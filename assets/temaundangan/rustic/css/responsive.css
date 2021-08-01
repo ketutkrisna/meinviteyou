@@ -1,0 +1,1282 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+#0.1	Theme Reset Style
+#0.2	Global Elements 
+
+
+---------------------------------------------------
+==== Home style-1 
+---------------------------------------------------
+#1.1	header
+#1.2	hero
+#1.3	couple
+#1.4	our-story
+#1.5	coming-soon
+#1.6	wedding-reciption
+#1.7	gallery
+#1.8	gift-registry
+#1.9	rsvp
+#1.10	footer
+#1.11	ceremony
+
+
+
+---------------------------------------------------
+==== Blog
+---------------------------------------------------
+#3.1	banar
+#3.2	blog-content
+#3.3	footer
+
+
+
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+#0.1	Theme Reset Style
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.section-title {
+		background: url(../images/section-title-bg-md.png) no-repeat center center;
+		height: 508px;
+	}
+
+	.section-title .col {
+		padding-left: 10px !important;
+		top: 225px;
+	}
+
+	.section-title h2 {
+		font-size: 35px;
+		line-height: 27px;
+	}
+
+	.para-with-bg {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.section-title .col {
+		left: 60%;
+	    -webkit-transform: translate(-60%);
+	   	transform: translate(-60%);
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.section-title {
+		background: url(../images/section-title-bg-sm.png) no-repeat center center;
+		width: 500px;
+		height: 339px;
+		position: relative;
+		left: 50%;
+		-webkit-transform: translate(-50%);
+		transform: translate(-50%);
+	}
+
+	.section-title .col {
+		width: 342px;
+		padding-left: 100px !important;
+		left: 19.5%;
+		top: 56%;
+	    -webkit-transform: translateY( -56%);
+	    transform: translateY( -56%);
+	}
+
+	.section-title span {
+		font-size: 13px;
+	}
+
+	.section-title h2 {
+		font-size: 25px;
+		line-height: 15px;
+		margin: 0.29em 0 0.5em;
+	}
+
+	.section-title p {
+		font-size: 14px;
+	}
+
+	.para-with-bg {
+		background: url(../images/para-bg-sm.png) no-repeat center bottom;
+		font-size: 16px;
+		padding: 0 0 75px
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.section-title {
+		background: url(../images/section-title-bg-xs.png) no-repeat center center;
+		width: 400px;
+		height: 271px;
+	}
+
+	.section-title .col {
+		width: 273px;
+		padding-left: 80px !important;
+		top: 55%;
+	}
+
+	.section-title span {
+		font-size: 13px;
+	}
+
+	.section-title h2 {
+		font-size: 20px;
+		margin: 3px 0 7px;
+	}
+
+	.section-title p {
+		font-size: 13px;
+		font-weight: normal;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.section-title {
+		background: url(../images/section-title-bg-tn.png) no-repeat center center;
+		width: 320px;
+		height: 217px;
+	}
+
+	.section-title .col {
+		width: 218px;
+		padding-left: 0 !important;
+		top: 55%;
+		text-align: center;
+	}
+
+	.section-title span,
+	.section-title p {
+		font-size: 10px;
+	}
+}
+
+
+
+/*---------------------------------------------------
+==== Home style-1 
+---------------------------------------------------*/
+/*--------------------------------------------------------------
+#1.1	header
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.navbar .container {
+		padding-right: 0;
+	}
+
+	#navbar {
+		padding: 0 100px 0 25px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	header {
+		top: 40px;
+	}
+
+	.navbar-header {
+		margin-bottom: 60px;
+		position: relative;
+		left: 50%;
+		-webkit-transform: translate(-50%);
+		transform: translate(-50%);
+	}
+
+	#navbar {
+		padding: 0 110px 0 30px;
+		opacity: 1;
+	}
+
+	#navbar > ul > li > a {
+		padding: 43px 13px;
+	}
+	
+	.main-header .navbar-brand{
+		float:left !important;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar .container {
+		padding-left: 0;
+	}
+
+	/*navbar header*/
+	.navbar-header {
+		padding-left: 40px;
+		margin-left: 0;
+	}
+
+	.navbar-header button span {
+		background-color: #fff;
+	}
+
+	.navbar-header button {
+		background-color: #0dd0e2;
+	}
+	
+	.main-header .navbar-toggle{
+		top:25px;	
+	}
+
+	/*navigation links*/
+	#navbar {
+		background-color: #010101;
+		width: 96%;
+		float: none !important;
+		border-top: 0;
+		border-radius: 0;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		position: relative;
+		left: 50%;
+		opacity: 1 !important;
+		visibility: visible !important;
+		-webkit-transform: translate(-50%);
+		transform: translate(-50%);
+	}
+
+	#navbar .navbar-nav {
+		width: 102%;
+		margin: 0;
+	}
+
+	#navbar > ul > li > a {
+		padding: 12px 10px 12px 20px;
+		border-bottom: 1px solid rgba(255,255,255, 0.2);
+		position: relative;
+	}
+
+	#navbar > ul > li:last-child a {
+		border-bottom: 0;
+	}
+
+	#navbar > ul > li > a i {
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+
+	.tog-nav {
+		display: none;
+	}
+
+	#navbar .dropdown-menu a {
+		padding-left: 40px;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+#1.2	hero
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.hero .title p {
+		padding: 0 50px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.hero .title > span {
+		font-size: 16px;
+	}
+
+	.hero .title h2 {
+		font-size: 45px;
+	}
+
+	.hero .title p {
+		padding: 0 30px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	/*shape*/
+	.hero .shape:before {
+		height: 43px;
+		background-image: url(../images/circle-shape-sm.png);
+		top: -23px;
+	}
+
+	.hero .item {
+		height: 900px;
+	}
+
+	.hero .title {
+		top: 140px;
+	}
+
+	.hero .title > span {
+		font-size: 14px;
+		font-weight: normal;
+	}
+
+	.hero .title h2 {
+		background: url(../images/slider/title-bg-sm.png) no-repeat center bottom;
+		font-size: 35px;
+		padding: 0 0 1.2em;
+	}
+
+	.hero .title p {
+		margin-bottom: 30px;
+		padding: 0;
+	}
+
+	.hero .title .btn {
+		width: 160px;
+		height: 45px;
+		line-height: 45px;
+		font-weight: normal;
+		position: relative;
+		z-index: 100;
+	}
+}
+
+
+
+@media only screen and (max-width: 400px) {
+	.hero .shape {
+		height: 380px;
+	}
+
+	.hero .title {
+		top: 170px;
+	}
+
+	.hero .title > span {
+		font-size: 12px;
+		font-weight: normal;
+	}
+
+	.hero .title h2 {
+		font-size: 25px;
+	}
+
+	.hero .title p {
+		font-size: 15px;
+	}
+
+	.hero .title .btn {
+		width: 130px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 12px;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+#1.3	couple
+--------------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+	.couple {
+	    margin-top: -440px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.couple .frame-wrapper {
+		width: 367px;
+		height: 367px;
+	}
+
+	.couple .frame {
+		width: 270px;
+		height: 270px;
+	}
+
+	.couple .groom .frame {
+		left: 53%;
+	}
+
+	.couple .bride .frame {
+		left: 47%;
+	}
+
+	.couple .para:before {
+		right: -10px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.common-shape:before {
+	    background-image: url(../images/circle-shape-sm.png);
+	    height: 43px;
+	    bottom: 60px;
+	}
+
+	.couple .frame-wrapper {
+		width: 320px;
+		height: 320px;
+		margin-bottom: 20px;
+		left: 50%;
+		-webkit-transform: translate(-50%);
+		transform: translate(-50%);
+	}
+	
+	.couple .groom,
+	.couple .bride {
+		padding-right: 0;
+	}
+
+	.couple .groom .frame {
+		left: 50%;
+	}
+
+	.couple .bride .frame {
+		left: 50%;
+	}
+
+	.couple .heart {
+		left: 49%;
+		top: 730px;
+		-webkit-transform: translate(-49%);
+		transform: translate(-49%);
+	}
+
+	.couple .para-with-bg {
+	    margin: 200px 0 0;
+	}
+
+	.couple .para:before {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.couple .frame-wrapper {
+		margin-bottom: 0;
+	}
+
+	.couple .frame {
+		width: 220px;
+		height: 220px;
+		border-radius: 10px;
+	}
+
+	.couple .frame:before {
+	    border: 15px solid rgba(0,0,0, 0.3);
+	}
+
+	.couple .frame-wrapper a {
+	    width: 210px;
+	    height: 40px;
+	    line-height: 40px;
+	    bottom: 30px;
+	}
+
+	.couple .heart {
+		top: 690px;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+#1.4	our-story
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.our-story .conversation .left:before,
+	.our-story .conversation .right:after {
+		content: "";
+		width: 381px;
+		height: 173px;
+		position: absolute;
+		top: 0;
+	}
+
+	.our-story .conversation .left:before {
+		background: url(../images/story/left-frame-sm.png) no-repeat;
+	}
+
+	.our-story .conversation .right:after {
+		background: url(../images/story/right-frame-sm.png) no-repeat;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.our-story .conversation .left,
+	.our-story .conversation .right {
+		display: none !important;
+	}
+
+	.our-story .conversation .left-side img,
+	.our-story .conversation .right-side img {
+		max-width: 100%;
+		float: none !important;
+	}
+
+	.meet .title {
+		font-size: 20px;
+	}
+
+	.meet .title h2 {
+		font-size: 40px;
+	}
+
+	.meet .owl-controls .owl-buttons .owl-prev {
+		left: -20px;
+	}
+
+	.meet .owl-controls .owl-buttons .owl-next {
+		right: -20px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.our-story:before {
+		bottom: -98px;
+	}
+
+
+	/*meet*/
+	.meet .title {
+		font-size: 16px;
+	}
+
+	.meet .title h2 {
+		font-size: 35px;
+	}
+
+	.meet .owl-pagination {
+		display: block;
+		margin-top: 20px;
+	}
+	.meet .owl-controls .owl-buttons .owl-prev,
+	.meet .owl-controls .owl-buttons .owl-next {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	/*meet*/
+	.meet .title {
+		font-size: 14px;
+	}
+
+	.meet .title h2 {
+		font-size: 25px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.our-story .meet:before,
+	.our-story .meet:after {
+		display: none;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+#1.5	coming-soon
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.coming-soon .shape {
+	    height: 270px;
+	}
+
+	.count-down-wrapper .time > div {
+		background: url(../images/clock-bg-md.png) no-repeat center 0;
+		width: 240px;
+		height: 242px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.count-down-wrapper .wrapper-digit {
+		top: 56%;
+		-webkit-transform: translate(-52%, -56%);
+		transform: translate(-52%, -56%);
+	}
+
+	.count-down-wrapper .time > div {
+		background: url(../images/clock-bg-sm.png) no-repeat center 0;
+		width: 200px;
+		height: 202px;
+	}
+
+	.count-down-wrapper .wrapper-digit div {
+		font-size: 30px;
+		height: 33px !important;
+	}
+
+	.count-down-wrapper .wrapper-digit p {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#clock > .col {
+		width: 100%;
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+	/*shape*/
+	.coming-soon .shape {
+	    height: 190px;
+	}
+
+	.coming-soon .shape:after {
+	    background-image: url(../images/circle-shape-sm.png);
+	    height: 43px;
+	    bottom: -30px;
+	}
+
+	.coming-soon .bottom-shape:after {
+	    background-image: url(../images/circle-shape-sm.png);
+	    height: 43px;
+	    bottom: -30px;
+	}
+
+	.wedding-reciption {
+	    padding-top: 200px;
+    }	
+
+    .coming-soon .title h3 {
+		font-size: 23px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	/*shape*/
+	.coming-soon .shape {
+	    height: 150px;
+	}
+
+	.coming-soon .title h3 {
+	    font-size: 19px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.coming-soon .shape {
+	    height: 120px;
+	}
+}
+
+
+
+
+/*--------------------------------------------------------------
+#1.6	wedding-reciption
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.wedding-reciption .title {
+		width: 373px;
+		height: 222px;
+	}
+
+	.wedding-reciption .title h3 {
+		margin-top: 70px;
+		margin-bottom: 5px;
+		padding-bottom: 5px;
+	}
+
+	.wedding-reciption .view {
+		width: 80px;
+		height: 242px;
+		margin-left: -40px;
+	}
+
+	.wedding-reciption .view a {
+		width: 70px;
+		height: 70px;
+		line-height: 70px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.wedding-reciption .title {
+		width: 282px;
+		height: 168px;
+	}
+
+	.wedding-reciption .title h3 {
+		font-size: 20px;
+		margin-top: 50px;
+		margin-bottom: 5px;
+		padding-bottom: 5px;
+	}
+
+	.wedding-reciption ul li {
+		padding-left: 60px;
+	    font-size: 17px;
+	    line-height: 40px;
+	    margin-bottom: 20px;
+	}
+
+	.wedding-reciption ul li i {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.wedding-reciption .container > .row:before {
+		display: none;
+	}
+
+	.wedding-reciption .wedding {
+		margin-bottom: 100px;
+	}
+
+	.wedding-reciption .title {
+		left: 50%;
+	    -webkit-transform: translate(-50%);
+	    transform: translate(-50%);
+	}
+
+	.wedding-reciption ul {
+	    margin: 67px 0 30px;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+#1.7	gallery
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.gallery .shape {
+	    height: 290px;
+	}
+
+	.gallery .gallery-content > .col > div {
+		width: 290px;
+		height: 280px;
+	}
+
+	.gallery .gallery-content button {
+		width: 270px;
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.gallery .gallery-content > .col > div {
+		width: 350px;
+		height: 340px;
+	}
+	
+	.gallery .gallery-content > .btn {
+		left: 0;
+		margin-top: 400px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.gallery .shape {
+	    height: 185px;
+	}
+
+	.gallery .shape:before {
+	    background: url(../images/circle-shape-sm.png) repeat-x;
+	    height: 43px;
+	    bottom: -30px;
+	}
+
+	.gallery .gallery-content > .col > div {
+		position: relative;
+		left: 50%;
+		-webkit-transform: translate(-50%);
+		transform: translate(-50%);
+	}
+	
+	.gallery .gallery-content > .btn {
+		left: 50%;
+		margin-top: 35px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.gallery .shape {
+	    height: 150px;
+	}
+
+	.gallery .gallery-content > .btn {
+	    width: 150px;
+	    height: 40px;
+	    line-height: 40px;
+	    font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.gallery .shape {
+	    height: 120px;
+	}
+
+	.gallery .gallery-content > .col > div {
+		width: 320px;
+		height: 310px;
+	}
+}
+
+
+
+
+/*--------------------------------------------------------------
+#1.8	gift-registry
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.gift-registry .shape {
+		height: 250px;
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+	.gift-registry .shape {
+		height: 160px;
+	}
+
+	.gift-registry .shape:before {
+	    background: url(../images/circle-shape-sm.png) repeat-x;
+	    height: 43px;
+	    position: absolute;
+	    bottom: -15px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.gift-registry .shape {
+		height: 140px;
+	}
+
+	.gift-registry {
+	    padding-bottom: 20px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.gift-registry .shape {
+		height: 110px;
+	}
+}
+
+
+
+
+/*--------------------------------------------------------------
+#1.9	rsvp
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.rsvp .title p {
+	    padding: 0 0 125px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.rsvp .title h2 {
+		font-size: 32px;
+	}
+
+	.rsvp .form > .col:before,
+	#blog-details .form > .col:before {
+		right: 0;
+	}
+
+	.rsvp .form > .col,
+	#blog-details .form > .col {
+	    background: url(../images/common-bg.jpg);
+	    padding: 80px 65px;
+	    margin-top: 80px;
+	    position: relative;
+	    z-index: 10;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	/*shape*/
+	.rsvp:before {
+	    background: url(../images/circle-shape-sm.png) repeat-x;
+	    height: 43px;
+	    top: -15px;
+	}
+
+	.rsvp {
+	    padding-top: 80px;
+	}
+
+	.rsvp .title h2 {
+	    font-size: 25px;
+	}
+
+	.rsvp .form > .col .bird,
+	#blog-details .form > .col .bird {
+		display: none;
+	}
+
+	.rsvp .form > .col:before,
+	.rsvp .form > .col:after,
+	.rsvp .title:before,
+	#blog-details .form > .col:before,
+	#blog-details .form > .col:after {
+		display: none;
+	}
+
+	.rsvp .title p {
+	    padding: 0 0 75px;
+	}
+
+	.rsvp .form > .col,
+	#blog-details .form > .col {
+	    width: 95%;
+		padding: 40px 25px;
+		left: 50%;
+	    -webkit-transform: translate(-50%);
+	    transform: translate(-50%);
+	}
+
+
+	/*form*/
+	.rsvp form > .col,
+	#blog-details form > .col {
+		margin-bottom: 22px;
+	}
+
+	.rsvp .form label {
+		font-size: 15px;
+	}
+
+	.rsvp .form input[type="text"],
+	.rsvp .form input[type="email"],
+	#blog-details .form input[type="text"],
+	#blog-details .form input[type="email"] {
+		height: 40px;
+		font-size: 15px;
+	}
+
+	.rsvp .form textarea,
+	#blog-details .form textarea {
+		height: 160px;
+		font-size: 15px;
+	}
+
+	.rsvp form .btn,
+	#blog-details form .btn {
+		width: 150px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.rsvp .title h2 {
+	    font-size: 22px;
+	}
+}
+
+
+
+
+/*--------------------------------------------------------------
+#1.10	footer
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	footer h2 {
+		font-size: 45px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.footer-wrapper:before {
+	    background: url(../images/circle-shape-sm.png) repeat-x;
+	    height: 43px;
+	    top: -25px;
+	}
+
+	footer h2 {
+		font-size: 30px;
+	}
+
+	footer .title p {
+		background: url(../images/footer-para-bg-sm.png) no-repeat center bottom;
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	footer h2 {
+		font-size: 25px;
+	}
+
+	footer .title p {
+		font-size: 14px;
+	}
+
+	footer .social-links li a {
+		font-size: 18px;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+#1.11	ceremony
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.ceremony .content {
+		padding: 50px;
+	}
+
+	.ceremony .right-col {
+		padding-left: 80px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	/*title*/
+	.ceremony .ceremony-banar .title {
+		width: 400px;
+		height: 236px;
+		margin-top: 114px;
+	}
+
+	.ceremony .ceremony-banar h2 {
+		font-size: 20px;
+		padding: 75px 0 22px;
+	}
+
+	.ceremony .ceremony-banar h2:after {
+		width: 	100px;
+		height: 2px;
+		bottom: 7px;
+	}
+
+
+	/*left-col*/
+	.ceremony .left-col {
+		margin-bottom: 80px;
+	}
+
+	.ceremony .left-col > div {
+		margin: 0 auto;
+	}
+
+	/*right-col*/
+	.ceremony .right-col {
+		padding-left: 15px;
+	}
+
+	.ceremony .right-col h3 {
+		font-size: 25px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.ceremony .container {
+		margin: 50px auto;
+	}
+	
+	.ceremony .content {
+		padding: 50px 0;
+	}
+
+	.ceremony .right-col {
+		padding-left: 20px;
+	}
+
+	.ceremony .right-col h3 {
+		font-size: 20px;
+	}
+
+	.ceremony .right-col .details p {
+		font-size: 15px;
+		line-height: 30px;
+	}
+
+	.ceremony .map {
+		height: 350px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	#popup-wedding-ceremony .ceremony-banar,
+	#popup-reciption-ceremony .ceremony-banar {
+		height: 400px;
+	}
+
+	/*title*/
+	.ceremony .ceremony-banar .title {
+		width: 310px;
+		height: 183px;
+		margin-top: 105px;
+	}
+
+	.ceremony .ceremony-banar h2 {
+		font-size: 17px;
+		padding: 60px 0 16px;
+	}
+
+	.ceremony .ceremony-banar h2:after {
+		width: 	100px;
+		height: 1px;
+		bottom: 6px;
+	}
+
+	.ceremony .ceremony-banar span {
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.ceremony .left-col > div {
+		width: 280px;
+	}
+}
+
+
+
+
+/*---------------------------------------------------
+==== Blog
+---------------------------------------------------*/
+/*--------------------------------------------------------------
+#3.1	banar
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.banar .container {
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.banar h2 {
+		font-size: 45px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.banar {
+		height: 564px;
+	}
+
+	.banar h2 {
+		font-size: 35px;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+#3.2	blog-content
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	.blog .blog-content {
+		margin-top: -240px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	/*author*/
+	.blog .blog-content .author {
+		padding-left: 10px;
+		top: -25px;
+	}
+
+	#blog-details .blog-content .author {
+	    padding-left: 25px;
+	}
+
+	.blog .blog-content .author img {
+		width: 50px;
+		border: 2px solid #fff;
+	}
+
+	.blog .blog-content .view {
+		width: 50px;
+		height: 151px;
+	}
+
+	.blog .blog-content .view a {
+		width: 43px;
+		height: 43px;
+		line-height: 43px;
+		top: 50px;
+	}
+
+
+	/*details*/
+	.blog .details {
+	    padding: 35px 0 0 25px;
+	}
+
+	.blog .details h3 {
+		font-size: 18px;
+		margin: 0 0 15px;
+	}
+
+	.blog .post-info div {
+		float: none !important;
+		margin-bottom: 5px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.blog .blog-content {
+		margin-top: -165px;
+	}
+
+	.blog .para p {
+		font-size: 16px;
+		padding: 0 15px;
+	}
+
+	#blog-details .details {
+	    padding-right: 15px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.blog .blog-content {
+		margin-top: -110px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#blog-details .blog-content .author {
+	    padding-left: 5px;
+	}
+
+	#blog-details .details {
+	    padding-left: 10px;
+	}
+}
+
+
+
+
+/*--------------------------------------------------------------
+#3.3	footer
+--------------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+	#blog .footer-wrapper {
+		padding-top: 100px;
+	}
+
+	#blog .footer-wrapper .container {
+		padding-bottom: 65px;
+	}
+}
+
+

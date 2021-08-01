@@ -1,0 +1,1169 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Admin extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+		if(!$this->session->userdata('level_user')){
+			redirect('auth');
+		}
+		if($this->session->userdata('level_user')!='admin'){
+			redirect('users');
+		}
+	}
+
+	public function index()
+	{
+		$querypengundang="SELECT count(id_user) as ids, id_user, pengundang.* from pengundang left join users on pengundang.id_pengundang=users.id_p group by id_pengundang order by id_pengundang desc";
+		$data["allorder"]=$this->db->query($querypengundang)->result_array();
+
+		// var_dump($data["allorder"]);die;
+		$this->load->view('admin/admins',$data);
+	}
+
+	public function aturundangan($idpengundang)
+	{
+		$queryundangan="SELECT * from pengundang where id_pengundang='$idpengundang'";
+		$data['detailundangan']=$this->db->query($queryundangan)->row_array();
+		$this->load->view('admin/aturundangan',$data);
+	}
+
+	public function tambahundangan()
+	{
+		$tambahnamaurl=$this->input->post('tambahnamaurl',true);
+		$tambahnamalakiperempuan=$this->input->post('tambahnamalakiperempuan');
+		$tambahfullnamalaki=$this->input->post('tambahfullnamalaki',true);
+		$tambahnamaortulaki=$this->input->post('tambahnamaortulaki');
+		$tambahfullnamaperempuan=$this->input->post('tambahfullnamaperempuan',true);
+		$tambahnamaortuperempuan=$this->input->post('tambahnamaortuperempuan');
+		$tambahnomertlp=$this->input->post('tambahnomertlp',true);
+		$tambahnomertlpw=$this->input->post('tambahnomertlpw',true);
+		$tambahucapanawal=$this->input->post('tambahucapanawal');
+		$tambahucapanahir=$this->input->post('tambahucapanahir');
+		$tambahtanggalakad=$this->input->post('tambahtanggalakad',true);
+		$tambahjamakad=$this->input->post('tambahjamakad',true);
+		$tambahalamatakad=$this->input->post('tambahalamatakad',true);
+		$tambahtanggalacara=$this->input->post('tambahtanggalacara',true);
+		$tambahjamacara=$this->input->post('tambahjamacara',true);
+		$tambahalamatacara=$this->input->post('tambahalamatacara',true);
+		$tambahmapacara=$this->input->post('tambahmapacara');
+
+		// $tambahmusikacara=$this->input->post('tambahmusikacara');
+		$tambahvideoacara=$this->input->post('tambahvideoacara');
+
+		$tambahjenisacara=$this->input->post('tambahjenisacara',true);
+		$tambahtemaundangan=$this->input->post('tambahtemaundangan',true);
+		$tambahpaketacara=$this->input->post('tambahpaketacara',true);
+		$getnamapengundang=$this->db->get_where('pengundang',['url_pengundang'=>$tambahnamaurl])->row_array();
+
+		if($getnamapengundang){
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+			              <strong>Gagal</strong>, Nama diUrl sudah ada!
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+			redirect('admin');
+			return false;
+		}
+
+		if($_FILES['tambahfotolaki']['name'] && $_FILES['tambahfotoperempuan']['name']){
+
+			$configl['upload_path']          = './assets/img/fotopelanggan/';
+            $configl['allowed_types']        = 'jpg|png|gif';
+            $configl['max_size']             = 2048;
+
+            $this->load->library('upload', $configl);
+
+            if($this->upload->do_upload('tambahfotolaki')){
+            	$fotol=$this->upload->data('file_name');
+            }else{
+            	$errorl = $this->upload->display_errors('','');
+            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
+            		$errorsl=['error'=>'Format file harus JPG,PNG'];
+            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
+			              <strong>JPG|PNG|GIF</strong>(laki-laki)
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+					redirect('admin');
+					return false;
+            	}else{
+            		$errorsl=['error'=>'Max gambar 2MB'];
+            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
+			              <strong>max 2MB</strong>(laki-laki)
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+					redirect('admin');
+					return false;
+            	}
+            }
+
+            $configp['upload_path']          = './assets/img/fotopelanggan/';
+            $configp['allowed_types']        = 'jpg|png|gif';
+            $configp['max_size']             = 2048;
+
+            $this->load->library('upload', $configp);
+
+            if($this->upload->do_upload('tambahfotoperempuan')){
+            	$fotop=$this->upload->data('file_name');
+            }else{
+            	$errorp = $this->upload->display_errors('','');
+            	if($errorp=='The filetype you are attempting to upload is not allowed.'){
+            		$errorsp=['error'=>'Format file harus JPG,PNG'];
+            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
+			              <strong>JPG|PNG|GIF</strong>(perempuan)
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+					redirect('admin');
+					return false;
+            	}else{
+            		$errorsp=['error'=>'Max gambar 2MB'];
+            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
+			              <strong>max 2MB</strong>(perempuan)
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+					redirect('admin');
+					return false;
+            	}
+            }
+            if($tambahtemaundangan=='tematic'){
+            	$colortema='#2484a6';
+            }else{
+            	$colortema='#000';
+            }
+            // insert to produks
+            $bgdefault=$tambahtemaundangan.'.jpg';
+			$data = array(
+			        'id_pengundang' => null,
+			        'url_pengundang' => $tambahnamaurl,
+			        'namapanggilan_priawanita' => $tambahnamalakiperempuan,
+			        'namalengkap_pria' => $tambahfullnamalaki,
+			        'orangtua_pria' => $tambahnamaortulaki,
+			        'namalengkap_wanita' => $tambahfullnamaperempuan,
+			        'orangtua_wanita' => $tambahnamaortuperempuan,
+			        'ucapan_awal' => $tambahucapanawal,
+			        'ucapan_ahir' => $tambahucapanahir,
+			        'tanggal_akad' => $tambahtanggalakad,
+			        'jam_akad' => $tambahjamakad,
+			        'alamat_akad' => $tambahalamatakad,
+			        'tanggal_acara' => $tambahtanggalacara,
+			        'jam_acara' => $tambahjamacara,
+			        'alamat_acara' => $tambahalamatacara,
+			        'map_acara' => $tambahmapacara,
+			        'musik_acara' => '',
+			        'video_acara' => $tambahvideoacara,
+			        'foto_pria' => $fotol,
+			        'foto_wanita' => $fotop,
+			        'jenis_acara' => $tambahjenisacara,
+			        'tema_template' => $tambahtemaundangan,
+			        'paket_acara' => $tambahpaketacara,
+			        'background_welcome' => $bgdefault,
+			        'nomer_pengundang' => $tambahnomertlp,
+			        'nomer_pengundangw' => $tambahnomertlpw,
+			        'color_template' => $colortema,
+			        'img_sharing' => 'defaultsharing.png'
+					);
+			$this->db->insert('pengundang', $data);
+			// $idproduk = $this->db->insert_id();
+			// notifikasi berhasil
+			// $this->session->set_flashdata('newnotiftambah',$idproduk);
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Undangan
+	              <strong>Berhasil</strong> ditambahkan.
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin');
+			return false;
+
+		}else{
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto 
+	              <strong> laki-laki & perempuan </strong> tidak boleh kosong!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin');
+			return false;
+		}
+	}
+
+	public function ajaxambildatapengundang()
+	{
+		// sleep(2);
+		$idpengundang=htmlspecialchars($this->input->post('idpengundang',true));
+
+		$queryundangan="SELECT * from pengundang where id_pengundang='$idpengundang'";
+		$datajson=$this->db->query($queryundangan)->row_array();
+		echo json_encode($datajson);
+		return false;
+	}
+
+	public function ajaxambildetailuser()
+	{
+		// sleep(2);
+		$iduser=htmlspecialchars($this->input->post('iduser',true));
+
+		// $detail=$this->db->get_where('users',['id_user'=>$iduser])->row_array();
+		$querypengundang="SELECT namapanggilan_priawanita, users.* from pengundang left join users on pengundang.id_pengundang=users.id_p where id_user = '$iduser' group by id_pengundang";
+		$detail=$this->db->query($querypengundang)->row_array();
+		echo json_encode($detail);
+		return false;
+	}
+
+	public function buatakseslogin()
+	{
+		$idpen=htmlspecialchars($this->input->post('idpen',true));
+		$fullnamepengundang=htmlspecialchars($this->input->post('fullnamepengundang',true));
+		$usernamepengundang=htmlspecialchars($this->input->post('usernamepengundang',true));
+		$passwordpengundang=htmlspecialchars($this->input->post('passwordpengundang',true));
+
+		// var_dump($_POST);die;
+
+		$data = array(
+			        'id_user' => null,
+			        'id_p' => $idpen,
+			        'nama_user' => $fullnamepengundang,
+			        'username_user' => $usernamepengundang,
+			        'password_user' => $passwordpengundang,
+			        'level_user' => "user"
+					);
+			$this->db->insert('users', $data);
+			// $idproduk = $this->db->insert_id();
+			// notifikasi berhasil
+			// $this->session->set_flashdata('newnotiftambah',$idproduk);
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	              <strong>Berhasil,</strong> akses user telah dibuat!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin');
+			return false;
+	}
+
+	public function tutupakseslogin($iduser)
+	{
+		$this->db->set('status_user', 'tidak');
+		$this->db->where('id_user', $iduser);
+		$this->db->update('users');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Akses login,</strong> telah ditutup!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>');
+		redirect('admin');
+		return false;
+	}
+
+	public function bukaakseslogin($iduser)
+	{
+		$this->db->set('status_user', 'aktif');
+		$this->db->where('id_user', $iduser);
+		$this->db->update('users');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Akses login,</strong> telah dibuka!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>');
+		redirect('admin');
+		return false;
+	}
+
+	public function tambahdaftarundangan()
+	{
+		$idtpengundang=htmlspecialchars($this->input->post('idtpengundang',true));
+		$tnamaurl=strtolower($this->input->post('tnamaurl',true));
+		$tnamadiundang=$this->input->post('tnamadiundang',true);
+		$tnomerdiundang=htmlspecialchars($this->input->post('tnomerdiundang',true));
+		$talamatdiundang=htmlspecialchars($this->input->post('talamatdiundang',true));
+
+		$tnamaurlnull=trim($tnamaurl);
+	    if(empty($tnamaurlnull)){
+	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+	              <strong>Gagal</strong>, nama diUrl tidak boleh kosong!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idtpengundang);
+			return false;
+	    }else{
+	      $tnamaurlbaru1 = preg_replace('/[^a-zA-Z0-9\_\.\-]/', ' ', $tnamaurlnull);
+	      $tnamaurlbaru= str_replace(' ', '', $tnamaurlbaru1);
+	    }
+
+	    $tnamadiundangnull=trim($tnamadiundang);
+	    if(empty($tnamadiundangnull)){
+	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+	              <strong>Gagal</strong>, nama diundang tidak boleh kosong!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idtpengundang);
+			return false;
+	    }else{
+	      $tnamadiundangbaru = preg_replace('/[^a-zA-Z0-9\&\_\.\,\-]/', ' ', $tnamadiundangnull);
+	    }
+
+		$cekdiundang=$this->db->get_where('diundang',['matchid_pengundang'=>$idtpengundang,'url_diundang'=>$tnamaurl])->row_array();
+		if($cekdiundang){
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+	              <strong>Gagal</strong>, nama diUrl sudah ada!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idtpengundang);
+			return false;
+		}
+
+		$data = array(
+			        'id_diundang' => null,
+			        'matchid_pengundang' => $idtpengundang,
+			        'url_diundang' => $tnamaurlbaru,
+			        'nama_diundang' => $tnamadiundangbaru,
+			        'nomer_diundang' => $tnomerdiundang,
+			        'alamat_diundang' => $talamatdiundang,
+			        'absen_diundang' => 'null',
+			        'jumlah_kehadiran' => 0
+					);
+			$this->db->insert('diundang', $data);
+			// $idproduk = $this->db->insert_id();
+			// notifikasi berhasil
+			// $this->session->set_flashdata('newnotiftambah',$idproduk);
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Daftar undangan
+	              <strong>Berhasil</strong> ditambahkan!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idtpengundang);
+			return false;	
+	}
+
+	public function ajaxeditundangan()
+	{
+		// sleep(2);
+		$ideditundangan=htmlspecialchars($this->input->post('ideditundangan',true));
+
+		$queryundangan="SELECT * from pengundang where id_pengundang='$ideditundangan'";
+		$datajson=$this->db->query($queryundangan)->row_array();
+		echo json_encode($datajson);
+		return false;
+	}
+
+	public function editundangan()
+	{
+		$ideundangan=$this->input->post('ideundangan',true);
+		$tambahnamaurl=$this->input->post('tambahnamaurl',true);
+		$tambahnamalakiperempuan=$this->input->post('tambahnamalakiperempuan');
+		$tambahfullnamalaki=$this->input->post('tambahfullnamalaki',true);
+		$tambahnamaortulaki=$this->input->post('tambahnamaortulaki');
+		$tambahfullnamaperempuan=$this->input->post('tambahfullnamaperempuan',true);
+		$tambahnamaortuperempuan=$this->input->post('tambahnamaortuperempuan');
+		$tambahnomertlp=$this->input->post('tambahnomertlp',true);
+		$tambahnomertlpw=$this->input->post('tambahnomertlpw',true);
+		$tambahucapanawal=$this->input->post('tambahucapanawal');
+		$tambahucapanahir=$this->input->post('tambahucapanahir');
+		$tambahtanggalakad=$this->input->post('tambahtanggalakad',true);
+		$tambahjamakad=$this->input->post('tambahjamakad',true);
+		$tambahalamatakad=$this->input->post('tambahalamatakad');
+		$tambahtanggalacara=$this->input->post('tambahtanggalacara',true);
+		$tambahjamacara=$this->input->post('tambahjamacara',true);
+		$tambahalamatacara=$this->input->post('tambahalamatacara');
+		$tambahmapacara=$this->input->post('tambahmapacara');
+
+		// $tambahmusikacara=$this->input->post('tambahmusikacara');
+		$tambahvideoacara=$this->input->post('tambahvideoacara');
+
+		$tambahjenisacara=$this->input->post('tambahjenisacara',true);
+		$tambahtemaundangan=$this->input->post('tambahtemaundangan',true);
+		$tambahwarnadasar=$this->input->post('tambahwarnadasar',true);
+		$tambahpaketacara=$this->input->post('tambahpaketacara',true);
+
+		$getnamapengundang=$this->db->get_where('pengundang',['url_pengundang'=>$tambahnamaurl])->row_array();
+		$fotopertama=$this->db->get_where('pengundang',['id_pengundang'=>$ideundangan])->row_array();
+
+		// if($getnamapengundang){
+		// 	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+		// 	              <strong>Gagal</strong>, Nama diUrl pengundang sudah ada!
+		// 	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		// 	                <span aria-hidden="true">&times;</span>
+		// 	              </button>
+		// 	            </div>');
+		// 	redirect('admin/aturundangan/'.$ideundangan);
+		// 	return false;
+		// }
+
+		if($_FILES['tambahfotolaki']['name'] || $_FILES['tambahfotoperempuan']['name']){
+			if($_FILES['tambahfotolaki']['name']==''){
+				$fotol=$fotopertama['foto_pria'];
+			}else{
+				$configl['upload_path']          = './assets/img/fotopelanggan/';
+	            $configl['allowed_types']        = 'jpg|png|gif';
+	            $configl['max_size']             = 2048;
+
+	            $this->load->library('upload', $configl);
+
+	            if($this->upload->do_upload('tambahfotolaki')){
+		            unlink(FCPATH . '/assets/img/fotopelanggan/' .$fotopertama['foto_pria']);
+	            	$fotol=$this->upload->data('file_name');
+	            }else{
+	            	$errorl = $this->upload->display_errors('','');
+	            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
+	            		$errorsl=['error'=>'Format file harus JPG,PNG'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
+				              <strong>JPG|PNG|GIF</strong>(laki-laki)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$ideundangan);
+						return false;
+	            	}else{
+	            		$errorsl=['error'=>'Max gambar 2MB'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
+				              <strong>max 2MB</strong>(laki-laki)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$ideundangan);
+						return false;
+	            	}
+	            }
+			}
+
+			if($_FILES['tambahfotoperempuan']['name']==''){
+				$fotop=$fotopertama['foto_wanita'];
+			}else{
+				$configp['upload_path']          = './assets/img/fotopelanggan/';
+	            $configp['allowed_types']        = 'jpg|png|gif';
+	            $configp['max_size']             = 2048;
+
+	            $this->load->library('upload', $configp);
+
+	            if($this->upload->do_upload('tambahfotoperempuan')){
+	            	unlink(FCPATH . '/assets/img/fotopelanggan/' .$fotopertama['foto_wanita']);
+	            	$fotop=$this->upload->data('file_name');
+	            }else{
+	            	$errorp = $this->upload->display_errors('','');
+	            	if($errorp=='The filetype you are attempting to upload is not allowed.'){
+	            		$errorsp=['error'=>'Format file harus JPG,PNG'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
+				              <strong>JPG|PNG|GIF</strong>(perempuan)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$ideundangan);
+						return false;
+	            	}else{
+	            		$errorsp=['error'=>'Max gambar 2MB'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
+				              <strong>max 2MB</strong>(perempuan)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$ideundangan);
+						return false;
+	            	}
+	            }
+			}
+			if($fotopertama['background_welcome']=='classic.jpg'||$fotopertama['background_welcome']=='rustic.jpg'||$fotopertama['background_welcome']=='tematic.jpg'){
+				$bgdefault=$tambahtemaundangan.'.jpg';
+			}else{
+				$bgdefault=$fotopertama['background_welcome'];
+			}
+			// update to mobils
+			$this->db->set('url_pengundang', $tambahnamaurl);
+			$this->db->set('namapanggilan_priawanita', $tambahnamalakiperempuan);
+			$this->db->set('namalengkap_pria', $tambahfullnamalaki);
+			$this->db->set('orangtua_pria', $tambahnamaortulaki);
+			$this->db->set('namalengkap_wanita', $tambahfullnamaperempuan);
+			$this->db->set('orangtua_wanita', $tambahnamaortuperempuan);
+			$this->db->set('nomer_pengundang', $tambahnomertlp);
+			$this->db->set('nomer_pengundangw', $tambahnomertlpw);
+			$this->db->set('ucapan_awal', $tambahucapanawal);
+			$this->db->set('ucapan_ahir', $tambahucapanahir);
+
+			$this->db->set('tanggal_akad', $tambahtanggalakad);
+			$this->db->set('jam_akad', $tambahjamakad);
+			$this->db->set('alamat_akad', $tambahalamatakad);
+
+			$this->db->set('tanggal_acara', $tambahtanggalacara);
+			$this->db->set('jam_acara', $tambahjamacara);
+			$this->db->set('alamat_acara', $tambahalamatacara);
+			$this->db->set('map_acara', $tambahmapacara);
+
+			// $this->db->set('musik_acara', $tambahmusikacara);
+			$this->db->set('video_acara', $tambahvideoacara);
+
+			$this->db->set('foto_pria', $fotol);
+			$this->db->set('foto_wanita', $fotop);
+			$this->db->set('jenis_acara', $tambahjenisacara);
+			$this->db->set('tema_template', $tambahtemaundangan);
+			$this->db->set('color_template', $tambahwarnadasar);
+			$this->db->set('paket_acara', $tambahpaketacara);
+			$this->db->set('background_welcome', $bgdefault);
+			$this->db->where('id_pengundang', $ideundangan);
+			$this->db->update('pengundang');
+			// $idproduk = $this->db->insert_id();
+			// notifikasi berhasil
+			// $this->session->set_flashdata('newnotiftambah',$idproduk);
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Undangan
+	              <strong>Berhasil</strong> diupdate!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$ideundangan);
+			return false;
+
+		}else{
+			if($fotopertama['background_welcome']=='classic.jpg'||$fotopertama['background_welcome']=='rustic.jpg'||$fotopertama['background_welcome']=='tematic.jpg'){
+				$bgdefault=$tambahtemaundangan.'.jpg';
+			}else{
+				$bgdefault=$fotopertama['background_welcome'];
+			}
+			$fotol=$fotopertama['foto_pria'];
+			$fotop=$fotopertama['foto_wanita'];
+			// update to mobils
+			$this->db->set('url_pengundang', $tambahnamaurl);
+			$this->db->set('namapanggilan_priawanita', $tambahnamalakiperempuan);
+			$this->db->set('namalengkap_pria', $tambahfullnamalaki);
+			$this->db->set('orangtua_pria', $tambahnamaortulaki);
+			$this->db->set('namalengkap_wanita', $tambahfullnamaperempuan);
+			$this->db->set('orangtua_wanita', $tambahnamaortuperempuan);
+			$this->db->set('nomer_pengundang', $tambahnomertlp);
+			$this->db->set('nomer_pengundangw', $tambahnomertlpw);
+			$this->db->set('ucapan_awal', $tambahucapanawal);
+			$this->db->set('ucapan_ahir', $tambahucapanahir);
+
+			$this->db->set('tanggal_akad', $tambahtanggalakad);
+			$this->db->set('jam_akad', $tambahjamakad);
+			$this->db->set('alamat_akad', $tambahalamatakad);
+
+			$this->db->set('tanggal_acara', $tambahtanggalacara);
+			$this->db->set('jam_acara', $tambahjamacara);
+			$this->db->set('alamat_acara', $tambahalamatacara);
+			$this->db->set('map_acara', $tambahmapacara);
+
+			// $this->db->set('musik_acara', $tambahmusikacara);
+			$this->db->set('video_acara', $tambahvideoacara);
+			
+			$this->db->set('foto_pria', $fotol);
+			$this->db->set('foto_wanita', $fotop);
+			$this->db->set('jenis_acara', $tambahjenisacara);
+			$this->db->set('tema_template', $tambahtemaundangan);
+			$this->db->set('color_template', $tambahwarnadasar);
+			$this->db->set('paket_acara', $tambahpaketacara);
+			$this->db->set('background_welcome', $bgdefault);
+			$this->db->where('id_pengundang', $ideundangan);
+			$this->db->update('pengundang');
+
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Undangan
+	              <strong> berhasil </strong> diupdate!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$ideundangan);
+			return false;
+		}
+	}
+
+	public function tambahgaleri()
+	{
+		$idtambahgaleri=htmlspecialchars($this->input->post('idtambahgaleri',true));
+		$urltambahgaleri=htmlspecialchars($this->input->post('urltambahgaleri',true));
+		$tambahcaption=htmlspecialchars($this->input->post('tambahcaption',true));
+
+		if($_FILES['tambahfgaleri']['name']){
+			$config['upload_path']          = './assets/img/fotogaleripelanggan/';
+            $config['allowed_types']        = 'jpg|png|gif';
+            $config['max_size']             = 2048;
+
+            $this->load->library('upload', $config);
+
+            if($this->upload->do_upload('tambahfgaleri')){
+            	$foto=$this->upload->data('file_name');
+            }else{
+            	$error = $this->upload->display_errors('','');
+            	if($error=='The filetype you are attempting to upload is not allowed.'){
+            		$errors=['error'=>'Format file harus JPG,PNG'];
+            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
+			              <strong>JPG|PNG|GIF</strong>.
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+					redirect('admin/aturundangan/'.$idtambahgaleri);
+					return false;
+            	}else{
+            		$errors=['error'=>'Max gambar 2MB'];
+            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
+			              <strong>max 2MB</strong>.
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+					redirect('admin/aturundangan/'.$idtambahgaleri);
+					return false;
+            	}
+            }
+            // insert to produks
+			$data = array(
+			        'id_galeri' => null,
+			        'idpengundang_galeri' => $idtambahgaleri,
+			        'url_galeri' => $urltambahgaleri,
+			        'foto_galeri' => $foto,
+			        'caption_galeri' => $tambahcaption
+					);
+			$this->db->insert('galeris', $data);
+			// $idproduk = $this->db->insert_id();
+			// notifikasi berhasil
+			// $this->session->set_flashdata('newnotiftambah',$idproduk);
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto galeri
+	              <strong>Berhasil</strong> ditambahkan.
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idtambahgaleri);
+			return false;
+		}else{
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto tidak boleh
+	              <strong> Kosong </strong>!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idtambahgaleri);
+			return false;
+		}
+	}
+
+	public function hapusgaleri($idgaleri,$idpengundang)
+	{
+		$foto=$this->db->get_where('galeris',['id_galeri'=>$idgaleri])->row_array();
+		unlink(FCPATH . '/assets/img/fotogaleripelanggan/' .$foto['foto_galeri']);
+		$this->db->where('id_galeri', $idgaleri);
+		$this->db->delete('galeris');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto galeri
+	              <strong> berhasil </strong> dihapus!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+		redirect('admin/aturundangan/'.$idpengundang);
+		return false;
+	}
+
+
+
+
+
+
+
+
+
+
+	public function gantibackground()
+	{
+		$idgantibg=htmlspecialchars($this->input->post('idgantibg',true));
+		$cekfoto=$this->db->get_where('pengundang',['id_pengundang'=>$idgantibg])->row_array();
+
+		if($_FILES['fotogantibg']['name']){
+			if($_FILES['fotogantibg']['name']==''){
+				$fotobg=$cekfoto['background_welcome'];
+			}else{
+				$configl['upload_path']          = './assets/img/backgroundawal/';
+	            $configl['allowed_types']        = 'jpg|png|gif';
+	            $configl['max_size']             = 2048;
+
+	            $this->load->library('upload', $configl);
+
+	            if($this->upload->do_upload('fotogantibg')){
+	            	if($cekfoto['background_welcome']=='classic.jpg'||$cekfoto['background_welcome']=='rustic.jpg'||$cekfoto['background_welcome']=='tematic.jpg'){}else{
+		            	unlink(FCPATH . '/assets/img/backgroundawal/' .$cekfoto['background_welcome']);
+		        	}
+	            	$fotol=$this->upload->data('file_name');
+	            }else{
+	            	$errorl = $this->upload->display_errors('','');
+	            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
+	            		$errorsl=['error'=>'Format file harus JPG,PNG'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
+				              <strong>JPG|PNG|GIF</strong>(laki-laki)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$idgantibg);
+						return false;
+	            	}else{
+	            		$errorsl=['error'=>'Max gambar 2MB'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
+				              <strong>max 2MB</strong>(laki-laki)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$idgantibg);
+						return false;
+	            	}
+	            }
+			}
+			
+			// update to mobils
+			$this->db->set('background_welcome', $fotol);
+			$this->db->where('id_pengundang', $idgantibg);
+			$this->db->update('pengundang');
+			// $idproduk = $this->db->insert_id();
+			// notifikasi berhasil
+			// $this->session->set_flashdata('newnotiftambah',$idproduk);
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Background 
+	              <strong>Berhasil</strong> diupdate!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idgantibg);
+			return false;
+
+		}else{
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto background
+	              <strong> tidak boleh</strong> kosong!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idgantibg);
+			return false;
+		}
+	}
+
+	public function defaultbackground($idpengundang)
+	{
+		$foto=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
+		if($foto['background_welcome']=='classic.jpg'||$foto['background_welcome']=='rustic.jpg'||$foto['background_welcome']=='tematic.jpg'){}else{
+			unlink(FCPATH . '/assets/img/backgroundawal/' .$foto['background_welcome']);
+		}
+		$bgdefault=$foto['tema_template'].'.jpg';
+		$this->db->set('background_welcome', $bgdefault);
+		$this->db->where('id_pengundang', $idpengundang);
+		$this->db->update('pengundang');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Background
+	              <strong> berhasil </strong> diganti Default!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+		redirect('admin/aturundangan/'.$idpengundang);
+		return false;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public function deletepengundang($idpengundang)
+	{
+		$fotogaleri=$this->db->get_where('galeris',['idpengundang_galeri'=>$idpengundang])->result_array();
+		$foto=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
+		
+		if($foto['background_welcome']=='classic.jpg'||$foto['background_welcome']=='rustic.jpg'||$foto['background_welcome']=='tematic.jpg'){}else{
+			unlink(FCPATH . '/assets/img/backgroundawal/' .$foto['background_welcome']);
+		}
+			unlink(FCPATH . '/assets/img/fotopelanggan/' .$foto['foto_pria']);
+			unlink(FCPATH . '/assets/img/fotopelanggan/' .$foto['foto_wanita']);
+		foreach($fotogaleri as $fg){
+			unlink(FCPATH . '/assets/img/fotogaleripelanggan/' .$fg['foto_galeri']);
+		}
+			unlink(FCPATH . '/assets/img/musikwedding/' .$foto['musik_acara']);
+			// unlink(FCPATH . '/assets/img/musikwedding/' .$musikwedding['musik_acara']);
+
+		$this->db->where('idpengundang_galeri', $idpengundang);
+		$this->db->delete('galeris');
+
+		$this->db->where('id_pengundang', $idpengundang);
+		$this->db->delete('pengundang');
+
+		$this->db->where('matchid_pengundang', $idpengundang);
+		$this->db->delete('diundang');
+
+		$this->db->where('urlpengundang_ucapan', $idpengundang);
+		$this->db->delete('ucapan');
+
+		$this->db->where('id_p', $idpengundang);
+		$this->db->delete('users');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Undangan
+	              <strong> berhasil </strong> dihapus!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+		redirect('admin');
+		return false;
+	}
+
+	public function ajaxeditdiundang()
+	{
+		// sleep(2);
+		$ideditdiundang=htmlspecialchars($this->input->post('ideditdiundang',true));
+
+		$queryundangan="SELECT * from diundang where id_diundang='$ideditdiundang'";
+		$datajson=$this->db->query($queryundangan)->row_array();
+		echo json_encode($datajson);
+		return false;
+	}
+
+	public function editdaftardiundang()
+	{
+		$idepengundang=htmlspecialchars($this->input->post('idepengundang',true));
+		$idediundang=htmlspecialchars($this->input->post('idediundang',true));
+		$enamaurl=strtolower($this->input->post('enamaurl',true));
+		$enamadiundang=$this->input->post('enamadiundang',true);
+		$enomerdiundang=htmlspecialchars($this->input->post('enomerdiundang',true));
+		$ealamatdiundang=htmlspecialchars($this->input->post('ealamatdiundang',true));
+
+		// $getnamadiundang=$this->db->get_where('diundang',['url_diundang'=>$enamaurl,'matchid_pengundang'=>$idepengundang])->row_array();
+
+		// if($getnamadiundang){
+		// 	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+		// 	              <strong>Gagal</strong>, Nama diUrl sudah ada!
+		// 	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		// 	                <span aria-hidden="true">&times;</span>
+		// 	              </button>
+		// 	            </div>');
+		// 	redirect('admin/aturundangan/'.$idepengundang);
+		// 	return false;
+		// }
+
+		$enamaurlnull=trim($enamaurl);
+	    if(empty($enamaurlnull)){
+	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+	              <strong>Gagal</strong>, nama diUrl tidak boleh kosong!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idepengundang);
+			return false;
+	    }else{
+	      $enamaurlbaru1 = preg_replace('/[^a-zA-Z0-9\_\.\-]/', ' ', $enamaurlnull);
+	      $enamaurlbaru= str_replace(' ', '', $enamaurlbaru1);
+	    }
+
+	    $enamadiundangnull=trim($enamadiundang);
+	    if(empty($enamadiundangnull)){
+	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+	              <strong>Gagal</strong>, nama diundang tidak boleh kosong!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idepengundang);
+			return false;
+	    }else{
+	      $enamadiundangbaru = preg_replace('/[^a-zA-Z0-9\&\_\.\,\-]/', ' ', $enamadiundangnull);
+	    }
+
+		$this->db->set('url_diundang', $enamaurlbaru);
+		$this->db->set('nama_diundang', $enamadiundangbaru);
+		$this->db->set('nomer_diundang', $enomerdiundang);
+		$this->db->set('alamat_diundang', $ealamatdiundang);
+		$this->db->where('id_diundang', $idediundang);
+		$this->db->update('diundang');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Daftar undangan
+              <strong> berhasil </strong> diupdate!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>');
+		redirect('admin/aturundangan/'.$idepengundang);
+		return false;
+	}
+
+	public function hapusdaftarundangan($iddiundang,$idundangan)
+	{
+		$this->db->where('id_diundang', $iddiundang);
+		$this->db->delete('diundang');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Daftar undangan
+	              <strong> berhasil </strong> dihapus!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+		redirect('admin/aturundangan/'.$idundangan);
+		return false;
+	}
+
+	public function hapusucapan($iducapan,$urlpengundang,$urldiundang)
+	{
+		$this->db->where('id_ucapan', $iducapan);
+		$this->db->delete('ucapan');
+
+		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
+		$tema=$datacek['tema_template'];
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ucapan undangan
+	              <strong> berhasil </strong> dihapus!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+		redirect('wedding/'.$urlpengundang.'/'.$urldiundang);
+			return false;
+		return false;
+	}
+
+	public function uploadmusik()
+	{
+		$idpengundang=htmlspecialchars($this->input->post('idpengundang',true));
+		$musikwedding=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
+		if($_FILES){
+			if($_FILES['datafilemusiku']['size']==''||$_FILES['datafilemusiku']['size']>7340032){
+				echo "File terlalu besar";
+				return false;
+			}else{
+				$configl['upload_path']          = './assets/img/musikwedding/';
+	            $configl['allowed_types']        = 'mp3';
+	            $configl['max_size']             = 7340;
+
+	            $this->load->library('upload', $configl);
+
+	            if($this->upload->do_upload('datafilemusiku')){
+	            	if($musikwedding['musik_acara']==''){}else{
+		            	unlink(FCPATH . '/assets/img/musikwedding/' .$musikwedding['musik_acara']);
+		        	}
+	            	$musik=$this->upload->data('file_name');
+	            }else{
+	            	$errorl = $this->upload->display_errors('','');
+	            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
+	            		$errorsl=['error'=>'Format file harus JPG,PNG'];
+						echo "Format tidak benar";
+						return false;
+	            	}else{
+	            		$errorsl=['error'=>'Max gambar 7MB'];
+						echo "File terlalu besar";
+						return false;
+	            	}
+	            }
+			}
+			
+			// update to mobils
+			$this->db->set('musik_acara', $musik);
+			$this->db->where('id_pengundang', $idpengundang);
+			$this->db->update('pengundang');
+			echo "success";
+			return false;
+
+		}else{
+			echo "musik kosong";
+			return false;
+		}
+	}
+
+	public function hapusmusik($idpengundang)
+	{
+		$musikwedding=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
+		unlink(FCPATH . '/assets/img/musikwedding/' .$musikwedding['musik_acara']);
+
+		$this->db->set('musik_acara', '');
+		$this->db->where('id_pengundang', $idpengundang);
+		$this->db->update('pengundang');
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Success musik
+              <strong>berhasil</strong> dihapus!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>');
+		redirect('admin/aturundangan/'.$idpengundang);
+		return false;
+
+	}
+
+	public function updateimgsharing()
+	{
+		$idsharepengundang=htmlspecialchars($this->input->post('idsharepengundang',true));
+		$cekfoto=$this->db->get_where('pengundang',['id_pengundang'=>$idsharepengundang])->row_array();
+
+		if($_FILES['fotosharing']['name']){
+			if($_FILES['fotosharing']['name']==''){
+				$fotobg=$cekfoto['img_sharing'];
+			}else{
+				$configl['upload_path']          = './assets/img/imgsharing/';
+	            $configl['allowed_types']        = 'jpg|png|gif';
+	            $configl['max_size']             = 2048;
+
+	            $this->load->library('upload', $configl);
+
+	            if($this->upload->do_upload('fotosharing')){
+	            	if($cekfoto['img_sharing']=='defaultsharing.png'){}else{
+		            	unlink(FCPATH . '/assets/img/imgsharing/' .$cekfoto['img_sharing']);
+		        	}
+	            	$fotol=$this->upload->data('file_name');
+	            }else{
+	            	$errorl = $this->upload->display_errors('','');
+	            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
+	            		$errorsl=['error'=>'Format file harus JPG,PNG'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
+				              <strong>JPG|PNG|GIF</strong>(laki-laki)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$idsharepengundang);
+						return false;
+	            	}else{
+	            		$errorsl=['error'=>'Max gambar 2MB'];
+	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
+				              <strong>max 2MB</strong>(laki-laki)
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+						redirect('admin/aturundangan/'.$idsharepengundang);
+						return false;
+	            	}
+	            }
+			}
+			
+			// update to mobils
+			$this->db->set('img_sharing', $fotol);
+			$this->db->where('id_pengundang', $idsharepengundang);
+			$this->db->update('pengundang');
+			// $idproduk = $this->db->insert_id();
+			// notifikasi berhasil
+			// $this->session->set_flashdata('newnotiftambah',$idproduk);
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Image sharing 
+	              <strong>Berhasil</strong> diupdate!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idsharepengundang);
+			return false;
+
+		}else{
+			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto sahring
+	              <strong> tidak boleh</strong> kosong!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+			redirect('admin/aturundangan/'.$idsharepengundang);
+			return false;
+		}
+	}
+
+	public function defaultimgsharing($idpengundang)
+	{
+		$foto=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
+		if($foto['img_sharing']=='defaultsharing.png'){}else{
+			unlink(FCPATH . '/assets/img/imgsharing/' .$foto['img_sharing']);
+		}
+		// $bgdefault=$foto['tema_template'].'.jpg';
+		$this->db->set('img_sharing', 'defaultsharing.png');
+		$this->db->where('id_pengundang', $idpengundang);
+		$this->db->update('pengundang');
+
+		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Image sharing
+	              <strong> berhasil </strong> diganti Default!
+	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>');
+		redirect('admin/aturundangan/'.$idpengundang);
+		return false;
+	}
+
+	public function ubahpassword()
+	{
+		$data['profileuser']=$this->db->get_where('users',['id_user'=>$this->session->userdata('id_user')])->row_array();
+		$userid=$this->session->userdata('id_user');
+		$passwordlama=htmlspecialchars($this->input->post('passwordlama',true));
+		$matchpassword=$this->db->get_where('users',['id_user'=>$userid])->row_array();
+		// var_dump($matchpassword);die;
+
+		$this->form_validation->set_rules('passwordlama','passwordlama','trim|required',
+			[
+				'required'=>'Password harus diisi'
+			]);
+		$this->form_validation->set_rules('passwordbaru','Password','trim|required|min_length[5]|matches[passwordconfirm]',[
+				'required'=>'Password harus diisi',
+				'min_length'=>'Panjang password min 5 karakter',
+				'matches'=>'Confirm password tidak sama'
+			]);
+		$this->form_validation->set_rules('passwordconfirm','confirmpassword','trim|required|matches[passwordbaru]',
+			[
+				'required'=>'Password harus diisi',
+				'matches'=>'Confirm password tidak sama'
+			]);
+
+		if ($this->form_validation->run() == FALSE){
+			// $this->load->view('users/setpassword',$data);
+			$this->load->view('admin/password');
+		}else{
+			if($matchpassword['password_user']!=$passwordlama){
+				$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Password lama 
+		              <strong>Salah</strong>.
+		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                <span aria-hidden="true">&times;</span>
+		              </button>
+		            </div>');
+				redirect('admin/ubahpassword');
+				// $this->load->view("templates/header",$data);
+				// $this->load->view("home/setpassword",$data);
+				return false;
+			}else{
+				$this->db->set('password_user', htmlspecialchars($this->input->post('passwordbaru',true)));
+				$this->db->where('id_user', $userid);
+				$this->db->update('users');
+				$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Success password
+		              <strong>berhasil</strong> diubah.
+		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                <span aria-hidden="true">&times;</span>
+		              </button>
+		            </div>');
+				redirect('admin/ubahpassword');
+				// $this->load->view("templates/header",$data);
+				// $this->load->view("home/setpassword",$data);
+				return false;
+			}
+		}
+	}
+
+
+
+}
