@@ -29,5 +29,10 @@ class Contohundangan extends CI_Controller {
 		$this->load->view('contohundangan/tematic');
 	}
 
+	public function vantage()
+	{
+		$this->load->view('contohundangan/vantage');
+	}
+
 
 }
