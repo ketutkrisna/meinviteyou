@@ -156,12 +156,15 @@ class Admin extends CI_Controller {
 			        'tanggal_akad' => $tambahtanggalakad,
 			        'jam_akad' => $tambahjamakad,
 			        'alamat_akad' => $tambahalamatakad,
+			        'map_akad' => '',
 			        'tanggal_acara' => $tambahtanggalacara,
 			        'jam_acara' => $tambahjamacara,
 			        'alamat_acara' => $tambahalamatacara,
 			        'map_acara' => $tambahmapacara,
 			        'musik_acara' => '',
 			        'video_acara' => $tambahvideoacara,
+			        'stori_pengundang' => '',
+			        'rekening_pengundang' => '',
 			        'foto_pria' => $fotol,
 			        'foto_wanita' => $fotop,
 			        'jenis_acara' => $tambahjenisacara,
@@ -171,6 +174,7 @@ class Admin extends CI_Controller {
 			        'nomer_pengundang' => $tambahnomertlp,
 			        'nomer_pengundangw' => $tambahnomertlpw,
 			        'color_template' => $colortema,
+			        'color_template2' => '',
 			        'img_sharing' => 'defaultsharing.png'
 					);
 			$this->db->insert('pengundang', $data);
@@ -384,6 +388,8 @@ class Admin extends CI_Controller {
 		$tambahtanggalakad=$this->input->post('tambahtanggalakad',true);
 		$tambahjamakad=$this->input->post('tambahjamakad',true);
 		$tambahalamatakad=$this->input->post('tambahalamatakad');
+		$tambahmapakad=$this->input->post('tambahmapakad');
+
 		$tambahtanggalacara=$this->input->post('tambahtanggalacara',true);
 		$tambahjamacara=$this->input->post('tambahjamacara',true);
 		$tambahalamatacara=$this->input->post('tambahalamatacara');
@@ -391,10 +397,13 @@ class Admin extends CI_Controller {
 
 		// $tambahmusikacara=$this->input->post('tambahmusikacara');
 		$tambahvideoacara=$this->input->post('tambahvideoacara');
+		$tambahstoriacara=$this->input->post('tambahstoriacara');
+		$tambahrekeningacara=$this->input->post('tambahrekeningacara');
 
 		$tambahjenisacara=$this->input->post('tambahjenisacara',true);
 		$tambahtemaundangan=$this->input->post('tambahtemaundangan',true);
 		$tambahwarnadasar=$this->input->post('tambahwarnadasar',true);
+		$tambahwarnadasar2=$this->input->post('tambahwarnadasar2',true);
 		$tambahpaketacara=$this->input->post('tambahpaketacara',true);
 
 		$getnamapengundang=$this->db->get_where('pengundang',['url_pengundang'=>$tambahnamaurl])->row_array();
@@ -507,6 +516,7 @@ class Admin extends CI_Controller {
 			$this->db->set('tanggal_akad', $tambahtanggalakad);
 			$this->db->set('jam_akad', $tambahjamakad);
 			$this->db->set('alamat_akad', $tambahalamatakad);
+			$this->db->set('map_akad', $tambahmapakad);
 
 			$this->db->set('tanggal_acara', $tambahtanggalacara);
 			$this->db->set('jam_acara', $tambahjamacara);
@@ -515,12 +525,15 @@ class Admin extends CI_Controller {
 
 			// $this->db->set('musik_acara', $tambahmusikacara);
 			$this->db->set('video_acara', $tambahvideoacara);
+			$this->db->set('stori_pengundang', $tambahstoriacara);
+			$this->db->set('rekening_pengundang', $tambahrekeningacara);
 
 			$this->db->set('foto_pria', $fotol);
 			$this->db->set('foto_wanita', $fotop);
 			$this->db->set('jenis_acara', $tambahjenisacara);
 			$this->db->set('tema_template', $tambahtemaundangan);
 			$this->db->set('color_template', $tambahwarnadasar);
+			$this->db->set('color_template2', $tambahwarnadasar2);
 			$this->db->set('paket_acara', $tambahpaketacara);
 			$this->db->set('background_welcome', $bgdefault);
 			$this->db->where('id_pengundang', $ideundangan);
@@ -560,6 +573,7 @@ class Admin extends CI_Controller {
 			$this->db->set('tanggal_akad', $tambahtanggalakad);
 			$this->db->set('jam_akad', $tambahjamakad);
 			$this->db->set('alamat_akad', $tambahalamatakad);
+			$this->db->set('map_akad', $tambahmapakad);
 
 			$this->db->set('tanggal_acara', $tambahtanggalacara);
 			$this->db->set('jam_acara', $tambahjamacara);
@@ -568,12 +582,15 @@ class Admin extends CI_Controller {
 
 			// $this->db->set('musik_acara', $tambahmusikacara);
 			$this->db->set('video_acara', $tambahvideoacara);
+			$this->db->set('stori_pengundang', $tambahstoriacara);
+			$this->db->set('rekening_pengundang', $tambahrekeningacara);
 			
 			$this->db->set('foto_pria', $fotol);
 			$this->db->set('foto_wanita', $fotop);
 			$this->db->set('jenis_acara', $tambahjenisacara);
 			$this->db->set('tema_template', $tambahtemaundangan);
 			$this->db->set('color_template', $tambahwarnadasar);
+			$this->db->set('color_template2', $tambahwarnadasar2);
 			$this->db->set('paket_acara', $tambahpaketacara);
 			$this->db->set('background_welcome', $bgdefault);
 			$this->db->where('id_pengundang', $ideundangan);
@@ -764,7 +781,7 @@ class Admin extends CI_Controller {
 	public function defaultbackground($idpengundang)
 	{
 		$foto=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
-		if($foto['background_welcome']=='classic.jpg'||$foto['background_welcome']=='rustic.jpg'||$foto['background_welcome']=='tematic.jpg'){}else{
+		if($foto['background_welcome']=='classic.jpg'||$foto['background_welcome']=='rustic.jpg'||$foto['background_welcome']=='tematic.jpg'||$foto['background_welcome']=='vantage.jpg'){}else{
 			unlink(FCPATH . '/assets/img/backgroundawal/' .$foto['background_welcome']);
 		}
 		$bgdefault=$foto['tema_template'].'.jpg';

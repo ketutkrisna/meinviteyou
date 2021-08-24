@@ -40,6 +40,7 @@
       $temp.remove();
     }
   </script>
+  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
   <!-- =======================================================
   * Template Name: BizPage - v3.1.1
@@ -48,9 +49,13 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    html,body{
+    /*html,body{
       height:100%;
       position:relative;
+    }*/
+    .popover{
+      max-width: 50%;
+      /*overflow:scroll;*/
     }
   </style>
 </head>
@@ -616,7 +621,7 @@
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nama L & P</span>
+              <span class="input-group-text" id="basic-addon1">Nama L & W</span>
             </div>
             <input type="text" class="form-control tambahnamalakiperempuan" placeholder="Alex & Bella" aria-label="Username" aria-describedby="basic-addon1" name="tambahnamalakiperempuan">
           </div>
@@ -628,7 +633,11 @@
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nama ortu L</span>
+              <span class="input-group-text btn ortutoltip" id="basic-addon1" data-toggle="popover" title="Contoh template orang tua" data-content='
+                  <span class="anakke">Putra pertama dari :</span><br>
+                  <span class="ortu">Bapak Romeo & Ibu Romeo</span>
+              '>Nama ortu L
+              </span>
             </div>
             <input type="text" class="form-control tambahnamaortulaki" placeholder="mr david & ms lina" aria-label="Username" aria-describedby="basic-addon1" name="tambahnamaortulaki">
           </div>
@@ -640,21 +649,31 @@
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nama ortu P</span>
+              <span class="input-group-text btn ortutoltip" id="basic-addon1" data-toggle="popover" title="Contoh template orang tua" data-content='
+                  <span class="anakke">Putri kedua dari :</span><br>
+                  <span class="ortu">Bapak Juliete & Ibu Juliete</span>
+              '>Nama ortu W
+              </span>
             </div>
             <input type="text" class="form-control tambahnamaortuperempuan" placeholder="mr patrik & ms stevani" aria-label="Username" aria-describedby="basic-addon1" name="tambahnamaortuperempuan">
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">No.Tlp L</span>
+              <span class="input-group-text btn ortutoltip" id="basic-addon1" data-toggle="popover" title="Contoh template no.tlp laki-laki" data-content='
+                  +6282179471533l
+              '>No.Tlp L
+              </span>
             </div>
             <input type="text" class="form-control tambahnomertlp" placeholder="Nomer tlp pengundang L" aria-label="Username" aria-describedby="basic-addon1" name="tambahnomertlp">
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">No.Tlp W</span>
+              <span class="input-group-text btn ortutoltip" id="basic-addon1" data-toggle="popover" title="Contoh template no.tlp perempuan" data-content='
+                  +6282179471533w
+              '>No.Tlp W
+              </span>
             </div>
             <input type="text" class="form-control tambahnomertlpw" placeholder="Nomer tlp pengundang P" aria-label="Username" aria-describedby="basic-addon1" name="tambahnomertlpw">
           </div>
@@ -690,6 +709,12 @@
             </div>
             <input type="text" class="form-control tambahalamatakad" aria-label="Username" placeholder="Tempat akad berlangsung" aria-describedby="basic-addon1" name="tambahalamatakad">
           </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Maps akad</span>
+            </div>
+            <textarea class="form-control tambahmapakad" aria-label="With textarea" placeholder="Sematkan dari google maps" name="tambahmapakad"></textarea>
+          </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -711,7 +736,7 @@
           </div>
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text">Maps undangan</span>
+              <span class="input-group-text">Maps resepsi</span>
             </div>
             <textarea class="form-control tambahmapacara" aria-label="With textarea" placeholder="Sematkan dari google maps" name="tambahmapacara"></textarea>
           </div>
@@ -723,10 +748,26 @@
           </div> -->
           <div class="input-group mt-3">
             <div class="input-group-prepend">
-              <span class="input-group-text">video undangan</span>
+              <span class="input-group-text">video</span>
             </div>
             <textarea class="form-control tambahvideoacara" aria-label="With textarea" placeholder="Sematkan dari youtube" name="tambahvideoacara"></textarea>
           </div>
+
+
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text btn" data-toggle="modal" data-target="#exampleModalstori">Stori</span>
+            </div>
+            <textarea class="form-control tambahstoriacara" aria-label="With textarea" placeholder="Stori pengundang" name="tambahstoriacara"></textarea>
+          </div>
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text btn" data-toggle="modal" data-target="#exampleModalbank">Rekening</span>
+            </div>
+            <textarea class="form-control tambahrekeningacara" aria-label="With textarea" placeholder="Rekening pengundang" name="tambahrekeningacara"></textarea>
+          </div>
+
+
           <div class="input-group mb-3 mt-3">
             <div class="input-group-prepend">
               <span style="padding:0" class="input-group-text tambahfotolaki" id="inputGroupFileAddon01">Foto L</span>
@@ -762,6 +803,7 @@
               <option value="classic">Classic</option>
               <option value="rustic">Rustic</option>
               <option value="tematic">Tematic</option>
+              <option value="vantage">Vantage</option>
             </select>
           </div>
           <div class="input-group mb-3">
@@ -771,14 +813,35 @@
                   echo "#2484a6";
                 }else if($detailundangan['tema_template']=='rustic'){
                   echo "#000000";
-                }else{
+                }else if($detailundangan['tema_template']=='classic'){
                   echo "#000000";
+                }else if($detailundangan['tema_template']=='vantage'){
+                  echo "#dce0e0";
                 } ?> 
                 <span style="background-color:<?=$detailundangan['color_template']; ?>;height:20px;width:20px;margin-left:5px"></span>
               </span>
             </div>
             <input type="text" class="form-control tambahwarnadasar" aria-label="Username" placeholder="Warna dasar template" aria-describedby="basic-addon1" name="tambahwarnadasar">
           </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                Default: <?php if($detailundangan['tema_template']=='tematic'){
+                  echo "#2484a6";
+                }else if($detailundangan['tema_template']=='rustic'){
+                  echo "#000000";
+                }else if($detailundangan['tema_template']=='classic'){
+                  echo "#000000";
+                }else if($detailundangan['tema_template']=='vantage'){
+                  echo "#319e72";
+                } ?> 
+                <span style="background-color:<?=$detailundangan['color_template2']; ?>;height:20px;width:20px;margin-left:5px"></span>
+              </span>
+            </div>
+            <input type="text" class="form-control tambahwarnadasar2" aria-label="Username" placeholder="Warna dasar template 2" aria-describedby="basic-addon1" name="tambahwarnadasar2">
+          </div>
+
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Paket undangan</label>
@@ -805,6 +868,8 @@
   </div>
 
 
+
+<!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
    <!-- Modal tambah undangan -->
   <div class="modal fade" id="modaldetailundangan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -929,6 +994,40 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalstori" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Template Stori</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body tempatcode" style="padding:0">
+        <script async src="//jsfiddle.net/thisizanagi/zd0msp4L/9/embed/html/dark/"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalbank" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Template Rekening</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body tempatcode" style="padding:0">
+        <script async src="//jsfiddle.net/thisizanagi/c0x3hu72/7/embed/html/dark/"></script>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <!-- ======= Footer ======= -->
@@ -1069,13 +1168,17 @@
             $('.tambahjamacara').val(data.jam_acara);
             $('.tambahalamatacara').val(data.alamat_acara);
 
+            $('.tambahmapakad').val(data.map_akad);
             $('.tambahmapacara').val(data.map_acara);
             $('.tambahmusikacara').val(data.musik_acara);
             $('.tambahvideoacara').val(data.video_acara);
+            $('.tambahstoriacara').val(data.stori_pengundang);
+            $('.tambahrekeningacara').val(data.rekening_pengundang);
 
             $('.tambahjenisacara').val(data.jenis_acara);
             $('.tambahtemaundangan').val(data.tema_template);
             $('.tambahwarnadasar').val(data.color_template);
+            $('.tambahwarnadasar2').val(data.color_template2);
             $('.tambahpaketacara').val(data.paket_acara);
 
           }
@@ -1106,6 +1209,17 @@
     // $('[data-toggle="tooltip"]').tooltip({
     //   title:'oke'
     // });
+
+    // var exampleEl = document.getElementById('storitoltip');
+    // var tooltip = new bootstrap.Tooltip(exampleEl,{
+    //   'trigger':'click',
+    // });
+    // $('#storitoltip').tooltip({'trigger':'click','boundary':'scrollParent'});
+    $('.ortutoltip').popover({
+      'placement':'right',
+      'boundary':'clippingParents',
+      // 'html':true
+    })
 
     $('body').on('click','.onclip',function(){
       $(this).tooltip('show');

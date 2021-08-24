@@ -48,6 +48,10 @@ class Undangan extends CI_Controller {
 			$this->session->id_pengundang = $datasession['id_pengundang'];
 			$this->session->id_diundang = $datasession['id_diundang'];
 			$this->load->view('pernikahan/tematic',$data);
+		}else if($data['detailundangan']['tema_template']=='vantage'){
+			$this->session->id_pengundang = $datasession['id_pengundang'];
+			$this->session->id_diundang = $datasession['id_diundang'];
+			$this->load->view('pernikahan/vantage',$data);
 		}else{
 			redirect('pengunjung');
 		}
@@ -64,6 +68,7 @@ class Undangan extends CI_Controller {
 		$isiucapan=$this->input->post('isiucapan',true);
 		$absenkehadiran=$this->input->post('absenkehadiran',true);
 		$jumlahkehadiran=$this->input->post('jumlahkehadiran',true);
+		$waktuucapan=time();
 
 		// var_dump($idupengundang);die;
 
@@ -84,7 +89,8 @@ class Undangan extends CI_Controller {
 			        'id_ucapan' => null,
 			        'urlpengundang_ucapan' => $id_pengundang,
 			        'urldiundang_ucapan' => $id_diundang,
-			        'isi_ucapan' => $isiucapan
+			        'isi_ucapan' => $isiucapan,
+			        'waktu_ucapan' => $waktuucapan
 					);
 			$this->db->insert('ucapan', $data);
 

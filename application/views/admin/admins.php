@@ -290,6 +290,12 @@
             </div>
             <input type="text" class="form-control" aria-label="Username" placeholder="Tempat akad berlangsung" aria-describedby="basic-addon1" name="tambahalamatakad">
           </div>
+          <!-- <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Maps akad</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" placeholder="Sematkan dari google maps" name="tambahmapakad"></textarea>
+          </div> -->
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -311,7 +317,7 @@
           </div>
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text">Maps undangan</span>
+              <span class="input-group-text">Maps resepsi</span>
             </div>
             <textarea class="form-control" aria-label="With textarea" placeholder="Sematkan dari google maps" name="tambahmapacara"></textarea>
           </div>
@@ -327,6 +333,12 @@
             </div>
             <textarea class="form-control" aria-label="With textarea" placeholder="Sematkan dari youtube" name="tambahvideoacara"></textarea>
           </div>
+          <!-- <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Stori undangan</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" placeholder="Stori pengundang" name="tambahstoriacara"></textarea>
+          </div> -->
           <div class="input-group mb-3 mt-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupFileAddon01">Foto L</span>

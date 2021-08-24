@@ -414,7 +414,7 @@
     <div class="row ww-rsvp-form">
       <div class="col-md-10">
         <div class="card-body">
-          <form action="<?=base_url('pernikahan/ucapan'); ?>" method="post">
+          <form action="<?=base_url('undangan/ucapan'); ?>" method="post">
             <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
             <div class="row">
               <div class="col md-6 pb-3">

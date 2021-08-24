@@ -566,7 +566,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline" method="post" action="<?=base_url('pernikahan/ucapan'); ?>">
+					<form class="form-inline" method="post" action="<?=base_url('undangan/ucapan'); ?>">
 						<input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">

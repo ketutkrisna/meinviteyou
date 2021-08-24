@@ -29,9 +29,11 @@ class Contohundangan extends CI_Controller {
 		$this->load->view('contohundangan/tematic');
 	}
 
-	public function vantage()
+	public function vantage($warna1='dce0e0', $warna2='319e72')
 	{
-		$this->load->view('contohundangan/vantage');
+		$data['warna1']=$warna1;
+		$data['warna2']=$warna2;
+		$this->load->view('contohundangan/vantage', $data);
 	}
 
 

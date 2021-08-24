@@ -19,6 +19,8 @@
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png"> -->
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/materialize.css">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/timeline.css">
   <!--Let browser know website is optimized for mobile-->
@@ -146,9 +148,20 @@
           transition:.6s;
         }
       }
+
+      @media screen and (min-width: 576px) {
+        .dekstop{
+          width:90%;
+          margin:auto;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .dekstop{
+          width:80%;
+          margin:auto;
+        }
+      }
     </style>
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Satisfy&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -180,7 +193,7 @@
     </div>
     <div class="row">
       <div class="col s12 center-align">
-        <span class="white-text" style="text-shadow:1px 1px 2px #111;font-size:24px;font-family: 'Satisfy', cursive;">Selasa, 30 maret 2021</span>
+        <span class="white-text" style="text-shadow:1px 1px 2px #111;font-size:24px;font-family: 'Satisfy', cursive;">Minggu, 30 oktober 2021</span>
       </div>
     </div>
     <div class="row">
@@ -243,24 +256,19 @@
 
   </div>
 
-    
-    
-
-   
-
      
    
   <div id="mempelai" class="warnatema" style="position:relative;background-color:#dce0e0;">
 
-     <svg style="margin-top: -180px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+     <svg style="margin-top: -210px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
     </svg>
     <!-- <svg style="margin-top: -180px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="rgba(151, 194, 143, 1)" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
     </svg> -->
-
-    <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga2.png" width="200" style="position:absolute;top:-120px;right:-30px;z-index:4">
-
+    <div class="dekstop">
+      <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga2.png" width="200" style="position:absolute;top:-120px;right:-30px;z-index:4">
+    </div>
     <!-- <div class="mempelai"></div> -->
 
     <!-- <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="mempelai" data-uptop="upmempelai" style="z-index:2">
@@ -271,7 +279,7 @@
       </div>
     </nav> -->
 
-    <div class="mempelai">
+    <div class="mempelai dekstop">
     <div class="row" style="">
       <div class="container">
       <div class="col s12 center-align">
@@ -286,12 +294,23 @@
     <div class="row" style="padding-bottom:30px;">
       <!-- <div class="container"> -->
 
-      <div class="col s12 l5 center-align" data-aos="flip-left" data-aos-duration="1000" style="text-shadow:0 2px 4px white;">
+      <style>
+        .anakke{
+          font-size:14px;
+          padding:0 7px 0 7px;
+        }
+        .ortu{
+          font-size:16px;
+          padding:0 7px 0 7px;
+        }
+      </style>
+
+      <div class="col s12 l5 center-align" data-aos="flip-left" data-aos-duration="1000" style="">
         <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/mpria.jpg" alt="mempelai" width="150" style="border-radius:50%;"><br>
-        <span style="font-size:29px;font-family: 'Satisfy', cursive;">Romeo</span><br>
-        <span style="font-size:16px;text-shadow:0 2px 4px white;">
-        <span style="font-size:14px">Putra pertama dari:</span><br>
-        <span>Bapak Romeo & Ibu Romeo</span>
+        <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;">Romeo</span><br>
+        <span style="background-color:rgba(255,255,255,.7);">
+          <span class="anakke">Putra pertama dari :</span><br>
+          <span class="ortu">Bapak Romeo & Ibu Romeo</span>
         </span>
       </div>
       <div class="col s12 l2 center-align">
@@ -303,12 +322,12 @@
             <!-- <hr data-aos="fade-left" data-aos-duration="1000" style="width:80%;margin:30px 0 30px 0;border:0;height:1px;background-color:#aaa;"> -->
         </div>
       </div>
-      <div class="col s12 l5 center-align" data-aos="flip-right" data-aos-duration="1000" style="text-shadow:0 2px 4px white;">
+      <div class="col s12 l5 center-align" data-aos="flip-right" data-aos-duration="1000" style="">
         <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/mwanita.jpg" alt="mempelai" width="150" style="border-radius:50%;"><br>
-        <span style="font-size:29px;font-family: 'Satisfy', cursive;">Juliete</span><br>
-        <span style="font-size:16px;text-shadow:0 2px 4px white;">
-        <span style="font-size:14px">Putri kedua dari:</span><br>
-        <span>Bapak Juliete & Ibu Juliete</span>
+        <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;">Juliete</span><br>
+        <span style="background-color:rgba(255,255,255,.7);">
+          <span class="anakke">Putri kedua dari :</span><br>
+          <span class="ortu">Bapak Juliete & Ibu Juliete</span>
         </span>
       </div>
 
@@ -330,9 +349,9 @@
     <!-- <svg style="margin-top:-20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="rgba(95, 161, 126, 1)" fill-opacity="1" d="M0,256L80,250.7C160,245,320,235,480,202.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
     </svg> -->
-
-    <img data-aos="fade-right" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga1.png" width="200" style="position:absolute;top:-90px;left:-40px">
-
+    <div class="dekstop">
+      <img data-aos="fade-right" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga1.png" width="200" style="position:absolute;top:-90px;left:-40px">
+    </div>
     <!-- <div class="acara"></div> -->
 
    <!--  <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="acara" data-uptop="upacara" style="z-index:2;font-family: 'Satisfy', cursive;">
@@ -343,7 +362,7 @@
       </div>
     </nav> -->
 
-    <div class="acara">
+    <div class="acara dekstop">
     <div class="row" style="padding-bottom:60px;padding-top:50px"> 
 
       <div class="col s12 l6 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
@@ -443,7 +462,7 @@
   <div id="stori" class="warnatema" style="position:relative;background-color:#5fa17e;">
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,224C160,192,320,128,480,117.3C640,107,800,149,960,176C1120,203,1280,213,1360,218.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
-    <div class="upstori" style="padding-bottom:60px;">
+    <div class="upstori dekstop" style="padding-bottom:60px;">
 
       <div class="row">
       <div class="col s12 center-align">
@@ -506,7 +525,7 @@
 
     <svg style="margin-top:-15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#5fa17e" fill-opacity="1" d="M0,96L80,85.3C160,75,320,53,480,85.3C640,117,800,203,960,218.7C1120,235,1280,181,1360,154.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
-    <div class="galeri" style="padding-bottom:40px">
+    <div class="galeri dekstop" style="padding-bottom:40px">
 
     <div class="row">
       <div class="col s12 center-align">
@@ -567,7 +586,7 @@
   <div id="rekening" class="warnatema" style="position:relative;background-color:#5fa17e;">
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,224C160,192,320,128,480,117.3C640,107,800,149,960,176C1120,203,1280,213,1360,218.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
-    <div class="uprekening" style="padding-bottom:60px;">
+    <div class="uprekening dekstop" style="padding-bottom:60px;">
 
       <div class="row">
         <div class="col s12 center-align">
@@ -619,9 +638,11 @@
     </nav> -->
     <svg style="margin-top:-20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#5fa17e" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,229.3C480,203,600,117,720,90.7C840,64,960,96,1080,144C1200,192,1320,256,1380,288L1440,320L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
 
-    <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga2.png" width="200" style="position:absolute;top:-80px;right:-30px;z-index:5">
+    <div class="dekstop">
+      <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga2.png" width="200" style="position:absolute;top:-80px;right:-30px;z-index:5">
+    </div>
 
-    <div class="quesbook ww-rsvp-form" style="padding-top:20px">
+    <div class="quesbook ww-rsvp-form dekstop" style="padding-top:20px">
 
       <div class="row">
         <div class="col s12 center-align">
@@ -651,18 +672,88 @@
 
         <div class="col s12 slidetampil" style="margin-top:-120px;">
           <div class="carousel checkcarousel">
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!"><h5 style="">Mr.Bill Gates</h5><p style="font-size:16px">Good luck!</p></a>
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!"><h5 style="">Steven</h5><p style="font-size:16px">HWD!</p></a>
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!"><h5 style="">Arsi</h5><p style="font-size:16px">Selamat ya!</p></a>
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!"><h5 style="">Roman</h5><p style="font-size:16px">H.W.D!</p></a>
+            <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Wiliam</span><br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">Kemarin 09.43</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:3px;color:#282928;">
+                Good luck! Semoga lancar sampai hari H nya :)
+              </p>
+            </a>
+            <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Steven</span><br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">3 hari yang lalu 22.06</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+                HWD! Selamat bro..
+              </p>
+            </a>
+            <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Arsi</span><br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">4 hari yang lalu 19.22</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+                Selamat ya! :)
+              </p>
+            </a>
+            <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Roman</span><br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">Seminggu yang lalu 17.25</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+                H.W.D! 
+              </p>
+            </a>
           </div>
         </div>
-        <div class="col s12 listtampil" style="margin-top:-30px;display:none;">
+        <div class="col s12 listtampil" style="margin-top:-20px;display:none;">
           <div class="">
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;" href="#one!"><h5 style="">Mr.Bill Gates</h5><p style="font-size:16px">Good luck!</p></a>
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;"href="#two!"><h5 style="">Steven</h5><p style="font-size:16px">HWD!</p></a>
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;"href="#three!"><h5 style="">Arsi</h5><p style="font-size:16px">Selamat ya!</p></a>
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;"href="#four!"><h5 style="">Roman</h5><p style="font-size:16px">H.W.D!</p></a>
+            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Wiliam</span> <br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">Kemarin 09.43</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+                Good luck! Semoga lancar sampai hari H nya :)
+              </p>
+            </a>
+            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Steven</span> <br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">3 hari yang lalu 22.06</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+                HWD! Selamat bro..
+              </p>
+            </a><a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Arsi</span> <br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">4 hari yang lalu 19.22</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+                Selamat ya! :)
+              </p>
+            </a><a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;" href="#one!">
+              <h5 style="font-size:18px;line-height:12px;">
+                <span style="color:#282928;">Roman</span> <br>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;">Seminggu yang lalu 17.25</span>
+              </h5>
+              <div class="divider" style="margin-top:-7px;"></div>
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+                H.W.D! 
+              </p>
+            </a>
           </div>
         </div>
 
@@ -681,7 +772,10 @@
       </div>
     </nav> -->
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,101.3C480,107,600,181,720,224C840,267,960,277,1080,288C1200,299,1320,309,1380,314.7L1440,320L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
-    <div class="kehadiran">
+
+
+
+    <div class="kehadiran dekstop">
 
       <div class="row">
         <div class="col s12 center-align">
@@ -792,8 +886,8 @@
 
 
   <div class="piringan" style="position: fixed;top:5px;z-index:10;left:5px;">
-    <div class="musikplayer" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
-      <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/team1.jpg'); ?>" width="100%">
+    <div class="musikplayer z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
+      <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
       <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
         <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
       </div>
@@ -803,7 +897,7 @@
     </div>
   </div>
 
-    <audio id="musikvalue" autoplay loop style="width:100%">
+    <audio id="musikvalue" loop style="width:100%">
       <source src="<?=base_url('assets/img/contoh/rembulan.MP3'); ?>" type="audio/mpeg">
     </audio>
 
@@ -812,7 +906,7 @@
     <svg style="margin-top:-60px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#d4d4d4" fill-opacity="1" d="M0,256L720,128L1440,256L1440,320L720,320L0,320Z"></path></svg>
     <!-- <svg style="margin-top:-30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(151, 194, 143,1)" fill-opacity="1" d="M0,256L720,128L1440,256L1440,0L720,0L0,0Z"></path></svg> -->
 
-    <div class="foter" style="height:70px">
+    <div class="foter dekstop" style="height:70px">
       <div class="row">
         <div class="col s12 center-align" style="margin-top:-16px">
           <p class="mb-0">&copy; meinviteyou. All Rights Reserved.</p>
@@ -846,6 +940,26 @@
       <li><span class="fixbtn" style="top:340px">Kehadiran</span><a href="#kehadiran" class="btn-floating blue page-scroll"><i class="material-icons">rsvp</i></a></li>
     </ul> -->
   </div>
+
+  <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;">
+    <h5 class="sizefont" style="font-size:18px;">Romeo & Juliete</h5>
+  </div>
+
+
+  <div class="text-primary settema" style="position:fixed;bottom:50%;right:15px;border-radius:50%;z-index:10;transition:.6s">
+      <i style="font-size:53px;text-shadow:0px 2px 2px black;" class="large orange-text text-lighten-1 material-icons">palette</i>
+  </div>
+
+  <div class="inputtema center-align" style="position:fixed;bottom:50%;right:-110px;border-radius:5px;z-index:10;width:110px;height:60px;transition:.6s;">
+    <span style="font-size:15px;padding:0 3px 0 3px;border-radius:2px;background-color:rgba(255,255,255,.7);">custom warna</span>
+    <input type="color" class="warna1 z-depth-1" style="width:100%;height:40px;margin-bottom:8px;border-radius:4px;background-color:rgba(255,255,255,.7);">
+    <!-- <div class="divider" style="padding:3px"></div> -->
+    <input type="color" class="warna2" style="width:100%;height:40px;border-radius:4px;background-color:rgba(255,255,255,.7);">
+    <input type="text" class="tampung1 z-depth-1" style="opacity:0;height:0">
+    <button class="copytext waves-effect waves-dark z-depth-1" style="font-size:14px;margin-top:-15px;border:0;border-radius:3px;background-color:#ddd;padding:3px;margin-bottom:5px;">Copy tema</button>
+    <span class="copied white-text" style="background-color:rgba(0,0,0,.5);padding:4px;border-radius:5px;font-size:13px;">Copied!</span>
+  </div>
+
 
   <div class="text-primary" style="position:fixed;bottom:10px;left:15px;border-radius:50%;z-index:10;">
     <div style="background-color:rgba(26, 199, 84,);padding:4px;border-radius:50%;">
@@ -987,8 +1101,8 @@
     $(document).ready(function(){
       $('#clock').countDown({
           targetDate: {
-              'day'   : 1,
-              'month' : 6,
+              'day'   : 30,
+              'month' : 10,
               'year'  : 2021,
               'hour'  : 0,
               'min'   : 0,
@@ -1148,25 +1262,106 @@
       var warnatema =document.querySelectorAll('.warnatema');
       for(i=0;i<warnatema.length;i++){
         if(i%2==0){
-          warnatema[i].style.backgroundColor='#dce0e0';
+          warnatema[i].style.backgroundColor='#<?=$warna1; ?>';
           // warnatema[i].style.backgroundColor='#9aada9';
         }else{
           // warnatema[i].style.backgroundColor='#5fa17e';
-          warnatema[i].style.backgroundColor='#319e72';
+          warnatema[i].style.backgroundColor='#<?=$warna2; ?>';
         }
       }
       var warnawaves =document.querySelectorAll('.warnawaves');
       for(w=0;w<warnawaves.length;w++){
         if(w==0||w==1||w==3||w==5||w==7||w==9||w==11){
-          warnawaves[w].setAttribute("fill","#dce0e0");
+          warnawaves[w].setAttribute("fill","#<?=$warna1; ?>");
           // warnawaves[w].setAttribute("fill","#9aada9");
         }else{
           // warnawaves[w].setAttribute("fill","#5fa17e");
-          warnawaves[w].setAttribute("fill","#319e72");
+          warnawaves[w].setAttribute("fill","#<?=$warna2; ?>");
 
         }
       }
 
+      fade=0;
+      $('.settema').on('click',function(){
+        fade++;
+        if(fade==2){
+          fade=0;
+        }
+        if(fade==0){
+          $('.inputtema').css('right','-110px');
+          $('.settema').css('right','15px');
+        }else{
+          $('.inputtema').css('right','2px');
+          $('.settema').css('right','110px');
+        }
+      });
+
+      var warna1=$('.warna1').val('#dce0e0');
+      var warna2=$('.warna2').val('#319e72');
+      // var tampungwarnas=$('.tampung1').val('[ Warna 1 = #dce0e0 ][ Warna 2 = #319e72 ]');
+      var tampungwarnas=$('.tampung1').val('<?=base_url('contohundangan/vantage/dce0e0/319e72'); ?>');
+
+      $('.warna1').on('change',function(){
+        var warna1=$('.warna1').val();
+        var warna2=$('.warna2').val();
+        var warnatema =document.querySelectorAll('.warnatema');
+
+        // $('.tampung1').val('[ Warna 1 = '+warna1+' ][ Warna 2 = '+warna2+' ]');
+        $('.tampung1').val('<?=base_url('contohundangan/vantage/'); ?>'+warna1.substring(1,7)+'/'+warna2.substring(1,7));
+
+        for(i=0;i<warnatema.length;i++){
+          if(i%2==0){
+            warnatema[i].style.backgroundColor=warna1;
+          }else{
+            warnatema[i].style.backgroundColor=warna2;
+          }
+        }
+        var warnawaves =document.querySelectorAll('.warnawaves');
+        for(w=0;w<warnawaves.length;w++){
+          if(w==0||w==1||w==3||w==5||w==7||w==9||w==11){
+            warnawaves[w].setAttribute("fill",warna1);
+          }else{
+            warnawaves[w].setAttribute("fill",warna2);
+
+          }
+        }
+      });
+      $('.warna2').on('change',function(){
+        var warna1=$('.warna1').val();
+        var warna2=$('.warna2').val();
+        var warnatema =document.querySelectorAll('.warnatema');
+
+        // $('.tampung1').val('[ Warna 1 = '+warna1+' ][ Warna 2 = '+warna2+' ]');
+        $('.tampung1').val('<?=base_url('contohundangan/vantage/'); ?>'+warna1.substring(1,7)+'/'+warna2.substring(1,7));
+
+        for(i=0;i<warnatema.length;i++){
+          if(i%2==0){
+            warnatema[i].style.backgroundColor=warna1;
+          }else{
+            warnatema[i].style.backgroundColor=warna2;
+          }
+        }
+        var warnawaves =document.querySelectorAll('.warnawaves');
+        for(w=0;w<warnawaves.length;w++){
+          if(w==0||w==1||w==3||w==5||w==7||w==9||w==11){
+            warnawaves[w].setAttribute("fill",warna1);
+          }else{
+            warnawaves[w].setAttribute("fill",warna2);
+
+          }
+        }
+      });
+
+      // $('.tooltipped').tooltip('close');
+      $('.copied').hide();
+      $('.copytext').on('click',function(){
+        $('.copied').fadeIn(100);
+        setTimeout(function() {
+          $('.copied').fadeOut(100);
+        }, 500);
+        var warna6=$('.tampung1').select().val();
+        document.execCommand("copy");
+      });
       // $('body').on('click','#addkomentar',function(e){
       //   e.preventDefault();
       //   $('.komentarbaru').append(`<a class="carousel-item checkitem center-align z-depth-1 active" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!"><h5 style="">Mr.Bill Gates</h5><p style="font-size:16px">Good luck!</p></a>`);

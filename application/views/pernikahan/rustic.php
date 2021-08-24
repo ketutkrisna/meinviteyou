@@ -483,7 +483,7 @@
                 <div class="col col-md-8 col-md-offset-2">
                     <div class="form row">
                 <div class="col col-md-10 col-md-offset-1">
-                    <form method="post" action="<?=base_url('pernikahan/ucapan'); ?>" id="rsvp-form">
+                    <form method="post" action="<?=base_url('undangan/ucapan'); ?>" id="rsvp-form">
                         <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
 
                         <div class="form-group col col-sm-6">
