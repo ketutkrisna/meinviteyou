@@ -48,7 +48,8 @@
         height:115vh
       }
       #awal{
-        min-height: 400px;
+        /*min-height: 400px;*/
+        height:105vh
       }
       #mempelai{
         min-height: 400px;
@@ -111,19 +112,21 @@
         transform-style: preserve-3d;
       }
 
-      ::-webkit-scrollbar {
+      /*::-webkit-scrollbar {
         width: 5px;
-      }
-      ::-webkit-scrollbar-track {
+      }*/
+      /*::-webkit-scrollbar-track {*/
         /*box-shadow: inset 1px 1px 5px grey;*/
-        border-radius: 10px;
+      /*  border-radius: 10px;
         opacity:0;
-      }
-      ::-webkit-scrollbar-thumb {
+      }*/
+      /*::-webkit-scrollbar-thumb {
         background:linear-gradient(#4e342e,#ffff00,#ffff00,#4e342e);
         border-radius: 10px;
         box-shadow:1px 1px 5px grey;
-      }
+      }*/
+
+
       /*::-webkit-scrollbar-button {
         background:green;
         border-radius: 10px;
@@ -181,17 +184,10 @@
 
 <body>
 
-  <div id="awal" class="block white para" style="background-image:url('<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>');background-size:cover;background-position:50% 0px;">
+  <div id="awal" class="white para" style="background-image:url('<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>');background-size:cover;background-position:50% 0px;position:relative;">
 
-    <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="awal" style="opacity:0;display:none;">
-      <div class="nav-wrapper">
-        <div class="container">
-          <a href="#" class="brand-logo">Red</a>
-        </div>
-      </div>
-    </nav>
 
-    <div class="cobain">
+    <div class="cobain" style="position:absolute;left:0;right:0;width:100%;top:0">
 
     <div class="row">
       <div class="col s12 center-align" style="padding-top:14vh;font-family: 'Satisfy', cursive;">
@@ -271,7 +267,7 @@
 
      
    
-  <div id="mempelai" class="warnatema" style="position:relative;background-color:#dce0e0;">
+  <div id="mempelai" class="warnatema" style="background-color:#dce0e0;margin-top:0px;position:relative;">
 
      <svg style="margin-top: -210px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
@@ -297,14 +293,14 @@
       <div class="container">
       <div class="col s12 center-align">
         <div class="warnakotak z-depth-1" style="border-radius:7px;padding:3px;margin-top:20px;background-color:#eee"> 
-        <p class="warnatitle" style="font-family: 'Roboto', cursive;font-size:17px;color:#3b3d3b;"><?=$detailundangan['ucapan_awal']; ?></p>
+        <p class="warnatitle" style="font-family: 'Roboto', cursive;font-size:17px;color:#3b3d3b;padding:0 5px 0 5px;"><?=$detailundangan['ucapan_awal']; ?></p>
         </div>
       </div>
       </div>
     </div>
 
     <!-- <div class="infoprofil white z-depth-1" style="background-color:red;width:90%;margin:auto;padding-top:20px;border-radius:10px;"> -->
-    <div class="row" style="padding-bottom:30px;">
+    <div class="row" style="padding-bottom:50px;">
       <!-- <div class="container"> -->
 
       <style>
@@ -352,7 +348,7 @@
   </div>
 
 
-  <div id="acara" class="warnatema" style="position:relative;background-color:#5fa17e;">
+  <div id="acara" class="warnatema" style="background-color:#5fa17e;position:relative;">
 
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,250.7C160,245,320,235,480,202.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
@@ -400,6 +396,7 @@
               <span style="font-size:18px;line-height:20px;"><?=$detailundangan['alamat_akad']; ?></span><br>
             </div>
 
+            <?php if(!empty($detailundangan['map_akad'])): ?>
                 <ul class="collapsible popout" style="width:90%;margin:auto;padding-bottom:10px;">
                   <li style="border-radius:10px;">
                     <div class="collapsible-header teal white-text" style="border-radius:8px;display:flex;justify-content:center;padding:6px"><span style="font-size:18px">Lihat Maps</span></div>
@@ -412,6 +409,7 @@
                     </div>
                   </li>
                 </ul>
+            <?php endif; ?>
 
           </div>
         </div>
@@ -442,6 +440,7 @@
               <span style="font-size:18px;line-height:20px;"><?=$detailundangan['alamat_acara']; ?></span>
             </div>
 
+            <?php if(!empty($detailundangan['map_acara'])): ?>
                 <ul class="collapsible popout" style="width:90%;margin:auto;padding-bottom:10px;">
                   <li style="border-radius:10px;">
                     <div class="collapsible-header teal white-text" style="border-radius:8px;display:flex;justify-content:center;padding:6px"><span style="font-size:18px">Lihat Maps</span></div>
@@ -454,6 +453,7 @@
                     </div>
                   </li>
                 </ul>
+            <?php endif; ?>
 
           </div>
         </div>
@@ -463,7 +463,7 @@
       <div class="row">
         <div class="col s12 center-align">
           <div class="z-depth-2" style="background-color:#eee;border-radius:9px;padding:3px;margin-top:30px;">
-          <p class="" style="font-size:18px;color:#3b3d3b;"><?=$detailundangan['ucapan_ahir']; ?></p>
+          <p class="" style="font-size:18px;color:#3b3d3b;padding:0 5px 0 5px;"><?=$detailundangan['ucapan_ahir']; ?></p>
         </div>
         </div>
       </div>
@@ -474,7 +474,8 @@
   </div>
 
 
-  <div id="stori" class="warnatema" style="position:relative;background-color:#5fa17e;">
+  <?php if(!empty($detailundangan['stori_pengundang'])): ?>
+  <div id="stori" class="warnatema" style="background-color:#5fa17e;position:relative;">
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,224C160,192,320,128,480,117.3C640,107,800,149,960,176C1120,203,1280,213,1360,218.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
     <div class="upstori dekstop" style="padding-bottom:60px;">
@@ -501,9 +502,10 @@
       
     </div>
   </div>
+  <?php endif; ?>
 
 
-  <div id="galeri" class="warnatema"  style="position:relative;margin-top:-20px;background-color:#dce0e0;">
+  <div id="galeri" class="warnatema"  style="margin-top:-20px;background-color:#dce0e0;position:relative;">
 
     <svg style="margin-top:-15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#5fa17e" fill-opacity="1" d="M0,96L80,85.3C160,75,320,53,480,85.3C640,117,800,203,960,218.7C1120,235,1280,181,1360,154.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
@@ -525,8 +527,8 @@
     <div class="row">
 
       <?php $aos=1; foreach($fotogaleris as $fgs): ?>
-        <?php if($aos++ % 2 == 0){$isiaos='fade-right';}else{$isiaos='fade-left';} ?> 
-          <div class="col s12 m6 l4 xl3 center-align" style="margin-bottom:8px;">
+        <?php if($aos++ % 2 == 0){$isiaos='fade-left';}else{$isiaos='fade-right';} ?> 
+          <div class="col s6 m4 l4 xl3 center-align" style="margin-bottom:8px;">
             <img data-aos="<?=$isiaos; ?>" data-aos-duration="1000" class="card-image materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/fotogaleripelanggan/'.$fgs['foto_galeri']); ?>" width="100%">
           </div>
       <?php endforeach; ?>
@@ -534,34 +536,37 @@
     </div>
 
 
+    <?php if(!empty($detailundangan['video_acara'])): ?>
     <div class="row">
     <div class="col s12 m8 offset-m2 l6 offset-l3 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
-        <div class="" style="background-color:#eee;border-radius:9px;padding:0px;">
-          <h5 class="" style="font-size:20px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:2px">Video</h5>
+      <div class="" style="background-color:#eee;border-radius:9px;padding:0px;">
+        <h5 class="" style="font-size:20px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:2px">Video</h5>
+      </div>
+      <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:-8px;">
+        <div class="card-image" style="text-align:center;">
+          
         </div>
-        <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:-8px;">
-          <div class="card-image" style="text-align:center;">
-            
-          </div>
-          <div class="card-stacked center-align">
-            <div class="card-content center-align" style="padding:5px;">
+        <div class="card-stacked center-align">
+          <div class="card-content center-align" style="padding:5px;">
 
-              <div class="video-container">
-                <?=$detailundangan['video_acara']; ?>
-              </div>
-
+            <div class="video-container">
+              <?=$detailundangan['video_acara']; ?>
             </div>
+
           </div>
         </div>
       </div>
-      </div>
+    </div>
+    </div>
+    <?php endif; ?>
 
 
     </div>
   </div>
 
 
-  <div id="rekening" class="warnatema" style="position:relative;background-color:#5fa17e;">
+  <?php if(!empty($detailundangan['rekening_pengundang'])): ?>
+  <div id="rekening" class="warnatema" style="background-color:#5fa17e;position:relative;">
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,224C160,192,320,128,480,117.3C640,107,800,149,960,176C1120,203,1280,213,1360,218.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
     <div class="uprekening dekstop" style="padding-bottom:60px;">
@@ -569,7 +574,7 @@
       <div class="row">
         <div class="col s12 center-align">
           <div class="warnakotak z-depth-2" style="background-color:#eee;border-radius:9px;padding:3px;">
-          <p class="warnatitle" style="font-size:18px;color:#3b3d3b;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui :</p>
+          <p class="warnatitle" style="font-size:18px;color:#3b3d3b;padding:0 5px 0 5px;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui :</p>
         </div>
         </div>
       </div>
@@ -580,8 +585,10 @@
       
     </div>
   </div>
+  <?php endif; ?>
 
-  <div id="quesbook" class="warnatema ww-detail" style="margin-top:-10px;position:relative;background-color:#dce0e0;">
+
+  <div id="quesbook" class="warnatema ww-detail" style="margin-top:-10px;background-color:#dce0e0;position:relative;">
     <!-- <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="quesbook" data-uptop="upquesbook" style="font-family: 'Satisfy', sans-serif;">
       <div class="nav-wrapper cyan darken-2">
         <div class="container">
@@ -665,10 +672,10 @@
             <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
               <h5 style="font-size:18px;line-height:12px;">
                 <span style="color:#282928;"><?=$du['nama_diundang']; ?></span><br>
-                <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post; ?></span>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span>
               </h5>
               <div class="divider" style="margin-top:-7px;"></div>
-              <p style="font-size:14px;line-height:16px;margin-top:3px;color:#282928;">
+              <p style="font-size:14px;line-height:16px;margin-top:3px;color:#4f4f4f;">
                 <?=$du['isi_ucapan']; ?>
               </p>
             </a>
@@ -713,10 +720,10 @@
             <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;" href="#one!">
               <h5 style="font-size:18px;line-height:12px;">
                 <span style="color:#282928;"><?=$du['nama_diundang']; ?></span> <br>
-                <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post; ?></span>
+                <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span>
               </h5>
               <div class="divider" style="margin-top:-7px;"></div>
-              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#282928;">
+              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#4f4f4f;">
                 <?=$du['isi_ucapan']; ?>
               </p>
             </a>
@@ -732,7 +739,7 @@
   </div>
 
 
-  <div id="kehadiran" class="warnatema ww-detail" style="background:linear-gradient(rgba(95, 161, 126, 1),rgba(151, 194, 143, 1),rgba(151, 194, 143,1));position:relative;background-image:url('<?=base_url('assets/temaundangan/vantage/'); ?>img/rsvp-imgc.jpg');background-size:cover;background-position:center;">
+  <div id="kehadiran" class="warnatema ww-detail" style="background:linear-gradient(rgba(95, 161, 126, 1),rgba(151, 194, 143, 1),rgba(151, 194, 143,1));background-image:url('<?=base_url('assets/temaundangan/vantage/'); ?>img/rsvp-imgc.jpg');background-size:cover;background-position:center;position:relative;">
     <!-- <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="kehadiran" data-uptop="upkehadiran" style="font-family: 'Satisfy', sans-serif;">
       <div class="nav-wrapper cyan darken-2">
         <div class="container">
@@ -806,6 +813,8 @@
                   <select class="browser-default form-custom" name="jumlahkehadiran" required>
                     <option value="1">1 orang</option>
                     <option value="2">2 orang</option>
+                    <option value="3">3 orang</option>
+                    <option value="4">4 orang</option>
                   </select>
                   <!-- <label>Materialize Select</label> -->
                 </div>
@@ -853,10 +862,10 @@
   <div class="piringan" style="position: fixed;top:5px;z-index:10;left:5px;">
     <div class="musikplayer musikset z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
       <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>" width="100%">
-      <div class="darkmusik" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:96%;height:97%;border-radius:50%;background-color:rgba(0,0,0,.4);transition:.7s;"></div>
       <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
         <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
       </div>
+      <div class="darkmusik" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:96%;height:97%;border-radius:50%;background-color:rgba(0,0,0,.4);transition:.7s;"></div>
     </div>
     <div class="stik" style="position:fixed;left:2px;margin-top:-6px;width:30px;height:30px;transform:rotate(0deg);transition:1s;z-index:10">
       <img class="stikok musikset" style="position:absolute;left:28px;right:0;margin:auto;transform:rotate(-90deg);bottom:0;top:-2px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
@@ -868,9 +877,8 @@
     </audio>
 
 
-  <footer style="background-color:#d4d4d4">
+  <footer style="background-color:#d4d4d4;position:relative;">
     <svg style="margin-top:-60px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#d4d4d4" fill-opacity="1" d="M0,256L720,128L1440,256L1440,320L720,320L0,320Z"></path></svg>
-    <!-- <svg style="margin-top:-30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(151, 194, 143,1)" fill-opacity="1" d="M0,256L720,128L1440,256L1440,0L720,0L0,0Z"></path></svg> -->
 
     <div class="foter dekstop" style="height:70px">
       <div class="row">
@@ -896,15 +904,6 @@
     <a href="#awal" class="btn-floating btn-large fixclick page-scroll" style="background-color:rgba(0,0,0,.4);width:45px;height:45px">
       <i style="font-size:27px;line-height:45px" class="large material-icons">arrow_upward</i>
     </a>
-    <!-- <ul>
-      <li><span class="fixbtn" style="top:6px">Home</span><a href="#awal" class="btn-floating red page-scroll"><i class="material-icons">home</i></a></li>
-      <li><span class="fixbtn" style="top:62px">Mempelai</span><a href="#mempelai" class="btn-floating red page-scroll"><i class="material-icons">safety_divider</i></a></li>
-      <li><span class="fixbtn" style="top:118px">Acara</span><a href="#acara" class="btn-floating yellow darken-1 page-scroll"><i class="material-icons">local_bar</i></a></li>
-      <li><span class="fixbtn" style="top:174px">Galeri</span><a href="#galeri" class="btn-floating green page-scroll"><i class="material-icons">collections</i></a></li>
-      <li><span class="fixbtn" style="top:230px">Stori</span><a href="#stori" class="btn-floating green page-scroll"><i class="material-icons">auto_stories</i></a></li>
-      <li><span class="fixbtn" style="top:284px">Komentar</span><a href="#quesbook" class="btn-floating green page-scroll"><i class="material-icons">comment</i></a></li>
-      <li><span class="fixbtn" style="top:340px">Kehadiran</span><a href="#kehadiran" class="btn-floating blue page-scroll"><i class="material-icons">rsvp</i></a></li>
-    </ul> -->
   </div>
 
   <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;">
@@ -946,7 +945,7 @@
     <li class="divider" tabindex="-1" style="padding:0"></li>
 
   <?php if($detailundangan['nomer_pengundang']==''&&$detailundangan['nomer_pengundangw']==''){ ?>
-    <p class='text-center red-text'>Nomer tlp tidak ditampilkan</p>
+    <p class='center-align red-text'>Nomer tlp tidak ditampilkan</p>
   <?php }else if($detailundangan['nomer_pengundang']!='' && $detailundangan['nomer_pengundangw']==''){ ?>
     <?php if(substr($detailundangan['nomer_pengundang'],-1)=='l'){ ?>
 
@@ -1090,37 +1089,6 @@
 
 
 
-    <!-- <li style="padding:0">
-      <div class="card horizontal z-depth-0" style="">
-        <div class="card-image" style="border-radius:10px 0 0 10px;border-right:1px solid #ddd;padding:0 5px 0 5px">
-          <img src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>" height="40px" style="border-radius:5px;">
-        </div>
-        <div class="card-stacked" style="">
-          <div class="card-content" style="padding:5px;font-size:17px;margin-top:2px">
-            <a href="">
-            <p style="color:#19191a">Mempelai pria</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-    <li class="divider" tabindex="-1" style="padding:0"></li>
-
-    <li style="padding:0">
-      <div class="card horizontal z-depth-0" style="">
-        <div class="card-image" style="border-radius:10px 0 0 10px;border-right:1px solid #ddd;padding:0 5px 0 5px">
-          <img src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>" height="40px" style="border-radius:5px;">
-        </div>
-        <div class="card-stacked" style="">
-          <div class="card-content" style="padding:5px;font-size:17px;margin-top:2px">
-            <a href="">
-            <p style="color:#19191a">Mempelai wanita</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li> -->
 
     <!-- <li><a href="#!">three</a></li>
     <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
@@ -1139,7 +1107,44 @@
       <p style="font-family: 'Roboto', sans-serif;">Tampa mengurangi rasa hormat <br> Acara ini akan dilaksanakan dengan menerapkan <br> <b>PROTOKOL KESEHATAN</b> <br> sebagai berikut:</p>
 
       <div class="row" style="padding:0;margin:0 auto;max-width:450px;">
-        <div class="col s4" style="padding:0;margin:0">
+
+        <div class="barisatas" style="display:flex;justify-content:space-between;">
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay-="300" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/anaksp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Dianjurkan Tidak <br> Membawa Anak Kecil</span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="300" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="600" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/maskp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Masker <br></span>
+            <span style="opacity:0">membawa oke <br> sipp</span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="900" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/handsp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Handsanitizer <br></span>
+            <span style="opacity:0">membawa oke</span>
+          </div>
+        </div>
+
+        <div class="barisatas" style="display:flex;justify-content:space-between;">
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="2100" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/suhusp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cek Suhu Tubuh <br></span>
+            <span style="opacity:0">membawa oke </span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/cucisp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cuci Tangan <br></span>
+            <span style="opacity:0">membawa oke </span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/socialp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Jaga Jarak 1METER <br></span>
+            <span style="opacity:0">membawa oke </span>
+          </div>
+        </div>
+
+
+        <!-- <div class="col s4" style="padding:0;margin:0">
           <div class="card cyan darken-2" data-aos="fade-down" data-aos-duration="500" style="min-height:160px;border-radius:8px;">
             <div class="card-image" data-aos="fade-down" data-aos-delay-="300" data-aos-duration="500" style="padding-top:4px">
               <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/anaksp.png">
@@ -1199,7 +1204,7 @@
               <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Jaga Jarak 1METER</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="row">
@@ -1209,7 +1214,7 @@
       </div>
 
     </div>
-    <div class="modal-footer" style="padding:0 50px 0 50px;background-color:rgba(0,0,0,0);border:0;display:flex;justify-content:center;align-items: center;">
+    <div class="modal-footer" style="padding:0 50px 0 50px;background-color:rgba(0,0,0,0);border:0;display:flex;justify-content:center;align-items: center;margin-bottom:20px;">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.5);width:200px;display: flex;align-items: center;justify-content:center;"><i class="large material-icons" style="padding-right:5px">drafts</i> Buka Undangan</a>
     </div>
 
@@ -1225,6 +1230,11 @@
   <script src="<?=base_url('assets/temaundangan/vantage/'); ?>js/materialize.js"></script>
   <script src="<?=base_url('assets/temaundangan/vantage/'); ?>js/jquery.lwtCountdown-1.0.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
   <script>
     $(document).ready(function(){
       $('#clock').countDown({
@@ -1239,7 +1249,6 @@
           omitWeeks: true
       });
 
-      AOS.init();
       $('.materialboxed').materialbox();
 
       $('.carousel').carousel({
@@ -1327,16 +1336,16 @@
         var awanx=$(this).scrollTop()/8;
         var gradasi=$(this).scrollTop()/1000;
         // console.log(Math.floor(orang));
-        if(orang>300){
-          $('.para').css({
-            'background-position':'50% 300px'
-          });
-        }else{
-          $('.para').css({
-            'background-position':'50% '+Math.floor(orang)+'px',
-            'transition':'2ms'
-          });
-        }
+        // if(orang>300){
+        //   $('.para').css({
+        //     'background-position':'50% 300px'
+        //   });
+        // }else{
+        //   $('.para').css({
+        //     'background-position':'50% '+Math.floor(orang)+'px',
+        //     'transition':'2ms'
+        //   });
+        // }
         if(top>=800){
           $('.backtop').show();
         }else{
@@ -1367,7 +1376,6 @@
               'transform':'rotate(-35deg)'
             });
             $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
-            // $('.bars').fadeIn();
             $('.ofm').hide();
             $('.onm').show();
         }  else {
@@ -1378,7 +1386,6 @@
               'transform':'rotate(0deg)'
             });
             $('.darkmusik').css('background-color','rgba(0,0,0,.6)');
-            // $('.bars').fadeOut();
             $('.ofm').show();
             $('.onm').hide();
         }
@@ -1394,7 +1401,6 @@
           'transform':'rotate(-35deg)'
         });
         $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
-        // $('.bars').fadeIn();
         $('.ofm').hide();
         $('.onm').show();
       });

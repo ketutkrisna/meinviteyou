@@ -16,26 +16,17 @@
   <meta property="og:locale" content="id_ID">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Pernikahan Romeo & juliete; ?>">
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png"> -->
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/materialize.css">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/timeline.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
       body,html{
-        /*height: 115vh;*/
         overflow-x:hidden;
-        /*background:#ab47bc;*/
-      }
-      .block{
-        height:115vh
       }
       #awal{
-        min-height: 400px;
+        height:115vh;
       }
       #mempelai{
         min-height: 400px;
@@ -94,15 +85,13 @@
         animation-delay: 1s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
-        /*animation-direction: alternate;*/
         transform-style: preserve-3d;
       }
 
-      ::-webkit-scrollbar {
+      /*::-webkit-scrollbar {
         width: 5px;
       }
       ::-webkit-scrollbar-track {
-        /*box-shadow: inset 1px 1px 5px grey;*/
         border-radius: 10px;
         opacity:0;
       }
@@ -110,7 +99,9 @@
         background:linear-gradient(#4e342e,#ffff00,#ffff00,#4e342e);
         border-radius: 10px;
         box-shadow:1px 1px 5px grey;
-      }
+      }*/
+
+
       /*::-webkit-scrollbar-button {
         background:green;
         border-radius: 10px;
@@ -168,17 +159,11 @@
 
 <body>
 
-  <div id="awal" class="block white para" style="background-image:url('<?=base_url('assets/img/contoh/lp.jpg'); ?>');background-size:cover;background-position:50% 0px;">
+  <div id="awal" class="white para" style="background-image:url('<?=base_url('assets/img/contoh/lp.jpg'); ?>');background-size:cover;background-position:center 0px;position:relative;">
 
-    <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="awal" style="opacity:0;display:none;">
-      <div class="nav-wrapper">
-        <div class="container">
-          <a href="#" class="brand-logo">Red</a>
-        </div>
-      </div>
-    </nav>
+  <!-- <div id="awal" class="white para"  data-image-src="<?=base_url('assets/img/contoh/lp.jpg'); ?>"> -->
 
-    <div class="cobain">
+    <div class="cobain" style="position:absolute;left:0;right:0;width:100%;top:0">
 
     <div class="row">
       <div class="col s12 center-align" style="padding-top:14vh;font-family: 'Satisfy', cursive;">
@@ -199,56 +184,56 @@
     <div class="row">
       <div class="col s12">
         <div class="count-down-wrapper" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="2000" data-aos-offset="20" style="margin-top:0px;">
-                <div id="clock" class="center-align" style="display:flex;justify-content:center;">
-                    <div class="times center-align" style="margin-right:6px;">
-                        <div class="days_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
-                            <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
-                                <div class="digit"></div>
-                                <div class="digit"></div>
-                                </div>
-                                <span style="color:#ddd;" class="note dash_title">Hari</span>
-                            </div>
-                        </div>
-                    </div>
+          <div id="clock" class="center-align" style="display:flex;justify-content:center;">
+            <div class="times center-align" style="margin-right:6px;">
+              <div class="days_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
+                <div class="wrapper-digit">
+                  <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                  <div class="digit"></div>
+                  <div class="digit"></div>
+                  </div>
+                  <span style="color:#ddd;" class="note dash_title">Hari</span>
+                </div>
+              </div>
+            </div>
 
-                    <div class="times" style="margin:0 6px 0 6px;">
-                        <div class="hours_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
-                            <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
-                                <div class="digit"></div>
-                                <div class="digit"></div>
-                                </div>
-                                <span style="color:#ddd;" class="note dash_title">Jam</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="times" style="margin:0 6px 0 6px;">
+              <div class="hours_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
+                <div class="wrapper-digit">
+                  <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                  <div class="digit"></div>
+                  <div class="digit"></div>
+                  </div>
+                  <span style="color:#ddd;" class="note dash_title">Jam</span>
+                </div>
+              </div>
+            </div>
 
-                    <div class="times" style="margin:0 6px 0 6px;">
-                        <div class="minutes_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
-                            <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
-                                <div class="digit"></div>
-                                <div class="digit"></div>
-                                </div>
-                                <span style="color:#ddd;" class="note dash_title">Menit</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="times" style="margin:0 6px 0 6px;">
+              <div class="minutes_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
+                <div class="wrapper-digit">
+                  <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                  <div class="digit"></div>
+                  <div class="digit"></div>
+                  </div>
+                  <span style="color:#ddd;" class="note dash_title">Menit</span>
+                </div>
+              </div>
+            </div>
 
-                    <div class="times" style="margin-left:6px;">
-                        <div class="seconds_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
-                            <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
-                                <div class="digit"></div>
-                                <div class="digit"></div>
-                                </div>
-                                <span style="color:#ddd;" class="note dash_title">Detik</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end of clock -->
-            </div> <!-- count-down-wrapper -->
+            <div class="times" style="margin-left:6px;">
+              <div class="seconds_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
+                <div class="wrapper-digit">
+                  <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                  <div class="digit"></div>
+                  <div class="digit"></div>
+                  </div>
+                  <span style="color:#ddd;" class="note dash_title">Detik</span>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end of clock -->
+        </div> <!-- count-down-wrapper -->
       </div>
     </div>
 
@@ -256,43 +241,27 @@
 
   </div>
 
-     
    
-  <div id="mempelai" class="warnatema" style="position:relative;background-color:#dce0e0;">
+  <div id="mempelai" class="warnatema" style="position:relative;background-color:#dce0e0;margin-top:0px">
 
-     <svg style="margin-top: -210px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg style="margin-top: -210px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-    </svg>
-    <!-- <svg style="margin-top: -180px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="rgba(151, 194, 143, 1)" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-    </svg> -->
+
     <div class="dekstop">
       <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga2.png" width="200" style="position:absolute;top:-120px;right:-30px;z-index:4">
     </div>
-    <!-- <div class="mempelai"></div> -->
-
-    <!-- <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="mempelai" data-uptop="upmempelai" style="z-index:2">
-      <div class="nav-wrapper cyan darken-2" style="opacity:1;font-family: 'Satisfy', cursive;">
-        <div class="container">
-          <a href="#" class="brand-logo" style="text-shadow:1px 1px 3px #aaa;"><i class="material-icons" style="font-size:30px;">safety_divider</i> Mempelai</a>
-        </div>
-      </div>
-    </nav> -->
 
     <div class="mempelai dekstop">
-    <div class="row" style="">
-      <div class="container">
-      <div class="col s12 center-align">
-        <div class="warnakotak z-depth-1" style="border-radius:7px;padding:3px;margin-top:20px;background-color:#eee"> 
-        <p class="warnatitle" style="font-family: 'Roboto', cursive;font-size:17px;color:#3b3d3b;">Atas nama Allah SWT yang Maha Penyayang dan Maha Penyayang, dengan senang hati kami berbagi kegembiraan di pesta pernikahan kami:</p>
+
+      <div class="row">
+        <div class="container">
+        <div class="col s12 center-align">
+          <div class="warnakotak z-depth-1" style="border-radius:7px;padding:3px;margin-top:20px;background-color:#eee"> 
+          <p class="warnatitle" style="font-family: 'Roboto', cursive;font-size:17px;color:#3b3d3b;padding:0 5px 0 5px">Mahasuci Allah telah menciptakan manusia dengan berpasang-pasangan. Sungguh besar rahmat dan karunia yang diberikan-Nya kepada keluarga Kami. Maka izinkan Kami mengundang sekaligus mengharapkan doa restu dari bapak/ibu dalam acara pernikahan putra & putri kami.</p>
+          </div>
+        </div>
         </div>
       </div>
-      </div>
-    </div>
-
-    <!-- <div class="infoprofil white z-depth-1" style="background-color:red;width:90%;margin:auto;padding-top:20px;border-radius:10px;"> -->
-    <div class="row" style="padding-bottom:30px;">
-      <!-- <div class="container"> -->
 
       <style>
         .anakke{
@@ -305,176 +274,163 @@
         }
       </style>
 
-      <div class="col s12 l5 center-align" data-aos="flip-left" data-aos-duration="1000" style="">
-        <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/mpria.jpg" alt="mempelai" width="150" style="border-radius:50%;"><br>
-        <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;">Romeo</span><br>
-        <span style="background-color:rgba(255,255,255,.7);">
-          <span class="anakke">Putra pertama dari :</span><br>
-          <span class="ortu">Bapak Romeo & Ibu Romeo</span>
-        </span>
-      </div>
-      <div class="col s12 l2 center-align">
-        <div class="" style="display:flex;justify-content: center;align-items:center;">
-            <!-- <hr data-aos="fade-right" data-aos-duration="1000" style="width:80%;margin:30px 0 30px 0;border:0;height:1px;background-color:#aaa;"> -->
-            <img data-aos="fade-right" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/panah01.png" style="width:150px;margin:30px 0 30px 0;border:0;height:50px;">
-              <span data-aos="zoom-in" data-aos-duration="1500" class="material-icons red-text" style="font-size:50px;margin:10px 10px 10px 10px;">favorite</span> 
-            <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/panah02.png" style="width:150px;margin:30px 0 30px 0;border:0;height:50px;">
-            <!-- <hr data-aos="fade-left" data-aos-duration="1000" style="width:80%;margin:30px 0 30px 0;border:0;height:1px;background-color:#aaa;"> -->
+      <div class="row" style="padding-bottom:50px;">
+        <div class="col s12 l5 center-align" data-aos="flip-left" data-aos-duration="1000" style="">
+          <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/mpria.jpg" alt="mempelai" width="150" style="border-radius:50%;"><br>
+          <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;">Romeo</span><br>
+          <span style="background-color:rgba(255,255,255,.7);">
+            <span class="anakke">Putra pertama dari :</span><br>
+            <span class="ortu">Bapak Romeo & Ibu Romeo</span>
+          </span>
+        </div>
+        <div class="col s12 l2 center-align">
+          <div class="" style="display:flex;justify-content: center;align-items:center;">
+
+              <img data-aos="fade-right" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/panah01.png" style="width:150px;margin:30px 0 30px 0;border:0;height:50px;">
+                <span data-aos="zoom-in" data-aos-duration="1500" class="material-icons red-text" style="font-size:50px;margin:10px 10px 10px 10px;">favorite</span> 
+              <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/panah02.png" style="width:150px;margin:30px 0 30px 0;border:0;height:50px;">
+              
+          </div>
+        </div>
+        <div class="col s12 l5 center-align" data-aos="flip-right" data-aos-duration="1000" style="">
+          <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/mwanita.jpg" alt="mempelai" width="150" style="border-radius:50%;"><br>
+          <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;">Juliete</span><br>
+          <span style="background-color:rgba(255,255,255,.7);">
+            <span class="anakke">Putri kedua dari :</span><br>
+            <span class="ortu">Bapak Juliete & Ibu Juliete</span>
+          </span>
         </div>
       </div>
-      <div class="col s12 l5 center-align" data-aos="flip-right" data-aos-duration="1000" style="">
-        <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/mwanita.jpg" alt="mempelai" width="150" style="border-radius:50%;"><br>
-        <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;">Juliete</span><br>
-        <span style="background-color:rgba(255,255,255,.7);">
-          <span class="anakke">Putri kedua dari :</span><br>
-          <span class="ortu">Bapak Juliete & Ibu Juliete</span>
-        </span>
-      </div>
 
-      <!-- </div> -->
-    </div>
-
-    <!-- </div> -->
     </div>
 
 
   </div>
 
 
-  <div id="acara" class="warnatema" style="position:relative;background-color:#5fa17e;">
+  <div id="acara" class="warnatema  " style="position:relative;background-color:#5fa17e;">
 
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,250.7C160,245,320,235,480,202.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
     </svg>
-    <!-- <svg style="margin-top:-20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="rgba(95, 161, 126, 1)" fill-opacity="1" d="M0,256L80,250.7C160,245,320,235,480,202.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-    </svg> -->
+
     <div class="dekstop">
       <img data-aos="fade-right" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga1.png" width="200" style="position:absolute;top:-90px;left:-40px">
     </div>
-    <!-- <div class="acara"></div> -->
-
-   <!--  <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="acara" data-uptop="upacara" style="z-index:2;font-family: 'Satisfy', cursive;">
-      <div class="nav-wrapper cyan darken-2">
-        <div class="container">
-          <a href="#" class="brand-logo" style="text-shadow:1px 1px 3px #aaa;"><i class="material-icons" style="font-size:30px;">local_bar</i> Acara</a>
-        </div>
-      </div>
-    </nav> -->
 
     <div class="acara dekstop">
-    <div class="row" style="padding-bottom:60px;padding-top:50px"> 
 
-      <div class="col s12 l6 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
-        <div class="warnakotak" style="background-color:#eee;border-radius:9px;padding:3px;">
-          <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;">Akad</h5>
-        </div>
-        <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:1px">
-          <div class="card-image" style="text-align:center;">
-            
+      <div class="row" style="padding-bottom:60px;padding-top:50px"> 
+        <div class="col s12 l6 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
+          <div class="warnakotak" style="background-color:#eee;border-radius:9px;padding:3px;">
+            <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;">Akad</h5>
           </div>
-          <div class="card-stacked">
-            <div class="card-content center-align">
-              <span style="display:flex;justify-content:center;">
-                <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">event</i>
-                <span style="font-size:18px;color:#19191a;">17 agustus 1945</span>
-              </span>
-              <span style="display:flex;justify-content:center;margin-top:5px">
-                <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">schedule</i>
-                <span style="font-size:18px;color:#19191a;">10.00 - SELESAI</span>
-              </span>
+          <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:1px">
+            <div class="card-image" style="text-align:center;">
+              
             </div>
-            <div class="card-action" style="">
-              <i class="material-icons red-text" style="font-size:35px;line-height:15px;">place</i><br>
-              <span style="font-size:18px;line-height:20px;">Lapanagan umum SP2 mulyasari mulyasari mulyasari</span><br>
+            <div class="card-stacked">
+              <div class="card-content center-align">
+                <span style="display:flex;justify-content:center;">
+                  <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">event</i>
+                  <span style="font-size:18px;color:#19191a;">17 agustus 1945</span>
+                </span>
+                <span style="display:flex;justify-content:center;margin-top:5px">
+                  <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">schedule</i>
+                  <span style="font-size:18px;color:#19191a;">10.00 - SELESAI</span>
+                </span>
+              </div>
+              <div class="card-action" style="">
+                <i class="material-icons red-text" style="font-size:35px;line-height:15px;">place</i><br>
+                <span style="font-size:18px;line-height:20px;">Lapanagan umum SP2 mulyasari mulyasari mulyasari</span><br>
+              </div>
+
+              <ul class="collapsible popout" style="width:90%;margin:auto;padding-bottom:10px;">
+                <li style="border-radius:10px;">
+                  <div class="collapsible-header teal white-text" style="border-radius:8px;display:flex;justify-content:center;padding:6px"><span style="font-size:18px">Lihat Maps</span></div>
+                  <div class="collapsible-body" style="">
+                    <span>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.3164625691725!2d104.65540801429546!3d-4.536927249086981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e38ea8034c00171%3A0x120f1ec62809fbc0!2sLapangan%20Umum%20Sp2%20Mulya%20Sari!5e0!3m2!1sen!2sid!4v1629280514016!5m2!1sen!2sid" width="100%" height="220" style="border:0;padding:0;margin:0" allowfullscreen="" loading="lazy"></iframe>
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-                <ul class="collapsible popout" style="width:90%;margin:auto;padding-bottom:10px;">
-                  <li style="border-radius:10px;">
-                    <div class="collapsible-header teal white-text" style="border-radius:8px;display:flex;justify-content:center;padding:6px"><span style="font-size:18px">Lihat Maps</span></div>
-                    <div class="collapsible-body" style="">
-                      <span>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.3164625691725!2d104.65540801429546!3d-4.536927249086981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e38ea8034c00171%3A0x120f1ec62809fbc0!2sLapangan%20Umum%20Sp2%20Mulya%20Sari!5e0!3m2!1sen!2sid!4v1629280514016!5m2!1sen!2sid" width="100%" height="220" style="border:0;padding:0;margin:0" allowfullscreen="" loading="lazy"></iframe>
-                      </span>
-                    </div>
-                  </li>
-                </ul>
+          </div>
+        </div>
 
+
+        <div class="col s12 l6 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
+          <div class="warnakotak" style="background-color:#eee;border-radius:9px;padding:3px;">
+            <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;">Resepsi</h5>
+          </div>
+          <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:1px;">
+            <div class="card-image" style="text-align:center;">
+              
+            </div>
+            <div class="card-stacked">
+              <div class="card-content center-align">
+                <span style="display:flex;justify-content:center;">
+                  <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">event</i>
+                  <span style="font-size:18px;color:#19191a;">18 agustus 1945</span>
+                </span>
+                <span style="display:flex;justify-content:center;margin-top:5px">
+                  <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">schedule</i>
+                  <span style="font-size:18px;color:#19191a;">10.00 - SELESAI</span>
+                </span>
+              </div>
+              <div class="card-action" style="">
+                <i class="material-icons red-text" style="font-size:35px;line-height:15px;">place</i><br>
+                <span style="font-size:18px;line-height:20px;">Lapanagan umum SP2 mulyasari</span>
+              </div>
+
+                  <ul class="collapsible popout" style="width:90%;margin:auto;padding-bottom:10px;">
+                    <li style="border-radius:10px;">
+                      <div class="collapsible-header teal white-text" style="border-radius:8px;display:flex;justify-content:center;padding:6px"><span style="font-size:18px">Lihat Maps</span></div>
+                      <div class="collapsible-body" style="">
+                        <span>
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.3164625691725!2d104.65540801429546!3d-4.536927249086981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e38ea8034c00171%3A0x120f1ec62809fbc0!2sLapangan%20Umum%20Sp2%20Mulya%20Sari!5e0!3m2!1sen!2sid!4v1629280514016!5m2!1sen!2sid" width="100%" height="220" style="border:0;padding:0;margin:0" allowfullscreen="" loading="lazy"></iframe>
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+
+            </div>
           </div>
         </div>
       </div>
 
-
-      <div class="col s12 l6 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
-        <div class="warnakotak" style="background-color:#eee;border-radius:9px;padding:3px;">
-          <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;">Resepsi</h5>
-        </div>
-        <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:1px;">
-          <div class="card-image" style="text-align:center;">
-            
-          </div>
-          <div class="card-stacked">
-            <div class="card-content center-align">
-              <span style="display:flex;justify-content:center;">
-                <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">event</i>
-                <span style="font-size:18px;color:#19191a;">18 agustus 1945</span>
-              </span>
-              <span style="display:flex;justify-content:center;margin-top:5px">
-                <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">schedule</i>
-                <span style="font-size:18px;color:#19191a;">10.00 - SELESAI</span>
-              </span>
-            </div>
-            <div class="card-action" style="">
-              <i class="material-icons red-text" style="font-size:35px;line-height:15px;">place</i><br>
-              <span style="font-size:18px;line-height:20px;">Lapanagan umum SP2 mulyasari</span>
-            </div>
-
-                <ul class="collapsible popout" style="width:90%;margin:auto;padding-bottom:10px;">
-                  <li style="border-radius:10px;">
-                    <div class="collapsible-header teal white-text" style="border-radius:8px;display:flex;justify-content:center;padding:6px"><span style="font-size:18px">Lihat Maps</span></div>
-                    <div class="collapsible-body" style="">
-                      <span>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.3164625691725!2d104.65540801429546!3d-4.536927249086981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e38ea8034c00171%3A0x120f1ec62809fbc0!2sLapangan%20Umum%20Sp2%20Mulya%20Sari!5e0!3m2!1sen!2sid!4v1629280514016!5m2!1sen!2sid" width="100%" height="220" style="border:0;padding:0;margin:0" allowfullscreen="" loading="lazy"></iframe>
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row">
+      <div class="row" style="padding-bottom:20px">
         <div class="col s12 center-align">
-          <div class="z-depth-2" style="background-color:#eee;border-radius:9px;padding:3px;margin-top:30px;">
-          <p class="" style="font-size:18px;color:#3b3d3b;">Sungguh suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/I berkenan hadir untuk memberikan Do'a restunya kami sekeluarga mengucapkan terima kasih</p>
+          <div class="z-depth-2" style="background-color:#eee;border-radius:9px;padding:3px;">
+          <p class="" style="font-size:18px;color:#3b3d3b;padding:0 5px 0 5px;">Sungguh suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/I berkenan hadir untuk memberikan Do'a restunya kami sekeluarga mengucapkan terima kasih</p>
         </div>
         </div>
       </div>
 
-    </div>
     </div>
 
   </div>
 
 
-  <div id="stori" class="warnatema" style="position:relative;background-color:#5fa17e;">
+  <div id="stori" class="warnatema " style="position:relative;background-color:#5fa17e;">
+
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,224C160,192,320,128,480,117.3C640,107,800,149,960,176C1120,203,1280,213,1360,218.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
     <div class="upstori dekstop" style="padding-bottom:60px;">
 
       <div class="row">
-      <div class="col s12 center-align">
-        <div class="container">
+        <div class="col s12 center-align">
+          <div class="container">
             <div class="container">
-        <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-          <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Stori</h5>
-        </div>
+              <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
+                <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Stori</h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
       <div class="container">
         <div class="timeline">
@@ -521,61 +477,57 @@
   </div>
 
 
-  <div id="galeri" class="warnatema"  style="position:relative;margin-top:-20px;background-color:#dce0e0;">
+  <div id="galeri" class="warnatema "  style="position:relative;margin-top:-20px;background-color:#dce0e0;">
 
     <svg style="margin-top:-15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#5fa17e" fill-opacity="1" d="M0,96L80,85.3C160,75,320,53,480,85.3C640,117,800,203,960,218.7C1120,235,1280,181,1360,154.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
     <div class="galeri dekstop" style="padding-bottom:40px">
 
-    <div class="row">
-      <div class="col s12 center-align">
-        <div class="container">
+      <div class="row">
+        <div class="col s12 center-align">
+          <div class="container">
             <div class="container">
-        <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-          <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Galeri</h5>
-        </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="col s12 m6 l4 xl3 center-align" style="margin-bottom:8px;">
-        <img data-aos="fade-right" data-aos-duration="1000" class="card-image materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
-      </div>
-      <div class="col s12 m6 l4 xl3 center-align" style="margin-bottom:8px;">
-        <img data-aos="fade-left" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
-      </div>
-      <div class="col s12 m6 l4 xl3 center-align" style="margin-bottom:8px;">
-        <img data-aos="fade-right" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
-      </div>
-      <div class="col s12 m6 l4 xl3 center-align" style="margin-bottom:8px;">
-        <img data-aos="fade-left" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
-      </div>
-      <div class="col s12 m6 l4 xl3 center-align" style="margin-bottom:8px;">
-        <img data-aos="fade-right" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
-      </div>
-    </div>
-
-
-    <div class="row">
-    <div class="col s12 m8 offset-m2 l6 offset-l3 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
-        <div class="" style="background-color:#eee;border-radius:9px;padding:0px;">
-          <h5 class="" style="font-size:20px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:2px">Video</h5>
-        </div>
-        <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:-8px;">
-          <div class="card-image" style="text-align:center;">
-            
-          </div>
-          <div class="card-stacked center-align">
-            <div class="card-content center-align" style="padding:5px;">
-              <!-- <iframe style="border-radius:10px" width="100%" height="260" src="https://www.youtube.com/embed/ONcXsba7B30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-              <h5>Disini tempat video!!</h5>
+              <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
+                <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Galeri</h5>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+
+      <div class="row">
+        <div class="col s6 m4 l4 xl3 center-align" style="margin-bottom:8px;">
+          <img data-aos="fade-right" data-aos-duration="1000" class="card-image materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
+        </div>
+        <div class="col s6 m4 l4 xl3 center-align" style="margin-bottom:8px;">
+          <img data-aos="fade-left" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
+        </div>
+        <div class="col s6 m4 l4 xl3 center-align" style="margin-bottom:8px;">
+          <img data-aos="fade-right" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
+        </div>
+        <div class="col s6 m4 l4 xl3 center-align" style="margin-bottom:8px;">
+          <img data-aos="fade-left" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
+        </div>
+        <div class="col s6 m4 l4 xl3 center-align" style="margin-bottom:8px;">
+          <img data-aos="fade-right" data-aos-duration="1000" class="card-image center-align materialboxed z-depth-1 img-thumbnail" style="border-radius:5px;" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" width="100%">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
+          <div class="" style="background-color:#eee;border-radius:9px;padding:0px;">
+            <h5 class="" style="font-size:20px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:2px">Video</h5>
+          </div>
+          <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:-8px;">
+            <div class="card-stacked center-align">
+              <div class="card-content center-align" style="padding:5px;">
+                <h5>Disini tempat video!!</h5>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
@@ -583,7 +535,8 @@
   </div>
 
 
-  <div id="rekening" class="warnatema" style="position:relative;background-color:#5fa17e;">
+  <div id="rekening" class="warnatema " style="position:relative;background-color:#5fa17e;">
+
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,256L80,224C160,192,320,128,480,117.3C640,107,800,149,960,176C1120,203,1280,213,1360,218.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
     <div class="uprekening dekstop" style="padding-bottom:60px;">
@@ -591,51 +544,45 @@
       <div class="row">
         <div class="col s12 center-align">
           <div class="warnakotak z-depth-2" style="background-color:#eee;border-radius:9px;padding:3px;">
-          <p class="warnatitle" style="font-size:18px;color:#3b3d3b;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui :</p>
-        </div>
+            <p class="warnatitle" style="font-size:18px;color:#3b3d3b;padding:0 5px 0 5px;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui :</p>
+          </div>
         </div>
       </div>
 
       <div class="row">
-          <div class="col s12 m6" data-aos="fade-down" data-aos-duration="1000">
-            <div class="card horizontal" style="border-radius:6px;background-color:#eee;">
-              <div class="card-image" style="border-radius:10px 0 0 10px;border-right:1px solid #ddd;padding:0 5px 0 5px">
-                <img src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bbri.png" height="80px">
-              </div>
-              <div class="card-stacked" style="">
-                <div class="card-content" style="padding:5px;font-size:17px;margin-top:7px">
-                  <p style="color:#19191a">No.Rek: 5749-2434-2465-433</p>
-                  <p style="color:#19191a">Atas Nama: Suparman</p>
-                </div>
+        <div class="col s12 m6" data-aos="fade-down" data-aos-duration="1000">
+          <div class="card horizontal" style="border-radius:6px;background-color:#eee;">
+            <div class="card-image" style="border-radius:10px 0 0 10px;border-right:1px solid #ddd;padding:0 5px 0 5px">
+              <img src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bbri.png" height="80px">
+            </div>
+            <div class="card-stacked" style="">
+              <div class="card-content" style="padding:5px;font-size:17px;margin-top:7px">
+                <p style="color:#19191a">No.Rek: 5749-2434-2465-433</p>
+                <p style="color:#19191a">Atas Nama: Suparman</p>
               </div>
             </div>
           </div>
-          <div class="col s12 m6" data-aos="fade-up" data-aos-duration="1000">
-            <div class="card horizontal" style="border-radius:6px;background-color:#eee;">
-              <div class="card-image" style="border-radius:10px 0 0 10px;border-right:1px solid #ddd;padding:0 5px 0 5px">
-                <img src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bbnii.png" height="80px">
-              </div>
-              <div class="card-stacked" style="">
-                <div class="card-content" style="padding:5px;font-size:17px;margin-top:7px">
-                  <p style="color:#19191a">No.Rek: 5749-2434-2465-433</p>
-                  <p style="color:#19191a">Atas Nama: Suparman</p>
-                </div>
+        </div>
+        <div class="col s12 m6" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card horizontal" style="border-radius:6px;background-color:#eee;">
+            <div class="card-image" style="border-radius:10px 0 0 10px;border-right:1px solid #ddd;padding:0 5px 0 5px">
+              <img src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bbnii.png" height="80px">
+            </div>
+            <div class="card-stacked" style="">
+              <div class="card-content" style="padding:5px;font-size:17px;margin-top:7px">
+                <p style="color:#19191a">No.Rek: 5749-2434-2465-433</p>
+                <p style="color:#19191a">Atas Nama: Suparman</p>
               </div>
             </div>
           </div>
+        </div>
       </div>
       
     </div>
   </div>
 
-  <div id="quesbook" class="warnatema ww-detail" style="margin-top:-10px;position:relative;background-color:#dce0e0;">
-    <!-- <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="quesbook" data-uptop="upquesbook" style="font-family: 'Satisfy', sans-serif;">
-      <div class="nav-wrapper cyan darken-2">
-        <div class="container">
-          <a href="#" class="brand-logo" style="text-shadow:1px 1px 3px #aaa;"><i class="material-icons" style="font-size:30px;">comment</i> Komentar</a>
-        </div>
-      </div>
-    </nav> -->
+  <div id="quesbook" class="warnatema ww-detail " style="margin-top:-10px;position:relative;background-color:#dce0e0;">
+
     <svg style="margin-top:-20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#5fa17e" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,229.3C480,203,600,117,720,90.7C840,64,960,96,1080,144C1200,192,1320,256,1380,288L1440,320L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
 
     <div class="dekstop">
@@ -648,9 +595,9 @@
         <div class="col s12 center-align">
           <div class="container">
             <div class="container">
-          <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-            <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Daftar Ucapan</h5>
-          </div>
+              <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
+                <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Daftar Ucapan</h5>
+              </div>
             </div>
           </div>
         </div>
@@ -663,13 +610,11 @@
               <option value="slide">Slide</option>
               <option value="list">List</option>
             </select>
-            <!-- <label>Materialize Select</label> -->
           </div>
         </div>
       </div>
 
       <div class="row">
-
         <div class="col s12 slidetampil" style="margin-top:-120px;">
           <div class="carousel checkcarousel">
             <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
@@ -756,34 +701,25 @@
             </a>
           </div>
         </div>
-
       </div>
       
     </div>
   </div>
 
 
-  <div id="kehadiran" class="warnatema ww-detail" style="background:linear-gradient(rgba(95, 161, 126, 1),rgba(151, 194, 143, 1),rgba(151, 194, 143,1));position:relative;background-image:url('<?=base_url('assets/temaundangan/vantage/'); ?>img/rsvp-imgc.jpg');background-size:cover;background-position:center;">
-    <!-- <nav class="pushpin-sticky z-depth-0 pin-bottom" data-target="kehadiran" data-uptop="upkehadiran" style="font-family: 'Satisfy', sans-serif;">
-      <div class="nav-wrapper cyan darken-2">
-        <div class="container">
-          <a href="#" class="brand-logo" style="text-shadow:1px 1px 3px #aaa;"><i class="material-icons" style="font-size:35px;">rsvp</i> Kehadiran</a>
-        </div>
-      </div>
-    </nav> -->
+  <div id="kehadiran" class="warnatema ww-detail " style="background:linear-gradient(rgba(95, 161, 126, 1),rgba(151, 194, 143, 1),rgba(151, 194, 143,1));position:relative;background-image:url('<?=base_url('assets/temaundangan/vantage/'); ?>img/rsvp-imgc.jpg');background-size:cover;background-position:center;">
+
     <svg style="margin-top:-25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,101.3C480,107,600,181,720,224C840,267,960,277,1080,288C1200,299,1320,309,1380,314.7L1440,320L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
 
-
-
-    <div class="kehadiran dekstop">
+    <div class="kehadiran dekstop" style="padding-bottom:60px">
 
       <div class="row">
         <div class="col s12 center-align">
           <div class="container">
             <div class="container">
-          <div class="warnakotak z-depth-1 test" style="background-color:#eee;border-radius:9px;padding:0px;margin-top:20px">
-            <h5 class="" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Kirim Ucapan</h5>
-          </div>
+              <div class="warnakotak z-depth-1 test" style="background-color:#eee;border-radius:9px;padding:0px;margin-top:20px">
+                <h5 class="" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Kirim Ucapan</h5>
+              </div>
             </div>
           </div>
         </div>
@@ -791,68 +727,41 @@
 
 
       <div class="row ww-rsvp-form">
-        <div class="col s12" style="">
-        <div class="container">
-         <form action="" method="post" data-aos="fade-down" data-aos-duration="1000">
-            <input type="hidden" name="idupengundang" value="1">
-            <div class="row">
-              <div class="col s12">
-                <!-- <div class="form-group">
-                  <select class="form-control" id="guest-input" name="namaanda">
-                    <option class="disabled" value="">nama</option>
-                  </select>
-                </div> -->
-                <div class="input-field col s12" style="border-radius:5px;">
-                  <select class="browser-default form-custom" name="namaanda" required>
-                    <option value="suparman" selected>Suparman</option>
-                  </select>
-                  <!-- <label>Materialize Select</label> -->
-                </div>
-              </div>
-            </div>
-            <div class="row" style="margin-top:-20px">
-              <div class="col s12 m6 center-align">
-                <!-- <div class="form-group">
-                  <select class="form-control" id="events-input" name="absenkehadiran" required>
-                    <option value="">Apakah kamu menghadiri?</option>
-                    <option value="hadir">Menghadiri</option>
-                    <option value="tidak">Tidak menghadiri</option>
-                  </select>
-                </div> -->
-                <div class="input-field col s12 m6" style="width:100%;border-radius:5px;">
-                  <select class="browser-default form-custom" name="absenkehadiran" required>
-                    <option value="">Apakah kamu menghadiri?</option>
-                    <option value="hadir">Menghadiri</option>
-                    <option value="tidak">Tidak menghadiri</option>
-                    <option value="ragu">Masih ragu-ragu</option>
-                  </select>
-                  <!-- <label>Materialize Select</label> -->
+        <div class="col s12">
+          <div class="container">
+            <form action="" method="post" data-aos="fade-down" data-aos-duration="1000">
+              <input type="hidden" name="idupengundang" value="1">
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field col s12" style="border-radius:5px;">
+                    <select class="browser-default form-custom" name="namaanda" required>
+                      <option value="suparman" selected>Suparman</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
-              <div class="col s12 m6 center-align">
-                <!-- <div class="form-group">
-                  <select class="form-control" id="events-input" name="jumlahkehadiran" required>
-                    <option value="1">1 orang</option>
-                    <option value="2">2 orang</option>
-                  </select>
-                </div> -->
-                <div class="input-field col s12 m6" style="width:100%;border-radius:5px;">
-                  <select class="browser-default form-custom" name="jumlahkehadiran" required>
-                    <option value="1">1 orang</option>
-                    <option value="2">2 orang</option>
-                  </select>
-                  <!-- <label>Materialize Select</label> -->
+              <div class="row" style="margin-top:-20px">
+                <div class="col s12 m6 center-align">
+                  <div class="input-field col s12 m6" style="width:100%;border-radius:5px;">
+                    <select class="browser-default form-custom" name="absenkehadiran" required>
+                      <option value="">Apakah kamu menghadiri?</option>
+                      <option value="hadir">Menghadiri</option>
+                      <option value="tidak">Tidak menghadiri</option>
+                      <option value="ragu">Masih ragu-ragu</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col s12 m6 center-align">
+                  <div class="input-field col s12 m6" style="width:100%;border-radius:5px;">
+                    <select class="browser-default form-custom" name="jumlahkehadiran" required>
+                      <option value="1">1 orang</option>
+                      <option value="2">2 orang</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col s12">
-                <!-- <div class="form-group">
-                  <label for="message-input">Pesan Anda</label>
-                  <textarea class="form-control" id="message-input" name="isiucapan" rows="4" required></textarea>
-                </div>
-              </div> -->
+
               <div class="row">
                 <div class="col s12" style="margin-top:-20px">
                   <div class="input-field col s12" style="border-radius:5px;">
@@ -861,16 +770,15 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col right" style="margin-top:-20px;margin-right:21px">
-                <!-- <div class="container"> -->
-                <button class="btn blue btn-small waves-effect waves-light addkomentar" id="addkomentar" type="submit" name="kirimin">kirim</button>
-                <!-- </div> -->
+
+              <div class="row">
+                <div class="col right" style="margin-top:-20px;margin-right:10px">
+                  <button class="btn blue btn-small waves-effect waves-light addkomentar" id="addkomentar" type="submit" name="kirimin">kirim</button>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
+
+            </form>
+          </div>
         </div>
       </div>
 
@@ -885,36 +793,38 @@
   </div>
 
 
-  <div class="piringan" style="position: fixed;top:5px;z-index:10;left:5px;">
+  <footer style="background-color:#d4d4d4;position:relative;">
+
+    <svg style="margin-top:-60px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#d4d4d4" fill-opacity="1" d="M0,256L720,128L1440,256L1440,320L720,320L0,320Z"></path></svg>
+
+    <div class="foter dekstop" style="height:70px">
+      <div class="row">
+        <div class="col s12 center-align" style="margin-top:-16px">
+          <p class="mb-0">&copy; meinviteyou. All Rights Reserved.</p>
+          <p class="mb-0" style="margin-top:-15px">Design by - <a class="credit" href="https://meinviteyou.com">
+            <span style="color:#0062CC;">me</span><span class="red-text"><u>INVITE</u></span><span style="color:#0062CC;">you</span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="piringan" style="position: fixed;top:5px;z-index:30;left:5px;">
     <div class="musikplayer z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
-      <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
+      <img class="putarmulai musikset" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
       <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
         <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
       </div>
+      <div class="darkmusik" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:96%;height:97%;border-radius:50%;background-color:rgba(0,0,0,.4);transition:.7s;"></div>
     </div>
     <div class="stik" style="position:fixed;left:2px;margin-top:-6px;width:30px;height:30px;transform:rotate(0deg);transition:1s;z-index:10">
       <img class="stikok musikset" style="position:absolute;left:28px;right:0;margin:auto;transform:rotate(-90deg);bottom:0;top:-2px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
     </div>
   </div>
 
-    <audio id="musikvalue" loop style="width:100%">
-      <source src="<?=base_url('assets/img/contoh/rembulan.MP3'); ?>" type="audio/mpeg">
-    </audio>
-
-
-  <footer style="background-color:#d4d4d4">
-    <svg style="margin-top:-60px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#d4d4d4" fill-opacity="1" d="M0,256L720,128L1440,256L1440,320L720,320L0,320Z"></path></svg>
-    <!-- <svg style="margin-top:-30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(151, 194, 143,1)" fill-opacity="1" d="M0,256L720,128L1440,256L1440,0L720,0L0,0Z"></path></svg> -->
-
-    <div class="foter dekstop" style="height:70px">
-      <div class="row">
-        <div class="col s12 center-align" style="margin-top:-16px">
-          <p class="mb-0">&copy; meinviteyou. All Rights Reserved.</p>
-          <p class="mb-0" style="margin-top:-15px">Design by - <a class="credit" href="https://meinviteyou.com"><span style="color:#0062CC;">me</span><span class="red-text"><u>INVITE</u></span><span style="color:#0062CC;">you</span></a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <audio id="musikvalue" loop style="width:100%">
+    <source src="<?=base_url('assets/img/contoh/rembulan.MP3'); ?>" type="audio/mpeg">
+  </audio>
 
   <style>
     .fixbtn {
@@ -930,19 +840,14 @@
     <a href="#awal" class="btn-floating btn-large fixclick page-scroll" style="background-color:rgba(0,0,0,.4);width:45px;height:45px">
       <i style="font-size:27px;line-height:45px" class="large material-icons">arrow_upward</i>
     </a>
-    <!-- <ul>
-      <li><span class="fixbtn" style="top:6px">Home</span><a href="#awal" class="btn-floating red page-scroll"><i class="material-icons">home</i></a></li>
-      <li><span class="fixbtn" style="top:62px">Mempelai</span><a href="#mempelai" class="btn-floating red page-scroll"><i class="material-icons">safety_divider</i></a></li>
-      <li><span class="fixbtn" style="top:118px">Acara</span><a href="#acara" class="btn-floating yellow darken-1 page-scroll"><i class="material-icons">local_bar</i></a></li>
-      <li><span class="fixbtn" style="top:174px">Galeri</span><a href="#galeri" class="btn-floating green page-scroll"><i class="material-icons">collections</i></a></li>
-      <li><span class="fixbtn" style="top:230px">Stori</span><a href="#stori" class="btn-floating green page-scroll"><i class="material-icons">auto_stories</i></a></li>
-      <li><span class="fixbtn" style="top:284px">Komentar</span><a href="#quesbook" class="btn-floating green page-scroll"><i class="material-icons">comment</i></a></li>
-      <li><span class="fixbtn" style="top:340px">Kehadiran</span><a href="#kehadiran" class="btn-floating blue page-scroll"><i class="material-icons">rsvp</i></a></li>
-    </ul> -->
   </div>
 
-  <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;">
+  <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
     <h5 class="sizefont" style="font-size:18px;">Romeo & Juliete</h5>
+    <div class="bars" style="position:absolute;top:-35px;left:-10px;transition:.7s">
+      <img class="onm" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
+      <img class="ofm" style="position:absolute;top:10px;left:0" src="<?=base_url('assets/img/bars-musikof.gif'); ?>" width="100px" height="30px">
+    </div>
   </div>
 
 
@@ -950,24 +855,24 @@
       <i style="font-size:53px;text-shadow:0px 2px 2px black;" class="large orange-text text-lighten-1 material-icons">palette</i>
   </div>
 
-  <div class="inputtema center-align" style="position:fixed;bottom:50%;right:-110px;border-radius:5px;z-index:10;width:110px;height:60px;transition:.6s;">
+  <div class="inputtema center-align" style="position:fixed;bottom:50%;right:-110px;border-radius:5px;z-index:27;width:110px;height:60px;transition:.6s;">
     <span style="font-size:15px;padding:0 3px 0 3px;border-radius:2px;background-color:rgba(255,255,255,.7);">custom warna</span>
     <input type="color" class="warna1 z-depth-1" style="width:100%;height:40px;margin-bottom:8px;border-radius:4px;background-color:rgba(255,255,255,.7);">
-    <!-- <div class="divider" style="padding:3px"></div> -->
     <input type="color" class="warna2" style="width:100%;height:40px;border-radius:4px;background-color:rgba(255,255,255,.7);">
     <input type="text" class="tampung1 z-depth-1" style="opacity:0;height:0">
     <button class="copytext waves-effect waves-dark z-depth-1" style="font-size:14px;margin-top:-15px;border:0;border-radius:3px;background-color:#ddd;padding:3px;margin-bottom:5px;">Copy tema</button>
     <span class="copied white-text" style="background-color:rgba(0,0,0,.5);padding:4px;border-radius:5px;font-size:13px;">Copied!</span>
+    <a class="btn btn-small deep-purple darken-4 waves-effect waves-light orderwa" style="padding:0 5px 0 5px;margin-top:10px;border-radius:3px;" href="">order via WA</a>
   </div>
 
 
   <div class="text-primary" style="position:fixed;bottom:10px;left:15px;border-radius:50%;z-index:10;">
     <div style="background-color:rgba(26, 199, 84,);padding:4px;border-radius:50%;">
       <i style="font-size:53px;text-shadow:0px 2px 2px black;font-weight:bold;min-width:180px" class="large green-text material-icons dropdown-trigger" href="#" data-target="dropdown1">whatsapp</i>
-      <!-- <span style="">kirim ucapan via wa</span> -->
     </div>
   </div>
-    <!-- Dropdown Structure -->
+
+  <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content" style="border-radius:5px;">
     <li><a href="#!">Kirim ucapan via WA</a></li>
     <li class="divider" tabindex="-1" style="padding:0"></li>
@@ -1000,13 +905,10 @@
         </div>
       </div>
     </li>
-    <!-- <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
   </ul>
 
-<!-- modal awal -->
-  <div id="modal1" class="modal modal-fixed-footer white-text" style="width:100%;height:100%!important;background-image: url('<?=base_url('assets/temaundangan/vantage/'); ?>img/bgmodal.png');background-size:cover;">
+  <!-- modal awal -->
+  <div id="modal1" class="modal modal-fixed-footer white-text" style="width:100%;height:100%!important;background-image: url('<?=base_url('assets/temaundangan/vantage/'); ?>img/bgmodal.png');background-size:100%;background-repeat:no-repeat;">
     <div style="position:absolute;left:0;right:0;bottom:0;top:0;background-color:black;opacity:.6"></div>
 
     <div class="modal-content center-align" style="height:100%">
@@ -1016,8 +918,45 @@
       <p style="font-family: 'Roboto', sans-serif;">Kami mengundang anda untuk datang pada hari pernikahan kami!</p>
       <p style="font-family: 'Roboto', sans-serif;">Tampa mengurangi rasa hormat <br> Acara ini akan dilaksanakan dengan menerapkan <br> <b>PROTOKOL KESEHATAN</b> <br> sebagai berikut:</p>
 
-      <div class="row" style="padding:0;margin:0 auto;max-width:450px;">
-        <div class="col s4" style="padding:0;margin:0">
+      <div class="row" style="padding:0;margin:0 auto;max-width:500px;">
+
+        <div class="barisatas" style="display:flex;justify-content:space-between;">
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay-="300" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/anaksp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Dianjurkan Tidak <br> Membawa Anak Kecil</span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="300" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="600" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/maskp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Masker <br></span>
+            <span style="opacity:0">membawa oke <br> sipp</span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="900" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/handsp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Handsanitizer <br></span>
+            <span style="opacity:0">membawa oke</span>
+          </div>
+        </div>
+
+        <div class="barisatas" style="display:flex;justify-content:space-between;">
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="2100" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/suhusp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cek Suhu Tubuh <br></span>
+            <span style="opacity:0">membawa oke </span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/cucisp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cuci Tangan <br></span>
+            <span style="opacity:0">membawa oke </span>
+          </div>
+          <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+            <img class="hoverc" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/socialp.png"><br>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Jaga Jarak 1METER <br></span>
+            <span style="opacity:0">membawa oke </span>
+          </div>
+        </div>
+
+
+        <!-- <div class="col s4" style="padding:0;margin:0">
           <div class="card cyan darken-2" data-aos="fade-down" data-aos-duration="500" style="min-height:160px;border-radius:8px;">
             <div class="card-image" data-aos="fade-down" data-aos-delay-="300" data-aos-duration="500" style="padding-top:4px">
               <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/anaksp.png">
@@ -1077,7 +1016,8 @@
               <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Jaga Jarak 1METER</p>
             </div>
           </div>
-        </div>
+        </div> -->
+
       </div>
 
       <div class="row">
@@ -1087,18 +1027,35 @@
       </div>
 
     </div>
-    <div class="modal-footer" style="padding:0 50px 0 50px;background-color:rgba(0,0,0,0);border:0;display:flex;justify-content:center;align-items: center;">
+    <div class="modal-footer" style="padding:0 50px 0 50px;background-color:rgba(0,0,0,0);border:0;display:flex;justify-content:center;align-items: center;margin-bottom:20px;">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.5);width:200px;display: flex;align-items: center;justify-content:center;"><i class="large material-icons" style="padding-right:5px">drafts</i> Buka Undangan</a>
     </div>
 
   </div>
 
+  <!-- <div id="modal1" class="modal" style="">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div> -->
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="<?=base_url('assets/temaundangan/vantage/'); ?>js/materialize.js"></script>
   <script src="<?=base_url('assets/temaundangan/vantage/'); ?>js/jquery.lwtCountdown-1.0.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
   <script>
     $(document).ready(function(){
+
+
       $('#clock').countDown({
           targetDate: {
               'day'   : 30,
@@ -1111,9 +1068,8 @@
           omitWeeks: true
       });
 
-      AOS.init();
-      $('.materialboxed').materialbox();
 
+      $('.materialboxed').materialbox();
       $('.carousel').carousel({
         'dist':-110,
         'fullWidth':false,
@@ -1125,6 +1081,17 @@
         'constrainWidth':true
       });
       $('.collapsible').collapsible();
+      $('.parallax').parallax();
+      $('.fixed-action-btn').floatingActionButton({
+        hoverEnabled: false
+      });
+      $('.modal').modal({
+        'startingTop':'0%',
+        'endingTop':'0%',
+        'preventScrolling':false
+      });
+      $('.modal').modal('open');
+      // $('.parallax').parallax();
 
       // Pushpin Demo Init
         // $('.pushpin-sticky').each(function() {
@@ -1141,16 +1108,7 @@
         //   });
         // });
 
-      $('.fixed-action-btn').floatingActionButton({
-        hoverEnabled: false
-      });
-      // $('.modal').modal();
-      $('.modal').modal({
-        'startingTop':'0%',
-        'endingTop':'0%'
-      });
-      $('.modal').modal('open');
-      $('.scrollspy').scrollSpy();
+    
 
       $('.page-scroll').on('click',function(e){
           var tujuan=$(this).attr('href');
@@ -1161,12 +1119,14 @@
           e.preventDefault();
       });
 
+
       $('.fixclick').on('click',function(){
         $('.fixbtn').hide();
         setTimeout(function() {
           $('.fixbtn').fadeIn();
         }, 500);
       });
+
 
       $('.hoverc').on('mouseover',function(){
         $(this).css({
@@ -1181,34 +1141,30 @@
         })
       });
 
-      var elems = document.querySelectorAll('.parallax');
-      M.Parallax.init(elems);
 
       $('.backtop').hide();
       $(window).on('scroll',function(){
-        var nilai=$(this).scrollTop()/1.2;
-        var welcome=$(this).scrollTop()/17.5;
-        var welcomes=$(this).scrollTop()/0.7;
+        // var nilai=$(this).scrollTop()/1.2;
+        // var welcome=$(this).scrollTop()/17.5;
+        // var welcomes=$(this).scrollTop()/0.7;
         var top=$(this).scrollTop();
-        // console.log(top);
-
-        var matahari=$(this).scrollTop()/1.2;
-        var orang=$(this).scrollTop()/2.5-1;
-        var pura=$(this).scrollTop()/6;
-        var awan=$(this).scrollTop()/2;
-        var awanx=$(this).scrollTop()/8;
-        var gradasi=$(this).scrollTop()/1000;
-        // console.log(Math.floor(orang));
-        if(orang>300){
-          $('.para').css({
-            'background-position':'50% 300px'
-          });
-        }else{
-          $('.para').css({
-            'background-position':'50% '+Math.floor(orang)+'px',
-            'transition':'2ms'
-          });
-        }
+        // var matahari=$(this).scrollTop()/1.2;
+        // var orang=$(this).scrollTop()/2.5-1;
+        // var pura=$(this).scrollTop()/6;
+        // var awan=$(this).scrollTop()/2;
+        // var awanx=$(this).scrollTop()/8;
+        // var gradasi=$(this).scrollTop()/1000;
+        // console.log(Math.floor(top));
+        // if(orang>300){
+        //   $('.para').css({
+        //     'background-position':'50% 300px'
+        //   });
+        // }else{
+        //   $('.para').css({
+        //     'background-position':'50% '+Math.floor(orang)+'px',
+        //     'transition':'100ms'
+        //   });
+        // }
         if(top>=800){
           $('.backtop').show();
         }else{
@@ -1216,7 +1172,88 @@
         }
       });
 
-      
+      // var jumboHeight = $('.para').outerHeight();
+      //   function parallax(){
+      //       var scrolled = $(window).scrollTop();
+      //       $('.para').css('background-position', '50% -'+(Math.floor((jumboHeight-scrolled/4)+55)) + 'px');
+      //       $('.para').css("transition","1ms");
+      //       console.log(Math.floor(jumboHeight-scrolled/6));
+      //   }
+
+      //   $(window).on('scroll',function(e){
+      //       parallax();
+      //       var top=$(this).scrollTop();
+      //       if(top>=800){
+      //         $('.backtop').show();
+      //       }else{
+      //         $('.backtop').hide();
+      //       }
+      //   });
+
+
+
+
+
+
+
+      // var scrolled = $(window).scrollTop()
+      // $('.para').each(function(index) {
+      //   var imageSrc = $(this).data('image-src')
+      //   var imageHeight = $(this).data('height')
+      //   console.log(imageHeight);
+      //   $(this).css('background-image','url(' + imageSrc + ')')
+      //   $(this).css('height', imageHeight)
+
+      //   // Adjust the background position.
+      //   var initY = $(this).offset().top
+      //   var height = $(this).height()
+      //   var diff = scrolled - initY
+      //   var ratio = Math.round((diff / height) * 100)
+      //   $(this).css('background-position','center ' + parseInt(-(ratio * 1.5)) + 'px')
+      // })
+
+      // // function isInViewport(node) {
+      // //   // Am I visible? Height and Width are not explicitly necessary in visibility
+      // //   // detection, the bottom, right, top and left are the essential checks. If an
+      // //   // image is 0x0, it is technically not visible, so it should not be marked as
+      // //   // such. That is why either width or height have to be > 0.
+      // //   var rect = node.getBoundingClientRect()
+      // //   return (
+      // //     (rect.height > 0 || rect.width > 0) &&
+      // //     rect.bottom >= 0 &&
+      // //     rect.right >= 0 &&
+      // //     rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+      // //     rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+      // //   )
+      // // }
+
+      // $('.backtop').hide();
+      // $(window).scroll(function() {
+      //   var scrolled = $(window).scrollTop()
+      //   $('.para').each(function(index, element) {
+      //     var initY = $(this).offset().top
+      //     var height = $(this).height()
+      //     var endY  = initY + $(this).height()
+
+      //     // Check if the element is in the viewport.
+      //     var visible = isInViewport(this)
+      //     if(visible) {
+      //       var diff = scrolled - initY
+      //       var ratio = Math.round((diff / height) * 100)
+      //         // $(this).css('background-position','center ' + parseInt(-(ratio * 1.5)) + 'px')
+      //     }
+      //     if(scrolled>717){
+      //       $('.backtop').show();
+      //     }else{
+      //       $('.backtop').hide();
+      //     }
+      //     // console.log(scrolled)
+      //   })
+      // })
+
+
+
+
 
       $('.changekomentar').on('change',function(){
         var changeval=$('.changekomentar').val();
@@ -1229,6 +1266,7 @@
         }
       });
 
+
       $('.musikset').on('click',function(){
         var audio = $("#musikvalue")[0];
         if (audio.paused) {
@@ -1238,15 +1276,21 @@
             $('.stik').css({
               'transform':'rotate(-35deg)'
             });
+            $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
+            $('.ofm').hide();
+            $('.onm').show();
         }  else {
             audio.pause();
-            // $('.putarmulai').removeClass('putaran');
             $('.putarmulai').css('animation-play-state','paused');
             $('.stik').css({
               'transform':'rotate(0deg)'
             });
+            $('.darkmusik').css('background-color','rgba(0,0,0,.6)');
+            $('.ofm').show();
+            $('.onm').hide();
         }
       });
+
 
       $('.bukaundangan').on('click',function(){
         var audio = $("#musikvalue")[0];
@@ -1256,6 +1300,9 @@
         $('.stik').css({
           'transform':'rotate(-35deg)'
         });
+        $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
+        $('.ofm').hide();
+        $('.onm').show();
       });
 
       
@@ -1263,9 +1310,7 @@
       for(i=0;i<warnatema.length;i++){
         if(i%2==0){
           warnatema[i].style.backgroundColor='#<?=$warna1; ?>';
-          // warnatema[i].style.backgroundColor='#9aada9';
         }else{
-          // warnatema[i].style.backgroundColor='#5fa17e';
           warnatema[i].style.backgroundColor='#<?=$warna2; ?>';
         }
       }
@@ -1273,13 +1318,12 @@
       for(w=0;w<warnawaves.length;w++){
         if(w==0||w==1||w==3||w==5||w==7||w==9||w==11){
           warnawaves[w].setAttribute("fill","#<?=$warna1; ?>");
-          // warnawaves[w].setAttribute("fill","#9aada9");
         }else{
-          // warnawaves[w].setAttribute("fill","#5fa17e");
           warnawaves[w].setAttribute("fill","#<?=$warna2; ?>");
 
         }
       }
+
 
       fade=0;
       $('.settema').on('click',function(){
@@ -1296,19 +1340,15 @@
         }
       });
 
-      var warna1=$('.warna1').val('#dce0e0');
-      var warna2=$('.warna2').val('#319e72');
-      // var tampungwarnas=$('.tampung1').val('[ Warna 1 = #dce0e0 ][ Warna 2 = #319e72 ]');
-      var tampungwarnas=$('.tampung1').val('<?=base_url('contohundangan/vantage/dce0e0/319e72'); ?>');
 
+      var warna1=$('.warna1').val('#<?=$warna1; ?>');
+      var warna2=$('.warna2').val('#<?=$warna2; ?>');
+      var tampungwarnas=$('.tampung1').val('<?=base_url('contohundangan/vantage/dce0e0/319e72'); ?>');
       $('.warna1').on('change',function(){
         var warna1=$('.warna1').val();
         var warna2=$('.warna2').val();
         var warnatema =document.querySelectorAll('.warnatema');
-
-        // $('.tampung1').val('[ Warna 1 = '+warna1+' ][ Warna 2 = '+warna2+' ]');
         $('.tampung1').val('<?=base_url('contohundangan/vantage/'); ?>'+warna1.substring(1,7)+'/'+warna2.substring(1,7));
-
         for(i=0;i<warnatema.length;i++){
           if(i%2==0){
             warnatema[i].style.backgroundColor=warna1;
@@ -1322,18 +1362,16 @@
             warnawaves[w].setAttribute("fill",warna1);
           }else{
             warnawaves[w].setAttribute("fill",warna2);
-
           }
         }
       });
+
+
       $('.warna2').on('change',function(){
         var warna1=$('.warna1').val();
         var warna2=$('.warna2').val();
         var warnatema =document.querySelectorAll('.warnatema');
-
-        // $('.tampung1').val('[ Warna 1 = '+warna1+' ][ Warna 2 = '+warna2+' ]');
         $('.tampung1').val('<?=base_url('contohundangan/vantage/'); ?>'+warna1.substring(1,7)+'/'+warna2.substring(1,7));
-
         for(i=0;i<warnatema.length;i++){
           if(i%2==0){
             warnatema[i].style.backgroundColor=warna1;
@@ -1347,12 +1385,11 @@
             warnawaves[w].setAttribute("fill",warna1);
           }else{
             warnawaves[w].setAttribute("fill",warna2);
-
           }
         }
       });
 
-      // $('.tooltipped').tooltip('close');
+      
       $('.copied').hide();
       $('.copytext').on('click',function(){
         $('.copied').fadeIn(100);
@@ -1362,48 +1399,15 @@
         var warna6=$('.tampung1').select().val();
         document.execCommand("copy");
       });
-      // $('body').on('click','#addkomentar',function(e){
-      //   e.preventDefault();
-      //   $('.komentarbaru').append(`<a class="carousel-item checkitem center-align z-depth-1 active" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!"><h5 style="">Mr.Bill Gates</h5><p style="font-size:16px">Good luck!</p></a>`);
-      // });
-      // var warnatitle =document.querySelectorAll('.warnatitle');
-      // for(j=0;j<warnatitle.length;j++){
-      //   console.log(warnatitle[j]);
-      //   if(j==0||j==3||j==5||j==7){
-      //     warnatitle[j].style.color='#19191a !important';
-      //     warnatitle[j].style.textShadow='0px 4px 6px grey !important';
-      //   }else{
-      //     // warnatitle[i].style.backgroundColor='#5fa17e';
-      //     warnatitle[j].style.color='white !important';
-      //     warnatitle[j].style.textShadow='0 4px 6px black !important';
-      //   }
-      // }
 
-      
-      // console.log(warnawaves);
 
-      // $('.anjing').attr('fill','#5fa17e')
+      $('.orderwa').on('click',function(e){
+        e.preventDefault();
+        var warnaorder1=$('.warna1').val();
+        var warnaorder2=$('.warna2').val();
+        document.location.href='https://api.whatsapp.com/send?phone=+6282179471533&text=Saya%20pesan%20template%20undangan%20digital%20VANTAGE%20dengan%20warna%20ini%20kak%20:%20%0A%0A<?=base_url("contohundangan/vantage/"); ?>'+warnaorder1.substring(1,7)+'/'+warnaorder2.substring(1,7)+'/';
+      });
 
-      // $('.changekomentar').on('change',function(){
-      //   var changeval=$('.changekomentar').val();
-      //   if(changeval=='slide'){
-      //     $('.heightcol').css('margin-top','-110px');
-      //     $('.checkcarousel').addClass('carousel');
-      //     $('.carousel-item').css({
-      //       'display':'inline-block',
-      //       'width':'70%'
-      //     });
-      //   }else{
-      //     $('.heightcol').css('margin-top','-30px');
-      //     $('.checkcarousel').removeClass('carousel');
-      //     $('.checkcarousel').removeClass('scrolling');
-      //     $('.checkitem').removeClass('carousel-item');
-      //     $('.checkitem').css({
-      //       'display':'block',
-      //       'width':'100%'
-      //     });
-      //   }
-      // });
 
     });
   </script>
