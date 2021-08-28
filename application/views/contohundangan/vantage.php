@@ -809,6 +809,24 @@
     </div>
   </footer>
 
+
+  <style>
+    .fixbtn {
+      position:absolute;
+      right:53px;
+      text-shadow:1px 1px 1px white;
+      color:black;
+    }
+  </style>
+
+  <!-- floating button -->
+  <div class="fixed-action-btn backtop" style="padding:0;">
+    <a href="#awal" class="btn-floating btn-large fixclick page-scroll" style="background-color:rgba(0,0,0,.4);width:45px;height:45px">
+      <i style="font-size:27px;line-height:45px" class="large material-icons">arrow_upward</i>
+    </a>
+  </div>
+
+
   <div class="piringan" style="position: fixed;top:5px;z-index:30;left:5px;">
     <div class="musikplayer z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
       <img class="putarmulai musikset" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
@@ -826,21 +844,6 @@
     <source src="<?=base_url('assets/img/contoh/rembulan.MP3'); ?>" type="audio/mpeg">
   </audio>
 
-  <style>
-    .fixbtn {
-      position:absolute;
-      right:53px;
-      text-shadow:1px 1px 1px white;
-      color:black;
-    }
-  </style>
-
-  <!-- floating button -->
-  <div class="fixed-action-btn backtop" style="padding:0;">
-    <a href="#awal" class="btn-floating btn-large fixclick page-scroll" style="background-color:rgba(0,0,0,.4);width:45px;height:45px">
-      <i style="font-size:27px;line-height:45px" class="large material-icons">arrow_upward</i>
-    </a>
-  </div>
 
   <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
     <h5 class="sizefont" style="font-size:18px;">Romeo & Juliete</h5>

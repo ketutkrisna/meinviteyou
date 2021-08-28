@@ -9078,7 +9078,7 @@ body {
   }
 }
 
-.ww-home-page:before {
+/*.ww-home-page:before {
   content: "";
   background-color: rgba(245, 138, 119, 0.2);
   width: 100%;
@@ -9088,7 +9088,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-}
+}*/
 
 /* Nav Bar Style */
 .ww-nav-bar .heart {
@@ -9250,7 +9250,7 @@ body {
   border: 0;
 }
 
-.ww-rsvp-detail:before {
+/*.ww-rsvp-detail:before {
   content: "";
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
@@ -9258,7 +9258,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-}
+}*/
 
 /* Footer Style */
 .ww-footer a.credit {
