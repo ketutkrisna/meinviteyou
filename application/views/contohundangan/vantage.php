@@ -828,8 +828,8 @@
 
 
   <div class="piringan" style="position: fixed;top:5px;z-index:30;left:5px;">
-    <div class="musikplayer z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
-      <img class="putarmulai musikset" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
+    <div class="musikplayer musikset z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
+      <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
       <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
         <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
       </div>
@@ -1295,6 +1295,7 @@
       });
 
 
+        $('.ofm').hide();
       $('.bukaundangan').on('click',function(){
         var audio = $("#musikvalue")[0];
         audio.play();

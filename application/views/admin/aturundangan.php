@@ -1006,7 +1006,11 @@
         </button>
       </div>
       <div class="modal-body tempatcode" style="padding:0">
-        <script async src="//jsfiddle.net/thisizanagi/zd0msp4L/9/embed/html/dark/"></script>
+        <?php if($detailundangan['tema_template']=='classic'){ ?>
+          <script async src="//jsfiddle.net/thisizanagi/cfdka3tm/1/embed/html/dark/"></script>
+        <?php }else if($detailundangan['tema_template']=='vantage'){ ?>
+          <script async src="//jsfiddle.net/thisizanagi/zd0msp4L/9/embed/html/dark/"></script>
+        <?php } ?>
       </div>
     </div>
   </div>
@@ -1023,7 +1027,11 @@
         </button>
       </div>
       <div class="modal-body tempatcode" style="padding:0">
-        <script async src="//jsfiddle.net/thisizanagi/c0x3hu72/7/embed/html/dark/"></script>
+        <?php if($detailundangan['tema_template']=='classic'){ ?>
+          <script async src="//jsfiddle.net/thisizanagi/4aq61gop/3/embed/html/dark/"></script>
+        <?php }else if($detailundangan['tema_template']=='vantage'){ ?>
+          <script async src="//jsfiddle.net/thisizanagi/c0x3hu72/7/embed/html/dark/"></script>
+        <?php } ?>
       </div>
     </div>
   </div>

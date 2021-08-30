@@ -26,6 +26,7 @@
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>css/aos.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>css/ekko-lightbox.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?=base_url('assets/temaundangan/classic/'); ?>styles/timeline.css">
     <style>
       .whitebg{
         background-image:url('<?=base_url('assets/img/flowersbg/whitebg.jpg'); ?>');
@@ -58,6 +59,21 @@
         animation-timing-function: linear;
         transform-style: preserve-3d;
       }
+      .myshadow{
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      }
+      .anakke{
+        font-size:14px;
+        padding:1px 3px 1px 3px;
+        background-color:rgba(240,240,240,.7);
+        border-radius:1px;
+      }
+      .ortu{
+        font-size:16px;
+        padding:1px 3px 1px 3px;
+        background-color:rgba(240,240,240,.7);
+        border-radius:1px;
+      }
       @keyframes putar {
         from {transform: rotate(0deg);}
         to {transform: rotate(360deg);}
@@ -86,7 +102,7 @@
 <div class="page-content">
   <div class="div">
 
-<div class="ww-home-page" id="home" style="background: url('<?=base_url('assets/img/contoh/lp.jpg'); ?>') no-repeat center center;background-position: 52%;background-size: cover;z-index:1;border-radius:0 0 20px 20px;box-shadow:0 3px 6px #bbb;">
+<div class="ww-home-page myshadow" id="home" style="background: url('<?=base_url('assets/img/contoh/lp.jpg'); ?>') no-repeat center center;background-position: 52%;background-size: cover;z-index:1;border-radius:0 0 20px 20px;">
   <div class="ww-wedding-announcement d-flex align-items-center justify-content-start">
     <div class="container ww-announcement-container">
       <p class="ww-couple-name ww-title" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000">Romeo & Juliete</p>
@@ -96,7 +112,7 @@
       	Minggu 18 agustus 2021
       </p>
 
-      <div class="count-down-wrapper" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10" style="margin-top:00px">
+      <div class="count-down-wrapper" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10" style="margin-top:0px">
                 <div id="clock">
                   <div class="d-flex justify-content-center">
                     <div class="col-3 col-sm-3 times" style="">
@@ -177,8 +193,8 @@
     <div class="container">
 
       <div class="piringan" style="position: absolute;top:5px;z-index:30;left:5px;">
-        <div class="musikplayer z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
-          <img class="putarmulai musikset" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
+        <div class="musikplayer musikset myshadow" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
+          <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
           <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
             <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
           </div>
@@ -189,7 +205,7 @@
         </div>
       </div>
 
-      <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:absolute;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
+      <div id="navatas" class="navatas center-align white-text myshadow" style="position:absolute;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
         <h5 class="sizefont" style="font-size:18px;color:white;margin-top:10px">Romeo & Juliete</h5>
         <div class="bars" style="position:absolute;top:-35px;left:-10px;transition:.7s">
           <img class="onm" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
@@ -207,14 +223,13 @@
       <style>
         .lismenu{
           font-size:13px;
-          /*font-weight:bold;*/
           background-color:rgba(0,0,0,.5);
           padding:2px 5px 1px 5px;
           border-radius:2px;
           color: white
         }
       </style>
-      <button style="margin-top:15px;background-color:rgba(0,0,0,.5);color:white!important;box-shadow:0 2px 5px #bbb" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#ww-navbarNav" aria-controls="ww-navbarNav" aria-expanded="false" aria-haspopup="true" aria-label="Toggle navigation">
+      <button style="margin-top:15px;background-color:rgba(0,0,0,.5);color:white!important;" class="navbar-toggler ml-auto myshadow" type="button" data-toggle="collapse" data-target="#ww-navbarNav" aria-controls="ww-navbarNav" aria-expanded="false" aria-haspopup="true" aria-label="Toggle navigation">
         <!-- <span class="navbar-toggler-icon"></span> -->
          <i class="fas fa-bars" style="font-size:25px"></i>
       </button>
@@ -233,7 +248,7 @@
     </div>
   </nav>
 
-    <svg style="margin-top:-20px;position:absolute;z-index:0;max-width:400px;" viewBox="0 0 1366 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(122, 186, 255,0)" d="M 0 200 C 544.8000000000001 200 136.19999999999993 -9 681 -9 L 681 -9 L 681 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(122, 186, 255,0)" d="M 680 -9 C 1228.8000000000002 -9 817.1999999999999 0 1366 0 L 1366 0 L 1366 0 L 680 0 Z" stroke-width="0"></path> </svg>
+    <!-- <svg style="margin-top:-20px;position:absolute;z-index:0;max-width:400px;" viewBox="0 0 1366 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(122, 186, 255,0)" d="M 0 200 C 544.8000000000001 200 136.19999999999993 -9 681 -9 L 681 -9 L 681 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(122, 186, 255,0)" d="M 680 -9 C 1228.8000000000002 -9 817.1999999999999 0 1366 0 L 1366 0 L 1366 0 L 680 0 Z" stroke-width="0"></path> </svg> -->
 
    
 
@@ -243,14 +258,14 @@
 <!-- <svg style="margin-top:-200px;z-index:99999999" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,0L48,5.3C96,11,192,21,288,53.3C384,85,480,139,576,154.7C672,171,768,149,864,144C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
 
 
-<div class="ww-section" id="couples" style="margin-top:-20px;border-radius:10px 10px 0 0">
+<div class="ww-section" id="couples" style="margin-top:-20px;border-radius:10px 10px 0 0;">
 
   <div class="container">
     <div class="row text-center">
       <div class="col-12">
-        <div class="mt-3" style="background-color: rgba(242, 242, 242,.7);border-radius:10px;box-shadow:0 1px 4px #bbb;">
-          <p class="p-3  text-center text-muted">
-            Mahasuci Allah telah menciptakan manusia dengan berpasang-pasangan. Sungguh besar rahmat dan karunia yang diberikan-Nya kepada keluarga Kami. Maka izinkan Kami mengundang sekaligus mengharapkan doa restu dari bapak/ibu dalam acara pernikahan putra & putri kami.
+        <div class="mt-3 myshadow" style="background-color: #f2f2f2;border-radius:10px;">
+          <p class="p-3 text-center text-muted">
+            <span>Mahasuci Allah telah menciptakan manusia dengan berpasang-pasangan. Sungguh besar rahmat dan karunia yang diberikan-Nya kepada keluarga Kami. Maka izinkan Kami mengundang sekaligus mengharapkan doa restu dari bapak/ibu dalam acara pernikahan putra & putri kami.</span>
           </p>
         </div>
       </div>
@@ -259,25 +274,27 @@
 
 </div>
 
+
+
   <!-- mempleai pria -->
 <div class="ww-section" id="couple" style="margin-top:-50px;">
   <div class="container" style="margin-top:-150px">
     <div class="row text-center">
       <div class="col-md-6">
-        <div class="mt-5"><img class="img-fluid img-thumbnail clickmempelai" data-toggle="modal" data-target="#modalmempelai" src="<?=base_url('assets/img/contoh/mpria.jpg'); ?>" alt="Groom" data-aos="fade-left" data-aos-duration="1000" style="border-radius:15px;height:150px;width:150px;box-shadow:1px 1px 5px #d4d4d4;"/>
+        <div class="mt-5"><img class="img-fluid img-thumbnail clickmempelai myshadow" data-toggle="modal" data-target="#modalmempelai" src="<?=base_url('assets/img/contoh/mpria.jpg'); ?>" alt="Mempelai pria" data-aos="fade-left" data-aos-duration="1000" style="border-radius:15px;height:150px;width:150px;"/>
           <h3 class="h2 ww-title mt-2" style="color:black;"><span style="background-color:rgba(240,240,240,.7);border-radius:6px;padding:2px 6px 2px 6px">Romeo aguero</span></h3>
           <p class="text-center">
-            <span style="font-size:14px;padding:1px 3px 1px 3px;background-color:rgba(240,240,240,.7);">Putra pertama dari:</span><br>
-            <span style="font-size:16px;padding:1px 3px 1px 3px;background-color:rgba(240,240,240,.7);">Bapak Romeo & Ibu Romeo</span>
+            <span class="anakke">Putra pertama dari:</span><br>
+            <span class="ortu">Bapak Romeo & Ibu Romeo</span>
           </p>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="mt-5"><img class="img-fluid img-thumbnail clickmempelai" data-toggle="modal" data-target="#modalmempelai" src="<?=base_url('assets/img/contoh/mwanita.jpg'); ?>" alt="Bride" data-aos="fade-right" data-aos-duration="1000" style="border-radius:15px;height:150px;width:150px;box-shadow:1px 1px 5px #d4d4d4;"/>
+        <div class="mt-5"><img class="img-fluid img-thumbnail clickmempelai myshadow" data-toggle="modal" data-target="#modalmempelai" src="<?=base_url('assets/img/contoh/mwanita.jpg'); ?>" alt="Mempelai wanita" data-aos="fade-right" data-aos-duration="1000" style="border-radius:15px;height:150px;width:150px;"/>
           <h3 class="h2 ww-title mt-2" style="color:black;"><span style="background-color:rgba(240,240,240,.7);border-radius:6px;padding:2px 6px 2px 6px">Juliete roulete</span></h3>
           <p class="text-center">
-            <span style="font-size:14px;padding:1px 3px 1px 3px;background-color:rgba(240,240,240,.7);">Putri Pertama dari:</span><br>
-            <span style="font-size:16px;padding:1px 3px 1px 3px;background-color:rgba(240,240,240,.7);">Bapak Juliete & Ibu Juliete</span>
+            <span class="anakke">Putri Pertama dari:</span><br>
+            <span class="ortu">Bapak Juliete & Ibu Juliete</span>
           </p>
         </div>
       </div>
@@ -287,14 +304,14 @@
 
 <div class="ww-section" id="events" style="margin-top:-50px;">
   <div class="container ww-wedding-event">
-    <h2 class="h1 text-center pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;">Acara</h2>
-    <div class="row" style="margin-top:-30px">
+    <h2 class="h1 text-center pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Acara</span></h2>
+    <div class="row" style="margin-top:-35px">
       <div class="col-md-12 col-sm-12">
         <div class="my-3">
 
           <div class="row">
             <div class="col-md-6 mt-4">
-              <div class="akd mb-3 text-left" data-aos="fade-up" data-aos-duration="1000" style="background-color: rgba(242, 242, 242,.7);padding:15px;border-radius:6px;box-shadow:1px 1px 5px #d4d4d4;">
+              <div class="akd mb-3 text-left myshadow" data-aos="fade-up" data-aos-duration="1000" style="background-color:#f2f2f2;padding:15px;border-radius:6px;">
                 <div class="h5">AKAD</div>
                 <ul>
                   <li class="pt-2"><i class="text-info far fa-calendar-alt" style="font-size:20px"></i><span class="pl-2 text-muted">18 agustus 2021</span></li>
@@ -307,7 +324,7 @@
               </div>
             </div>
             <div class="col-md-6 mt-4">
-              <div class="prnk text-right" data-aos="fade-up" data-aos-duration="1000" style="background-color: rgba(242, 242, 242,.7);padding:15px;border-radius:6px;box-shadow:1px 1px 5px #d4d4d4;">
+              <div class="prnk text-right myshadow" data-aos="fade-up" data-aos-duration="1000" style="background-color:#f2f2f2;padding:15px;border-radius:6px;">
                 <div class="h5">RESEPSI</div>
                 <ul>
                   <li class="pt-2"><span class="pr-2 text-muted">18 agustus 2021</span><i class="text-info far fa-calendar-alt" style="font-size:20px"></i></li>
@@ -325,10 +342,10 @@
           <!-- <div class="text-right mt-4">
             <span class="text-secondary" style="font-weight:bold">Peta Lokasi</span>
           </div>
-          <div class="embed-responsive embed-responsive-4by3" data-aos="zoom-in" data-aos-duration="1000" style="border:1px solid #d4d4d4;box-shadow:1px 1px 5px #d4d4d4;border-radius:6px">
+          <div class="embed-responsive embed-responsive-4by3" data-aos="zoom-in" data-aos-duration="1000" style="border:1px solid #d4d4d4;box-shadow:0px 1px 5px #d4d4d4;border-radius:6px">
           	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.3111304314098!2d104.6558554192874!3d-4.537895168961313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e38ea8034c00171%3A0x120f1ec62809fbc0!2sLapangan%20Umum%20Sp2%20Mulya%20Sari!5e0!3m2!1sen!2ssg!4v1615789890483!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div> -->
-          <div class="mt-5" style="background-color: rgba(242, 242, 242,.7);border-radius:10px;box-shadow:0 1px 4px #bbb;">
+          <div class="mt-5 myshadow" style="background-color:#f2f2f2;border-radius:10px;">
             <p class="p-3 text-center">Sungguh suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/I berkenan hadir untuk memberikan Do'a restunya kami sekeluarga mengucapkan terima kasih</p>
           </div>
 
@@ -338,25 +355,74 @@
   </div>
 </div>
 
+
+<div class="ww-section" id="stori" style="margin-top:-50px">
+  <div class="container ww-wedding-event">
+
+    <h2 class="h1 text-center pt-5 pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Stori</span></h2>
+
+    <div class="main-timeline" style="padding:0">
+      <div class="timeline">
+        <div class="timeline-content" data-aos="fade-up" data-aos-duration="1000" style="background-color:#fff!important">
+          <div class="timeline-icon"><i class="fa fa-heart text-danger" style="font-size:30px;"></i></div>
+          <h3 class="title warnatema2" style="background-color:#f2f2f2">2017</h3>
+          <p class="description">
+              Pertama bertemu!
+          </p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-content" data-aos="fade-up" data-aos-duration="1000" style="background-color:#fff!important">
+          <div class="timeline-icon"><i class="fa fa-heart text-danger" style="font-size:30px;"></i></div>    
+          <h3 class="title warnatema2" style="background-color:#f2f2f2">2018</h3>
+          <p class="description">
+              1 tahun bersama!
+          </p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-content" data-aos="fade-up" data-aos-duration="1000" style="background-color:#fff!important">
+          <div class="timeline-icon"><i class="fa fa-heart text-danger" style="font-size:30px;"></i></div>    
+          <h3 class="title warnatema2" style="background-color:#f2f2f2">2019</h3>
+          <p class="description">
+              2 tahun bersama!
+          </p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-content" data-aos="fade-up" data-aos-duration="1000" style="background-color:#fff!important">
+          <div class="timeline-icon"><i class="fa fa-heart text-danger" style="font-size:30px;"></i></div>
+          <h3 class="title warnatema2" style="background-color:#f2f2f2">2020</h3>
+          <p class="description">
+              Memutuskan untuk menikah!
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <div class="ww-section" id="gallery" style="margin-top:-50px;">
   <div class="ww-photo-gallery" style="margin-top:-50px;">
     <div class="container">
-      <h2 class="h1 text-center pt-5 pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;">Galeri</h2>
+      <h2 class="h1 text-center pt-5 pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Galeri</span></h2>
       <div class="ww-gallery" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="0" style="min-height:100px">
         <div class="card-columns">
 
           <div class="row">
             <div class="col-6 col-sm-12">
-            <div class="card" style="box-shadow:1px 1px 5px #d4d4d4;" data-aos="fade-left" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
+            <div class="card" data-aos="fade-left" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail myshadow" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
             </div>
             <div class="col-6 col-sm-12">
-            <div class="card" style="box-shadow:1px 1px 5px #d4d4d4;" data-aos="fade-right" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
+            <div class="card" data-aos="fade-right" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail myshadow" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
             </div>
             <div class="col-6 col-sm-12">
-            <div class="card" style="box-shadow:1px 1px 5px #d4d4d4;" data-aos="fade-left" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
+            <div class="card" data-aos="fade-left" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail myshadow" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
             </div>
             <div class="col-6 col-sm-12">
-            <div class="card" style="box-shadow:1px 1px 5px #d4d4d4;" data-aos="fade-right" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
+            <div class="card" data-aos="fade-right" data-aos-duration="1000"><a href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid img-thumbnail myshadow" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt="Gallery Pic 1"/></a></div>
             </div>
           </div>
 
@@ -368,7 +434,7 @@
           <div class="text-center mb-1">
             <span class="text-secondary" style="font-weight:bold;background-color:#ddd;padding:2px 10px 2px 10px;border-radius:4px;">Video</span>
           </div>
-          <div class="embed-responsive embed-responsive-4by3" style="border:4px solid #fff;box-shadow:1px 1px 5px #d4d4d4;border-radius:6px;">
+          <div class="embed-responsive embed-responsive-4by3 myshadow" style="border:4px solid #fff;border-radius:6px;">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/RrDa-QHdqfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
@@ -381,14 +447,16 @@
 
 
  <!-- nomer rekening -->
-<!-- <div class="ww-section" id="rekening" style="margin-top:-50px;padding-bottom:30px">
+<div class="ww-section" id="rekening" style="margin-top:-50px;">
   <div class="container" style="margin-top:-50px">
-    <p class="text-center">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui:</p>
+    <div class="myshadow" style="border-radius:7px;padding:10px 10px 1px 10px;background-color:#f2f2f2">
+      <p class="text-center">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui:</p>
+    </div>
     <div class="row justify-content-center text-center">
 
-      <div class="col-md-6 mt-3">
+      <!-- <div class="col-md-6 mt-3">
         <ul class="list-group">
-          <li class="list-group-item" data-aos="flip-up" data-aos-duration="1000" style="background-color: rgba(255, 200, 38,.4);padding:15px;border-radius:6px;box-shadow:1px 1px 5px #d4d4d4;">
+          <li class="list-group-item" data-aos="flip-up" data-aos-duration="1000" style="background-color: rgba(255, 200, 38,.4);padding:15px;border-radius:6px;box-shadow:0px 1px 5px #d4d4d4;">
             <img style="padding-bottom:6px;margin-right:5px" width="80" src="<?=base_url('assets/img/daftarbank/bri.jpg'); ?>">
             <br> 
             <span style="font-size:17px">No.Rekening: 5749-0101-3542-533</span><br>
@@ -399,33 +467,65 @@
 
       <div class="col-md-6 mt-3">
         <ul class="list-group">
-          <li class="list-group-item" data-aos="flip-up" data-aos-duration="1000" style="background-color: rgba(255, 200, 38,.4);padding:15px;border-radius:6px;box-shadow:1px 1px 5px #d4d4d4;">
+          <li class="list-group-item" data-aos="flip-up" data-aos-duration="1000" style="background-color: rgba(255, 200, 38,.4);padding:15px;border-radius:6px;box-shadow:0px 1px 5px #d4d4d4;">
             <img style="padding-bottom:6px;margin-right:5px" width="80" src="<?=base_url('assets/img/daftarbank/mandiri.jpg'); ?>">
             <br> 
             <span style="font-size:17px">No.Rekening: 1140-0169-7371-4</span><br>
             <span style="font-size:17px">Atas Nama: Ridha Octariana</span>
           </li>
         </ul>
+      </div> -->
+      <div class="col-12 col-md-6">
+        <div class="container">
+          <div class="media p-2 mt-3 myshadow" class="timeline-content" data-aos="fade-down" data-aos-duration="1000" style="background-color:#f2f2f2;border-radius:7px;">
+            <div class="media-left pr-2" style="border-right:1px solid #ddd;">
+              <a href="#">
+                <img class="media-object" src="<?=base_url('assets/img/daftarbank/bbri.png'); ?>" alt="bank bri" width="50px">
+              </a>
+            </div>
+            <div class="media-body text-left pl-2 pr-2">
+              <span style="color:#19191a">No.Rek: 5749-2434-2465-433</span><br>
+              <span style="color:#19191a">Atas Nama: Suparman</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="col-12 col-md-6">
+        <div class="container">
+          <div class="media p-2 mt-3 myshadow" class="timeline-content" data-aos="fade-up" data-aos-duration="1000" style="background-color:#f2f2f2;border-radius:7px;">
+            <div class="media-left pr-2" style="border-right:1px solid #ddd;">
+              <a href="#">
+                <img class="media-object" src="<?=base_url('assets/img/daftarbank/bbni.png'); ?>" alt="bank bri" width="50px">
+              </a>
+            </div>
+            <div class="media-body text-left pl-2 pr-2">
+              <span style="color:#19191a">No.Rek: 5749-2434-2465-433</span><br>
+              <span style="color:#19191a">Atas Nama: Suparman</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </div>
-</div> -->
+</div>
 
 
 
 
 <div class="ww-section" id="people" style="">
   <div class="container ww-couple-friends" style="margin-top:-50px;">
-    <h2 class="h1 text-center pt-5 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;">Daftar Ucapan</h2>
+    <h2 class="h1 text-center pt-5 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Daftar Ucapan</span></h2>
 
     <div class="row">
-      <div class="col-12 d-flex justify-content-end pt-4" style="margin-bottom:-45px;z-index:9;padding:0">
+      <div class="col-12 d-flex justify-content-end pt-4" style="margin-bottom:-50px;z-index:9;padding:0">
         <!-- <button type="button" class="btn btn-sm text-white tampillist" style="background-color:#007BFF">Tampilkan List</button>
         <button type="button" class="btn btn-sm btn-success text-white tampilslide">Tampilkan Slide</button> -->
         <div class="col-4">
           <div class="form-group ww-rsvp-form">
-            <select class="form-control changekoment" id="events-input">
+            <select style="z-index:0" class="form-control changekoment" id="events-input">
               <option value="slide">Slide</option>
               <option value="list">List</option>
             </select>
@@ -447,7 +547,7 @@
           <div class="carousel-item titems active">
             <div class="row">
               <div class="col-12">
-                <div class="card d-block mb-3" style="background-color:rgba(208, 245, 243,.6)!important;box-shadow:1px 1px 5px #ccfffa;">
+                <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
                     <div class="h5">Mr.Bill Gates</div>
                     <p class="mb-0 text-muted">Good Luck!</p>
@@ -459,7 +559,7 @@
           <div class="carousel-item titems">
             <div class="row">
               <div class="col-12">
-                <div class="card d-block mb-3" style="background-color:rgba(208, 245, 243,.6)!important;box-shadow:1px 1px 5px #ccfffa;">
+                <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
                     <div class="h5">Steven</div>
                     <p class="mb-0 text-muted">HWD!</p>
@@ -471,7 +571,7 @@
           <div class="carousel-item titems">
             <div class="row">
               <div class="col-12">
-                <div class="card d-block mb-3" style="background-color:rgba(208, 245, 243,.6)!important;box-shadow:1px 1px 5px #ccfffa;">
+                <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
                     <div class="h5">Arsi</div>
                     <p class="mb-0 text-muted">Selamat ya!</p>
@@ -483,7 +583,7 @@
           <div class="carousel-item titems">
             <div class="row">
               <div class="col-12">
-                <div class="card d-block mb-3" style="background-color:rgba(208, 245, 243,.6)!important;box-shadow:1px 1px 5px #ccfffa;">
+                <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
                     <div class="h5">Roman</div>
                     <p class="mb-0 text-muted">H.W.D!</p>
@@ -496,22 +596,22 @@
       </div>
       <a class="carousel-control-prev tlist" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" style="background-color:rgba(0,0,0,.2);" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only p-1">Previous</span>
       </a>
       <a class="carousel-control-next tlist" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" style="background-color:rgba(0,0,0,.2)" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="carousel-control-next-icon" style="background-color:rgba(0,0,0,.2);" aria-hidden="true"></span>
+        <span class="sr-only p-1">Next</span>
       </a>
     </div>
   </div>
 </div>
 
-<div class="ww-section ww-rsvp-detail text-white" id="rsvp" style="margin-top:-50px;border-radius:20px 20px 0 0;background-color:white!important;box-shadow:0 -3px 6px #bbb;">
+<div class="ww-section ww-rsvp-detail text-white myshadow" id="rsvp" style="margin-top:-50px;border-radius:20px 20px 0 0!important;background-color:white!important;">
   <div class="container" data-aos="zoom-in-up" data-aos-duration="1000" style="margin-top:-50px;">
     <div class="col text-center">
-      <h2 class="h1 ww-title pt-5 pb-3" data-aos="zoom-in-down" data-aos-duration="1000">Kirim Ucapkan</h2>
+      <h2 class="h1 ww-title pb-3" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;margin-top:-30px"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Kirim Ucapan</span></h2>
     </div>
-    <div class="row ww-rsvp-form">
+    <div class="row ww-rsvp-form" style="margin-top:-10px">
       <div class="col-md-10">
         <div class="card-body">
           <form action="" method="post">
@@ -564,13 +664,13 @@
 </div>
 
 <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content text-center" style="background-image:url('<?=base_url('assets/img/flowersbg/modalbg1.jpg'); ?>');background-size:100%;width:100%;background-repeat:repeat;">
+    <div class="modal fade" id="exampleModalCenter" data-backdrop="static" data-keyboard="false" tabindex="-1" style="background-color:#333333;">
+      <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content text-center text-light" style="background-color:#333333;border:0;">
           <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="exampleModalLongTitle">Pernikahan Romeo & Juliete</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle" style="font-size:26px">Romeo & Juliete</h5>
           </div>
-          <div class="modal-body" style="margin-top:-10px">
+          <div class="modal-body">
             <span>Hello,</span><br>
             <span style="font-size:25px;margin-top:-10px">Mr.Bill Gates</span><br>
             <span>Kami mengundang anda untuk datang pada hari pernikahan kami!</span>
@@ -587,7 +687,7 @@
               <div class="row" style="padding: 0 2px 0 2px;font-weight:bold;">
 
                 <div class="col-4" style="padding:4px">
-                  <div class="card" style="box-shadow:1px 1px 3px gray;border-radius:10px;min-height:160px;">
+                  <div class="card bg-info" style="border-radius:10px;min-height:160px;">
                     <img class="card-img-top mt-1 hoverc" src="<?=base_url('assets/img/covid/anaksp.png'); ?>" alt="Card image cap">
                     <div class="card-body" style="padding: 0;">
                       <p class="card-text">Dianjurkan Tidak Membawa Anak Kecil</p>
@@ -595,7 +695,7 @@
                   </div>
                 </div>
                 <div class="col-4" style="padding:4px">
-                  <div class="card" style="box-shadow:1px 1px 3px gray;border-radius:10px;min-height:160px;">
+                  <div class="card bg-info" style="border-radius:10px;min-height:160px;">
                     <img class="card-img-top mt-1 hoverc" src="<?=base_url('assets/img/covid/maskp.png'); ?>" alt="Card image cap">
                     <div class="card-body" style="padding: 0;">
                       <p class="card-text">Gunakan Masker</p>
@@ -603,7 +703,7 @@
                   </div>
                 </div>
                 <div class="col-4" style="padding:4px">
-                  <div class="card" style="box-shadow:1px 1px 3px gray;border-radius:10px;min-height:160px;">
+                  <div class="card bg-info" style="border-radius:10px;min-height:160px;">
                     <img class="card-img-top mt-1 hoverc" src="<?=base_url('assets/img/covid/handsp.png'); ?>" alt="Card image cap">
                     <div class="card-body" style="padding: 0;">
                       <p class="card-text">Gunakan Handsanitizer</p>
@@ -612,7 +712,7 @@
                 </div>
 
                 <div class="col-4" style="padding:4px">
-                  <div class="card" style="box-shadow:1px 1px 3px gray;border-radius:10px;min-height:160px;">
+                  <div class="card bg-info" style="border-radius:10px;min-height:160px;">
                     <img class="card-img-top mt-1 hoverc" src="<?=base_url('assets/img/covid/suhusp.png'); ?>" alt="Card image cap">
                     <div class="card-body" style="padding: 0;">
                       <p class="card-text">Cek Suhu Tubuh</p>
@@ -620,7 +720,7 @@
                   </div>
                 </div>
                 <div class="col-4" style="padding:4px">
-                  <div class="card" style="box-shadow:1px 1px 3px gray;border-radius:10px;min-height:160px;">
+                  <div class="card bg-info" style="border-radius:10px;min-height:160px;">
                     <img class="card-img-top mt-1 hoverc" src="<?=base_url('assets/img/covid/cucisp.png'); ?>" alt="Card image cap">
                     <div class="card-body" style="padding: 0;">
                       <p class="card-text">Cuci Tangan</p>
@@ -628,7 +728,7 @@
                   </div>
                 </div>
                 <div class="col-4" style="padding:4px">
-                  <div class="card" style="box-shadow:1px 1px 3px gray;border-radius:10px;min-height:160px;">
+                  <div class="card bg-info" style="border-radius:10px;min-height:160px;">
                     <img class="card-img-top mt-1 hoverc" src="<?=base_url('assets/img/covid/socialp.png'); ?>" alt="Card image cap">
                     <div class="card-body" style="padding: 0;">
                       <p class="card-text">Jaga Jarak 1METER</p>
@@ -640,19 +740,79 @@
             </div>
 
             <div class="row">
-              <div class="col-12" style="margin-top:-10px;margin-bottom:-20px">
+              <div class="col-12" style="margin-top:-0px;margin-bottom:-20px">
                 <p>Atas perhatiannya kami ucapkan <br> Terima Kasih</p>
               </div>
             </div>
 
 
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn" data-dismiss="modal" style="border-radius:20px;border:1px solid grey;background-color:white">Buka</button>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn bukaundangan" data-dismiss="modal" style="border-radius:20px;border:1px solid white;background-color:rgba(0,0,0,.6);width:200px;color:white"><i class="far fa-envelope-open"></i> OPEN</button>
           </div>
         </div>
       </div>
     </div>
+
+
+   <!--  <div class="modalawalan" style="position:fixed;z-index:2000;top:0;left:0;bottom:0;right:0;background-color:white;overflow:scroll;">
+
+      <div style="position:absolute;height:100%;width:100%;background-color:black;opacity:.6;z-index:0"></div>
+
+      <div class="isin text-center text-light" style="position:relative;z-index:1;margin:20px auto;left:0;right:0;overflow-y:hidden;">
+        <h5 style="font-size:30px;font-weight:bold;font-family: 'Satisfy', cursive;">Romeo & Juliete</h5>
+        <hr class="bg-light" width="70%">
+        <span>Hello,</span><br>
+        <span style="font-family: 'Satisfy', cursive;font-size:28px;font-weight:bold;">Teman</span>
+        <p style="font-family: 'Roboto', sans-serif;">Kami mengundang anda untuk datang pada hari pernikahan kami!</p>
+        <p style="color:white;z-index:2001">Tampa mengurangi rasa hormat <br> Acara ini akan dilaksanakan dengan menerapkan <br> <b>PROTOKOL KESEHATAN</b> <br> sebagai berikut:</p>
+
+        <div class="row" style="padding:10px;margin:0 auto;max-width:500px;">
+          <div class="barisatas" style="display:flex;justify-content:space-between;">
+            <div class="kotak1 bg-success" data-aos="fade-down" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+              <img class="hoverc" data-aos="fade-down" data-aos-delay-="300" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/anaksp.png"><br>
+              <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Dianjurkan Tidak <br> Membawa Anak Kecil</span>
+            </div>
+            <div class="kotak1 bg-success" data-aos="fade-down" data-aos-delay="300" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+              <img class="hoverc" data-aos="fade-down" data-aos-delay="600" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/maskp.png"><br>
+              <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Masker <br></span>
+              <span style="opacity:0">membawa oke <br> sipp</span>
+            </div>
+            <div class="kotak1 bg-success" data-aos="fade-down" data-aos-delay="900" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+              <img class="hoverc" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/handsp.png"><br>
+              <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Handsanitizer <br></span>
+              <span style="opacity:0">membawa oke</span>
+            </div>
+          </div>
+
+          <div class="barisatas" style="display:flex;justify-content:space-between;">
+            <div class="kotak1 bg-success" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+              <img class="hoverc" data-aos="fade-down" data-aos-delay="2100" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/suhusp.png"><br>
+              <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cek Suhu Tubuh <br></span>
+              <span style="opacity:0">membawa oke </span>
+            </div>
+            <div class="kotak1 bg-success" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+              <img class="hoverc" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/cucisp.png"><br>
+              <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cuci Tangan <br></span>
+              <span style="opacity:0">membawa oke </span>
+            </div>
+            <div class="kotak1 bg-success" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
+              <img class="hoverc" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/socialp.png"><br>
+              <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Jaga Jarak 1METER <br></span>
+              <span style="opacity:0">membawa oke </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12" style="padding-bottom: 20px">
+            <p style="font-family: 'Roboto', sans-serif;">Atas perhatiannya kami ucapkan <br> <b>Terima Kasih</b></p>
+          </div>
+        </div>
+
+      </div>
+      
+    </div> -->
 
 
   
@@ -679,7 +839,7 @@
     </div>
   </div> -->
   
-  <audio id="musikvalue" autoplay loop style="width:100%">
+  <audio id="musikvalue" loop style="width:100%">
     <source src="<?=base_url('assets/img/contoh/rembulan.MP3'); ?>" type="audio/mpeg">
   </audio>
 
@@ -697,14 +857,29 @@
     </style>
 
 
-  <div class="text-primary" style="position:fixed;bottom:30px;right:20px;border-radius:50%;z-index:1020;">
+  <div class="text-primary" style="position:fixed;bottom:30px;right:11px;border-radius:50%;z-index:1020;">
     <div style="background-color:rgba(26, 199, 84,);padding:4px;border-radius:50%">
-    <span class="cobain" data-placement="left" data-toggle="popover" title="Kirim ucapan via WA" data-html="true" data-content="
+    <span style="z-index:1020" class="cobain" data-placement="left" data-toggle="popover" title="Kirim ucapan via WA" data-html="true" data-content="
         <img class='imgradius' src='<?=base_url('assets/img/contoh/mpria.jpg'); ?>' width='25'><a class='text-success' href='#'> Mempelai Pria</a><br><img class='imgradius' src='<?=base_url('assets/img/contoh/mwanita.jpg'); ?>' width='25'><a class='text-success' href='#'> Mempelai Wanita</a>
     ">
       <i class="fab fa-whatsapp" style="font-size:55px;color:#00c45c;"></i>
     </span>
     </div>
+  </div>
+
+
+  <div class="text-primary settema" style="position:fixed;bottom:50%;right:17px;border-radius:50%;z-index:1025;transition:.6s">
+      <i class="fas fa-palette" style="font-size:43px;color:#ffa726;text-shadow:0px 2px 2px black;"></i>
+  </div>
+
+  <div class="inputtema text-center" style="position:fixed;bottom:50%;right:-110px;border-radius:5px;z-index:27;width:110px;height:60px;transition:.6s;z-index:1025">
+    <span style="font-size:15px;padding:0 3px 0 3px;border-radius:2px;background-color:rgba(255,255,255,.7);">custom warna</span>
+    <input type="color" class="warna1 z-depth-1" style="width:100%;height:40px;margin-bottom:8px;border-radius:4px;background-color:rgba(255,255,255,.7);">
+    <input type="color" class="warna2" style="width:100%;height:40px;border-radius:4px;background-color:rgba(255,255,255,.7);">
+    <input type="text" class="tampung1 z-depth-1" style="opacity:0;height:0">
+    <button class="copytext" style="font-size:14px;margin-top:-15px;border:0;border-radius:3px;background-color:#ddd;padding:3px;margin-bottom:5px;">Copy tema</button>
+    <span class="copied white-text" style="background-color:rgba(0,0,0,.5);padding:4px;border-radius:5px;font-size:13px;">Copied!</span>
+    <a class="btn btn-sm orderwa text-light" style="padding:4px 7px 4px 7px;margin-top:10px;border-radius:3px;background-color:#311b92;width:100%" href="">ORDER VIA WA</a>
   </div>
 
 
@@ -725,6 +900,7 @@
     <script src="<?=base_url('assets/temaundangan/classic/'); ?>js/ekko-lightbox.min.js"></script>
     <script src="<?=base_url('assets/temaundangan/classic/'); ?>scripts/main.js"></script>
     <script src="<?=base_url('assets/temaundangan/classic/'); ?>js/countdown.js"></script>
+
     <script>
       $(function () {
 
@@ -743,9 +919,11 @@
             omitWeeks: true
         });
 
-        $(window).on('load',function(){
-            $('#exampleModalCenter').modal('show');
-        });
+        $('#exampleModalCenter').modal('show');
+        // $(window).on('load',function(){
+        //     $('#exampleModalCenter').modal('show');
+        // });
+
 
         // $('.musikset').on('click',function(){
         //   var audio = $("#musikvalue")[0];
@@ -844,6 +1022,82 @@
             $('.tampillist').hide();
           }
         });
+
+        $('.onm').hide();
+        $('.bukaundangan').on('click',function(){
+          var audio = $("#musikvalue")[0];
+          audio.play();
+          $('.putarmulai').addClass('putaran');
+          $('.putarmulai').css('animation-play-state','running');
+          $('.stik').css({
+            'transform':'rotate(-35deg)'
+          });
+          $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
+          $('.ofm').hide();
+          $('.onm').show();
+        });
+
+
+        fade=0;
+      $('.settema').on('click',function(){
+        fade++;
+        if(fade==2){
+          fade=0;
+        }
+        if(fade==0){
+          $('.inputtema').css('right','-115px');
+          $('.settema').css('right','17px');
+        }else{
+          $('.inputtema').css('right','2px');
+          $('.settema').css('right','115px');
+        }
+      });
+
+
+      $('body').css('background-color','#<?=$warna1; ?>');
+      $('.warnatema2').css('background-color','#<?=$warna2; ?>');
+
+
+      var warna1=$('.warna1').val('#<?=$warna1; ?>');
+      var warna2=$('.warna2').val('#<?=$warna2; ?>');
+      var tampungwarnas=$('.tampung1').val('<?=base_url('contohundangan/classic/dce0e0/319e72'); ?>');
+      $('.warna1').on('change',function(){
+        var warna1=$('.warna1').val();
+        var warna2=$('.warna2').val();
+        var warnatema =document.querySelectorAll('.warnatema');
+        $('.tampung1').val('<?=base_url('contohundangan/classic/'); ?>'+warna1.substring(1,7)+'/'+warna2.substring(1,7));
+        $('body').css('background-color',warna1)
+        $('.warnatema2').css('background-color',warna2)
+      });
+
+
+      $('.warna2').on('change',function(){
+        var warna1=$('.warna1').val();
+        var warna2=$('.warna2').val();
+        var warnatema =document.querySelectorAll('.warnatema');
+        $('.tampung1').val('<?=base_url('contohundangan/classic/'); ?>'+warna1.substring(1,7)+'/'+warna2.substring(1,7));
+        $('body').css('background-color',warna1)
+        $('.warnatema2').css('background-color',warna2)
+      });
+
+      
+      $('.copied').hide();
+      $('.copytext').on('click',function(){
+        $('.copied').fadeIn(100);
+        setTimeout(function() {
+          $('.copied').fadeOut(100);
+        }, 500);
+        var warna6=$('.tampung1').select().val();
+        document.execCommand("copy");
+      });
+
+
+      $('.orderwa').on('click',function(e){
+        e.preventDefault();
+        var warnaorder1=$('.warna1').val();
+        var warnaorder2=$('.warna2').val();
+        document.location.href='https://api.whatsapp.com/send?phone=+6282179471533&text=Saya%20pesan%20template%20undangan%20digital%20CLASSIC%20dengan%20warna%20ini%20kak%20:%20%0A%0A<?=base_url("contohundangan/classic/"); ?>'+warnaorder1.substring(1,7)+'/'+warnaorder2.substring(1,7)+'/';
+      });
 
 
       })

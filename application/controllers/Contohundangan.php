@@ -14,9 +14,11 @@ class Contohundangan extends CI_Controller {
 		redirect('pengunjung');
 	}
 
-	public function classic()
+	public function classic($warna1='ffffff', $warna2='f2f2f2')
 	{
-		$this->load->view('contohundangan/classic');
+		$data['warna1']=$warna1;
+		$data['warna2']=$warna2;
+		$this->load->view('contohundangan/classic', $data);
 	}
 
 	public function rustic()
