@@ -15,7 +15,7 @@
     <meta content='<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>' property='og:image'/>
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Pernikahan Romeo & juliete; ?>">
+    <meta property="og:title" content="wedding Of Romeo & juliete; ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -103,19 +103,21 @@
   <div class="div">
 
 <div class="ww-home-page myshadow" id="home" style="background: url('<?=base_url('assets/img/contoh/lp.jpg'); ?>') no-repeat center center;background-position: 52%;background-size: cover;z-index:1;border-radius:0 0 20px 20px;">
-  <div class="ww-wedding-announcement d-flex align-items-center justify-content-start">
-    <div class="container ww-announcement-container">
-      <p class="ww-couple-name ww-title" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000">Romeo & Juliete</p>
-      <img style="margin-top:-20px;" class="img-fluid" src="<?=base_url('assets/temaundangan/classic/'); ?>images/laurel-1.png" alt="Heart" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000"/>
-      <p class="h2 ww-title" style="text-shadow:1px 1px 4px black!important" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10">
+  <div class="ww-wedding-announcement" style="display:flex;justify-content:center;align-items:center;">
+    <div class="container ww-announcement-container" style="padding:0;margin:0">
+      <span data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" style="font-size:20px">wedding of <br></span>
+      <p class="ww-couple-name ww-title mb-3" style="font-size:40px" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000">
+      Romeo & Juliete</p>
+      <img style="margin-top:-20px;width:250px" class="img-fluid" src="<?=base_url('assets/temaundangan/classic/'); ?>images/laurel-1.png" alt="save the date" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000"/>
+      <p class="h2 mt-2 ww-title" style="text-shadow:1px 1px 4px black!important" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10">
       	<!-- 20<sup>th</sup> December, 2018 -->
-      	Minggu 18 agustus 2021
+      	Minggu, 18 agustus 2021
       </p>
 
       <div class="count-down-wrapper" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10" style="margin-top:0px">
                 <div id="clock">
                   <div class="d-flex justify-content-center">
-                    <div class="col-3 col-sm-3 times" style="">
+                    <div class="times ml-3 mr-3" style="">
                         <div class="days_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit" style="background-color:rgba(255,255,255,.7);border-radius:5px;width:75px;height:70px;">
                               <div class="pt-1">
@@ -129,7 +131,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 col-sm-3 times" style="">
+                    <div class="times ml-3 mr-3" style="">
                         <div class="hours_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit" style="background-color:rgba(255,255,255,.7);border-radius:5px;width:75px;height:70px">
                               <div class="pt-1">
@@ -143,7 +145,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 col-sm-3 times" style="">
+                    <div class="times ml-3 mr-3" style="">
                         <div class="minutes_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit" style="background-color:rgba(255,255,255,.7);border-radius:5px;width:75px;height:70px">
                               <div class="pt-1">
@@ -158,7 +160,7 @@
                     </div>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <div class="col-3 col-sm-3 times mt-3" style="">
+                    <div class="times mt-3" style="">
                         <div class="seconds_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit" style="background-color:rgba(255,255,255,.7);border-radius:5px;width:75px;height:70px">
                               <div class="pt-1">
@@ -192,7 +194,7 @@
 
     <div class="container">
 
-      <div class="piringan" style="position: absolute;top:5px;z-index:30;left:5px;">
+      <div class="piringan" style="position:absolute;top:5px;z-index:30;left:10px;">
         <div class="musikplayer musikset myshadow" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
           <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/bgmusik.jpg'); ?>" width="100%">
           <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
@@ -200,16 +202,16 @@
           </div>
           <div class="darkmusik" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:96%;height:97%;border-radius:50%;background-color:rgba(0,0,0,.4);transition:.7s;"></div>
         </div>
-        <div class="stik" style="position:absolute;left:2px;margin-top:-6px;width:30px;height:30px;transform:rotate(0deg);transition:1s;z-index:10">
-          <img class="stikok musikset" style="position:absolute;left:28px;right:0;margin:auto;transform:rotate(-90deg);bottom:0;top:-2px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
+        <div class="stik" style="position:absolute;left:5px;margin-top:-3px;width:20px;height:20px;transition:1s;z-index:10;">
+          <img class="stikok musikset" style="position:absolute;left:21.3px;right:0;margin:auto;transform:rotate(-93deg);bottom:0;top:-2.2px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
         </div>
       </div>
 
-      <div id="navatas" class="navatas center-align white-text myshadow" style="position:absolute;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
+      <div id="navatas" class="navatas white-text myshadow" style="position:absolute;top:20px;left:73px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
         <h5 class="sizefont" style="font-size:18px;color:white;margin-top:10px">Romeo & Juliete</h5>
         <div class="bars" style="position:absolute;top:-35px;left:-10px;transition:.7s">
-          <img class="onm" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
-          <img class="ofm" style="position:absolute;top:10px;left:0" src="<?=base_url('assets/img/bars-musikof.gif'); ?>" width="100px" height="30px">
+          <img class="onm" style="margin-top:1px" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
+          <img class="ofm" style="position:absolute;top:10.5px;left:0" src="<?=base_url('assets/img/bars-musikof.gif'); ?>" width="100px" height="30px">
         </div>
       </div>
 
@@ -223,10 +225,15 @@
       <style>
         .lismenu{
           font-size:13px;
-          background-color:rgba(0,0,0,.5);
-          padding:2px 5px 1px 5px;
+          background-color:rgba(255,255,255,.7);
+          padding:4px 5px 3px 5px;
           border-radius:2px;
-          color: white
+          color:#303030;
+          box-shadow:0 0 5px rgba(0,0,0,.4);
+        }
+        .smooth-scroll{
+          display:flex;
+          align-items:center;
         }
       </style>
       <button style="margin-top:15px;background-color:rgba(0,0,0,.5);color:white!important;" class="navbar-toggler ml-auto myshadow" type="button" data-toggle="collapse" data-target="#ww-navbarNav" aria-controls="ww-navbarNav" aria-expanded="false" aria-haspopup="true" aria-label="Toggle navigation">
@@ -235,13 +242,18 @@
       </button>
       <div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#home"><span class="lismenu">Home</span> <i class="text-success fas fa-home" style="font-size:20px"></i></a></li>
-          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#couples"><span class="lismenu">Penerima</span> <i class="text-success fas fa-hand-holding" style="font-size:20px"></i></a></li>
-          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#couple"><span class="lismenu">Mempelai</span> <i class="text-success fas fa-transgender" style="font-size:20px"> </i></a></li>
-          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#events"><span class="lismenu">Acara</span> <i class="text-success fas fa-glass-cheers" style="font-size:20px"></i></a></li>
-          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#gallery"><span class="lismenu">Galeri</span> <i class="text-success fas fa-photo-video" style="font-size:20px"></i></a></li>
-          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#people"><span class="lismenu">Ucapan</span> <i class="text-success fas fa-comments" style="font-size:20px"></i></a></li>
-          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#rsvp"><span class="lismenu">Pesan</span> <i class="text-success fas fa-file-signature" style="font-size:20px"></i></a></li>
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#home"><span class="lismenu">Home <i class="text-info fas fa-home" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#couple"><span class="lismenu">Couple <i class="text-info fas fa-restroom" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#events"><span class="lismenu">Events <i class="text-info fas fa-glass-cheers" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#stori"><span class="lismenu">Love Story <i class="text-info fas fa-heartbeat" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#gallery"><span class="lismenu">Gallery <i class="text-info fas fa-photo-video" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#rekening"><span class="lismenu">Transfer <i class="text-info fas fa-donate" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#people"><span class="lismenu">Friend Wishes <i class="text-info fas fa-comments" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+          <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#rsvp"><span class="lismenu">RSVP <i class="text-info fas fa-file-signature" style="font-size:20px;padding-left:3px;"></i></span></a></li>
         </ul>
       </div>
 
@@ -302,9 +314,9 @@
   </div>
 </div>
 
-<div class="ww-section" id="events" style="margin-top:-50px;">
+<div class="ww-section" id="events" style="margin-top:-40px;">
   <div class="container ww-wedding-event">
-    <h2 class="h1 text-center pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Acara</span></h2>
+    <h2 class="h1 text-center pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Events</span></h2>
     <div class="row" style="margin-top:-35px">
       <div class="col-md-12 col-sm-12">
         <div class="my-3">
@@ -359,7 +371,7 @@
 <div class="ww-section" id="stori" style="margin-top:-50px">
   <div class="container ww-wedding-event">
 
-    <h2 class="h1 text-center pt-5 pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Stori</span></h2>
+    <h2 class="h1 text-center pt-5 pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Love Story</span></h2>
 
     <div class="main-timeline" style="padding:0">
       <div class="timeline">
@@ -407,7 +419,7 @@
 <div class="ww-section" id="gallery" style="margin-top:-50px;">
   <div class="ww-photo-gallery" style="margin-top:-50px;">
     <div class="container">
-      <h2 class="h1 text-center pt-5 pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Galeri</span></h2>
+      <h2 class="h1 text-center pt-5 pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Gallery</span></h2>
       <div class="ww-gallery" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="0" style="min-height:100px">
         <div class="card-columns">
 
@@ -434,8 +446,8 @@
           <div class="text-center mb-1">
             <span class="text-secondary" style="font-weight:bold;background-color:#ddd;padding:2px 10px 2px 10px;border-radius:4px;">Video</span>
           </div>
-          <div class="embed-responsive embed-responsive-4by3 myshadow" style="border:4px solid #fff;border-radius:6px;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/RrDa-QHdqfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="embed-responsive embed-responsive-16by9 text-center myshadow" style="border:4px solid #fff;border-radius:6px;">
+            <h5>disini tempat video!</h5>
           </div>
         </div>
       </div>
@@ -517,7 +529,7 @@
 
 <div class="ww-section" id="people" style="">
   <div class="container ww-couple-friends" style="margin-top:-50px;">
-    <h2 class="h1 text-center pt-5 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Daftar Ucapan</span></h2>
+    <h2 class="h1 text-center pt-5 ww-title" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Friend Wishes</span></h2>
 
     <div class="row">
       <div class="col-12 d-flex justify-content-end pt-4" style="margin-bottom:-50px;z-index:9;padding:0">
@@ -535,7 +547,7 @@
       </div>
     </div>
 
-    <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel" data-aos="zoom-in-up" data-aos-duration="1000">
+    <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
       <ol class="carousel-indicators">
         <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
         <li class="" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -549,7 +561,10 @@
               <div class="col-12">
                 <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
-                    <div class="h5">Mr.Bill Gates</div>
+                    <div class="h5" style="line-height:14px">
+                      Mr.Bill Gates <br>
+                      <span style="color:#aaa;font-size:12px;margin-top:-50px;">3 jam yang lalu 14.13</span>
+                    </div>
                     <p class="mb-0 text-muted">Good Luck!</p>
                   </div>
                 </div>
@@ -561,7 +576,10 @@
               <div class="col-12">
                 <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
-                    <div class="h5">Steven</div>
+                    <div class="h5" style="line-height:14px">
+                      Steven <br>
+                      <span style="color:#aaa;font-size:12px;margin-top:-50px;">10 jam yang lalu 17.57</span>
+                    </div>
                     <p class="mb-0 text-muted">HWD!</p>
                   </div>
                 </div>
@@ -573,7 +591,10 @@
               <div class="col-12">
                 <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
-                    <div class="h5">Arsi</div>
+                    <div class="h5" style="line-height:14px">
+                      Arsi <br>
+                      <span style="color:#aaa;font-size:12px;margin-top:-50px;">2 hari yang lalu 18.22</span>
+                    </div>
                     <p class="mb-0 text-muted">Selamat ya!</p>
                   </div>
                 </div>
@@ -585,7 +606,10 @@
               <div class="col-12">
                 <div class="card d-block mb-3 myshadow" style="background-color:#f2f2f2!important;">
                   <div class="card-body text-center">
-                    <div class="h5">Roman</div>
+                    <div class="h5" style="line-height:14px">
+                      Roman <br>
+                      <span style="color:#aaa;font-size:12px;margin-top:-50px;">3 hari yang lalu 15.44</span>
+                    </div>
                     <p class="mb-0 text-muted">H.W.D!</p>
                   </div>
                 </div>
@@ -609,7 +633,7 @@
 <div class="ww-section ww-rsvp-detail text-white myshadow" id="rsvp" style="margin-top:-50px;border-radius:20px 20px 0 0!important;background-color:white!important;">
   <div class="container" data-aos="zoom-in-up" data-aos-duration="1000" style="margin-top:-50px;">
     <div class="col text-center">
-      <h2 class="h1 ww-title pb-3" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;margin-top:-30px"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">Kirim Ucapan</span></h2>
+      <h2 class="h1 ww-title pb-3" data-aos="zoom-in-down" data-aos-duration="1000" style="color:black;margin-top:-30px"><span style="background-color:rgba(244,244,244,.7);padding:2px 50px 2px 50px;border-radius:10px">RSVP</span></h2>
     </div>
     <div class="row ww-rsvp-form" style="margin-top:-10px">
       <div class="col-md-10">
@@ -666,15 +690,25 @@
 <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" data-backdrop="static" data-keyboard="false" tabindex="-1" style="background-color:#333333;">
       <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
-        <div class="modal-content text-center text-light" style="background-color:#333333;border:0;">
+        <div class="modal-content text-center text-light" style="background-color:rgba(0,0,0,0);border:0;">
           <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="exampleModalLongTitle" style="font-size:26px">Romeo & Juliete</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle" style="font-size:27px;font-family:'Great Vibes','cursive';">Romeo & Juliete</h5>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="margin-top:10px;">
             <span>Hello,</span><br>
-            <span style="font-size:25px;margin-top:-10px">Mr.Bill Gates</span><br>
+            <span style="font-size:25px;margin-top:-10px;font-family:'Great Vibes','cursive';"><u>Mr.Bill Gates</u></span><br>
             <span>Kami mengundang anda untuk datang pada hari pernikahan kami!</span>
             <div class="row">
+
+              <!-- <div class="col-12 mt-2">
+                Mengingat bahwa masih ada nya covid 19 di sekitar untuk meminimalisir keadaan, Adapun sesi yang di terapkan sebagai berikut:<br>
+                <div style="border-radius:5px;border:1px solid white;background-color:rgba(255,255,255,.1);font-weight:bold;">
+                  Sesi 1. Pukul 08.00 - 10.00 Akad Nikah <br>
+                  Sesi 2. Pukul 10.00 - 11.00<br>
+                  Sesi 3. Pukul 11.00 - 12.00<br>
+                </div>
+              </div> -->
+
               <div class="col-12 mt-2">
                 Tanpa mengurangi rasa hormat. <br>
                 Acara ini akan dilaksanakan dengan Menerapkan <br>
@@ -869,6 +903,12 @@
 
 
   <div class="text-primary settema" style="position:fixed;bottom:50%;right:17px;border-radius:50%;z-index:1025;transition:.6s">
+      <div class="notiftema" style="width:160px;height:50px;position:absolute;top:-60px;right:0px;border-radius:25px;box-shadow:0 0 7px rgba(0,0,0,.7);display:none;">
+        <div style="width:15px;height:15px;background-color:white;position:absolute;bottom:-3px;right:15px;transform:rotate(45deg);border-radius:0 7px 0 0;box-shadow:0 0 7px rgba(0,0,0,.7)"></div>
+        <div style="width:160px;height:50px;background-color:white;position:absolute;bottom:0px;right:0px;border-radius:25px;line-height:14px;font-size:13px;padding:3px 12px 3px 12px;color:#333333;text-align:center;">
+          <span>Silahkan custom sesuai warna kesukaanmu, lalu Order via WA</span>
+        </div>
+      </div>
       <i class="fas fa-palette" style="font-size:43px;color:#ffa726;text-shadow:0px 2px 2px black;"></i>
   </div>
 
@@ -890,8 +930,19 @@
     <p class="mb-0">&copy; meinviteyou. All Rights Reserved.</p>
     <p class="mb-0">Design by - <a class="credit" href="<?=base_url(); ?>"><span style="color:#0062CC;">me</span><span class="text-danger"><u>INVITE</u></span><span style="color:#0062CC;">you</span></a></p>
   </div>
-</div></div>
-    </div>
+  </div></div>
+</div>
+
+<!-- <div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.5);border-radius:5px;z-index:1030;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+      <div style="font-size:25px;background-color:rgba(255, 167, 38,.5);color:#303030;border-radius:50%;box-shadow:0px 0px 2px rgba(0,0,0,.5);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;">&#8520;</div>
+      <span style="padding-left:5px;color:#ddd;line-height:16px">Ucapan berhasil <strong>ditambahkan!</strong></span>
+    </span>
+    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+  </div>
+</div> -->
+
     <footer></footer>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -1035,6 +1086,9 @@
           $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
           $('.ofm').hide();
           $('.onm').show();
+          setTimeout(function() {
+            $('.notiftema').fadeIn();
+          }, 7000);
         });
 
 
@@ -1051,6 +1105,7 @@
           $('.inputtema').css('right','2px');
           $('.settema').css('right','115px');
         }
+        $('.notiftema').fadeOut();
       });
 
 
@@ -1060,7 +1115,7 @@
 
       var warna1=$('.warna1').val('#<?=$warna1; ?>');
       var warna2=$('.warna2').val('#<?=$warna2; ?>');
-      var tampungwarnas=$('.tampung1').val('<?=base_url('contohundangan/classic/dce0e0/319e72'); ?>');
+      var tampungwarnas=$('.tampung1').val('<?=base_url('contohundangan/classic/ffffff/f2f2f2'); ?>');
       $('.warna1').on('change',function(){
         var warna1=$('.warna1').val();
         var warna2=$('.warna2').val();
@@ -1097,6 +1152,11 @@
         var warnaorder1=$('.warna1').val();
         var warnaorder2=$('.warna2').val();
         document.location.href='https://api.whatsapp.com/send?phone=+6282179471533&text=Saya%20pesan%20template%20undangan%20digital%20CLASSIC%20dengan%20warna%20ini%20kak%20:%20%0A%0A<?=base_url("contohundangan/classic/"); ?>'+warnaorder1.substring(1,7)+'/'+warnaorder2.substring(1,7)+'/';
+      });
+
+
+      $('.closeout').on('click',function(){
+        $('.popupnotif').fadeOut();
       });
 
 

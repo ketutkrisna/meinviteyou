@@ -289,6 +289,9 @@
         $querytidak="SELECT SUM(jumlah_kehadiran) as jumlahtidak from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='tidak'"; 
         $resultsumtidak=$this->db->query($querytidak)->row_array();
 
+        $queryragu="SELECT SUM(jumlah_kehadiran) as jumlahragu from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='ragu'"; 
+        $resultsumragu=$this->db->query($queryragu)->row_array();
+
         $querynull="SELECT count(jumlah_kehadiran) as jumlahnull from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='null'"; 
         $resultsumnull=$this->db->query($querynull)->row_array();
 
@@ -308,6 +311,8 @@
         <span class=""><i style="font-size:22px" class="ion-close-round text-danger"></i> Tidak hadir : <?=$resultsumtidak['jumlahtidak']; ?> </span>
         <span class=""><i style="font-size:22px" class="ion-podium text-success"></i> Semua undangan : <?=$resultsumsemua['jumlahsemua']; ?> </span>
         </div>
+
+        <span><i style="font-size:22px;font-weight:bold;" class="ion-ios-infinite-outline text-secondary"></i> Masih ragu : <?=$resultsumragu['jumlahragu']; ?> </span>
       </div>
     </div>
 
@@ -342,7 +347,11 @@
               <span><i class="ion-android-checkbox-outline"></i>  <?=$rlist['jumlah_kehadiran']; ?></span>
             <?php }else if($rlist['absen_diundang']=='tidak'){ ?>
               <span><i class="ion-close-round text-danger"></i>  <?=$rlist['jumlah_kehadiran']; ?></span>
-            <?php }else{} ?>
+            <?php }else if($rlist['absen_diundang']=='ragu'){ ?>
+              <span><i class="ion-ios-infinite-outline text-secondary" style="font-size:16px"></i>  <?=$rlist['jumlah_kehadiran']; ?></span>
+            <?php }else{ ?>
+              
+            <?php } ?>
             </button>
           </h2>
         </div>
@@ -814,7 +823,7 @@
                 }else if($detailundangan['tema_template']=='rustic'){
                   echo "#000000";
                 }else if($detailundangan['tema_template']=='classic'){
-                  echo "#000000";
+                  echo "#ffffff";
                 }else if($detailundangan['tema_template']=='vantage'){
                   echo "#dce0e0";
                 } ?> 
@@ -832,7 +841,7 @@
                 }else if($detailundangan['tema_template']=='rustic'){
                   echo "#000000";
                 }else if($detailundangan['tema_template']=='classic'){
-                  echo "#000000";
+                  echo "#f2f2f2";
                 }else if($detailundangan['tema_template']=='vantage'){
                   echo "#319e72";
                 } ?> 
@@ -840,6 +849,13 @@
               </span>
             </div>
             <input type="text" class="form-control tambahwarnadasar2" aria-label="Username" placeholder="Warna dasar template 2" aria-describedby="basic-addon1" name="tambahwarnadasar2">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text btn">Info modal</span>
+            </div>
+            <textarea class="form-control tambahinformasi" aria-label="With textarea" placeholder="Informasi pada pop up awal" name="tambahinformasi"></textarea>
           </div>
 
           <div class="input-group mb-3">
@@ -1182,6 +1198,7 @@
             $('.tambahvideoacara').val(data.video_acara);
             $('.tambahstoriacara').val(data.stori_pengundang);
             $('.tambahrekeningacara').val(data.rekening_pengundang);
+            $('.tambahinformasi').val(data.informasi_modal);
 
             $('.tambahjenisacara').val(data.jenis_acara);
             $('.tambahtemaundangan').val(data.tema_template);

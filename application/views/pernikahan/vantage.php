@@ -45,7 +45,7 @@
         /*background:#ab47bc;*/
       }
       .block{
-        height:115vh
+        height:105vh
       }
       #awal{
         /*min-height: 400px;*/
@@ -184,28 +184,31 @@
 
 <body>
 
-  <div id="awal" class="white para" style="background-image:url('<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>');background-size:cover;background-position:50% 0px;position:relative;">
+  <div id="awal" class="white para" style="background-image:url('<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>');background-size:cover;background-position:50% 0px;position:relative;display:flex;justify-content:center;align-items:center;">
 
 
-    <div class="cobain" style="position:absolute;left:0;right:0;width:100%;top:0">
+  <?=$this->session->flashdata('message'); ?>
+
+
+    <div class="cobain" style="margin-top:-20px">
 
     <div class="row">
-      <div class="col s12 center-align" style="padding-top:14vh;font-family: 'Satisfy', cursive;">
+      <div class="col s12 center-align" style="font-family: 'Satisfy', cursive;">
         <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:20px;">Wedding Of</span><br>
         <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:35px;"><?=$detailundangan['namapanggilan_priawanita']; ?></span>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top:-10px;">
       <div class="col s12 center-align">
         <img src="<?=base_url('assets/temaundangan/vantage/'); ?>img/savethedate2.png" width="260">
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top:-10px;">
       <div class="col s12 center-align">
         <span class="white-text" style="text-shadow:1px 1px 2px #111;font-size:24px;font-family: 'Satisfy', cursive;"><?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?></span>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top:-10px;">
       <div class="col s12">
         <div class="count-down-wrapper" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="2000" data-aos-offset="20" style="margin-top:0px;">
                 <div id="clock" class="center-align" style="display:flex;justify-content:center;">
@@ -272,6 +275,7 @@
      <svg style="margin-top: -210px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
     </svg>
+   <!--  <svg style="margin-top: -200px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#ffffff" fill-opacity="1" d="M0,160L120,181.3C240,203,480,245,720,240C960,235,1200,181,1320,154.7L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> -->
     <!-- <svg style="margin-top: -180px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="rgba(151, 194, 143, 1)" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
     </svg> -->
@@ -485,7 +489,7 @@
         <div class="container">
             <div class="container">
         <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-          <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Stori</h5>
+          <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Satisfy', cursive;padding:4px;">Love Story</h5>
         </div>
           </div>
         </div>
@@ -516,7 +520,7 @@
         <div class="container">
             <div class="container">
         <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-          <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Galeri</h5>
+          <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Satisfy', cursive;padding:4px;">Gallery</h5>
         </div>
           </div>
         </div>
@@ -609,7 +613,7 @@
           <div class="container">
             <div class="container">
           <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-            <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Daftar Ucapan</h5>
+            <h5 class="warnatitle" style="font-size:26px;font-family: 'Satisfy', cursive;color:#3b3d3b;padding:4px;">Friend Wishes</h5>
           </div>
             </div>
           </div>
@@ -631,44 +635,59 @@
       <?php 
 
         $urlpucapan=$detailundangan['id_pengundang'];
+
+        $queryallucapana="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
+        $dataucapana=$this->db->query($queryallucapana)->result_array();
+
         $queryucapan="SELECT max(id_ucapan) as maxidu FROM ucapan where urlpengundang_ucapan='$urlpucapan'";
         $resultmax=$this->db->query($queryucapan)->row_array();
 
         $queryallucapan="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
         $dataucapan=$this->db->query($queryallucapan)->result_array();
 
+        $queryallucapancount="SELECT count(*) as ucount from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan='$urlpucapan'";
+        $dataucapancount=$this->db->query($queryallucapancount)->row_array();
+
       ?>
 
+      <?php if($dataucapancount['ucount'] <= 0){ ?>
+        <div class="row" style="display:flex;justify-content:center;">
+          <div class="col">
+            <div class="center-align" style="margin-top:-20px;background-color:rgba(255,255,255,.4);border-radius:5px;">Friend wishes masih kosong, silahkan kirim ucapan sekarang pada form dibawah!</div>
+          </div>
+        </div>
+      <?php }else{ ?>
       <div class="row">
 
         <div class="col s12 slidetampil" style="margin-top:-120px;">
+
           <div class="carousel checkcarousel">
 
             <?php foreach($dataucapan as $du): ?>
-            <?php 
-              $waktu=time() - $du['waktu_ucapan'];
-              if($waktu<60){
-                $post = $waktu.' detik lalu';
-              }else if($waktu>=60&&$waktu<=3600){
-                $waktumenit=$waktu/60;
-                $post = floor($waktumenit).' menit lalu';
-              }else if($waktu>=3600&&$waktu<=86400){
-                $waktujam=$waktu/3600;
-                $post = floor($waktujam).' jam lalu';
-              }else if($waktu>=86400&&$waktu<=604800){
-                $waktuhari=$waktu/86400;
-                $post = floor($waktuhari).' hari lalu';
-              }else if($waktu>=604800&&$waktu<=2592000){
-                $waktuminggu=$waktu/604800;
-                $post = floor($waktuminggu).' minggu lalu';
-              }else if($waktu>=2592000&&$waktu<=31536000){
-                $waktubulan=$waktu/2592000;
-                $post = floor($waktubulan).' bulan lalu';
-              }else{
-                $waktutahun=$waktu/31536000;
-                $post = floor($waktubulan).' tahun lalu';
-              }
-            ?>
+              <?php 
+                $waktu=time() - $du['waktu_ucapan'];
+                if($waktu<60){
+                  $post = $waktu.' detik yang lalu';
+                }else if($waktu>=60&&$waktu<=3600){
+                  $waktumenit=$waktu/60;
+                  $post = floor($waktumenit).' menit yang lalu';
+                }else if($waktu>=3600&&$waktu<=86400){
+                  $waktujam=$waktu/3600;
+                  $post = floor($waktujam).' jam yang lalu';
+                }else if($waktu>=86400&&$waktu<=604800){
+                  $waktuhari=$waktu/86400;
+                  $post = floor($waktuhari).' hari yang lalu';
+                }else if($waktu>=604800&&$waktu<=2592000){
+                  $waktuminggu=$waktu/604800;
+                  $post = floor($waktuminggu).' minggu yang lalu';
+                }else if($waktu>=2592000&&$waktu<=31536000){
+                  $waktubulan=$waktu/2592000;
+                  $post = floor($waktubulan).' bulan yang lalu';
+                }else{
+                  $waktutahun=$waktu/31536000;
+                  $post = floor($waktubulan).' tahun yang lalu';
+                }
+              ?>
             <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
               <h5 style="font-size:18px;line-height:12px;">
                 <span style="color:#282928;"><?=$du['nama_diundang']; ?></span><br>
@@ -690,29 +709,29 @@
 
             <?php foreach($dataucapan as $du): ?>
               <?php 
-              $waktu=time() - $du['waktu_ucapan'];
-              if($waktu<60){
-                $post = $waktu.' detik lalu';
-              }else if($waktu>=60&&$waktu<=3600){
-                $waktumenit=$waktu/60;
-                $post = floor($waktumenit).' menit lalu';
-              }else if($waktu>=3600&&$waktu<=86400){
-                $waktujam=$waktu/3600;
-                $post = floor($waktujam).' jam lalu';
-              }else if($waktu>=86400&&$waktu<=604800){
-                $waktuhari=$waktu/86400;
-                $post = floor($waktuhari).' hari lalu';
-              }else if($waktu>=604800&&$waktu<=2592000){
-                $waktuminggu=$waktu/604800;
-                $post = floor($waktuminggu).' minggu lalu';
-              }else if($waktu>=2592000&&$waktu<=31536000){
-                $waktubulan=$waktu/2592000;
-                $post = floor($waktubulan).' bulan lalu';
-              }else{
-                $waktutahun=$waktu/31536000;
-                $post = floor($waktubulan).' tahun lalu';
-              }
-            ?>
+                $waktu=time() - $du['waktu_ucapan'];
+                if($waktu<60){
+                  $post = $waktu.' detik yang lalu';
+                }else if($waktu>=60&&$waktu<=3600){
+                  $waktumenit=$waktu/60;
+                  $post = floor($waktumenit).' menit yang lalu';
+                }else if($waktu>=3600&&$waktu<=86400){
+                  $waktujam=$waktu/3600;
+                  $post = floor($waktujam).' jam yang lalu';
+                }else if($waktu>=86400&&$waktu<=604800){
+                  $waktuhari=$waktu/86400;
+                  $post = floor($waktuhari).' hari yang lalu';
+                }else if($waktu>=604800&&$waktu<=2592000){
+                  $waktuminggu=$waktu/604800;
+                  $post = floor($waktuminggu).' minggu yang lalu';
+                }else if($waktu>=2592000&&$waktu<=31536000){
+                  $waktubulan=$waktu/2592000;
+                  $post = floor($waktubulan).' bulan yang lalu';
+                }else{
+                  $waktutahun=$waktu/31536000;
+                  $post = floor($waktubulan).' tahun yang lalu';
+                }
+              ?>
 
             <?php if($this->session->userdata('level_user')=='admin'){ ?>
               <a style="color:red" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapan/'.$du['id_ucapan'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
@@ -731,9 +750,11 @@
             <?php endforeach; ?>
 
           </div>
+
         </div>
 
       </div>
+    <?php } ?>
       
     </div>
   </div>
@@ -758,7 +779,7 @@
           <div class="container">
             <div class="container">
           <div class="warnakotak z-depth-1 test" style="background-color:#eee;border-radius:9px;padding:0px;margin-top:20px">
-            <h5 class="" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Kirim Ucapan</h5>
+            <h5 class="" style="font-size:26px;font-family: 'Satisfy', cursive;color:#3b3d3b;padding:4px;">RSVP</h5>
           </div>
             </div>
           </div>
@@ -859,23 +880,6 @@
   </div>
 
 
-  <div class="piringan" style="position: fixed;top:5px;z-index:10;left:5px;">
-    <div class="musikplayer musikset z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
-      <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>" width="100%">
-      <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
-        <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
-      </div>
-      <div class="darkmusik" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:96%;height:97%;border-radius:50%;background-color:rgba(0,0,0,.4);transition:.7s;"></div>
-    </div>
-    <div class="stik" style="position:fixed;left:2px;margin-top:-6px;width:30px;height:30px;transform:rotate(0deg);transition:1s;z-index:10">
-      <img class="stikok musikset" style="position:absolute;left:28px;right:0;margin:auto;transform:rotate(-90deg);bottom:0;top:-2px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
-    </div>
-  </div>
-
-    <audio id="musikvalue" loop style="width:100%">
-      <source src="<?=base_url('assets/img/musikwedding/'.$detailundangan['musik_acara']); ?>" type="audio/mpeg">
-    </audio>
-
 
   <footer style="background-color:#d4d4d4;position:relative;">
     <svg style="margin-top:-60px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#d4d4d4" fill-opacity="1" d="M0,256L720,128L1440,256L1440,320L720,320L0,320Z"></path></svg>
@@ -906,13 +910,34 @@
     </a>
   </div>
 
+  <?php if(!empty($detailundangan['musik_acara'])){ ?>
+  <div class="piringan" style="position: fixed;top:5px;z-index:10;left:5px;">
+    <div class="musikplayer musikset z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
+      <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>" width="100%">
+      <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
+        <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
+      </div>
+      <div class="darkmusik" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:96%;height:97%;border-radius:50%;background-color:rgba(0,0,0,.4);transition:.7s;"></div>
+    </div>
+    <div class="stik" style="position:fixed;left:10px;margin-top:-3px;width:20px;height:20px;transform:rotate(0deg);transition:1s;z-index:10;">
+      <img class="stikok musikset" style="position:absolute;left:21.3px;right:0;margin:auto;transform:rotate(-90deg);bottom:0;top:0px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
+    </div>
+  </div>
+
   <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;">
     <h5 class="sizefont" style="font-size:18px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
     <div class="bars" style="position:absolute;top:-35px;left:-10px;transition:.7s">
-      <img class="onm" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
-      <img class="ofm" style="position:absolute;top:9px;left:0" src="<?=base_url('assets/img/bars-musikof.gif'); ?>" width="100px" height="30px">
+      <img class="onm" style="margin-top:1.1px" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
+      <img class="ofm" style="position:absolute;top:10px;left:0" src="<?=base_url('assets/img/bars-musikof.gif'); ?>" width="100px" height="30px">
     </div>
   </div>
+  <?php } ?>
+
+  <?php if(!empty($detailundangan['musik_acara'])){ ?>
+    <audio id="musikvalue" loop style="width:100%">
+      <source src="<?=base_url('assets/img/musikwedding/'.$detailundangan['musik_acara']); ?>" type="audio/mpeg">
+    </audio>
+  <?php } ?>
 
 
   <!-- <div class="text-primary settema" style="position:fixed;bottom:50%;right:15px;border-radius:50%;z-index:10;transition:.6s">
@@ -1100,10 +1125,17 @@
     <div style="position:absolute;left:0;right:0;bottom:0;top:0;background-color:black;opacity:.6"></div>
 
     <div class="modal-content center-align" style="height:100%">
-      <h5 style="font-size:30px;font-weight:bold;font-family: 'Satisfy', cursive;">Romeo & Juliete</h5><hr>
+      <h5 style="font-size:30px;font-weight:bold;font-family: 'Satisfy', cursive;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5><hr>
       <span>Hello,</span><br>
-      <span style="font-family: 'Satisfy', cursive;font-size:28px;font-weight:bold;">Teman</span>
+      <span style="font-family: 'Satisfy', cursive;font-size:28px;font-weight:bold;"><u><?=$detailundangan['nama_diundang']; ?></u></span>
       <p style="font-family: 'Roboto', sans-serif;">Kami mengundang anda untuk datang pada hari pernikahan kami!</p>
+
+      <?php if(!empty($detailundangan['informasi_modal'])): ?>
+        <div class="col" style="margin-top:10px;">
+          <?=$detailundangan['informasi_modal']; ?>
+        </div>
+      <?php endif; ?>
+
       <p style="font-family: 'Roboto', sans-serif;">Tampa mengurangi rasa hormat <br> Acara ini akan dilaksanakan dengan menerapkan <br> <b>PROTOKOL KESEHATAN</b> <br> sebagai berikut:</p>
 
       <div class="row" style="padding:0;margin:0 auto;max-width:450px;">
@@ -1143,68 +1175,6 @@
           </div>
         </div>
 
-
-        <!-- <div class="col s4" style="padding:0;margin:0">
-          <div class="card cyan darken-2" data-aos="fade-down" data-aos-duration="500" style="min-height:160px;border-radius:8px;">
-            <div class="card-image" data-aos="fade-down" data-aos-delay-="300" data-aos-duration="500" style="padding-top:4px">
-              <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/anaksp.png">
-            </div>
-            <div class="card-content" style="padding:4px;margin:0">
-              <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Dianjurkan Tidak Membawa Anak Kecil</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s4" style="padding:0;margin:0">
-          <div class="card cyan darken-2" data-aos="fade-down" data-aos-delay="300" data-aos-duration="500" style="min-height:160px;border-radius:8px;">
-            <div class="card-image" data-aos="fade-down" data-aos-delay="600" data-aos-duration="500" style="padding-top:4px">
-              <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/maskp.png">
-            </div>
-            <div class="card-content" style="padding:4px;margin:0">
-              <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Masker</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s4" style="padding:0;margin:0">
-          <div class="card cyan darken-2" data-aos="fade-down" data-aos-delay="900" data-aos-duration="500" style="min-height:160px;border-radius:8px;">
-            <div class="card-image" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="padding-top:4px">
-              <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/handsp.png">
-            </div>
-            <div class="card-content" style="padding:4px;margin:0">
-              <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Handsanitizer</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s4" style="padding:0;margin:0">
-          <div class="card cyan darken-2" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="min-height:160px;margin-top:-13px;border-radius:8px;">
-            <div class="card-image" data-aos="fade-down" data-aos-delay="2100" data-aos-duration="500" style="padding-top:4px">
-              <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/suhusp.png">
-            </div>
-            <div class="card-content" style="padding:4px;margin:0">
-              <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Cek Suhu Tubuh</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s4" style="padding:0;margin:0">
-          <div class="card cyan darken-2" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="min-height:160px;margin-top:-13px;border-radius:8px;">
-            <div class="card-image" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="padding-top:4px">
-              <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/cucisp.png">
-            </div>
-            <div class="card-content" style="padding:4px;margin:0">
-              <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Cuci Tangan</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s4" style="padding:0;margin:0">
-          <div class="card cyan darken-2" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="min-height:160px;margin-top:-13px;border-radius:8px;">
-            <div class="card-image" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="padding-top:4px">
-              <img class="hoverc" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/socialp.png">
-            </div>
-            <div class="card-content" style="padding:4px;margin:0">
-              <p style="line-height:15px;font-family: 'Roboto', sans-serif;">Jaga Jarak 1METER</p>
-            </div>
-          </div>
-        </div> -->
       </div>
 
       <div class="row">
@@ -1215,7 +1185,7 @@
 
     </div>
     <div class="modal-footer" style="padding:0 50px 0 50px;background-color:rgba(0,0,0,0);border:0;display:flex;justify-content:center;align-items: center;margin-bottom:20px;">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.5);width:200px;display: flex;align-items: center;justify-content:center;"><i class="large material-icons" style="padding-right:5px">drafts</i> Buka Undangan</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.5);width:200px;display: flex;align-items: center;justify-content:center;"><i class="large material-icons" style="padding-right:5px">drafts</i> Open</a>
     </div>
 
   </div>
@@ -1225,6 +1195,7 @@
     $bulan=date('m', strtotime($detailundangan['tanggal_acara']));
     $tahun=date('Y', strtotime($detailundangan['tanggal_acara']));
   ?>
+
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="<?=base_url('assets/temaundangan/vantage/'); ?>js/materialize.js"></script>
@@ -1277,7 +1248,7 @@
         //     }
         //   });
         // });
-
+      $('.parallax').parallax();
       $('.fixed-action-btn').floatingActionButton({
         hoverEnabled: false
       });
@@ -1373,7 +1344,7 @@
             $('.putarmulai').addClass('putaran');
             $('.putarmulai').css('animation-play-state','running');
             $('.stik').css({
-              'transform':'rotate(-35deg)'
+              'transform':'rotate(-37deg)'
             });
             $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
             $('.ofm').hide();
@@ -1398,7 +1369,7 @@
         $('.putarmulai').addClass('putaran');
         $('.putarmulai').css('animation-play-state','running');
         $('.stik').css({
-          'transform':'rotate(-35deg)'
+          'transform':'rotate(-37deg)'
         });
         $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
         $('.ofm').hide();
@@ -1423,6 +1394,11 @@
 
         }
       }
+
+
+      $('.closeout').on('click',function(){
+        $('.popupnotif').fadeOut();
+      });
 
 
       // fade=0;

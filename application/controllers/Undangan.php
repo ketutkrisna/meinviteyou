@@ -20,6 +20,7 @@ class Undangan extends CI_Controller {
 		if($diundang==''){
 			redirect('pengunjung');
 		}
+		date_default_timezone_set('Asia/Jakarta');
 		$queryurl="SELECT * from pengundang left join diundang on pengundang.id_pengundang=diundang.matchid_pengundang where url_pengundang='$pengundang' and url_diundang='$diundang'";
 		$data['detailundangan']=$this->db->query($queryurl)->row_array();
 		$datasession=$this->db->query($queryurl)->row_array();
@@ -59,6 +60,7 @@ class Undangan extends CI_Controller {
 
 	public function ucapan()
 	{
+		date_default_timezone_set('Asia/Jakarta');
 		$id_pengundang=$_SESSION['id_pengundang'];
 		$id_diundang=$_SESSION['id_diundang'];
 
@@ -94,12 +96,15 @@ class Undangan extends CI_Controller {
 					);
 			$this->db->insert('ucapan', $data);
 
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ucapan
-		              <strong>Berhasil</strong> ditambahkan!
-		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		                <span aria-hidden="true">&times;</span>
-		              </button>
-		            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.7);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 167, 38,.5);color:#303030;border-radius:50%;box-shadow:0px 0px 2px rgba(0,0,0,.5);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;">&#8520;</div>
+				      <span style="padding-left:5px;color:#ddd;line-height:16px">Ucapan berhasil <strong>ditambahkan!</strong></span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('wedding/'.$namapengundang.'/'.$namadiundang);
 			return false;
 		}else{

@@ -26,7 +26,7 @@
         overflow-x:hidden;
       }
       #awal{
-        height:115vh;
+        height:105vh;
       }
       #mempelai{
         min-height: 400px;
@@ -159,29 +159,29 @@
 
 <body>
 
-  <div id="awal" class="white para" style="background-image:url('<?=base_url('assets/img/contoh/lp.jpg'); ?>');background-size:cover;background-position:center 0px;position:relative;">
+  <div id="awal" class="white para" style="background-image:url('<?=base_url('assets/img/contoh/lp.jpg'); ?>');background-size:cover;background-position:center 0px;position:relative;display:flex;justify-content:center;align-items:center;">
 
   <!-- <div id="awal" class="white para"  data-image-src="<?=base_url('assets/img/contoh/lp.jpg'); ?>"> -->
 
-    <div class="cobain" style="position:absolute;left:0;right:0;width:100%;top:0">
+    <div class="cobain" style="margin-top:-20px">
 
     <div class="row">
-      <div class="col s12 center-align" style="padding-top:14vh;font-family: 'Satisfy', cursive;">
-        <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:20px;">Wedding Of</span><br>
+      <div class="col s12 center-align" style="font-family: 'Satisfy', cursive;">
+        <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:16px;font-family: 'Roboto', cursive;">The Wedding Of</span><br>
         <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:35px;">Romeo & Juliete</span>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top:-10px;">
       <div class="col s12 center-align">
         <img src="<?=base_url('assets/temaundangan/vantage/'); ?>img/savethedate2.png" width="260">
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top:-10px;">
       <div class="col s12 center-align">
         <span class="white-text" style="text-shadow:1px 1px 2px #111;font-size:24px;font-family: 'Satisfy', cursive;">Minggu, 30 oktober 2021</span>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top:-10px;">
       <div class="col s12">
         <div class="count-down-wrapper" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="2000" data-aos-offset="20" style="margin-top:0px;">
           <div id="clock" class="center-align" style="display:flex;justify-content:center;">
@@ -244,8 +244,14 @@
    
   <div id="mempelai" class="warnatema" style="position:relative;background-color:#dce0e0;margin-top:0px">
 
-    <svg style="margin-top: -210px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <!-- <svg style="margin-top: -220px;height:70px;width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"> -->
+      <!-- <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path> -->
+
+      <svg style="margin-top: -200px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path class="warnawaves" fill="#dce0e0" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,213.3C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+    </svg>
+
+      <!-- <svg style="margin-top: -200px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#ffffff" fill-opacity="1" d="M0,160L120,181.3C240,203,480,245,720,240C960,235,1200,181,1320,154.7L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> -->
 
     <div class="dekstop">
       <img data-aos="fade-left" data-aos-duration="1000" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/bunga2.png" width="200" style="position:absolute;top:-120px;right:-30px;z-index:4">
@@ -425,7 +431,7 @@
           <div class="container">
             <div class="container">
               <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-                <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Stori</h5>
+                <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Satisfy', cursive;padding:4px;">Love Story</h5>
               </div>
             </div>
           </div>
@@ -488,7 +494,7 @@
           <div class="container">
             <div class="container">
               <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-                <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Roboto', cursive;padding:4px;">Galeri</h5>
+                <h5 class="header warnatitle" style="color:#3b3d3b;font-size:26px;font-family: 'Satisfy', cursive;padding:4px;">Gallery</h5>
               </div>
             </div>
           </div>
@@ -596,7 +602,7 @@
           <div class="container">
             <div class="container">
               <div class="warnakotak z-depth-1" style="background-color:#eee;border-radius:9px;padding:0px;">
-                <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Daftar Ucapan</h5>
+                <h5 class="warnatitle" style="font-size:26px;font-family: 'Satisfy', cursive;color:#3b3d3b;padding:4px;">Friend Wishes</h5>
               </div>
             </div>
           </div>
@@ -718,7 +724,7 @@
           <div class="container">
             <div class="container">
               <div class="warnakotak z-depth-1 test" style="background-color:#eee;border-radius:9px;padding:0px;margin-top:20px">
-                <h5 class="" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:4px;">Kirim Ucapan</h5>
+                <h5 class="" style="font-size:26px;font-family: 'Satisfy', cursive;color:#3b3d3b;padding:4px;">RSVP</h5>
               </div>
             </div>
           </div>
@@ -835,8 +841,8 @@
       </div>
       <div class="darkmusik" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:96%;height:97%;border-radius:50%;background-color:rgba(0,0,0,.4);transition:.7s;"></div>
     </div>
-    <div class="stik" style="position:fixed;left:2px;margin-top:-6px;width:30px;height:30px;transform:rotate(0deg);transition:1s;z-index:10">
-      <img class="stikok musikset" style="position:absolute;left:28px;right:0;margin:auto;transform:rotate(-90deg);bottom:0;top:-2px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
+    <div class="stik" style="position:fixed;left:10px;margin-top:-3px;width:20px;height:20px;transform:rotate(0deg);transition:1s;z-index:10;">
+      <img class="stikok musikset" style="position:absolute;left:21.3px;right:0;margin:auto;transform:rotate(-90deg);bottom:0;top:0px" src="<?=base_url('assets/img/stick3.png'); ?>" width="20">
     </div>
   </div>
 
@@ -848,13 +854,19 @@
   <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
     <h5 class="sizefont" style="font-size:18px;">Romeo & Juliete</h5>
     <div class="bars" style="position:absolute;top:-35px;left:-10px;transition:.7s">
-      <img class="onm" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
+      <img class="onm" style="margin-top:1.1px" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
       <img class="ofm" style="position:absolute;top:10px;left:0" src="<?=base_url('assets/img/bars-musikof.gif'); ?>" width="100px" height="30px">
     </div>
   </div>
 
 
   <div class="text-primary settema" style="position:fixed;bottom:50%;right:15px;border-radius:50%;z-index:10;transition:.6s">
+      <div class="notiftema" style="width:160px;height:50px;position:absolute;top:-55px;right:0px;border-radius:25px;box-shadow:0 0 7px rgba(0,0,0,.7);display:none;">
+        <div style="width:15px;height:15px;background-color:white;position:absolute;bottom:-3px;right:15px;transform:rotate(45deg);border-radius:0 7px 0 0;box-shadow:0 0 7px rgba(0,0,0,.7)"></div>
+        <div style="width:160px;height:50px;background-color:white;position:absolute;bottom:0px;right:0px;border-radius:25px;line-height:13px;font-size:12px;padding:3px 12px 3px 12px;color:#333333;text-align:center;">
+          <span>Silahkan custom sesuai warna kesukaanmu, lalu Order via WA</span>
+        </div>
+      </div>
       <i style="font-size:53px;text-shadow:0px 2px 2px black;" class="large orange-text text-lighten-1 material-icons">palette</i>
   </div>
 
@@ -917,7 +929,7 @@
     <div class="modal-content center-align" style="height:100%">
       <h5 style="font-size:30px;font-weight:bold;font-family: 'Satisfy', cursive;">Romeo & Juliete</h5><hr>
       <span>Hello,</span><br>
-      <span style="font-family: 'Satisfy', cursive;font-size:28px;font-weight:bold;">Teman</span>
+      <span style="font-family: 'Satisfy', cursive;font-size:28px;font-weight:bold;"><u>Teman</u></span>
       <p style="font-family: 'Roboto', sans-serif;">Kami mengundang anda untuk datang pada hari pernikahan kami!</p>
       <p style="font-family: 'Roboto', sans-serif;">Tampa mengurangi rasa hormat <br> Acara ini akan dilaksanakan dengan menerapkan <br> <b>PROTOKOL KESEHATAN</b> <br> sebagai berikut:</p>
 
@@ -1031,7 +1043,7 @@
 
     </div>
     <div class="modal-footer" style="padding:0 50px 0 50px;background-color:rgba(0,0,0,0);border:0;display:flex;justify-content:center;align-items: center;margin-bottom:20px;">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.5);width:200px;display: flex;align-items: center;justify-content:center;"><i class="large material-icons" style="padding-right:5px">drafts</i> Buka Undangan</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.5);width:200px;display: flex;align-items: center;justify-content:center;"><i class="large material-icons" style="padding-right:5px">drafts</i> Open</a>
     </div>
 
   </div>
@@ -1045,6 +1057,16 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div> -->
+
+  <!-- <div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.5);border-radius:5px;z-index:1030;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+          <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+            <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+              <div style="font-size:25px;background-color:rgba(255, 167, 38,.5);color:#303030;border-radius:50%;box-shadow:0px 0px 2px rgba(0,0,0,.5);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;">&#8520;</div>
+              <span style="padding-left:5px;color:#ddd;line-height:16px">Ucapan berhasil <strong>ditambahkan!</strong></span>
+            </span>
+            <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+          </div>
+        </div> -->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="<?=base_url('assets/temaundangan/vantage/'); ?>js/materialize.js"></script>
@@ -1277,7 +1299,7 @@
             $('.putarmulai').addClass('putaran');
             $('.putarmulai').css('animation-play-state','running');
             $('.stik').css({
-              'transform':'rotate(-35deg)'
+              'transform':'rotate(-37deg)'
             });
             $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
             $('.ofm').hide();
@@ -1302,12 +1324,16 @@
         $('.putarmulai').addClass('putaran');
         $('.putarmulai').css('animation-play-state','running');
         $('.stik').css({
-          'transform':'rotate(-35deg)'
+          'transform':'rotate(-37deg)'
         });
         $('.darkmusik').css('background-color','rgba(0,0,0,.3)');
         $('.ofm').hide();
         $('.onm').show();
+        setTimeout(function() {
+          $('.notiftema').fadeIn();
+        }, 7000);
       });
+
 
       
       var warnatema =document.querySelectorAll('.warnatema');
@@ -1342,6 +1368,7 @@
           $('.inputtema').css('right','2px');
           $('.settema').css('right','110px');
         }
+        $('.notiftema').fadeOut();
       });
 
 
@@ -1410,6 +1437,11 @@
         var warnaorder1=$('.warna1').val();
         var warnaorder2=$('.warna2').val();
         document.location.href='https://api.whatsapp.com/send?phone=+6282179471533&text=Saya%20pesan%20template%20undangan%20digital%20VANTAGE%20dengan%20warna%20ini%20kak%20:%20%0A%0A<?=base_url("contohundangan/vantage/"); ?>'+warnaorder1.substring(1,7)+'/'+warnaorder2.substring(1,7)+'/';
+      });
+
+
+      $('.closeout').on('click',function(){
+        $('.popupnotif').fadeOut();
       });
 
 

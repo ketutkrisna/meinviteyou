@@ -4,6 +4,21 @@
   $queryundangan="SELECT * from pengundang where id_pengundang='$idp'";
   $detailundangan=$this->db->query($queryundangan)->row_array();
 
+  $daftar_hari = array(
+   'Sunday' => 'Minggu',
+   'Monday' => 'Senin',
+   'Tuesday' => 'Selasa',
+   'Wednesday' => 'Rabu',
+   'Thursday' => 'Kamis',
+   'Friday' => 'Jumat',
+   'Saturday' => 'Sabtu'
+  );
+  $dateakad=$detailundangan['tanggal_akad'];
+  $namahariakad = date('l', strtotime($dateakad));
+
+  $dateresepsi=$detailundangan['tanggal_acara'];
+  $namahariresepsi = date('l', strtotime($dateresepsi));
+
 ?>
 
 
@@ -57,9 +72,15 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    html,body{
+    /*html,body{
       height:100%;
       position:relative;
+    }*/
+    .popover{
+      max-width: 50%;
+    }
+    .mobile-nav-toggle{
+      z-index: 999
     }
   </style>
 </head>
@@ -112,52 +133,23 @@
     <div>
 
 
-    <ul class="list-group">
-      <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-        <span class="text-info"><?=$detailundangan['url_pengundang']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Nama diURL)</span>
-      </li>
+    <ul class="list-group text-center">
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$detailundangan['namalengkap_pria']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Nama lengkap mempelai pria)</span>
+        <span style="font-size:12px;color:grey"> (Nama lengkap mempelai pertama)</span>
       </li>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$detailundangan['namalengkap_wanita']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Nama lengkap mempelai wanita)</span>
+        <span style="font-size:12px;color:grey"> (Nama lengkap mempelai kedua)</span>
       </li>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-        <span class="text-info"><?=date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
+        <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
         <span style="font-size:12px;color:grey"> (Tanggal akad pernikahan)</span>
       </li>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-        <span class="text-info"><?=date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Tanggal pesta pernikahan)</span>
+        <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
+        <span style="font-size:12px;color:grey"> (Tanggal resepsi pernikahan)</span>
       </li>
-      <!-- <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-        <span class="text-info"><?=$detailundangan['jenis_acara']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Jenis undangan)</span>
-      </li> -->
-      <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-        <span class="text-info"><?=$detailundangan['tema_template']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Tema undangan)</span>
-      </li>
-      <!-- <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-        <span class="text-info">
-          <?php 
-            if($detailundangan['paket_acara']=='paketeasy'){
-              $hargapaket='(100rb)';
-            }else if($detailundangan['paket_acara']=='paketmedium'){
-              $hargapaket='(200rb)';
-            }else if($detailundangan['paket_acara']=='pakethard'){
-              $hargapaket='(300rb)';
-            }else{
-              $hargapaket='(400rb)';
-            }
-          ?>
-          <?=$detailundangan['paket_acara'].$hargapaket; ?>
-        </span><br>
-        <span style="font-size:12px;color:grey"> (Paket undangan)</span>
-      </li> -->
     </ul>
 
     <div class="row">
@@ -170,21 +162,19 @@
     <hr style="border:1px solid grey;margin-bottom:10px;margin-top:10px">
     <!-- tutup div bungkus data 1-->
 
-   
-    <!-- <div class="embed-responsive embed-responsive-16by9">
-      <span class="text-info"><?=$detailundangan['map_acara']; ?></span>
-    </div> -->
-
     <!-- div bungkus daftar undangan -->
     <div>
 
       <?php 
-        $idpengundangsum=$this->session->userdata('id_p');
+        $idpengundangsum=$detailundangan['id_pengundang'];
         $queryhadir="SELECT SUM(jumlah_kehadiran) as jumlahhadir from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='hadir'"; 
         $resultsum=$this->db->query($queryhadir)->row_array();
 
         $querytidak="SELECT SUM(jumlah_kehadiran) as jumlahtidak from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='tidak'"; 
         $resultsumtidak=$this->db->query($querytidak)->row_array();
+
+        $queryragu="SELECT SUM(jumlah_kehadiran) as jumlahragu from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='ragu'"; 
+        $resultsumragu=$this->db->query($queryragu)->row_array();
 
         $querynull="SELECT count(jumlah_kehadiran) as jumlahnull from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='null'"; 
         $resultsumnull=$this->db->query($querynull)->row_array();
@@ -194,23 +184,27 @@
       ?>
 
 
-      
+     
+
     <div class="row">
-      <div class="col-12 mt-0 mb-3">
-        <div class="d-flex justify-content-between">
-        <span class=""><i style="font-size:22px;font-weight:bold;" class="ion-android-checkbox-outline text-primary"></i> Hadir : <?=$resultsum['jumlahhadir']; ?> </span>
-        <span><i style="font-size:22px;font-weight:bold;" class="ion-android-sync text-warning"></i> Belum confirmasi : <?=$resultsumnull['jumlahnull']; ?> </span>
-        </div>
-        <div class="d-flex justify-content-between">
-        <span class=""><i style="font-size:22px" class="ion-close-round text-danger"></i> Tidak hadir : <?=$resultsumtidak['jumlahtidak']; ?> </span>
-        <span class=""><i style="font-size:22px" class="ion-podium text-success"></i> Semua undangan : <?=$resultsumsemua['jumlahsemua']; ?> </span>
-        </div>
+      <div class="col-12 mt-2 mb-3 d-flex justify-content-start">
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modaltambahdaftarundangan">Tambah daftar undangan</button>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-12 mt-0 mb-3 d-flex justify-content-start">
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modaltambahdaftarundangan">Tambah daftar undangan</button>
+      <div class="col-12 mt-0 mb-3">
+        <div class="d-flex justify-content-between">
+        <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;font-weight:bold;border-right:1px solid #ccc;padding-right:5px;" class="ion-android-checkbox-outline text-primary"></i> Hadir : <?=$resultsum['jumlahhadir']; ?> </span>
+        <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;font-weight:bold;border-right:1px solid #ccc;padding-right:5px;" class="ion-android-sync text-warning"></i> Belum confirmasi : <?=$resultsumnull['jumlahnull']; ?> </span>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+        <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;border-right:1px solid #ccc;padding-right:5px;" class="ion-close-round text-danger"></i> Tidak hadir : <?=$resultsumtidak['jumlahtidak']; ?> </span>
+        <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;font-weight:bold;border-right:1px solid #ccc;padding-right:5px;" class="ion-ios-infinite-outline text-secondary"></i> Masih ragu : <?=$resultsumragu['jumlahragu']; ?> </span>
+        </div>
+        <div class="d-flex justify-content-start mt-2">
+        <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;border-right:1px solid #ccc;padding-right:5px;" class="ion-podium text-success"></i> Semua undangan : <?=$resultsumsemua['jumlahsemua']; ?> </span>
+        </div>
       </div>
     </div>
 
@@ -218,7 +212,7 @@
    <?=$this->session->flashdata('message'); ?>
 
     <div class="row">
-      <div class="col-12 mt-0 text-center">
+      <div class="col-12 mt-0 text-center mb-1">
         <h5>Daftar undangan</h5>
       </div>
     </div>
@@ -239,7 +233,11 @@
               <span><i class="ion-android-checkbox-outline"></i>  <?=$rlist['jumlah_kehadiran']; ?></span>
             <?php }else if($rlist['absen_diundang']=='tidak'){ ?>
               <span><i class="ion-close-round text-danger"></i>  <?=$rlist['jumlah_kehadiran']; ?></span>
-            <?php }else{} ?>
+            <?php }else if($rlist['absen_diundang']=='ragu'){ ?>
+              <span><i class="ion-ios-infinite-outline text-secondary" style="font-size:16px"></i>  <?=$rlist['jumlah_kehadiran']; ?></span>
+            <?php }else{ ?>
+              
+            <?php } ?>
             </button>
           </h2>
         </div>
@@ -297,8 +295,8 @@
             </div>
             <div class="row">
               <div class="col-12 d-flex justify-content-start ml-3">
-                <a onclick="return confirm('Pilih Oke untuk hapus!');" style="margin:5px 5px 0 0" class="text-danger" href="<?=base_url('users/hapusdaftarundanganuser/'.$rlist['id_diundang']); ?>">Hapus</a>
-                <a style="margin:5px 5px 0 10px" class="text-warning modaleditdaftar" data-toggle="modal" data-target="#modaleditdaftarundangan" data-iddiundang="<?=$rlist['id_diundang']; ?>">Edit</a>
+                <a onclick="return confirm('Pilih Oke untuk hapus!');" style="margin:5px 5px 0 0;cursor:pointer;" class="text-danger" href="<?=base_url('users/hapusdaftarundanganuser/'.$rlist['id_diundang']); ?>">[<u>Hapus</u>]</a>
+                <a style="margin:5px 5px 0 10px;cursor:pointer;" class="text-success modaleditdaftar" data-toggle="modal" data-target="#modaleditdaftarundangan" data-iddiundang="<?=$rlist['id_diundang']; ?>">[<u>Edit</u>]</a>
               </div>
             </div>
 
@@ -327,34 +325,31 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body pt-1 pb-1">
 
         <form action="<?=base_url('users/tambahdaftarundanganuser'); ?>" method="post">
           <input type="hidden" name="idtpengundang" value="<?=$detailundangan['id_pengundang']; ?>">
-          <div class="input-group mb-3">
+
+
+        <div class="mb-3 p-1" style="background-color:rgba(232, 183, 7,.4);border-radius:3px;word-wrap:break-word;">
+          <span><?=base_url('/wedding/'.$detailundangan['url_pengundang'].'/'); ?><span class="showlink" style="background-color:rgba(250, 209, 7,.9);border-radius:10px;box-shadow:0 0 3px rgba(250, 250, 250,.5)"></span>
+          </span>
+          <span><input style="border:1px solid #ccc;" type="hidden" class="showcustom" placeholder="custom nama" name="tnamaurl" required></span>
+          <span class="pl-1 trigereditmanual" style="color:green;cursor:pointer;">[<u>edit</u>]</span>
+        </div>
+
+          <!-- <div class="input-group mb-3 customnamainvit">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nama diUrl</span>
+              <span class="input-group-text" id="basic-addon1">Nama Link</span>
             </div>
             <input type="text" class="form-control" placeholder="Nama tidak boleh spasi.." aria-label="Username" aria-describedby="basic-addon1" name="tnamaurl" required>
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nama lengkap</span>
-            </div>
-            <input type="text" class="form-control" placeholder="nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="tnamadiundang" required>
-          </div>
-          <!-- <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">No.Tlp</span>
-            </div>
-            <input type="text" class="form-control" placeholder="optional" aria-label="Username" aria-describedby="basic-addon1" name="tnomerdiundang">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Alamat</span>
-            </div>
-            <input type="text" class="form-control" placeholder="optional" aria-label="Username" aria-describedby="basic-addon1" name="talamatdiundang">
           </div> -->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Nama</span>
+            </div>
+            <input type="text" class="form-control customnamalengkap" placeholder="Ketik nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="tnamadiundang" required>
+          </div>
 
         </div>
         <div class="modal-footer">
@@ -377,35 +372,32 @@
         </div>
 
       <div class="prebuka">
-        <div class="modal-body">
+        <div class="modal-body pt-1 pb-1">
 
         <form action="<?=base_url('users/editdaftardiundanguser'); ?>" method="post">
           <input type="hidden" name="idepengundang" value="<?=$detailundangan['id_pengundang']; ?>">
           <input type="hidden" name="idediundang" class="idediundang">
-          <div class="input-group mb-3">
+
+          <!-- <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nama diUrl</span>
             </div>
             <input type="text" class="form-control enamaurl" placeholder="Nama tidak boleh spasi" aria-label="Username" aria-describedby="basic-addon1" name="enamaurl" required>
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nama lengkap</span>
-            </div>
-            <input type="text" class="form-control enamadiundang" placeholder="nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="enamadiundang" required>
-          </div>
-          <!-- <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">No.Tlp</span>
-            </div>
-            <input type="text" class="form-control enomerdiundang" placeholder="optional" aria-label="Username" aria-describedby="basic-addon1" name="enomerdiundang">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Alamat</span>
-            </div>
-            <input type="text" class="form-control ealamatdiundang" placeholder="optional" aria-label="Username" aria-describedby="basic-addon1" name="ealamatdiundang">
           </div> -->
+
+          <div class="mb-3 p-1" style="background-color:rgba(232, 183, 7,.4);border-radius:3px;word-wrap:break-word;">
+            <span><?=base_url('/wedding/'.$detailundangan['url_pengundang'].'/'); ?><span class="eshowlink" style="background-color:rgba(250, 209, 7,.9);border-radius:10px;box-shadow:0 0 3px rgba(250, 250, 250,.5)"></span>
+            </span>
+            <span><input style="border:1px solid #ccc;" type="text" class="eshowcustom" placeholder="custom nama" name="enamaurl" required></span>
+            <span class="pl-1 etrigereditmanual" style="color:green;cursor:pointer;">[<u>edit</u>]</span>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Nama</span>
+            </div>
+            <input type="text" class="form-control ecustomnamalengkap" placeholder="Ketik nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="enamadiundang" required>
+          </div>
 
         </div>
         <div class="modal-footer">
@@ -419,7 +411,7 @@
   </div>
 
 
-   <!-- Modal tambah undangan -->
+   <!-- Modal detail undangan -->
   <div class="modal fade" id="modaldetailundangan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
@@ -429,35 +421,39 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body text-center">
 
           <ul class="list-group">
-            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info"><?=$detailundangan['url_pengundang']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nama diURL)</span>
+            <li style="padding:5px 15px 5px 15px;line-height:16px" class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="text-center">
+              <img width="50" height="50" style="border-radius:5px" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>"><br>(Mempelai pertama)
+              </div>
+              <div class="text-center">
+              <span class="text-info"><img width="50" height="50" style="border-radius:5px" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>"></span><br>(Mempelai kedua)
+              </div>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['namapanggilan_priawanita']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nama panggilan pria dan wanita)</span>
+              <span style="font-size:12px;color:grey"> (Nama panggilan mempelai pertama dan kedua)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['namalengkap_pria']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nama lengkap mempelai pria)</span>
+              <span style="font-size:12px;color:grey"> (Nama lengkap mempelai pertama)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['orangtua_pria']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nama orang tua mempelai pria)</span>
+              <span style="font-size:12px;color:grey"> (Nama orang tua mempelai pertama)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['namalengkap_wanita']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nama lengkap mempelai wanita)</span>
+              <span style="font-size:12px;color:grey"> (Nama lengkap mempelai kedua)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['orangtua_wanita']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nama orang tua mempelai wanita)</span>
+              <span style="font-size:12px;color:grey"> (Nama orang tua mempelai kedua)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info"><?=date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
+              <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Tanggal & jam akad pernikahan)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
@@ -465,12 +461,12 @@
               <span style="font-size:12px;color:grey"> (Alamat akad pernikahan)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info"><?=date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Tanggal & jam pesta pernikahan)</span>
+              <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
+              <span style="font-size:12px;color:grey"> (Tanggal & jam resepsi pernikahan)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['alamat_acara']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Alamat pesta pernikahan)</span>
+              <span style="font-size:12px;color:grey"> (Alamat resepsi pernikahan)</span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['ucapan_awal']; ?></span><br>
@@ -480,14 +476,18 @@
               <span class="text-info"><?=$detailundangan['ucapan_ahir']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Ucapan ahir pada undangan)</span>
             </li>
+          <?php if(!empty($detailundangan['nomer_pengundang'])): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info"><?=$detailundangan['nomer_pengundang']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nomer telepon pengundang L)</span>
+              <span class="text-info"><?=substr($detailundangan['nomer_pengundang'], 0, -1); ?></span><br>
+              <span style="font-size:12px;color:grey"> (Nomer telepon pengundang pertama)</span>
             </li>
+          <?php endif; ?>
+          <?php if(!empty($detailundangan['nomer_pengundangw'])): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info"><?=$detailundangan['nomer_pengundangw']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Nomer telepon pengundang P)</span>
+              <span class="text-info"><?=substr($detailundangan['nomer_pengundangw'], 0, -1); ?></span><br>
+              <span style="font-size:12px;color:grey"> (Nomer telepon pengundang kedua)</span>
             </li>
+          <?php endif; ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['jenis_acara']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Jenis undangan)</span>
@@ -496,44 +496,26 @@
               <span class="text-info"><?=$detailundangan['tema_template']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Tema undangan)</span>
             </li>
-            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item d-flex justify-content-between">
+
+            <!-- <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item d-flex justify-content-between">
               <span>
               <span class="text-info"><?=$detailundangan['color_template']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Warna dasar)</span>
               </span>
               <span style="background-color:<?=$detailundangan['color_template']; ?>;height:30px;width:50%;margin-left:5px"></span>
-            </li>
-           <!--  <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info">
-                <?php 
-                  if($detailundangan['paket_acara']=='paketeasy'){
-                    $hargapaket='(100rb)';
-                  }else if($detailundangan['paket_acara']=='paketmedium'){
-                    $hargapaket='(200rb)';
-                  }else if($detailundangan['paket_acara']=='pakethard'){
-                    $hargapaket='(300rb)';
-                  }else{
-                    $hargapaket='(400rb)';
-                  }
-                ?>
-                <?=$detailundangan['paket_acara'].$hargapaket; ?>
-              </span><br>
-              <span style="font-size:12px;color:grey"> (Paket undangan)</span>
             </li> -->
-            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item d-flex justify-content-between align-items-center">
-              <div class="text-center">
-              <img width="50" height="50" style="border-radius:5px" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>"><br>(mempelai pria)
-              </div>
-              <div class="text-center">
-              <span class="text-info"><img width="50" height="50" style="border-radius:5px" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>"></span><br>(mempelai wanita)
-              </div>
+
+            
+            <li style="padding:5px 15px 5px 15px;line-height:15px;" class="list-group-item">
+              <span style="word-wrap:break-word;" class="text-info"><?=base_url('wedding/').$detailundangan['url_pengundang']; ?></span><br>
+              <span style="font-size:12px;color:grey"> (Link utama)</span>
             </li>
-            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item text-center">
+            <!-- <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item text-center">
               <audio controls style="width:100%">
                 <source src="<?=base_url('assets/img/musikwedding/'.$detailundangan['musik_acara']); ?>" type="audio/mpeg">
               </audio><br>
               <span style="font-size:12px;color:grey"> (Musik undangan)</span>
-            </li>
+            </li> -->
           </ul>
 
         </div>
@@ -617,9 +599,10 @@
             // console.log(data);
             $('.loader').hide();
             $('.prebuka').show();
+            $('.eshowlink').text(data.url_diundang)
             $('.idediundang').val(data.id_diundang);
-            $('.enamaurl').val(data.url_diundang);
-            $('.enamadiundang').val(data.nama_diundang);
+            $('.eshowcustom').val(data.url_diundang);
+            $('.ecustomnamalengkap').val(data.nama_diundang);
             $('.enomerdiundang').val(data.nomer_diundang);
             $('.ealamatdiundang').val(data.alamat_diundang);
           }
@@ -628,6 +611,80 @@
 
     $('body').on('click','.onclip',function(){
       $(this).tooltip('show');
+    });
+
+    $('.showcustom').hide();
+    $('.trigereditmanual').hide();
+    $('.customnamalengkap').on('keyup',function(){
+      var stringUrl=$('.customnamalengkap').val();
+      var bersihkan=stringUrl.replace(/[^a-zA-Z0-9\_\.\-]/g, "-");
+      $('.showlink').text(bersihkan);
+      $('.showcustom').val(bersihkan);
+      if(stringUrl.length<1){
+        $('.trigereditmanual').hide();
+      }else{
+        $('.trigereditmanual').show();
+      }
+    });
+
+    var toggle=0;
+    $('.trigereditmanual').on('click',function(){
+      toggle++;
+      if(toggle==1){
+        $('.showcustom').show();
+        $('.showcustom').focus();
+        $('.showcustom').attr('type','text');
+        $('.trigereditmanual').html(`[<u>ok</u>]`);
+        $('.showcustom').val($('.showlink').text());
+      }else{
+        toggle=0;
+        $('.showcustom').hide();
+        $('.showcustom').attr('type','hidden');
+        $('.trigereditmanual').html(`[<u>edit</u>]`);
+      }
+    });
+
+    $('.showcustom').on('keyup',function(){
+      var stringUrl=$('.showcustom').val();
+      var bersihkan=stringUrl.replace(/[^a-zA-Z0-9\_\.\-]/g, "-");
+      $('.showlink').text(bersihkan);
+      $('.showcustom').val(bersihkan);
+      if(stringUrl.length<1){
+        $('.trigereditmanual').hide();
+      }else{
+        $('.trigereditmanual').show();
+      }
+    });
+
+    $('.eshowcustom').hide();
+    $('.etrigereditmanual').show();
+    var toggle1=0;
+    $('.etrigereditmanual').on('click',function(){
+      toggle1++;
+      if(toggle1==1){
+        $('.eshowcustom').show();
+        $('.eshowcustom').focus();
+        $('.eshowcustom').attr('type','text');
+        $('.etrigereditmanual').html(`[<u>ok</u>]`);
+        $('.eshowcustom').val($('.eshowlink').text());
+      }else{
+        toggle1=0;
+        $('.eshowcustom').hide();
+        $('.eshowcustom').attr('type','hidden');
+        $('.etrigereditmanual').html(`[<u>edit</u>]`);
+      }
+    });
+
+    $('.eshowcustom').on('keyup',function(){
+      var stringUrl=$('.eshowcustom').val();
+      var bersihkan=stringUrl.replace(/[^a-zA-Z0-9\_\.\-]/g, "-");
+      $('.eshowlink').text(bersihkan);
+      $('.eshowcustom').val(bersihkan);
+      if(stringUrl.length<1){
+        $('.etrigereditmanual').hide();
+      }else{
+        $('.etrigereditmanual').show();
+      }
     });
 
 

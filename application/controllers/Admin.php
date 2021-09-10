@@ -175,7 +175,8 @@ class Admin extends CI_Controller {
 			        'nomer_pengundangw' => $tambahnomertlpw,
 			        'color_template' => $colortema,
 			        'color_template2' => '',
-			        'img_sharing' => 'defaultsharing.png'
+			        'img_sharing' => 'defaultsharing.png',
+			        'informasi_modal' => ''
 					);
 			$this->db->insert('pengundang', $data);
 			// $idproduk = $this->db->insert_id();
@@ -399,6 +400,7 @@ class Admin extends CI_Controller {
 		$tambahvideoacara=$this->input->post('tambahvideoacara');
 		$tambahstoriacara=$this->input->post('tambahstoriacara');
 		$tambahrekeningacara=$this->input->post('tambahrekeningacara');
+		$tambahinformasi=$this->input->post('tambahinformasi');
 
 		$tambahjenisacara=$this->input->post('tambahjenisacara',true);
 		$tambahtemaundangan=$this->input->post('tambahtemaundangan',true);
@@ -527,6 +529,7 @@ class Admin extends CI_Controller {
 			$this->db->set('video_acara', $tambahvideoacara);
 			$this->db->set('stori_pengundang', $tambahstoriacara);
 			$this->db->set('rekening_pengundang', $tambahrekeningacara);
+			$this->db->set('informasi_modal', $tambahinformasi);
 
 			$this->db->set('foto_pria', $fotol);
 			$this->db->set('foto_wanita', $fotop);
@@ -584,6 +587,7 @@ class Admin extends CI_Controller {
 			$this->db->set('video_acara', $tambahvideoacara);
 			$this->db->set('stori_pengundang', $tambahstoriacara);
 			$this->db->set('rekening_pengundang', $tambahrekeningacara);
+			$this->db->set('informasi_modal', $tambahinformasi);
 			
 			$this->db->set('foto_pria', $fotol);
 			$this->db->set('foto_wanita', $fotop);
@@ -953,12 +957,15 @@ class Admin extends CI_Controller {
 		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
 		$tema=$datacek['tema_template'];
 
-		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ucapan undangan
-	              <strong> berhasil </strong> dihapus!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.7);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(255, 167, 38,.5);color:#303030;border-radius:50%;box-shadow:0px 0px 2px rgba(0,0,0,.5);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;">&#8520;</div>
+			      <span style="padding-left:5px;color:#ddd;line-height:16px">Ucapan berhasil <strong>dihapus!</strong></span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
 		redirect('wedding/'.$urlpengundang.'/'.$urldiundang);
 			return false;
 		return false;

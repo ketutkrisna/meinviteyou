@@ -187,7 +187,7 @@
 	</nav>
 
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url('<?=base_url('assets/img/contoh/lptematic.jpg'); ?>');background-position:400px 0px;" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url('<?=base_url('assets/img/contoh/lptematic.jpg'); ?>');background-position:50% 0px;background-size:cover;" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
