@@ -39,9 +39,12 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    html,body{
+    /*html,body{
       height:100%;
       position:relative;
+    }*/
+    .mobile-nav-toggle{
+      z-index: 999
     }
   </style>
 </head>
@@ -106,7 +109,16 @@
         <div class="card-header" id="headingorder<?=$aorder['id_pengundang']; ?>" style="padding:7px">
           <h2 class="mb-0">
             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseorder<?=$aorder['id_pengundang']; ?>" aria-expanded="true" aria-controls="collapseorder<?=$aorder['id_pengundang']; ?>">
-              <?=$aorder['namapanggilan_priawanita'].' ('.$aorder['jenis_acara'].')'; ?>
+              <?=$aorder['namapanggilan_priawanita']; ?>
+              <?php if($aorder['status_user']){ ?>
+                <?php if($aorder['status_user']=='aktif'){ ?>
+                  (<span class="text-success">Fitur ON</span>)
+                <?php }else{ ?>
+                  (<span class="text-danger">Fitur OFF</span>)
+                <?php } ?>
+              <?php }else{ ?>
+                (<span class="text-warning">Akses belum dibuat</span>)
+              <?php } ?>
             </button>
           </h2>
         </div>
@@ -475,8 +487,8 @@
 
         </div>
         <div class="modal-footer">
-          <a onclick="return confirm('Pilih Oke untuk buka akses login')" type="button" class="btn btn-info btn-sm bukauser">Buka akses login</a>
-          <a onclick="return confirm('Pilih Oke untuk tutup akses login')" type="button" class="btn btn-danger btn-sm tutupuser">Tutup akses login</a>
+          <a onclick="return confirm('Pilih Oke untuk buka akses login')" type="button" class="btn btn-info btn-sm bukauser">Aktifkan Fitur</a>
+          <a onclick="return confirm('Pilih Oke untuk tutup akses login')" type="button" class="btn btn-danger btn-sm tutupuser">Non aktifkan Fitur</a>
         </div>
       </div>
 

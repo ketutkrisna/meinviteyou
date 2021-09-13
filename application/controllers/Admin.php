@@ -16,7 +16,7 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$querypengundang="SELECT count(id_user) as ids, id_user, pengundang.* from pengundang left join users on pengundang.id_pengundang=users.id_p group by id_pengundang order by id_pengundang desc";
+		$querypengundang="SELECT count(id_user) as ids, id_user, status_user, pengundang.* from pengundang left join users on pengundang.id_pengundang=users.id_p group by id_pengundang order by id_pengundang desc";
 		$data["allorder"]=$this->db->query($querypengundang)->result_array();
 
 		// var_dump($data["allorder"]);die;
@@ -299,12 +299,15 @@ class Admin extends CI_Controller {
 
 		$tnamaurlnull=trim($tnamaurl);
 	    if(empty($tnamaurlnull)){
-	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
-	              <strong>Gagal</strong>, nama diUrl tidak boleh kosong!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+	      	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Nama di URL <strong>Tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idtpengundang);
 			return false;
 	    }else{
@@ -314,12 +317,15 @@ class Admin extends CI_Controller {
 
 	    $tnamadiundangnull=trim($tnamadiundang);
 	    if(empty($tnamadiundangnull)){
-	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
-	              <strong>Gagal</strong>, nama diundang tidak boleh kosong!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+	      	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Nama yang di undang <strong>Tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idtpengundang);
 			return false;
 	    }else{
@@ -328,12 +334,15 @@ class Admin extends CI_Controller {
 
 		$cekdiundang=$this->db->get_where('diundang',['matchid_pengundang'=>$idtpengundang,'url_diundang'=>$tnamaurl])->row_array();
 		if($cekdiundang){
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
-	              <strong>Gagal</strong>, nama diUrl sudah ada!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Nama di URL <strong>Sudah ada</strong>!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idtpengundang);
 			return false;
 		}
@@ -352,12 +361,15 @@ class Admin extends CI_Controller {
 			// $idproduk = $this->db->insert_id();
 			// notifikasi berhasil
 			// $this->session->set_flashdata('newnotiftambah',$idproduk);
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Daftar undangan
-	              <strong>Berhasil</strong> ditambahkan!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(69, 159, 191,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(69, 159, 191,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Daftar undangan <strong>Berhasil</strong> ditambahkan!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idtpengundang);
 			return false;	
 	}
@@ -439,22 +451,28 @@ class Admin extends CI_Controller {
 	            	$errorl = $this->upload->display_errors('','');
 	            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
 	            		$errorsl=['error'=>'Format file harus JPG,PNG'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
-				              <strong>JPG|PNG|GIF</strong>(laki-laki)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Format file harus <strong>JPG|PNG|GIF</strong> (mempelai pertama)!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$ideundangan);
 						return false;
 	            	}else{
 	            		$errorsl=['error'=>'Max gambar 2MB'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
-				              <strong>max 2MB</strong>(laki-laki)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ukuran file terlalu bessar <strong>MAX 2MB</strong> (mempelai pertama)!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$ideundangan);
 						return false;
 	            	}
@@ -477,22 +495,28 @@ class Admin extends CI_Controller {
 	            	$errorp = $this->upload->display_errors('','');
 	            	if($errorp=='The filetype you are attempting to upload is not allowed.'){
 	            		$errorsp=['error'=>'Format file harus JPG,PNG'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
-				              <strong>JPG|PNG|GIF</strong>(perempuan)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Format file harus <strong>JPG|PNG|GIF</strong> (mempelai kedua)!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$ideundangan);
 						return false;
 	            	}else{
 	            		$errorsp=['error'=>'Max gambar 2MB'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
-				              <strong>max 2MB</strong>(perempuan)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ukuran file terlalu besar <strong>MAX 2MB</strong> (mempelai kedua)!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$ideundangan);
 						return false;
 	            	}
@@ -544,12 +568,15 @@ class Admin extends CI_Controller {
 			// $idproduk = $this->db->insert_id();
 			// notifikasi berhasil
 			// $this->session->set_flashdata('newnotiftambah',$idproduk);
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Undangan
-	              <strong>Berhasil</strong> diupdate!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(83, 219, 79,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(83, 219, 79,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Undangan <strong>Berhasil</strong> diupdate!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$ideundangan);
 			return false;
 
@@ -600,12 +627,15 @@ class Admin extends CI_Controller {
 			$this->db->where('id_pengundang', $ideundangan);
 			$this->db->update('pengundang');
 
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Undangan
-	              <strong> berhasil </strong> diupdate!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(83, 219, 79,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(83, 219, 79,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Undangan <strong>Berhasil</strong> diupdate!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$ideundangan);
 			return false;
 		}
@@ -630,22 +660,28 @@ class Admin extends CI_Controller {
             	$error = $this->upload->display_errors('','');
             	if($error=='The filetype you are attempting to upload is not allowed.'){
             		$errors=['error'=>'Format file harus JPG,PNG'];
-            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
-			              <strong>JPG|PNG|GIF</strong>.
-			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			                <span aria-hidden="true">&times;</span>
-			              </button>
-			            </div>');
+            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+						  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+						    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+						      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+						      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Format file harus <strong>JPG|PNG|GIF</strong>!</span>
+						    </span>
+						    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+						  </div>
+						</div>');
 					redirect('admin/aturundangan/'.$idtambahgaleri);
 					return false;
             	}else{
             		$errors=['error'=>'Max gambar 2MB'];
-            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
-			              <strong>max 2MB</strong>.
-			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			                <span aria-hidden="true">&times;</span>
-			              </button>
-			            </div>');
+            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+						  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+						    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+						      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+						      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ukuran file terlalu besar <strong>MAX 2MB</strong>!</span>
+						    </span>
+						    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+						  </div>
+						</div>');
 					redirect('admin/aturundangan/'.$idtambahgaleri);
 					return false;
             	}
@@ -662,21 +698,27 @@ class Admin extends CI_Controller {
 			// $idproduk = $this->db->insert_id();
 			// notifikasi berhasil
 			// $this->session->set_flashdata('newnotiftambah',$idproduk);
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto galeri
-	              <strong>Berhasil</strong> ditambahkan.
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(69, 159, 191,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(69, 159, 191,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Foto galeri <strong>Berhasil</strong> ditambahkan!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idtambahgaleri);
 			return false;
 		}else{
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto tidak boleh
-	              <strong> Kosong </strong>!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Foto <strong>tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idtambahgaleri);
 			return false;
 		}
@@ -689,12 +731,15 @@ class Admin extends CI_Controller {
 		$this->db->where('id_galeri', $idgaleri);
 		$this->db->delete('galeris');
 
-		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto galeri
-	              <strong> berhasil </strong> dihapus!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Foto galeri <strong>Berhasil</strong> dihapus!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
 		redirect('admin/aturundangan/'.$idpengundang);
 		return false;
 	}
@@ -732,22 +777,28 @@ class Admin extends CI_Controller {
 	            	$errorl = $this->upload->display_errors('','');
 	            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
 	            		$errorsl=['error'=>'Format file harus JPG,PNG'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
-				              <strong>JPG|PNG|GIF</strong>(laki-laki)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Format file harus <strong>JPG|PNG|GIF</strong>!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$idgantibg);
 						return false;
 	            	}else{
 	            		$errorsl=['error'=>'Max gambar 2MB'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
-				              <strong>max 2MB</strong>(laki-laki)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ukuran file terlalu besar <strong>MAX 2MB</strong>!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$idgantibg);
 						return false;
 	            	}
@@ -761,22 +812,28 @@ class Admin extends CI_Controller {
 			// $idproduk = $this->db->insert_id();
 			// notifikasi berhasil
 			// $this->session->set_flashdata('newnotiftambah',$idproduk);
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Background 
-	              <strong>Berhasil</strong> diupdate!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(83, 219, 79,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(83, 219, 79,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Background <strong>Berhasil</strong> diupdate!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idgantibg);
 			return false;
 
 		}else{
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto background
-	              <strong> tidak boleh</strong> kosong!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Foto background <strong>tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idgantibg);
 			return false;
 		}
@@ -793,12 +850,15 @@ class Admin extends CI_Controller {
 		$this->db->where('id_pengundang', $idpengundang);
 		$this->db->update('pengundang');
 
-		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Background
-	              <strong> berhasil </strong> diganti Default!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(83, 219, 79,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(83, 219, 79,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Background <strong>Berhasil</strong> diganti default!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
 		redirect('admin/aturundangan/'.$idpengundang);
 		return false;
 	}
@@ -878,24 +938,30 @@ class Admin extends CI_Controller {
 		// $getnamadiundang=$this->db->get_where('diundang',['url_diundang'=>$enamaurl,'matchid_pengundang'=>$idepengundang])->row_array();
 
 		// if($getnamadiundang){
-		// 	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
-		// 	              <strong>Gagal</strong>, Nama diUrl sudah ada!
-		// 	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		// 	                <span aria-hidden="true">&times;</span>
-		// 	              </button>
-		// 	            </div>');
-		// 	redirect('admin/aturundangan/'.$idepengundang);
+		// 	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+		// 		  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+		// 		    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+		// 		      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+		// 		      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Nama di URL <strong>Sudah ada</strong>!</span>
+		// 		    </span>
+		// 		    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+		// 		  </div>
+		// 		</div>');
+		// 	redirect('users');
 		// 	return false;
 		// }
 
 		$enamaurlnull=trim($enamaurl);
 	    if(empty($enamaurlnull)){
-	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
-	              <strong>Gagal</strong>, nama diUrl tidak boleh kosong!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+	      	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Nama di URL <strong>Tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idepengundang);
 			return false;
 	    }else{
@@ -905,12 +971,15 @@ class Admin extends CI_Controller {
 
 	    $enamadiundangnull=trim($enamadiundang);
 	    if(empty($enamadiundangnull)){
-	      	$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert"> 
-	              <strong>Gagal</strong>, nama diundang tidak boleh kosong!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+	      	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Nama di undang <strong>Tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idepengundang);
 			return false;
 	    }else{
@@ -924,12 +993,15 @@ class Admin extends CI_Controller {
 		$this->db->where('id_diundang', $idediundang);
 		$this->db->update('diundang');
 
-		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Daftar undangan
-              <strong> berhasil </strong> diupdate!
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>');
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(83, 219, 79,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(83, 219, 79,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Daftar undangan <strong>Berhasil</strong> diupdate!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 		redirect('admin/aturundangan/'.$idepengundang);
 		return false;
 	}
@@ -939,12 +1011,15 @@ class Admin extends CI_Controller {
 		$this->db->where('id_diundang', $iddiundang);
 		$this->db->delete('diundang');
 
-		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Daftar undangan
-	              <strong> berhasil </strong> dihapus!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Daftar undangan <strong>Berhasil</strong> dihapus!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 		redirect('admin/aturundangan/'.$idundangan);
 		return false;
 	}
@@ -957,11 +1032,11 @@ class Admin extends CI_Controller {
 		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
 		$tema=$datacek['tema_template'];
 
-		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.7);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
 			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
 			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
-			      <div style="font-size:25px;background-color:rgba(255, 167, 38,.5);color:#303030;border-radius:50%;box-shadow:0px 0px 2px rgba(0,0,0,.5);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;">&#8520;</div>
-			      <span style="padding-left:5px;color:#ddd;line-height:16px">Ucapan berhasil <strong>dihapus!</strong></span>
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ucapan <strong>Berhasil</strong> dihapus!</span>
 			    </span>
 			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
 			  </div>
@@ -1026,12 +1101,15 @@ class Admin extends CI_Controller {
 		$this->db->set('musik_acara', '');
 		$this->db->where('id_pengundang', $idpengundang);
 		$this->db->update('pengundang');
-		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Success musik
-              <strong>berhasil</strong> dihapus!
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>');
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Musik <strong>Berhasil</strong> dihapus!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
 		redirect('admin/aturundangan/'.$idpengundang);
 		return false;
 
@@ -1061,22 +1139,28 @@ class Admin extends CI_Controller {
 	            	$errorl = $this->upload->display_errors('','');
 	            	if($errorl=='The filetype you are attempting to upload is not allowed.'){
 	            		$errorsl=['error'=>'Format file harus JPG,PNG'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Format file harus
-				              <strong>JPG|PNG|GIF</strong>(laki-laki)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Format file harus <strong>JPG|PNG|GIF</strong>!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$idsharepengundang);
 						return false;
 	            	}else{
 	            		$errorsl=['error'=>'Max gambar 2MB'];
-	            		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Ukuran gambar terlalu besar 
-				              <strong>max 2MB</strong>(laki-laki)
-				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                <span aria-hidden="true">&times;</span>
-				              </button>
-				            </div>');
+	            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+							  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+							    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+							      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+							      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ukuran file terlalu besar <strong>MAX 2MB</strong>!</span>
+							    </span>
+							    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+							  </div>
+							</div>');
 						redirect('admin/aturundangan/'.$idsharepengundang);
 						return false;
 	            	}
@@ -1090,22 +1174,28 @@ class Admin extends CI_Controller {
 			// $idproduk = $this->db->insert_id();
 			// notifikasi berhasil
 			// $this->session->set_flashdata('newnotiftambah',$idproduk);
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Image sharing 
-	              <strong>Berhasil</strong> diupdate!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(83, 219, 79,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(83, 219, 79,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Image sharing <strong>Berhasil</strong> diupdate!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idsharepengundang);
 			return false;
 
 		}else{
-			$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Foto sahring
-	              <strong> tidak boleh</strong> kosong!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Image sharing <strong>tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
 			redirect('admin/aturundangan/'.$idsharepengundang);
 			return false;
 		}
@@ -1122,12 +1212,15 @@ class Admin extends CI_Controller {
 		$this->db->where('id_pengundang', $idpengundang);
 		$this->db->update('pengundang');
 
-		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Image sharing
-	              <strong> berhasil </strong> diganti Default!
-	              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	                <span aria-hidden="true">&times;</span>
-	              </button>
-	            </div>');
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(83, 219, 79,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(83, 219, 79,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Image sharing <strong>Berhasil</strong> diganti default!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
 		redirect('admin/aturundangan/'.$idpengundang);
 		return false;
 	}
@@ -1136,7 +1229,7 @@ class Admin extends CI_Controller {
 	{
 		$data['profileuser']=$this->db->get_where('users',['id_user'=>$this->session->userdata('id_user')])->row_array();
 		$userid=$this->session->userdata('id_user');
-		$passwordlama=htmlspecialchars($this->input->post('passwordlama',true));
+		$passwordlama=htmlspecialchars($this->input->post('passwordlama'));
 		$matchpassword=$this->db->get_where('users',['id_user'=>$userid])->row_array();
 		// var_dump($matchpassword);die;
 
@@ -1159,7 +1252,7 @@ class Admin extends CI_Controller {
 			// $this->load->view('users/setpassword',$data);
 			$this->load->view('admin/password');
 		}else{
-			if($matchpassword['password_user']!=$passwordlama){
+			if(!password_verify($passwordlama, $matchpassword['password_user'])){
 				$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Password lama 
 		              <strong>Salah</strong>.
 		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -1167,23 +1260,34 @@ class Admin extends CI_Controller {
 		              </button>
 		            </div>');
 				redirect('admin/ubahpassword');
-				// $this->load->view("templates/header",$data);
-				// $this->load->view("home/setpassword",$data);
 				return false;
 			}else{
-				$this->db->set('password_user', htmlspecialchars($this->input->post('passwordbaru',true)));
-				$this->db->where('id_user', $userid);
-				$this->db->update('users');
-				$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Success password
-		              <strong>berhasil</strong> diubah.
+				$passwordNew = htmlspecialchars($this->input->post('passwordbaru',true));
+				if($passwordNew == $passwordlama){
+					$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Password lama 
+		              <strong>tidak boleh sama</strong>.
 		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 		                <span aria-hidden="true">&times;</span>
 		              </button>
 		            </div>');
-				redirect('admin/ubahpassword');
-				// $this->load->view("templates/header",$data);
-				// $this->load->view("home/setpassword",$data);
-				return false;
+					redirect('admin/ubahpassword');
+					return false;
+				}else{
+					$passwordHash = password_hash($passwordNew, PASSWORD_DEFAULT);
+					$this->db->set('password_user', $passwordHash);
+					$this->db->where('id_user', $userid);
+					$this->db->update('users');
+					$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">Success password
+			              <strong>berhasil</strong> diubah.
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			              </button>
+			            </div>');
+					redirect('admin/ubahpassword');
+					// $this->load->view("templates/header",$data);
+					// $this->load->view("home/setpassword",$data);
+					return false;
+				}
 			}
 		}
 	}

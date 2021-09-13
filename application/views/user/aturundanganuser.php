@@ -188,7 +188,7 @@
 
     <div class="row">
       <div class="col-12 mt-2 mb-3 d-flex justify-content-start">
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modaltambahdaftarundangan">Tambah daftar undangan</button>
+        <button type="button" class="btn btn-primary btn-sm tambahdaftaru" data-toggle="modal" data-target="#modaltambahdaftarundangan">Tambah daftar undangan</button>
       </div>
     </div>
 
@@ -245,7 +245,7 @@
         <div id="collapselist<?=$rlist['id_diundang']; ?>" class="collapse" aria-labelledby="headinglist <?=$rlist['id_diundang']; ?>" data-parent="#listnama<?=$detailundangan['id_pengundang']; ?>">
           <div class="card-body" style="padding:2px 0px 5px 20px;">
 
-            <div class="mb-0">
+            <!-- <div class="mb-0">
               <div class="card shadow" style="padding:0">
                 <div class="card-body py-0" style="margin:0">
                   <div class="row no-gutters align-items-center">
@@ -256,7 +256,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <?php if($rlist['nomer_diundang']){ ?>
             <div class="mb-0">
               <div class="card shadow" style="padding:0">
@@ -280,14 +280,14 @@
                 <div class="card-body py-0" style="margin:0">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-0">
-                      <div class="h5 mb-0 text-gray-800 clip<?=$rlist['id_diundang']; ?>"><?=$link; ?></div>
+                      <div class="h5 pr-2 pl-2 pt-1 pb-1 mb-0 mt-1 text-gray-800 clip<?=$rlist['id_diundang']; ?>" style="background-color:#fafafa;border-radius:5px;box-shadow:0 0 4px rgba(0,0,0,.4)"><?=$link; ?></div>
                       <span>Share : | 
                         <a class="whatsapp" href="https://api.whatsapp.com/send?text=<?=$link; ?>" title="Share this post on Whatsapp" target="_blank"><i style="font-weight:bold;font-size:22px;" class="ion-social-whatsapp text-success"></i></a>  |  
                         <a href="https://www.facebook.com/share.php?u=<?=$link; ?>" title="Share this post on Facebook" target="_blank"><i style="font-weight:bold;font-size:22px;" class="ion-social-facebook text-primary"></i></a>  |  
-                        <span onclick="copyToClipboard('.clip<?=$rlist['id_diundang']; ?>');" class="clipboard" title="Copy on clipboard"><i style="font-weight:bold;font-size:23px;margin:0 6px 0 6px;" class="ion-ios-copy-outline text-secondary onclip" data-toggle="tooltip" data-placement="top" title="Copied!"></i></span> |
+                        <span onclick="copyToClipboard('.clip<?=$rlist['id_diundang']; ?>');" class="clipboard" title="Copy on clipboard"><i style="font-weight:bold;font-size:23px;margin:0 6px 0 6px;cursor:copy;" class="ion-ios-copy-outline text-secondary onclip" data-toggle="tooltip" data-placement="top" title="Copied!"></i></span> |
                         <!-- <a class="twitter" href="https://twitter.com/share?text=undangan&url=<?=$link; ?>" title="Share this post on Twitter" target="_blank"><i style="font-weight:bold;font-size:22px;" class="ion-social-twitter text-info"></i></a>  | -->
                       </span>
-                      <div class="mb-0 d-flex justify-content-between" style="font-size:14px"><span>Link Url</span> <span><a target="_blank" style="margin:5px 5px 0 0" class="text-primary ml-auto" href="<?=$link; ?>">Lihat undangan</a></span></div>
+                      <div class="mb-0 d-flex justify-content-between" style="font-size:14px"><span></span> <span><a target="_blank" style="margin:0px;font-size:15px;" class="text-primary ml-auto" href="<?=$link; ?>">Lihat undangan <span style="font-size:18px">&raquo;</span></a></span></div>
                     </div>
                   </div>
                 </div>
@@ -348,7 +348,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nama</span>
             </div>
-            <input type="text" class="form-control customnamalengkap" placeholder="Ketik nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="tnamadiundang" required>
+            <input type="text" class="form-control customnamalengkap" placeholder="Ketik nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="tnamadiundang" autocomplete="off" required>
           </div>
 
         </div>
@@ -396,7 +396,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nama</span>
             </div>
-            <input type="text" class="form-control ecustomnamalengkap" placeholder="Ketik nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="enamadiundang" required>
+            <input type="text" class="form-control ecustomnamalengkap" placeholder="Ketik nama yang diundang" aria-label="Username" aria-describedby="basic-addon1" name="enamadiundang" autocomplete="off" required>
           </div>
 
         </div>
@@ -584,6 +584,12 @@
     $(document).ready(function(){
 
 
+    $('body').on('click','.tambahdaftaru',function(){
+      setTimeout(function() {
+        $('.customnamalengkap').focus();
+      }, 500);
+    });
+
     $('[data-toggle="popover"]').popover();
     $('.loader').hide();
     $('body').on('click','.modaleditdaftar',function(){
@@ -685,6 +691,10 @@
       }else{
         $('.etrigereditmanual').show();
       }
+    });
+
+    $('.closeout').on('click',function(){
+      $('.popupnotif').fadeOut();
     });
 
 
