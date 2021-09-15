@@ -194,7 +194,7 @@
 
     <div class="row">
       <div class="col s12 center-align" style="font-family: 'Satisfy', cursive;">
-        <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:20px;">Wedding Of</span><br>
+        <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:20px;">The Wedding Of</span><br>
         <span class="white-text" style="text-shadow:1px 1px 4px #111;font-size:35px;"><?=$detailundangan['namapanggilan_priawanita']; ?></span>
       </div>
     </div>

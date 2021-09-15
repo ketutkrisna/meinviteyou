@@ -38,6 +38,37 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .text-sendiri {
+      color: #2298A4 !important;
+    }
+    .text-merah {
+      color: #2298A4 !important;
+    }
+    .bg-sendiri {
+      background-color: #2298A4 !important;
+    }
+    .mobile-nav-toggle {
+      top: 30px;
+    }
+    .hoverlihat {
+      transition: .1s;
+      box-shadow:0 0 20px rgba(0,0,0,.7);
+    }
+    .hoverlihat:hover {
+      box-shadow:0px 0px 3px rgba(0,0,0,.3);
+      transform: scale(0.95)!important;
+      transition: .1s !important;
+    }
+    .box {
+      box-shadow:0 0 10px rgba(0,0,0,.4);
+      border-radius:5px;
+      padding:8px;
+      /*margin-left:3px;
+      margin-right:3px;
+      box-sizing:border-box;*/
+    }
+  </style>
 </head>
 
 <body>
@@ -48,9 +79,9 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
-          <!-- <h1 class="logo mr-auto"><a href="<?=base_url(); ?>" style="font-size:25px"><span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></a></h1> -->
+          <!-- <h1 class="logo mr-auto"><a href="<?=base_url(); ?>" style="font-size:25px"><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></a></h1> -->
           <!-- Uncomment below if you prefer to use an image logo -->
-           <a href="<?=base_url(); ?>" class="logo mr-auto"><img src="assets/img/logomiy.png" alt="" class="img-fluid"></a>
+           <a href="<?=base_url(); ?>" style="border:0;" class="logo mr-auto"><img src="assets/img/whiteok.png" alt="logo miy" class="img-fluid"></a>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
@@ -85,16 +116,17 @@
     <div class="intro-container">
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
 
-        <ol class="carousel-indicators"></ol>
+        <!-- <ol class="carousel-indicators"></ol> -->
 
         <div class="carousel-inner" role="listbox">
 
-          <div class="carousel-item active" style="background-image: url(assets/img/intro-carousel/7.jpg)">
+          <div class="carousel-item active" style="background:url(assets/img/intro-carousel/cobasa.jpg);background-size:cover;">
             <div class="carousel-container">
               <div class="container">
-                <h1 class="animate__animated animate__fadeInDown" style="font-size:35px"><span style="font-size:25px;" class="text-light">Welcome to</span><br> <span class="text-primary">me</span><span class="text-danger" style="font-weight:bold;"><u>INVITE</u></span><span class="text-primary">you</span></h1>
+                <span><img style="width:150px" src="<?=base_url('assets/img/logook.png') ?>"></span>
+                <h1 class="animate__animated animate__fadeInDown mt-0" style="font-size:35px"><span style="font-size:20px;" class="text-light">Welcome to</span><br> <span class="text-sendiri">me</span><span class="text-merah" style="font-weight:bold;"><u>INVITE</u></span><span class="text-sendiri">you</span></h1>
                 <p style="font-size:20px;color:#ddd" class="animate__animated animate__fadeInUp">Solusi Untuk Undangan Digital mu</p>
-                <a href="#services" class="btn-get-started scrollto animate__animated animate__fadeInUp bg-primary">INFORMASI</a>
+                <a href="#services" style="" class="btn-get-started scrollto hoverlihat animate__animated animate__fadeInUp bg-sendiri text-light">LIHAT</a>
               </div>
             </div>
           </div>
@@ -191,58 +223,58 @@
 
         <header class="section-header wow fadeInUp">
           <h3>Layanan</h3>
-          <p>Layanan yang akan kamu dapat dari <span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></p>
+          <p>Layanan yang akan kamu dapat dari <span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
         </header>
 
-        <div class="row">
+        <div class="row" style="margin:0 3px 0 3px;box-sizing:border-box;">
 
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i style="font-size:50px" class="ion-android-globe text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-android-globe text-sendiri"></i></div>
             <h4 class="title"><a href="">Link Url Undangan</a></h4>
             <p class="description">Kamu dapat gunakan nama Url method sesuai keinginanmu.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i style="font-size:50px" class="ion-aperture text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-aperture text-sendiri"></i></div>
             <h4 class="title"><a href="">Header Welcome</a></h4>
             <p class="description">Kamu bisa gunakan foto terbaik Kamu dan Pasangan yang nantinya digunakan di cover utama undangan digital Kamu.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i style="font-size:50px" class="ion-android-people text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-android-people text-sendiri"></i></div>
             <h4 class="title"><a href="">Informasi Mempelai</a></h4>
             <p class="description">Di fitur ini, undangan Kamu akan menampilkan detail dari Kamu dan Pasangan. Sepeti Foto, Nama, Nama Kedua orang tua dari masing masing pasangan.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-calendar text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-ios-calendar text-sendiri"></i></div>
             <h4 class="title"><a href="">Informasi Acara</a></h4>
             <p class="description">Fitur ini berisi tanggal, waktu, nama lokasi dan alamat lokasi pernikahan Kamu dan Pasangan.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-location text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-ios-location text-sendiri"></i></div>
             <h4 class="title"><a href="">Peta Lokasi</a></h4>
             <p class="description">Selain lokasi acara Kamu dan Pasangan di tampilkan dalam bentuk deskripsi, lokasi ditampilkan juga dalam bentuk map yang sudah terintegrasi dengan Google Maps yang pastinya membantu penerima undangan lebih mudah menuju lokasi acara Kamu dan Pasangan.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-images text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-images text-sendiri"></i></div>
             <h4 class="title"><a href="">Foto Galeri</a></h4>
             <p class="description">Lengkapi undanganmu dengan membagikan momen bahagia Kamu dan Pasangan yang sudah diabadikan dalam bentuk foto.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-chatboxes text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-ios-chatboxes text-sendiri"></i></div>
             <h4 class="title"><a href="">Ucapan Dan Doa</a></h4>
             <p class="description">Dengan fitur ini, para udangan bisa kirim ucapan dan doa untuk Kamu dan Pasangan, dan ditampilkan langsung diundangan Kamu dan Pasangan.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-time text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-ios-time text-sendiri"></i></div>
             <h4 class="title"><a href="">CountDown Acara</a></h4>
             <p class="description">Undangan Kamu akan menghitung berapa hari lagi menuju acara bahagia Kamu dan Pasangan.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-videocam text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-ios-videocam text-sendiri"></i></div>
             <h4 class="title"><a href="">Video Galeri</a></h4>
             <p class="description">Selain galeri foto, undangan Kamu dan Pasangan juga bisa tampilkan momen momen bahagia dalam bentuk video yang bisa Kamu dan Pasangan bagikan.</p>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-music-note text-primary"></i></div>
+            <div class="icon"><i style="font-size:50px" class="ion-music-note text-sendiri"></i></div>
             <h4 class="title"><a href="">Backsound Musik</a></h4>
             <p class="description">Fitur ini akan membuat undangan Kamu dan Pasangan menjadi lebih spesial dengan diiringi backsound lagu.</p>
           </div>
@@ -263,8 +295,8 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
       <div class=" col-lg-12">
           <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active bg-primary">Semua</li>
-            <li data-filter=".filter-app" class="bg-primary">Pernikahan</li>
+            <li data-filter="*" class="filter-active bg-sendiri">Semua</li>
+            <li data-filter=".filter-app" class="bg-sendiri">Pernikahan</li>
             <!-- <li data-filter=".filter-card">Ulang Tahun</li> -->
             <!-- <li data-filter=".filter-web">Lain-lain</li> -->
           </ul>
@@ -290,13 +322,28 @@
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap text-center">
             <figure>
-              <img src="<?=base_url('/'); ?>assets/img/portfolio/clasic1.JPG" class="img-fluid" alt="">
-              <a href="<?=base_url('/'); ?>assets/img/portfolio/clasic1.JPG" class="link-preview venobox" data-gall="portfolioGallery" title="Design Classic"><i class="ion ion-eye"></i></a>
+              <img src="<?=base_url('/'); ?>assets/img/portfolio/classictheme.jpg" class="img-fluid" alt="">
+              <a href="<?=base_url('/'); ?>assets/img/portfolio/classictheme.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Design Classic"><i class="ion ion-eye"></i></a>
               <a target="_blank" href="<?=base_url('/'); ?>contohundangan/classic/" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
 
             <div class="portfolio-info">
               <h4><a href="#!">CLASSIC</a></h4>
+              <p>Pernikahan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap text-center">
+            <figure>
+              <img src="<?=base_url('/'); ?>assets/img/portfolio/vantagetheme.jpg" class="img-fluid" alt="">
+              <a href="<?=base_url('/'); ?>assets/img/portfolio/vantagetheme.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Design Vantage"><i class="ion ion-eye"></i></a>
+              <a target="_blank" href="<?=base_url('/'); ?>contohundangan/vantage/" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="#!">VANTAGE</a></h4>
               <p>Pernikahan</p>
             </div>
           </div>
@@ -349,7 +396,7 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center mb-3 bg-white" style="border:1px solid #e0e0e0;">
-            <span style="color:#006BDF;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Easy</span>
+            <span style="color:#2298A4;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Easy</span>
             <div style="display:flex;justify-content:center;">
               <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-right:4px">Rp. </span><span data-toggle="counter-up" class="text-dark" style="font-weight:unset;letter-spacing:-3px;font-size:35px">100</span> <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-left:4px"> ribu</span>
             </div>
@@ -365,7 +412,7 @@
           </div>
 
           <div class="col-lg-3 col-6 text-center mb-3 bg-white" style="border:1px solid #e0e0e0">
-            <span style="color:#006BDF;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Medium</span>
+            <span style="color:#2298A4;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Medium</span>
             <div style="display:flex;justify-content:center;">
               <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-right:4px">Rp. </span><span data-toggle="counter-up" class="text-dark" style="font-weight:unset;letter-spacing:-3px;font-size:35px">200</span> <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-left:4px"> ribu</span>
             </div>
@@ -381,7 +428,7 @@
           </div>
 
           <div class="col-lg-3 col-6 text-center mb-3 bg-white" style="border:1px solid #e0e0e0">
-            <span style="color:#006BDF;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Hard</span>
+            <span style="color:#2298A4;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Hard</span>
             <div style="display:flex;justify-content:center;">
               <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-right:4px">Rp. </span><span data-toggle="counter-up" class="text-dark" style="font-weight:unset;letter-spacing:-3px;font-size:35px">300</span> <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-left:4px"> ribu</span>
             </div>
@@ -397,7 +444,7 @@
           </div>
 
           <div class="col-lg-3 col-6 text-center mb-3 bg-white" style="border:1px solid #e0e0e0">
-            <span style="color:#006BDF;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Spesial</span>
+            <span style="color:#2298A4;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Spesial</span>
             <div style="display:flex;justify-content:center;">
               <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-right:4px">Rp. </span><span data-toggle="counter-up" class="text-dark" style="font-weight:unset;letter-spacing:-3px;font-size:35px">400</span> <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-left:4px"> ribu</span>
             </div>
@@ -427,7 +474,7 @@
 
         <header class="section-header">
           <h3>Cara Pemesanan</h3>
-          <p>Langkah-langkah cara pemesanan di <span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></p>
+          <p>Langkah-langkah cara pemesanan di <span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
         </header>
 
         <div class="skills-content">
@@ -437,7 +484,7 @@
             Pilih desain yang tersedia atau diskusikan custom undangan seperti apa yang kamu inginkan.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
-            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">20%</i></span>
             </div>
           </div>
@@ -447,7 +494,7 @@
             Kami akan mengirimkan form data kepada pemesan, dan data tersebut yang akan digunakan untuk undangan anda.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
-            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">40%</i></span>
             </div>
           </div>
@@ -457,7 +504,7 @@
             Proses pengerjaan undangan oleh team kami sesuai dengan data yang dimasukan, termasuk dengan revisi-revisi jika ada perubahan data dll
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
-            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">60%</i></span>
             </div>
           </div>
@@ -467,7 +514,7 @@
             Pembayaran bisa dilakukan secara Tunai jika memang lokasi berdekatan atau transfer.<br> Pembarayan dilakukan setelah proses pembuatan undangan selesai..
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
-            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">80%</i></span>
             </div>
           </div>
@@ -477,7 +524,7 @@
             Kami akan memberikan akun untuk menambahkan daftar undangan seperti keluarga,teman atau kerabat yang akan anda undang dan undangan kamu siap dikirim.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
-            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">100%</i></span>
             </div>
           </div>
@@ -492,7 +539,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h3>Team</h3>
-          <p>Team <span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></p>
+          <p>Team <span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
         </div>
 
         <div class="row justify-content-center">
@@ -771,14 +818,14 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
+  <footer id="footer" style="background-color:#262626;">
+    <div class="footer-top" style="background-color: #333333;">
       <div class="container">
         <div class="row justify-content-center">
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>About Us</h3>
-            <p><span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span> adalah website penyedia layanan undangan berbentuk digital yang dibuat untuk mempermudah dalam pembuatan undangan sehingga tidak perlu lagi menggunakan kertas undangan sehingga lebih simpel, modern dan dinamis tentunya.</p>
+            <p><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span> adalah website penyedia layanan undangan berbentuk digital yang dibuat untuk mempermudah dalam pembuatan undangan sehingga tidak perlu lagi menggunakan kertas undangan sehingga lebih simpel, modern dan dinamis tentunya.</p>
           </div>
 
           <!-- <div class="col-lg-3 col-md-6 footer-links">
@@ -826,7 +873,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -835,7 +882,7 @@
         Licensing information: https://bootstrapmade.com/license/
         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
       -->
-        Designed by <a href="https://www.facebook.com/ketut.k.ii/" class="text-primary">Ketut Krisna</a>
+        Designed by <a href="https://www.facebook.com/ketut.k.ii/" class="text-sendiri">Ketut Krisna</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -864,7 +911,7 @@
         }
     </style>
 
-  <div class="text-primary" style="position:fixed;bottom:30px;left:15px;border-radius:50%;z-index:1020;">
+  <div class="text-sendiri" style="position:fixed;bottom:30px;left:15px;border-radius:50%;z-index:1020;">
     <div style="background-color:rgba(26, 199, 84,);padding:4px;border-radius:50%">
       <span class="cobain" data-placement="left" data-toggle="popover" title="Pesan via WA" data-html="true" data-content="
         <img class='imgradius' src='<?=base_url('assets/img/team1.jpg'); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=+6282179471533'> Krisna(owner)</a>
@@ -894,6 +941,19 @@
   <script src="<?=base_url('/'); ?>assets/js/main.js"></script>
   <script>
     $('.cobain').popover();
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('.mobile-nav-toggle').css({
+          'top':'25px',
+          'transition':'.5s'
+        })
+      }else{
+        $('.mobile-nav-toggle').css({
+          'top':'30px',
+          'transition':'.5s'
+        })
+      }
+    })
   </script>
 
 </body>

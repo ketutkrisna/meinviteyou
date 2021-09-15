@@ -39,9 +39,21 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    html,body{
+    /*html,body{
       height:100%;
       position:relative;
+    }*/
+    .text-sendiri {
+      color: #2298A4 !important;
+    }
+    .text-merah {
+      color: #2298A4 !important;
+    }
+    .bg-sendiri {
+      background-color: #2298A4 !important;
+    }
+    .mobile-nav-toggle {
+      top: 30px;
     }
   </style>
 </head>
@@ -49,19 +61,19 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top" style="background-color:black">
+  <header id="header" class="fixed-top" style="background-color: #2298A4;">
     <div class="container-fluid">
 
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
-          <a href="<?=base_url('users'); ?>" class="logo mr-auto"><i style="font-size:25px" class="fa fa-arrow-left text-white"></i><img src="<?=base_url('/'); ?>assets/img/logomiy.png" alt="" class="img-fluid"><span class="text-primary" style="font-size:25px">Dashboard</span></a>
+          <a href="<?=base_url('users'); ?>" style="border:0;" class="logo mr-auto"><i style="font-size:25px" class="fa fa-arrow-left text-white"></i> <img src="<?=base_url('/'); ?>assets/img/whiteok.png" alt="" class="img-fluid"><span class="text-light" style="font-size:25px"> Dashboard</span></a>
         </div>
       </div>
 
     </div>
   </header><!-- End Header -->
 
-  <main id="main" style="margin-top:100px;min-height:800px">
+  <main id="main" style="margin-top:100px;min-height:500px">
 
   <section style="margin:10px">
     <div id="content">
@@ -125,13 +137,13 @@
   
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <footer id="footer" style="position:fixed;bottom:0;width:100%;background-color:#262626">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><a href="<?=base_url(); ?>"><span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></a></strong>. All Rights Reserved
+        &copy; Copyright <strong><a href="<?=base_url(); ?>"><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></a></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Designed by <a class="text-primary" href="https://www.facebook.com/ketut.k.ii/">Ketut Krisna</a>
+        Designed by <a class="text-sendiri" href="https://www.facebook.com/ketut.k.ii/">Ketut Krisna</a>
       </div>
     </div>
   </footer>

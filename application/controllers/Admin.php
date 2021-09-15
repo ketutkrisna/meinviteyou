@@ -1032,7 +1032,7 @@ class Admin extends CI_Controller {
 		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
 		$tema=$datacek['tema_template'];
 
-		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
 			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
 			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
 			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>

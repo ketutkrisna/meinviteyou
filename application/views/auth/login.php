@@ -27,23 +27,32 @@
 
     <title>Halaman login</title>
     <style>
-      html,body{
+      /*html,body{
         height:100%;
         position:relative;
-      }
+      }*/
       /*img[alt*="www.000webhost.com"]{
           display:none
         }*/
+    .text-sendiri {
+      color: #2298A4 !important;
+    }
+    .text-merah {
+      color: #2298A4 !important;
+    }
+    .bg-sendiri {
+      background-color: #2298A4 !important;
+    }
   </style>
   </head>
   <body>
 
   <!-- Topbar -->
-  <nav class="navbar fixed-top navbar-expand topbar mb-4 static-top" style="height:55px;background-color:#000;">
+  <nav class="navbar fixed-top navbar-expand topbar mb-4 static-top" style="height:55px;background-color: #2298A4;">
     <!-- Sidebar Toggle (Topbar) -->
-    <a class="nav-link" href="<?=base_url('pengunjung'); ?>">
-      <img class="img-profile rounded-circle mr-auto" src="assets/img/logomiy.png" width="40" height="40">
-      <span class="text-primary" style="font-size:25px">me</span><span class="text-danger" style="font-size:25px;font-weight:bold;"><u>INVITE</u></span><span class="text-primary" style="font-size:25px">you</span>
+    <a class="nav-link" href="<?=base_url('pengunjung'); ?>" style="border:0">
+      <img class="img-profile rounded-circle mr-auto" src="assets/img/whiteok.png" width="40" height="40">
+      <span class="text-light" style="font-size:25px">me</span><span class="text-light" style="font-size:25px;font-weight:bold;"><u>INVITE</u></span><span class="text-light" style="font-size:25px">you</span>
       <!-- <h1 class="d-lg-inline logo text-white" style="font-weight:bold;font-size:25px;line-height:5px;"> -->
         <!-- <i class="fas fa-arrow-left"></i>  -->
         <!-- <span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></h1> -->
@@ -58,7 +67,7 @@
 
       <div class="col-xl-10 col-lg-12 col-md-9 d-flex justify-content-center" style="top: 100px;">
 
-        <div class="card o-hidden border-0 shadow-lg my-5 col-lg-6">
+        <div class="card o-hidden border-0 shadow-lg my-5 col-lg-6" style="border-radius:10px">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
@@ -66,16 +75,16 @@
               <div class="col-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
+                    <h1 class="h5 text-gray-900 mb-4"><span style="box-shadow:0 0 6px rgba(0,0,0,.4);padding:6px;border-radius:5px;font-weight:bold;">LOGIN</span></h1>
                   </div>
 
                   <?= $this->session->flashdata('message'); ?>
                   <form class="user" action="<?=base_url('auth'); ?>" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username..." name="username" value="<?= set_value('username'); ?>" required>
+                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username.." name="username" value="<?= set_value('username'); ?>" required>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password..." name="password" required>
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password.." name="password" required>
                     </div>
                     <button type="submit" name="login" class="btn btn-primary btn-user btn-block">
                       Login
@@ -110,13 +119,13 @@
   </div>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" style="position:fixed;bottom:0;width:100%">
+  <footer id="footer" style="position:fixed;bottom:0;width:100%;background-color:#262626">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><a href="<?=base_url(); ?>"><span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></a></strong>. All Rights Reserved
+        &copy; Copyright <strong><a href="<?=base_url(); ?>"><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></a></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Designed by <a class="text-primary" href="https://www.facebook.com/ketut.k.ii/">Ketut Krisna</a>
+        Designed by <a class="text-sendiri" href="https://www.facebook.com/ketut.k.ii/">Ketut Krisna</a>
       </div>
     </div>
   </footer>

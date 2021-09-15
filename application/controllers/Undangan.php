@@ -114,11 +114,11 @@ class Undangan extends CI_Controller {
 					);
 			$this->db->insert('ucapan', $data);
 
-			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.7);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(69, 159, 191,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
 				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
 				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
-				      <div style="font-size:25px;background-color:rgba(255, 167, 38,.5);color:#303030;border-radius:50%;box-shadow:0px 0px 2px rgba(0,0,0,.5);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;">&#8520;</div>
-				      <span style="padding-left:5px;color:#ddd;line-height:16px">Ucapan berhasil <strong>ditambahkan!</strong></span>
+				      <div style="font-size:25px;background-color:rgba(69, 159, 191,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ucapan <strong>Berhasil</strong> ditambahkan!</span>
 				    </span>
 				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
 				  </div>
