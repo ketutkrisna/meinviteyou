@@ -20,7 +20,7 @@ a {
 }
 
 a:hover, a:active, a:focus {
-  color: #2298A4 !important;
+  color: #fff !important;
   outline: none;
   text-decoration: none;
 }
@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #fff;
+  color: #ddd;
   transition: 0.3s;
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
@@ -189,7 +189,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   /*color: #2298A4;*/
-  color: #2298A4 !important;
+  /*color: #2298A4 !important;*/
+  /*color: #ababab;*/
+  color:white;
+  transform: scale(1.07);
 }
 
 .nav-menu .drop-down ul {
@@ -225,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-  color: #2298A4 !important;
+  color: #fff !important;
 }
 
 .nav-menu .drop-down > a:after {
@@ -796,7 +799,7 @@ section {
 }
 
 #services .title a {
-  color: #111;
+  color: #616161;
 }
 
 #services .box:hover .title a {
@@ -882,10 +885,11 @@ section {
 /* Facts Section
 --------------------------------*/
 #facts {
-  background: url("../img/facts-bg.jpg") center top no-repeat fixed;
-  background-size: cover;
+  /*background: url("../img/facts-bg.jpg") center top no-repeat fixed;*/
+  /*background-size: cover;*/
   padding: 60px 0 0 0;
   position: relative;
+  background-color:#ffffff;
 }
 
 #facts::before {

@@ -60,13 +60,21 @@
       transform: scale(0.95)!important;
       transition: .1s !important;
     }
-    .box {
-      box-shadow:0 0 10px rgba(0,0,0,.4);
+    .boxed {
+      box-shadow:0 0 10px 0px rgba(0,0,0,.1);
       border-radius:5px;
       padding:8px;
+      height:100%;
       /*margin-left:3px;
       margin-right:3px;
-      box-sizing:border-box;*/
+      box-sizing:border-box!important;
+      flex: 0;*/
+      transition:.3s;
+      margin-bottom:20px
+    }
+    .boxed:hover{
+      transform:scale(1.05);
+      transition:.3s;
     }
   </style>
 </head>
@@ -79,7 +87,6 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
-          <!-- <h1 class="logo mr-auto"><a href="<?=base_url(); ?>" style="font-size:25px"><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></a></h1> -->
           <!-- Uncomment below if you prefer to use an image logo -->
            <a href="<?=base_url(); ?>" style="border:0;" class="logo mr-auto"><img src="assets/img/whiteok.png" alt="logo miy" class="img-fluid"></a>
 
@@ -91,18 +98,6 @@
               <li><a href="#facts">Paket Harga</a></li>
               <li><a href="#skills">Cara Pemesanan</a></li>
               <li><a href="#team">Team</a></li>
-              <!-- <li><a href="#clients">Partner</a></li> -->
-              <!-- <li><a href="#contact">Contact Us</a></li> -->
-              <!-- <li><a href="#about">About Us</a></li> -->
-              <!-- <li class="drop-down"><a href="">Drop Down</a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                  <li><a href="#">Drop Down 5</a></li>
-                </ul>
-              </li> -->
-
             </ul>
           </nav><!-- .nav-menu -->
         </div>
@@ -130,58 +125,7 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/2.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Pilih template kesukaan mu</span></h2>
-                <p class="animate__animated animate__fadeInUp">Team Wedding Invitation kami banyak menyediakan template-template yang kekinian</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Informasi</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/3.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Welcome to <span style="color:lightblue">Wedding Invitation</span></h2>
-                <p class="animate__animated animate__fadeInUp">Buat undangan digital mu di sini</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Informasi</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/4.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Welcome to <span style="color:lightblue">Wedding Invitation</span></h2>
-                <p class="animate__animated animate__fadeInUp">Buat undangan digital mu di sini</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Informasi</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/5.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Welcome to <span style="color:lightblue">Wedding Invitation</span></h2>
-                <p class="animate__animated animate__fadeInUp">Buat undangan digital mu di sini</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Informasi</a>
-              </div>
-            </div>
-          </div> -->
-
         </div>
-
-       <!--  <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
 
       </div>
     </div>
@@ -189,94 +133,86 @@
 
   <main id="main">
 
-    <!-- ======= Featured Services Section Section ======= -->
-    <!-- <section id="featured-services">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 box">
-            <i class="ion-ios-bookmarks-outline"></i>
-            <h4 class="title"><a href="#">Harga Bersahabat</a></h4>
-            <p class="description">Harga yang ditawarkan oleh wedding invitation sangat terjangkau di kantong anda</p>
-          </div>
-
-          <div class="col-lg-4 box box-bg">
-            <i class="ion-ios-stopwatch-outline"></i>
-            <h4 class="title"><a href="#">Cepat Dan Handal</a></h4>
-            <p class="description">Team Wedding Invitation kami terbentuk dari orang-orang yang sudah handal sehingga cepat dan gesit dalam manangani undangan digital anda</p>
-          </div>
-
-          <div class="col-lg-4 box">
-            <i class="ion-ios-heart-outline"></i>
-            <h4 class="title"><a href="#">Banyak Pilihan Template</a></h4>
-            <p class="description">Template yang disediakan oleh team Wedding Invitation sangat banyak dan bervariasi, sehingga anda bebas memilih template kesukaan anda</p>
-          </div>
-
-        </div>
-      </div>
-    </section> -->
-    <!-- End Featured Services Section -->
-
     <!-- ======= Services Section ======= -->
     <section id="services">
       <div class="container" data-aos="fade-up">
 
         <header class="section-header wow fadeInUp">
-          <h3>Layanan</h3>
+          <h3 style="font-size:1.6em;color: #616161;">Layanan</h3>
           <p>Layanan yang akan kamu dapat dari <span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
         </header>
 
         <div class="row" style="margin:0 3px 0 3px;box-sizing:border-box;">
 
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i style="font-size:50px" class="ion-android-globe text-sendiri"></i></div>
-            <h4 class="title"><a href="">Link Url Undangan</a></h4>
-            <p class="description">Kamu dapat gunakan nama Url method sesuai keinginanmu.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-android-globe text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Link Url Undangan</a></h4>
+              <p class="description">Kamu dapat gunakan nama Url method sesuai keinginanmu.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i style="font-size:50px" class="ion-aperture text-sendiri"></i></div>
-            <h4 class="title"><a href="">Header Welcome</a></h4>
-            <p class="description">Kamu bisa gunakan foto terbaik Kamu dan Pasangan yang nantinya digunakan di cover utama undangan digital Kamu.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-aperture text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Header Welcome</a></h4>
+              <p class="description">Kamu bisa gunakan foto terbaik Kamu dan Pasangan yang nantinya digunakan di cover utama undangan digital Kamu.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i style="font-size:50px" class="ion-android-people text-sendiri"></i></div>
-            <h4 class="title"><a href="">Informasi Mempelai</a></h4>
-            <p class="description">Di fitur ini, undangan Kamu akan menampilkan detail dari Kamu dan Pasangan. Sepeti Foto, Nama, Nama Kedua orang tua dari masing masing pasangan.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-android-people text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Informasi Mempelai</a></h4>
+              <p class="description">Di fitur ini, undangan Kamu akan menampilkan detail dari Kamu dan Pasangan. Sepeti Foto, Nama, Nama Kedua orang tua dari masing masing pasangan.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-calendar text-sendiri"></i></div>
-            <h4 class="title"><a href="">Informasi Acara</a></h4>
-            <p class="description">Fitur ini berisi tanggal, waktu, nama lokasi dan alamat lokasi pernikahan Kamu dan Pasangan.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-ios-calendar text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Informasi Acara</a></h4>
+              <p class="description">Fitur ini berisi tanggal, waktu, nama lokasi dan alamat lokasi pernikahan Kamu dan Pasangan.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-location text-sendiri"></i></div>
-            <h4 class="title"><a href="">Peta Lokasi</a></h4>
-            <p class="description">Selain lokasi acara Kamu dan Pasangan di tampilkan dalam bentuk deskripsi, lokasi ditampilkan juga dalam bentuk map yang sudah terintegrasi dengan Google Maps yang pastinya membantu penerima undangan lebih mudah menuju lokasi acara Kamu dan Pasangan.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-ios-location text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Peta Lokasi</a></h4>
+              <p class="description">Selain lokasi acara Kamu dan Pasangan di tampilkan dalam bentuk deskripsi, lokasi ditampilkan juga dalam bentuk map yang sudah terintegrasi dengan Google Maps yang pastinya membantu penerima undangan lebih mudah menuju lokasi acara Kamu dan Pasangan.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-images text-sendiri"></i></div>
-            <h4 class="title"><a href="">Foto Galeri</a></h4>
-            <p class="description">Lengkapi undanganmu dengan membagikan momen bahagia Kamu dan Pasangan yang sudah diabadikan dalam bentuk foto.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-images text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Foto Galeri</a></h4>
+              <p class="description">Lengkapi undanganmu dengan membagikan momen bahagia Kamu dan Pasangan yang sudah diabadikan dalam bentuk foto.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-chatboxes text-sendiri"></i></div>
-            <h4 class="title"><a href="">Ucapan Dan Doa</a></h4>
-            <p class="description">Dengan fitur ini, para udangan bisa kirim ucapan dan doa untuk Kamu dan Pasangan, dan ditampilkan langsung diundangan Kamu dan Pasangan.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-ios-chatboxes text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Ucapan Dan Doa</a></h4>
+              <p class="description">Dengan fitur ini, para udangan bisa kirim ucapan dan doa untuk Kamu dan Pasangan, dan ditampilkan langsung diundangan Kamu dan Pasangan.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-time text-sendiri"></i></div>
-            <h4 class="title"><a href="">CountDown Acara</a></h4>
-            <p class="description">Undangan Kamu akan menghitung berapa hari lagi menuju acara bahagia Kamu dan Pasangan.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-ios-time text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">CountDown Acara</a></h4>
+              <p class="description">Undangan Kamu akan menghitung berapa hari lagi menuju acara bahagia Kamu dan Pasangan.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-ios-videocam text-sendiri"></i></div>
-            <h4 class="title"><a href="">Video Galeri</a></h4>
-            <p class="description">Selain galeri foto, undangan Kamu dan Pasangan juga bisa tampilkan momen momen bahagia dalam bentuk video yang bisa Kamu dan Pasangan bagikan.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-ios-videocam text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Video Galeri</a></h4>
+              <p class="description">Selain galeri foto, undangan Kamu dan Pasangan juga bisa tampilkan momen momen bahagia dalam bentuk video yang bisa Kamu dan Pasangan bagikan.</p>
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i style="font-size:50px" class="ion-music-note text-sendiri"></i></div>
-            <h4 class="title"><a href="">Backsound Musik</a></h4>
-            <p class="description">Fitur ini akan membuat undangan Kamu dan Pasangan menjadi lebih spesial dengan diiringi backsound lagu.</p>
+            <div class="boxed">
+              <div class="icon"><i style="font-size:50px" class="ion-music-note text-sendiri"></i></div>
+              <h4 class="title"><a href="#!">Backsound Musik</a></h4>
+              <p class="description">Fitur ini akan membuat undangan Kamu dan Pasangan menjadi lebih spesial dengan diiringi backsound lagu.</p>
+            </div>
           </div>
 
         </div>
@@ -289,7 +225,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h3 class="section-title">Template Undangan</h3>
+          <h3 class="section-title" style="font-size:1.6em;color:#616161;">Tema Undangan</h3>
         </header>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -297,8 +233,6 @@
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active bg-sendiri">Semua</li>
             <li data-filter=".filter-app" class="bg-sendiri">Pernikahan</li>
-            <!-- <li data-filter=".filter-card">Ulang Tahun</li> -->
-            <!-- <li data-filter=".filter-web">Lain-lain</li> -->
           </ul>
         </div>
       </div>
@@ -328,7 +262,7 @@
             </figure>
 
             <div class="portfolio-info">
-              <h4><a href="#!">CLASSIC</a></h4>
+              <h4><a href="#!" style="color:#616161;">CLASSIC</a></h4>
               <p>Pernikahan</p>
             </div>
           </div>
@@ -343,7 +277,7 @@
             </figure>
 
             <div class="portfolio-info">
-              <h4><a href="#!">VANTAGE</a></h4>
+              <h4><a href="#!" style="color:#616161;">VANTAGE</a></h4>
               <p>Pernikahan</p>
             </div>
           </div>
@@ -358,7 +292,7 @@
             </figure>
 
             <div class="portfolio-info">
-              <h4><a href="#!">RUSTIC</a></h4>
+              <h4><a href="#!" style="color:#616161;">RUSTIC</a></h4>
               <p>Pernikahan</p>
             </div>
           </div>
@@ -373,7 +307,7 @@
             </figure>
 
             <div class="portfolio-info">
-              <h4><a href="#!">TEMATIC</a></h4>
+              <h4><a href="#!" style="color:#616161;">TEMATIC</a></h4>
               <p>Pernikahan</p>
             </div>
           </div>
@@ -384,18 +318,275 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Facts Section ======= -->
+
+
     <section id="facts">
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="fade-up" style="width: 100%">
 
         <header class="section-header">
-          <h3>Daftar Paket Harga</h3>
+          <h3 style="font-size:1.6em">Daftar Paket Harga</h3>
           <p>Paket harga yang kami tawarkan</p>
         </header>
 
-        <div class="row counters">
+        <div class="row counters d-flex justify-content-center" style="margin:0!important;padding:0!important">
 
-          <div class="col-lg-3 col-6 text-center mb-3 bg-white" style="border:1px solid #e0e0e0;">
+          <style>
+            .pharga {
+              margin:10px 0 10px 0 !important;
+              word-break: break-all;
+              display:flex;
+              line-height:16px
+            }
+            /*.shadowcardpopuler{
+              box-shadow:0 0 20px 0px rgba(0,0,0,.3);
+              border-radius:5px
+            }*/
+            .shadowcard{
+              box-shadow:0 0 10px 0px rgba(0,0,0,.1);
+              border-radius:5px;
+              transition: .3s;
+              margin-bottom:60px;
+              border:0
+            }
+            .shadowcard:hover {
+              box-shadow:0 0 20px 0px rgba(0,0,0,.2);
+              border-radius:5px;
+              transform: scale(1.05);
+              transition: .3s;
+            }
+            .icon-ceklis {
+              font-size:17px;
+              margin-right:5px;
+            }
+            .pharga b {
+              color:#616161;
+            }
+          </style>
+
+          <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+            <div class="card shadowcard" style="width:23rem">
+              <div class="card-body">
+                <h5 class="card-title text-center" style="font-weight:bold;">HEMAT</h5><hr>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Domain Exp : https://meinviteyou.com/wedding/<b>romeodanjuliete</b>/</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Informasi <b>Pasangan</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>CountDown</b> Waktu</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Informasi <b>Acara</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Love <b>Story</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-warning icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>4 Foto</b> Galeri</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-times-circle text-danger icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><s><b>Video</b> Galeri</s></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Backsound <b>Musik</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Peta Lokasi/<b>Maps</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>Ucapan</b> Teman & Konfirmasi Kehadiran</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Fitur <b>Rekening</b>(Opsional)</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Tambah Daftar Undangan <b>Tidak Terbatas</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-warning icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Aktif <b>3 Bulan</b></deskripsi>
+                  </p>
+
+                  <div class="d-flex justify-content-center" style="align-items:center;margin-top:25px">
+                    <div style="font-size:14px;margin-right:5px"><s>Rp 200.000</s></div>
+                    <div style="border-radius:20px;padding:2px 10px 2px 10px;font-weight:bold;font-size:15px" class="bg-success text-light">Diskon 25%</div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <p class="text-center" style="font-size:15px;margin:15px 1px 0 0">Rp </p>
+                    <p class="text-center" data-toggle="counter-up" style="font-size:30px;font-weight:bold;color:#616161;">150.000</p>
+                    <p class="text-center" style="font-size:15px;margin:15px 0 0 1px">/3 bulan</p>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <button class="btn btn-primary" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+            <div class="card shadowcard" style="width:23rem">
+              <div style="position:absolute;background-color:#972ca3;color:white;padding:7px;font-weight:bold;top:-35px;border-radius:5px 5px 0 0;width:100%;text-align:center;">Terpopuler</div>
+              <div class="card-body" style="padding-bottom:40px">
+                <h5 class="card-title text-center" style="font-weight:bold;">REGULER</h5><hr>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Domain Exp : https://meinviteyou.com/wedding/<b>romeodanjuliete</b>/</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Informasi <b>Pasangan</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>CountDown</b> Waktu</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Informasi <b>Acara</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Love <b>Story</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-warning icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>12 Foto</b> Galeri</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-warning icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>1 Video</b> Galeri</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Backsound <b>Musik</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Peta Lokasi/<b>Maps</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>Ucapan</b> Teman & Konfirmasi Kehadiran</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Fitur <b>Rekening</b>(Opsional)</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Tambah Daftar Undangan <b>Tidak Terbatas</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Aktif <b>6 Bulan</b></deskripsi>
+                  </p>
+
+                  <div class="d-flex justify-content-center" style="align-items:center;margin-top:25px">
+                    <div style="font-size:14px;margin-right:5px"><s>Rp 300.000</s></div>
+                    <div style="border-radius:20px;padding:2px 10px 2px 10px;font-weight:bold;font-size:15px;" class="text-light bg-success">Diskon 33%</div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <p class="text-center" style="font-size:15px;margin:15px 1px 0 0">Rp </p>
+                    <p class="text-center" data-toggle="counter-up" style="font-size:30px;font-weight:bold;color:#616161;">200.000</p>
+                    <p class="text-center" style="font-size:15px;margin:15px 0 0 1px">/6 bulan</p>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <button class="btn text-light" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%;background-color: #972ca3;"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+            <div class="card shadowcard" style="width:23rem">
+              <div class="card-body">
+                <h5 class="card-title text-center" style="font-weight:bold;">PREMIUM</h5><hr>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Domain Exp : https://meinviteyou.com/wedding/<b>romeodanjuliete</b>/</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Informasi <b>Pasangan</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>CountDown</b> Waktu</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Informasi <b>Acara</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Love <b>Story</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>30 Foto</b> Galeri</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>2 Video</b> Galeri</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Backsound <b>Musik</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Peta Lokasi/<b>Maps</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;"><b>Ucapan</b> Teman & Konfirmasi Kehadiran</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Fitur <b>Rekening</b>(Opsional)</deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Tambah Daftar Undangan <b>Tidak Terbatas</b></deskripsi>
+                  </p>
+                  <p class="pharga">
+                    <i class="fa fa-check-circle text-success icon-ceklis"></i>
+                    <deskripsi style="word-wrap: break-word;">Aktif <b>6 Bulan</b></deskripsi>
+                  </p>
+
+                  <div class="d-flex justify-content-center" style="align-items:center;margin-top:25px">
+                    <div style="font-size:14px;margin-right:5px"><s>Rp 400.000</s></div>
+                    <div style="border-radius:20px;padding:2px 10px 2px 10px;font-weight:bold;font-size:15px" class="bg-success text-light">Diskon 35%</div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <p class="text-center" style="font-size:15px;margin:15px 1px 0 0">Rp </p>
+                    <p class="text-center" data-toggle="counter-up" style="font-size:30px;font-weight:bold;color:#616161;">260.000</p>
+                    <p class="text-center" style="font-size:15px;margin:15px 0 0 1px">/6 bulan</p>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <button class="btn btn-primary" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-3 col-6 text-center mb-3 bg-white" style="border:1px solid #e0e0e0;">
             <span style="color:#2298A4;font-size:22px;margin-top:36px;font-weight:unset;margin-right:4px">Paket <br> Easy</span>
             <div style="display:flex;justify-content:center;">
               <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-right:4px">Rp. </span><span data-toggle="counter-up" class="text-dark" style="font-weight:unset;letter-spacing:-3px;font-size:35px">100</span> <span style="color:#111;font-size:15px;margin-top:20px;font-weight:unset;margin-left:4px"> ribu</span>
@@ -457,23 +648,22 @@
             <p>Peta Lokasi(maps)</p>
             <p>Ucapan teman & konfirmasi kehadiran</p>
             <p>Undangan tidak terbatas</p>
-          </div>
+          </div> -->
 
         </div>
 
-        <!-- <div class="facts-img">
-          <img src="assets/img/facts-img.png" alt="" class="img-fluid">
-        </div> -->
 
       </div>
-    </section><!-- End Facts Section -->
+    </section>
+
+
 
     <!-- ======= Skills Section ======= -->
-    <section id="skills">
+    <section id="skills" style="background-color:#f7f7f7;">
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h3>Cara Pemesanan</h3>
+          <h3 style="font-size:1.6em;color: #616161;">Cara Pemesanan</h3>
           <p>Langkah-langkah cara pemesanan di <span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
         </header>
 
@@ -481,7 +671,7 @@
 
           <p>
             <span style="font-weight:bold;font-size:20px">1.Pilih Desain atau Diskusi</span> <br>
-            Pilih desain yang tersedia atau diskusikan custom undangan seperti apa yang kamu inginkan.
+            Pilih desain yang tersedia sekaligus anda juga bisa custom warna pada beberapa template yang kami sediakan. Setelah itu anda bisa Order dan diskusikan via Whatsapp untuk tema dan harganya.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
@@ -489,9 +679,11 @@
             </div>
           </div>
 
+          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+
           <p>
             <span style="font-weight:bold;font-size:20px">2.Input Data</span> <br>
-            Kami akan mengirimkan form data kepada pemesan, dan data tersebut yang akan digunakan untuk undangan anda.
+            Kami akan mengirimkan form pengisian data kepada anda dan data tersebut yang akan digunakan untuk undangan anda.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
@@ -499,9 +691,11 @@
             </div>
           </div>
 
+          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+
           <p>
             <span style="font-weight:bold;font-size:20px">3.Proses Pengerjaan</span> <br>
-            Proses pengerjaan undangan oleh team kami sesuai dengan data yang dimasukan, termasuk dengan revisi-revisi jika ada perubahan data dll
+            Proses pengerjaan akan dilakukan kurang lebih selama 3 hari dan paling lambat 1 minggu jika banyak revisi tambahan dari anda.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
@@ -509,9 +703,11 @@
             </div>
           </div>
 
+          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+
           <p>
             <span style="font-weight:bold;font-size:20px">4.Proses Pembayaran</span> <br>
-            Pembayaran bisa dilakukan secara Tunai jika memang lokasi berdekatan atau transfer.<br> Pembarayan dilakukan setelah proses pembuatan undangan selesai..
+            Pembayaran bisa dilakukan secara <span class="text-primary">Tunai</span> jika memang lokasi berdekatan atau <span class="text-primary">Transfer</span>. Kami juga menyediakan pembayaran via E-Wallet yaitu "<span style="font-weight:bold;"><span class="text-info">DANA</span>, <span style="color:#420066;">OVO</span> dan <span class="text-success">GoPay</span></span>"<br> Pembarayan dilakukan setelah proses pembuatan undangan selesai.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
@@ -519,9 +715,11 @@
             </div>
           </div>
 
+          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+
           <p>
             <span style="font-weight:bold;font-size:20px">5.Kirim Undangan</span> <br>
-            Kami akan memberikan akun untuk menambahkan daftar undangan seperti keluarga,teman atau kerabat yang akan anda undang dan undangan kamu siap dikirim.
+            Kami akan memberikan akun untuk input nama orang yang akan anda undang, sehinga anda dapat melihat semua daftar undangan yang telah anda inputkan dan undangan pun siap di share ke teman atau keluarga terdekat anda.
           </p>
           <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -538,7 +736,7 @@
     <section id="team">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h3>Team</h3>
+          <h3 style="font-size:1.6em;color: #616161;">Team</h3>
           <p>Team <span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
         </div>
 
@@ -552,33 +750,12 @@
                   <h4 style="font-size:13px">Ketut Krisna</h4>
                   <span style="font-size:11px">(Owner)</span>
                   <div class="social">
-                    <!-- <a href="#!"><i class="fa fa-twitter"></i></a> -->
                     <a href="https://www.facebook.com/ketut.k.ii/"><i class="fa fa-facebook"></i></a>
-                    <!-- <a href="#!"><i class="fa fa-instagram"></i></a> -->
-                    <!-- <a href="#!"><i class="fa fa-linkedin"></i></a> -->
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- <div class="col-lg-3 col-md-6">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/team-2.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
 
         </div>
 
@@ -828,17 +1005,6 @@
             <p><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span> adalah website penyedia layanan undangan berbentuk digital yang dibuat untuk mempermudah dalam pembuatan undangan sehingga tidak perlu lagi menggunakan kertas undangan sehingga lebih simpel, modern dan dinamis tentunya.</p>
           </div>
 
-          <!-- <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div> -->
-
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
@@ -852,20 +1018,9 @@
             <div class="social-links">
               <a href="https://api.whatsapp.com/send?phone=+6282179471533" class="twitter"><i class="fa fa-whatsapp"></i></a>
               <a href="https://www.facebook.com/ketut.k.ii/" class="facebook"><i class="fa fa-facebook"></i></a>
-              <!-- <a href="#!" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#!" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#!" class="linkedin"><i class="fa fa-linkedin"></i></a> -->
             </div>
 
           </div>
-
-          <!-- <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div> -->
 
         </div>
       </div>
@@ -914,7 +1069,7 @@
   <div class="text-sendiri" style="position:fixed;bottom:30px;left:15px;border-radius:50%;z-index:1020;">
     <div style="background-color:rgba(26, 199, 84,);padding:4px;border-radius:50%">
       <span class="cobain" data-placement="left" data-toggle="popover" title="Pesan via WA" data-html="true" data-content="
-        <img class='imgradius' src='<?=base_url('assets/img/team1.jpg'); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=+6282179471533'> Krisna(owner)</a>
+        <img class='imgradius' src='<?=base_url('assets/img/team1.jpg'); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=+6282179471533'> KETUT KRISNA</a>
       ">
       <i class="fa fa-whatsapp wapulse" style="font-size:50px;color:#00c45c;"></i>
     </span>
