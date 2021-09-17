@@ -61,7 +61,7 @@
       transition: .1s !important;
     }
     .boxed {
-      box-shadow:0 0 10px 0px rgba(0,0,0,.1);
+      box-shadow:0 0 10px 0px rgba(0,0,0,.2);
       border-radius:5px;
       padding:8px;
       height:100%;
@@ -73,13 +73,14 @@
       margin-bottom:20px
     }
     .boxed:hover{
+      box-shadow:0 0 20px 0px rgba(0,0,0,.3);
       transform:scale(1.05);
       transition:.3s;
     }
   </style>
 </head>
 
-<body>
+<body id="home">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-transparent">
@@ -92,12 +93,12 @@
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li class="active"><a href="<?=base_url(); ?>">Home</a></li>
+              <li class="active"><a href="#home">Home</a></li>
               <li><a href="#services">Layanan</a></li>
               <li><a href="#portfolio">Template</a></li>
               <li><a href="#facts">Paket Harga</a></li>
               <li><a href="#skills">Cara Pemesanan</a></li>
-              <li><a href="#team">Team</a></li>
+              <li><a href="#team">Faq</a></li>
             </ul>
           </nav><!-- .nav-menu -->
         </div>
@@ -135,7 +136,7 @@
 
     <!-- ======= Services Section ======= -->
     <section id="services">
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="fade-up" style="padding:0;">
 
         <header class="section-header wow fadeInUp">
           <h3 style="font-size:1.6em;color: #616161;">Layanan</h3>
@@ -253,10 +254,10 @@
             </div>
           </div>
         </div> -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-3 col-md-4 col-6 portfolio-item filter-app">
           <div class="portfolio-wrap text-center">
             <figure>
-              <img src="<?=base_url('/'); ?>assets/img/portfolio/classictheme.jpg" class="img-fluid" alt="">
+              <img src="<?=base_url('/'); ?>assets/img/portfolio/classictheme.jpg" class="img-fluid" alt="tema classic">
               <a href="<?=base_url('/'); ?>assets/img/portfolio/classictheme.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Design Classic"><i class="ion ion-eye"></i></a>
               <a target="_blank" href="<?=base_url('/'); ?>contohundangan/classic/" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
@@ -268,7 +269,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-3 col-md-4 col-6 portfolio-item filter-app">
           <div class="portfolio-wrap text-center">
             <figure>
               <img src="<?=base_url('/'); ?>assets/img/portfolio/vantagetheme.jpg" class="img-fluid" alt="">
@@ -283,11 +284,11 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-3 col-md-4 col-6 portfolio-item filter-app">
           <div class="portfolio-wrap text-center">
             <figure>
-              <img src="<?=base_url('/'); ?>assets/img/portfolio/rustic1.JPG" class="img-fluid" alt="">
-              <a href="<?=base_url('/'); ?>assets/img/portfolio/rustic1.JPG" class="link-preview venobox" data-gall="portfolioGallery" title="Design Rustic"><i class="ion ion-eye"></i></a>
+              <img src="<?=base_url('/'); ?>assets/img/portfolio/rustictheme.jpg" class="img-fluid" alt="rustic tema">
+              <a href="<?=base_url('/'); ?>assets/img/portfolio/rustictheme.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Design Rustic"><i class="ion ion-eye"></i></a>
               <a target="_blank" href="<?=base_url('/'); ?>contohundangan/rustic/" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
 
@@ -298,11 +299,11 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-3 col-md-4 col-6 portfolio-item filter-app">
           <div class="portfolio-wrap text-center">
             <figure>
-              <img src="<?=base_url('/'); ?>assets/img/portfolio/tematic1.JPG" class="img-fluid" alt="">
-              <a href="<?=base_url('/'); ?>assets/img/portfolio/tematic1.JPG" class="link-preview venobox" data-gall="portfolioGallery" title="Design Tematic"><i class="ion ion-eye"></i></a>
+              <img src="<?=base_url('/'); ?>assets/img/portfolio/tematictheme.jpg" class="img-fluid" alt="tematic tema">
+              <a href="<?=base_url('/'); ?>assets/img/portfolio/tematictheme.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Design Tematic"><i class="ion ion-eye"></i></a>
               <a target="_blank" href="<?=base_url('/'); ?>contohundangan/tematic/" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
 
@@ -324,7 +325,7 @@
       <div class="container" data-aos="fade-up" style="width: 100%">
 
         <header class="section-header">
-          <h3 style="font-size:1.6em">Daftar Paket Harga</h3>
+          <h3 style="font-size:1.6em;color: #616161;">Daftar Paket Harga</h3>
           <p>Paket harga yang kami tawarkan</p>
         </header>
 
@@ -342,14 +343,14 @@
               border-radius:5px
             }*/
             .shadowcard{
-              box-shadow:0 0 10px 0px rgba(0,0,0,.1);
+              box-shadow:0 0 10px 0px rgba(0,0,0,.2);
               border-radius:5px;
               transition: .3s;
               margin-bottom:60px;
               border:0
             }
             .shadowcard:hover {
-              box-shadow:0 0 20px 0px rgba(0,0,0,.2);
+              box-shadow:0 0 20px 0px rgba(0,0,0,.3);
               border-radius:5px;
               transform: scale(1.05);
               transition: .3s;
@@ -431,7 +432,7 @@
                     <p class="text-center" style="font-size:15px;margin:15px 0 0 1px">/3 bulan</p>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <button class="btn btn-primary" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</button>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=+6282179471533&text=Kak saya mau pesan undangan paket HEMAT!" class="btn btn-primary" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</a>
                   </div>
               </div>
             </div>
@@ -506,7 +507,7 @@
                     <p class="text-center" style="font-size:15px;margin:15px 0 0 1px">/6 bulan</p>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <button class="btn text-light" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%;background-color: #972ca3;"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</button>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=+6282179471533&text=Kak saya mau pesan undangan paket REGULER!" class="btn text-light" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%;background-color: #972ca3;"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</a>
                   </div>
               </div>
             </div>
@@ -580,7 +581,7 @@
                     <p class="text-center" style="font-size:15px;margin:15px 0 0 1px">/6 bulan</p>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <button class="btn btn-primary" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</button>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=+6282179471533&text=Kak saya mau pesan undangan paket PREMIUM!" class="btn btn-primary" style="border-radius:25px;font-weight:bold;font-size:20px;width:100%"><i class="fa fa-whatsapp text-light" style="font-size:25px"></i> PESAN SEKARANG</a>
                   </div>
               </div>
             </div>
@@ -673,55 +674,55 @@
             <span style="font-weight:bold;font-size:20px">1.Pilih Desain atau Diskusi</span> <br>
             Pilih desain yang tersedia sekaligus anda juga bisa custom warna pada beberapa template yang kami sediakan. Setelah itu anda bisa Order dan diskusikan via Whatsapp untuk tema dan harganya.
           </p>
-          <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
+          <div class="progress" style="margin-top:-20px;margin-bottom:0px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">20%</i></span>
             </div>
           </div>
 
-          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+          <div style="text-align:center;font-size:27px;font-weight:bold;color:#017580">&darr;</div>
 
           <p>
             <span style="font-weight:bold;font-size:20px">2.Input Data</span> <br>
             Kami akan mengirimkan form pengisian data kepada anda dan data tersebut yang akan digunakan untuk undangan anda.
           </p>
-          <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
+          <div class="progress" style="margin-top:-20px;margin-bottom:0px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">40%</i></span>
             </div>
           </div>
 
-          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+          <div style="text-align:center;font-size:27px;font-weight:bold;color:#017580">&darr;</div>
 
           <p>
             <span style="font-weight:bold;font-size:20px">3.Proses Pengerjaan</span> <br>
             Proses pengerjaan akan dilakukan kurang lebih selama 3 hari dan paling lambat 1 minggu jika banyak revisi tambahan dari anda.
           </p>
-          <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
+          <div class="progress" style="margin-top:-20px;margin-bottom:0px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">60%</i></span>
             </div>
           </div>
 
-          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+          <div style="text-align:center;font-size:27px;font-weight:bold;color:#017580">&darr;</div>
 
           <p>
             <span style="font-weight:bold;font-size:20px">4.Proses Pembayaran</span> <br>
             Pembayaran bisa dilakukan secara <span class="text-primary">Tunai</span> jika memang lokasi berdekatan atau <span class="text-primary">Transfer</span>. Kami juga menyediakan pembayaran via E-Wallet yaitu "<span style="font-weight:bold;"><span class="text-info">DANA</span>, <span style="color:#420066;">OVO</span> dan <span class="text-success">GoPay</span></span>"<br> Pembarayan dilakukan setelah proses pembuatan undangan selesai.
           </p>
-          <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
+          <div class="progress" style="margin-top:-20px;margin-bottom:0px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">80%</i></span>
             </div>
           </div>
 
-          <div style="text-align:center;font-size:25px;font-weight:bold;color:#017580">&dArr;</div>
+          <div style="text-align:center;font-size:27px;font-weight:bold;color:#017580">&darr;</div>
 
           <p>
             <span style="font-weight:bold;font-size:20px">5.Kirim Undangan</span> <br>
             Kami akan memberikan akun untuk input nama orang yang akan anda undang, sehinga anda dapat melihat semua daftar undangan yang telah anda inputkan dan undangan pun siap di share ke teman atau keluarga terdekat anda.
           </p>
-          <div class="progress" style="margin-top:-20px;margin-bottom:20px;">
+          <div class="progress" style="margin-top:-20px;margin-bottom:0px;">
             <div class="progress-bar bg-sendiri" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
               <span class="skill"><i class="val">100%</i></span>
             </div>
@@ -732,15 +733,168 @@
       </div>
     </section><!-- End Skills Section -->
 
-    <!-- ======= Team Section ======= -->
+    <!-- ======= Faq Section ======= -->
     <section id="team">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h3 style="font-size:1.6em;color: #616161;">Team</h3>
-          <p>Team <span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
+          <h3 style="font-size:1.6em;color: #616161;">Faq</h3>
+          <p><span class="text-sendiri">me</span><span class="text-merah"><u>INVITE</u></span><span class="text-sendiri">you</span></p>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row">
+          <div class="col-sm-12">
+
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Berapa lama proses pembuatan?
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Proses pembuatan udangan &#177; 1 hari setelah data kami terima dan paling lambat 5 hari jika ada revisi tambahan!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Data apa saja yang perlu dikirim?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex p-0"><span>1. </span>&#160;<span> Data lengkap mempelai <b>pria</b> : <br> 
+                        - Nama panggilan : ... <br>
+                        - Nama lengkap : ... <br>
+                        - Anak ke : ... <br>
+                        - Nama bapak : ... <br>
+                        - Nama ibu : ... <br>
+                      </span></li>
+                      <li class="list-group-item d-flex p-0"><span>2. </span>&#160;<span> Data lengkap mempelai <b>wanita</b> : <br> 
+                        - Nama panggilan : ... <br>
+                        - Nama lengkap : ... <br>
+                        - Anak ke : ... <br>
+                        - Nama bapak : ... <br>
+                        - Nama ibu : ... <br>
+                      </span></li>
+                      <li class="list-group-item d-flex p-0"><span>3. </span>&#160;<span> Data lengkap <b>acara</b> : <br> 
+                        - Tanggal <b>AKAD</b> : ... <br>
+                        - Jam AKAD : ... <br>
+                        - Alamat AKAD : ... <br>
+                        <hr style="padding:0;margin:0">
+                        - Tanggal <b>RESEPSI</b> : ... <br>
+                        - Jam RESEPSI : ... <br>
+                        - Alamat RESEPSI : ... <br>
+                      </span></li>
+                      <li class="list-group-item d-flex p-0"><span>4. </span>&#160;<span> Data <b>love story</b> : <br> 
+                        - Time line kisah cinta anda (Opsional, bisa di isi atau tidak)
+                      </span></li>
+                      <li class="list-group-item d-flex p-0"><span>5. </span>&#160;<span> Data <b>foto dan video</b> : <br> 
+                        - 1 foto background depan <br>
+                        - Foto galeri <br>
+                        - 1 musik backsound <br>
+                        - Video galeri <br>
+                        - 1 Foto URL sharing <br>
+                      </span></li>
+                      <li class="list-group-item d-flex p-0"><span>6. </span>&#160;<span> Informasi <b>rekening</b> : <br> 
+                        - No rekening (Opsional, bisa di isi atau tidak)
+                      </span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Bagaimana cara generate link undangan?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <span>- </span>&#160;
+                      <span>Login <b>akun</b>.</span>
+                    </div>
+                    <div class="d-flex">
+                      <span>- </span>&#160;
+                      <span>Pilih <b>buat link</b>.</span>
+                    </div>
+                    <div class="d-flex">
+                      <span>- </span>&#160;
+                      <span>Ketik <b>nama</b> orang yang akan anda undang, lalu <b>simpan</b>.</span>
+                    </div>
+                    <div class="d-flex">
+                      <span>- </span>&#160;
+                      <span>Link akan <b>tampil</b> pada halaman paling bawah.</span>
+                    </div>
+                    <div class="d-flex">
+                      <span>- </span>&#160;
+                      <span>Link siap di <b>share</b> ke teman-teman atau sodara anda.</span>
+                    </div>
+                    <div class="text-center" style="background-color:#ffebcc;border-radius:10px;margin:10px 0 0 0;padding:7px;">
+                      Kami akan memberikan akses login Username dan Password kepada anda sehingga anda tinggal menggunakannya saja. <br>
+                      Halaman login dapat di akses pada link dibawah: <br> <a href="<?=base_url('auth'); ?>"><b>masuk</b> akun anda</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingfour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                      Apakah fitur generate link undangan ada batasnya?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Fitur generate link undangan tidak memiliki batas, anda dapat generate link sebanyak yang anda mau.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingfive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                      Berapa lama masa aktif Web nya?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                  <div class="card-body text-center">
+                    <span>Lama masa aktif Web sesuai dengan harga paket yang anda pesan.</span>
+                    <div class="d-flex mt-1">
+                      <span>- </span>&#160;
+                      <span> Paket HEMAT aktif <b>3 bulan</b>.</span>
+                    </div>
+                    <div class="d-flex">
+                      <span>- </span>&#160;
+                      <span> Paket REGULER aktif <b>6 bulan</b>.</span>
+                    </div>
+                    <div class="d-flex">
+                      <span>- </span>&#160;
+                      <span> Paket PREMIUM aktif <b>6 bulan</b>.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <!-- <div class="row justify-content-center">
 
           <div class="col-6 col-lg-3 col-md-4 col-xl-2">
             <div class="member rounded-circle" data-aos="fade-up" data-aos-delay="100">
@@ -757,7 +911,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Team Section -->

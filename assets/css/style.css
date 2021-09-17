@@ -968,24 +968,26 @@ section {
 }
 
 #portfolio .portfolio-wrap {
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0,.2);
   transition: 0.3s;
 }
 
 #portfolio .portfolio-wrap:hover {
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0,.4);
 }
 
-#portfolio .portfolio-item {
+/*#portfolio .portfolio-item {
   position: relative;
-  height: 360px;
+  min-height: 240px;
   overflow: hidden;
-}
+}*/
+
 
 #portfolio .portfolio-item figure {
   background: #000;
   overflow: hidden;
-  height: 240px;
+  /*height: 240px;*/
+  min-height: 100px;
   position: relative;
   border-radius: 4px 4px 0 0;
   margin: 0;
@@ -1159,6 +1161,27 @@ section {
   .portfolio-details .portfolio-info {
     position: static;
     margin-top: 30px;
+  }
+  #portfolio .portfolio-item {
+    position: relative;
+    min-height: 270px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 992px) {
+  #portfolio .portfolio-item {
+    position: relative;
+    min-height: 270px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 496px) {
+  #portfolio .portfolio-item {
+    position: relative;
+    min-height: 230px;
+    overflow: hidden;
   }
 }
 
