@@ -8,9 +8,9 @@
   <title>Ubah paswword</title>
   <meta content="Halaman set password admin" name="description">
   <meta content="undangan digital meinviteyou" name="keywords">
-  <meta property="og:title" content="Admin meinviteyou">
+  <meta property="og:title" content="Admin set password">
   <meta property="og:site_name" content="meINVITEyou.com">
-  <meta content='<?=base_url('assets/img/imgsharing/logosharingjpg.jpg'); ?>' property='og:image'/>
+  <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
   <!-- Favicons -->
   <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
@@ -18,11 +18,12 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <!-- icons fontawesome -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- Vendor CSS Files -->
   <link href="<?=base_url('/'); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/venobox/venobox.css" rel="stylesheet">
@@ -32,20 +33,7 @@
   <!-- Template Main CSS File -->
   <link href="<?=base_url('/'); ?>assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: BizPage - v3.1.1
-  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <style>
-    /*html,body{
-      height:100%;
-      position:relative;
-    }*/
-    /*img[alt*="www.000webhost.com"]{
-        display:none
-      }*/
     .text-sendiri {
       color: #2298A4 !important;
     }
@@ -69,7 +57,7 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
-          <a href="<?=base_url('admin'); ?>" style="border: 0;" class="logo mr-auto"><i style="font-size:25px" class="fa fa-arrow-left text-light"></i> <img src="<?=base_url('/'); ?>assets/img/whiteok.png" alt="" class="img-fluid"><span class="text-light" style="font-size:25px"> Admin</span></a>
+          <a href="<?=base_url('admin'); ?>" style="border: 0;" class="logo mr-auto"><i style="font-size:25px" class="fa fa-arrow-left text-light"></i> <img src="<?=base_url('/'); ?>assets/img/whiteok.png" alt="" class="img-fluid"><span class="text-light" style="font-size:20px"> Admin</span></a>
         </div>
       </div>
 
@@ -92,10 +80,7 @@
             <!-- Grow In Utility -->
             <div class="col-lg-6">
 
-              <div class="card position-relative">
-                <!-- <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Grow In Animation Utilty</h6>
-                </div> -->
+              <div class="card position-relative" style="box-shadow: 0 0 10px rgba(0,0,0,.2);">
                 <div class="card-body">
                   <?=$this->session->flashdata('message'); ?>
                   <form action="<?=base_url('admin/ubahpassword'); ?>" method="post">
@@ -116,7 +101,7 @@
                       <input style="margin-top:-10px;margin-bottom:-5px" type="password" class="form-control" id="inputAddress" placeholder="" name="passwordconfirm" required>
                       <?= form_error('passwordconfirm','<span class="small text-danger">', '</span>'); ?>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="simpanpassword">Simpan</button>
+                    <button type="submit" class="btn btn-primary" name="simpanpassword"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
                   </form>
 
                 </div>

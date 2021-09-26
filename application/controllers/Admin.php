@@ -136,23 +136,60 @@ class Admin extends CI_Controller {
 					return false;
             	}
             }
-            if($tambahtemaundangan=='tematic'){
-            	$colortema='#2484a6';
-            }else{
-            	$colortema='#000';
-            }
+            // if($tambahtemaundangan=='tematic'){
+            // 	$colortema='#2484a6';
+            // }else{
+            // 	$colortema='#000';
+            // }
+            $colortemplate1='#f4f4f4';
+            $colortemplate2='#dddddd';
             // insert to produks
             $bgdefault=$tambahtemaundangan.'.jpg';
+			// $data = array(
+			//         'id_pengundang' => null,
+			//         'url_pengundang' => $tambahnamaurl,
+			//         'namapanggilan_priawanita' => $tambahnamalakiperempuan,
+			//         'namalengkap_pria' => $tambahfullnamalaki,
+			//         'orangtua_pria' => $tambahnamaortulaki,
+			//         'namalengkap_wanita' => $tambahfullnamaperempuan,
+			//         'orangtua_wanita' => $tambahnamaortuperempuan,
+			//         'ucapan_awal' => $tambahucapanawal,
+			//         'ucapan_ahir' => $tambahucapanahir,
+			//         'tanggal_akad' => $tambahtanggalakad,
+			//         'jam_akad' => $tambahjamakad,
+			//         'alamat_akad' => $tambahalamatakad,
+			//         'map_akad' => '',
+			//         'tanggal_acara' => $tambahtanggalacara,
+			//         'jam_acara' => $tambahjamacara,
+			//         'alamat_acara' => $tambahalamatacara,
+			//         'map_acara' => $tambahmapacara,
+			//         'musik_acara' => '',
+			//         'video_acara' => $tambahvideoacara,
+			//         'stori_pengundang' => '',
+			//         'rekening_pengundang' => '',
+			//         'foto_pria' => $fotol,
+			//         'foto_wanita' => $fotop,
+			//         'jenis_acara' => $tambahjenisacara,
+			//         'tema_template' => $tambahtemaundangan,
+			//         'paket_acara' => $tambahpaketacara,
+			//         'background_welcome' => $bgdefault,
+			//         'nomer_pengundang' => $tambahnomertlp,
+			//         'nomer_pengundangw' => $tambahnomertlpw,
+			//         'color_template' => $colortema,
+			//         'color_template2' => '',
+			//         'img_sharing' => 'defaultsharing.png',
+			//         'informasi_modal' => ''
+			// 		);
 			$data = array(
 			        'id_pengundang' => null,
 			        'url_pengundang' => $tambahnamaurl,
 			        'namapanggilan_priawanita' => $tambahnamalakiperempuan,
 			        'namalengkap_pria' => $tambahfullnamalaki,
-			        'orangtua_pria' => $tambahnamaortulaki,
+			        'orangtua_pria' => '',
 			        'namalengkap_wanita' => $tambahfullnamaperempuan,
-			        'orangtua_wanita' => $tambahnamaortuperempuan,
-			        'ucapan_awal' => $tambahucapanawal,
-			        'ucapan_ahir' => $tambahucapanahir,
+			        'orangtua_wanita' => '',
+			        'ucapan_awal' => '',
+			        'ucapan_ahir' => '',
 			        'tanggal_akad' => $tambahtanggalakad,
 			        'jam_akad' => $tambahjamakad,
 			        'alamat_akad' => $tambahalamatakad,
@@ -160,9 +197,9 @@ class Admin extends CI_Controller {
 			        'tanggal_acara' => $tambahtanggalacara,
 			        'jam_acara' => $tambahjamacara,
 			        'alamat_acara' => $tambahalamatacara,
-			        'map_acara' => $tambahmapacara,
+			        'map_acara' => '',
 			        'musik_acara' => '',
-			        'video_acara' => $tambahvideoacara,
+			        'video_acara' => '',
 			        'stori_pengundang' => '',
 			        'rekening_pengundang' => '',
 			        'foto_pria' => $fotol,
@@ -171,10 +208,10 @@ class Admin extends CI_Controller {
 			        'tema_template' => $tambahtemaundangan,
 			        'paket_acara' => $tambahpaketacara,
 			        'background_welcome' => $bgdefault,
-			        'nomer_pengundang' => $tambahnomertlp,
-			        'nomer_pengundangw' => $tambahnomertlpw,
-			        'color_template' => $colortema,
-			        'color_template2' => '',
+			        'nomer_pengundang' => '',
+			        'nomer_pengundangw' => '',
+			        'color_template' => $colortemplate1,
+			        'color_template2' => $colortemplate2,
 			        'img_sharing' => 'defaultsharing.png',
 			        'informasi_modal' => ''
 					);

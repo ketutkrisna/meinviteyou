@@ -4,46 +4,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta content="Login undang kerabat & teman-teman dekatmu" name="description">
-    <meta content="undangan digital meinviteyou" name="keywords">
+    <title>Halaman login</title>
+    <meta content="Halaman login meinviteyou" name="description">
+    <meta content="undangan digital" name="keywords">
     <meta property="og:title" content="Login meinviteyou">
     <meta property="og:site_name" content="meINVITEyou.com">
-    <meta content='<?=base_url('assets/img/imgsharing/logosharingjpg.jpg'); ?>' property='og:image'/>
+    <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
-     <!-- Vendor CSS Files -->
-  <link href="<?=base_url('/'); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Template Main CSS File -->
-  <link href="<?=base_url('/'); ?>assets/css/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <!-- icons fontawesome -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Vendor CSS Files -->
+    <link href="<?=base_url('/'); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url('/'); ?>assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="<?=base_url('/'); ?>assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="<?=base_url('/'); ?>assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="<?=base_url('/'); ?>assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="<?=base_url('/'); ?>assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?=base_url('/'); ?>assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="<?=base_url('/'); ?>assets/css/style.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
 
-
-    <title>Halaman login</title>
     <style>
-      /*html,body{
-        height:100%;
-        position:relative;
-      }*/
-      /*img[alt*="www.000webhost.com"]{
-          display:none
-        }*/
-    .text-sendiri {
-      color: #2298A4 !important;
-    }
-    .text-merah {
-      color: #2298A4 !important;
-    }
-    .bg-sendiri {
-      background-color: #2298A4 !important;
-    }
-  </style>
+      .text-sendiri {
+        color: #2298A4 !important;
+      }
+      .text-merah {
+        color: #2298A4 !important;
+      }
+      .bg-sendiri {
+        background-color: #2298A4 !important;
+      }
+    </style>
   </head>
   <body>
 
@@ -52,10 +52,7 @@
     <!-- Sidebar Toggle (Topbar) -->
     <a class="nav-link" href="<?=base_url('pengunjung'); ?>" style="border:0">
       <img class="img-profile rounded-circle mr-auto" src="assets/img/whiteok.png" width="40" height="40">
-      <span class="text-light" style="font-size:25px">me</span><span class="text-light" style="font-size:25px;font-weight:bold;"><u>INVITE</u></span><span class="text-light" style="font-size:25px">you</span>
-      <!-- <h1 class="d-lg-inline logo text-white" style="font-weight:bold;font-size:25px;line-height:5px;"> -->
-        <!-- <i class="fas fa-arrow-left"></i>  -->
-        <!-- <span class="text-primary">me</span><span class="text-danger"><u>INVITE</u></span><span class="text-primary">you</span></h1> -->
+      <span class="text-light" style="font-size:20px">me</span><span class="text-light" style="font-size:20px;font-weight:bold;"><u>INVITE</u></span><span class="text-light" style="font-size:20px">you</span>
     </a>
   </nav>
   <!-- End of Topbar -->
@@ -71,39 +68,24 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
               <div class="col-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h5 text-gray-900 mb-4"><span style="box-shadow:0 0 6px rgba(0,0,0,.4);padding:6px;border-radius:5px;font-weight:bold;">LOGIN</span></h1>
+                    <h1 class="h5 text-gray-900 mb-4"><span style="box-shadow:0 0 5px rgba(0,0,0,.1);padding:6px;border-radius:5px;font-weight:bold;">Masuk Akun</span></h1>
                   </div>
 
                   <?= $this->session->flashdata('message'); ?>
                   <form class="user" action="<?=base_url('auth'); ?>" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username.." name="username" value="<?= set_value('username'); ?>" required>
+                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" name="username" value="<?= set_value('username'); ?>" autofocus="on" required>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password.." name="password" required>
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password" required>
                     </div>
                     <button type="submit" name="login" class="btn btn-primary btn-user btn-block">
-                      Login
+                      Masuk <i class="fas fa-sign-in-alt text-light"></i>
                     </button>
                   </form>
-                  <!-- <form>
-                    <div class="form-group row">
-                      <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="staticEmail">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword">
-                      </div>
-                    </div>
-                  </form> -->
 
                   <hr>
                 </div>

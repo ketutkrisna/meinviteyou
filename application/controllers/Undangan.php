@@ -11,7 +11,6 @@ class Undangan extends CI_Controller {
 	public function index()
 	{
 		redirect('pengunjung');
-		// echo $pengundang;
 	}
 
 	public function daftarundangan($pengundang='',$diundang='')
@@ -25,7 +24,23 @@ class Undangan extends CI_Controller {
 		$data['detailundangan']=$this->db->query($queryurl)->row_array();
 		$datasession=$this->db->query($queryurl)->row_array();
 
-		// var_dump($datasession['id_pengundang']);die;
+		$tanggalacara = $data['detailundangan']['tanggal_acara'];
+		$waktuawal  = strtotime($tanggalacara);
+		if($data['detailundangan']['paket_acara']=='hemat'){
+			$waktutarget = $waktuawal + 7884000;
+			$data['paket']='<b>HEMAT</b> dengan masa aktif <b>3 bulan</b>!.<br> Mulai Tanggal <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+		}else if($data['detailundangan']['paket_acara']=='reguler'){
+			$waktutarget = $waktuawal + 15770000;
+			$data['paket']='<b>REGULER</b> dengan masa aktif <b>6 bulan</b>!.<br> Mulai Tanggal <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+		}else{
+			$waktutarget = $waktuawal + 31546000;
+			$data['paket']='<b>PREMIUM</b> dengan masa aktif <b>1 tahun</b>!.<br> Mulai Tanggal <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+		}
+		$waktusekarang = time();
+		if($waktusekarang > $waktutarget){
+			$this->load->view('undangan/limit',$data);
+			return false;
+		}
 
 		$dataidp=$this->db->get_where('pengundang',['url_pengundang'=>$pengundang])->row_array();
 		$dataidpe=$dataidp['id_pengundang'];
@@ -97,7 +112,7 @@ class Undangan extends CI_Controller {
 			return false;
 		}
 
-		if($datacek['paket_acara']=='pakethard'||$datacek['paket_acara']=='paketspesial'){
+		// if($datacek['paket_acara']=='pakethard'||$datacek['paket_acara']=='paketspesial'){
 			
 			$this->db->set('absen_diundang', $absenkehadiran);
 			$this->db->set('jumlah_kehadiran', $jumlahkehadiran);
@@ -125,10 +140,10 @@ class Undangan extends CI_Controller {
 				</div>');
 			redirect('wedding/'.$namapengundang.'/'.$namadiundang);
 			return false;
-		}else{
-			redirect('pengunjung');
-			return false;
-		}
+		// }else{
+		// 	redirect('pengunjung');
+		// 	return false;
+		// }
 	}
 
 

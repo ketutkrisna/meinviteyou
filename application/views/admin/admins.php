@@ -7,10 +7,10 @@
 
   <title>Halaman admin</title>
   <meta content="Halaman pada admin" name="description">
-  <meta content="undangan digital meinviteyou" name="keywords">
-  <meta property="og:title" content="Admin meinviteyou">
+  <meta content="Undangan digital" name="keywords">
+  <meta property="og:title" content="Dashboard admin meinviteyou">
   <meta property="og:site_name" content="meINVITEyou.com">
-  <meta content='<?=base_url('assets/img/imgsharing/logosharingjpg.jpg'); ?>' property='og:image'/>
+  <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
   <!-- Favicons -->
   <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
@@ -18,11 +18,12 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <!-- icons fontawesome -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- Vendor CSS Files -->
   <link href="<?=base_url('/'); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/venobox/venobox.css" rel="stylesheet">
@@ -39,12 +40,11 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    /*html,body{
-      height:100%;
-      position:relative;
-    }*/
     .mobile-nav-toggle{
-      z-index: 999
+      top: 30px;
+    }
+    .mobile-nav a{
+      color:#ddd;
     }
     .text-sendiri {
       color: #2298A4 !important;
@@ -54,9 +54,6 @@
     }
     .bg-sendiri {
       background-color: #2298A4 !important;
-    }
-    .mobile-nav-toggle {
-      top: 30px;
     }
   </style>
 </head>
@@ -69,27 +66,14 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
-          <!-- <h1 class="logo mr-auto"><a href="<?=base_url('admin'); ?>" class="text-primary" style="font-size:25px">Admin<span class="text-white">(</span>M<span class="text-danger">I</span>Y<span class="text-white">)</span></a></h1> -->
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="<?=base_url('admin'); ?>" style="border:0;" class="logo mr-auto"><img src="<?=base_url('/'); ?>assets/img/whiteok.png" alt="" class="img-fluid"><span class="text-light" style="font-size:25px"> Admin</span></a>
+          <a href="<?=base_url('admin'); ?>" style="border:0;" class="logo mr-auto"><img src="<?=base_url('/'); ?>assets/img/whiteok.png" alt="" class="img-fluid"><span class="text-light" style="font-size:20px"> Admin</span></a>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li><a href="<?=base_url(); ?>">Beranda</a></li>
-              <li class="active"><a href="<?=base_url('admin'); ?>">Admin</a></li>
-              <li><a href="<?=base_url('admin/ubahpassword'); ?>">Ubah password</a></li>
-              <li><a href="<?=base_url('auth/logout'); ?>">Logout</a></li>
-              <!-- <li><a href="#contact">Contact Us</a></li> -->
-              <!-- <li><a href="#about">About Us</a></li> -->
-              <!-- <li class="drop-down"><a href="">Drop Down</a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                  <li><a href="#">Drop Down 5</a></li>
-                </ul>
-              </li> -->
-
+              <li><a href="<?=base_url(); ?>"><i class="fas fa-home" style="font-size:15px;color:white;"></i> Beranda</a></li>
+              <li class="active"><a href="<?=base_url('admin'); ?>"><i class="fas fa-user-cog" style="font-size:15px;color:white;"></i> Admin</a></li>
+              <li><a href="<?=base_url('admin/ubahpassword'); ?>"><i class="fas fa-key" style="font-size:15px;color:white;"></i> Ubah password</a></li>
+              <li><a href="<?=base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt" style="font-size:15px;color:white;"></i> Keluar</a></li>
             </ul>
           </nav><!-- .nav-menu -->
         </div>
@@ -98,30 +82,33 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main" style="margin-top:100px;min-height:800px">
+  <main id="main" style="margin-top:100px;min-height:700px">
 
-  <section>
-    <div class="row">
-      <div class="col-12 text-center">
-        <h3>Daftar Pesanan</h3>
+  <section style="margin:10px;padding:10px">
+
+    <div class="row ">
+      <div class="col-sm-12 d-flex justify-content-end">
+        <button type="button" class="btn btn-primary btn-sm mb-2 ubahzindex" data-toggle="modal" data-target="#modaltambahundangan"><i class="fas fa-plus-circle" style="color:white;font-size:18px"></i> Tambah baru</button>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-12 d-flex justify-content-end">
-        <button type="button" class="btn btn-primary btn-sm mb-2 mr-2" data-toggle="modal" data-target="#modaltambahundangan">Tambah</button>
+      <div class="col-sm-12 text-center py-0 mt-2 ml-2 mr-2">
+        <h5 style="box-shadow: 0 0 8px rgba(0,0,0,.2);border-radius:5px;padding:5px;font-weight:bold;"><span class="text-info">Daftar pesanan</span></h5>
       </div>
     </div>
+
+    
 
     <?=$this->session->flashdata('message'); ?>
 
-    <div class="accordion" id="pengorder">
+    <div class="accordion" id="pengorder" style="box-shadow: 0 0 5px rgba(0,0,0,.2);">
 <?php foreach($allorder as $aorder): ?>
       <div class="card">
         <div class="card-header" id="headingorder<?=$aorder['id_pengundang']; ?>" style="padding:7px">
           <h2 class="mb-0">
             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseorder<?=$aorder['id_pengundang']; ?>" aria-expanded="true" aria-controls="collapseorder<?=$aorder['id_pengundang']; ?>">
-              <?=$aorder['namapanggilan_priawanita']; ?>
+              <span class="font-weight-bold"><?=$aorder['namapanggilan_priawanita']; ?></span>
               <?php if($aorder['status_user']){ ?>
                 <?php if($aorder['status_user']=='aktif'){ ?>
                   (<span class="text-success">Fitur ON</span>)
@@ -138,76 +125,54 @@
         <div id="collapseorder<?=$aorder['id_pengundang']; ?>" class="collapse" aria-labelledby="headingorder<?=$aorder['id_pengundang']; ?>" data-parent="#pengorder">
           <div class="card-body" style="padding:2px 0px 10px 20px">
 
-            <ul class="list-group">
-              <!-- <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Nama pria:
-                <span class="text-danger"><?=$aorder['namalengkap_pria']; ?></span>
+            <ul class="list-group shadow">
+              <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
+                Nama Url :
+                <span class="text-info font-weight-bold"><?=$aorder['url_pengundang']; ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Orang tua pria:
-                <span class="text-danger"><?=$aorder['orangtua_pria']; ?></span>
+                Tgl resepsi :
+                <span class="text-info font-weight-bold"><?=date('d M Y', strtotime($aorder['tanggal_acara'])); ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Nama wanita:
-                <span class="text-danger"><?=$aorder['namalengkap_wanita']; ?></span>
+                Tema undangan :
+                <span class="text-info font-weight-bold"><?=$aorder['tema_template']; ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Orang tua wanita:
-                <span class="text-danger"><?=$aorder['orangtua_wanita']; ?></span>
-              </li> -->
-              <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Nama diUrl:
-                <span class="text-danger"><?=$aorder['url_pengundang']; ?></span>
+                Paket undangan :
+                <span class="text-info font-weight-bold"><?=$aorder['paket_acara']; ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Tgl resepsi:
-                <span class="text-danger"><?=date('d M Y', strtotime($aorder['tanggal_acara'])).', '.$aorder['jam_acara']; ?></span>
-              </li>
-              <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Alamat resepsi:
-                <span class="text-danger"><?=$aorder['alamat_acara']; ?></span>
-              </li>
-              <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Tema undangan:
-                <span class="text-danger"><?=$aorder['tema_template']; ?></span>
+                Status :
+                <?php
+                  $tanggalacara = $aorder['tanggal_acara'];
+                  $waktuawal  = strtotime($tanggalacara);
+                  if($aorder['paket_acara']=='hemat'){
+                    $waktutarget = $waktuawal + 7884000;
+                  }else if($aorder['paket_acara']=='reguler'){
+                    $waktutarget = $waktuawal + 15777000;
+                  }else{
+                    $waktutarget = $waktuawal + 31546000;
+                  }
+                  $waktusekarang = time();
+                ?>
+                <?php if($waktusekarang > $waktutarget){ ?>
+                  <span class="text-danger font-weight-bold">Tidak aktif</span>
+                <?php }else{ ?>
+                  <span class="text-success font-weight-bold">Aktif</span>
+                <?php } ?>
               </li>
             </ul>
             <div class="row">
               <div class="col-12 d-flex justify-content-between">
                 <?php if($aorder['ids']==0){ ?>
-                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-danger ambildatapengundang" data-toggle="modal" data-target="#modalakseslogin" data-idpengundang="<?=$aorder['id_pengundang']; ?>" role="button">Buatkan akses login</a>
+                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-danger ambildatapengundang ubahzindex" data-toggle="modal" data-target="#modalakseslogin" data-idpengundang="<?=$aorder['id_pengundang']; ?>" role="button">Buatkan akses</a>
                 <?php }else{ ?>
-                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-warning lihatdetailuser" data-toggle="modal" data-target="#modallihatakseslogin" data-iduser="<?=$aorder['id_user']; ?>" role="button">Lihat akses login</a>
+                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-success lihatdetailuser" data-toggle="modal" data-target="#modallihatakseslogin" data-iduser="<?=$aorder['id_user']; ?>" role="button">Lihat akses</a>
                 <?php } ?>
                 <a style="margin:5px 5px 0 0" class="btn btn-sm btn-primary" href="<?=base_url('admin/aturundangan/'.$aorder['id_pengundang']); ?>" role="button">Kelola</a>
               </div>
             </div>
-
-            <!-- <div class="accordion" id="listnama<?=$aorder['id_pengundang']; ?>">
-          <?php 
-            $idpengundang=$aorder['id_pengundang'];
-            $querylist="SELECT * from diundang where matchid_pengundang='$idpengundang' order by nama_diundang"; 
-            $resultlist=$this->db->query($querylist)->result_array();
-          ?>
-          <?php $no=1; foreach($resultlist as $rlist): ?>
-              <div class="card">
-                <div class="card-header" id="headinglist <?=$rlist['id_diundang']; ?>" style="padding:0">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapselist<?=$rlist['id_diundang']; ?>" aria-expanded="true" aria-controls="collapselist<?=$rlist['id_diundang']; ?>">
-                      <?=$no++; ?>. <?=$rlist['nama_diundang']; ?>
-                    </button>
-                  </h2>
-                </div>
-
-                <div id="collapselist<?=$rlist['id_diundang']; ?>" class="collapse" aria-labelledby="headinglist <?=$rlist['id_diundang']; ?>" data-parent="#listnama<?=$aorder['id_pengundang']; ?>">
-                  <div class="card-body" style="padding:5px;">
-                    <span>No.Tlp : <?=$rlist['nomer_diundang']; ?></span><br>
-                    <span>Url : <?=base_url($aorder['jenis_acara'].'/'.$aorder['paket_acara'].'/'.$aorder['url_pengundang'].'/'.$rlist['url_diundang']); ?></span>
-                  </div>
-                </div>
-              </div>
-          <?php endforeach; ?>
-            </div> -->
 
           </div>
         </div>
@@ -250,26 +215,26 @@
             </div>
             <input type="text" class="form-control" placeholder="Full name laki-laki" aria-label="Username" aria-describedby="basic-addon1" name="tambahfullnamalaki">
           </div>
-          <div class="input-group mb-3">
+          <!-- <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nama ortu L</span>
             </div>
             <input type="text" class="form-control" placeholder="mr david & ms lina" aria-label="Username" aria-describedby="basic-addon1" name="tambahnamaortulaki">
-          </div>
+          </div> -->
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nama P</span>
             </div>
             <input type="text" class="form-control" placeholder="Full name perempuan" aria-label="Username" aria-describedby="basic-addon1" name="tambahfullnamaperempuan">
           </div>
-          <div class="input-group mb-3">
+          <!-- <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nama ortu P</span>
             </div>
             <input type="text" class="form-control" placeholder="mr patrik & ms stevani" aria-label="Username" aria-describedby="basic-addon1" name="tambahnamaortuperempuan">
-          </div>
+          </div> -->
 
-          <div class="input-group mb-3">
+          <!-- <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">No.Tlp L</span>
             </div>
@@ -294,7 +259,7 @@
               <span class="input-group-text">Ucapan ahir</span>
             </div>
             <textarea class="form-control" aria-label="With textarea" placeholder="Ucapan ahir pada undangan" name="tambahucapanahir"></textarea>
-          </div>
+          </div> -->
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -314,12 +279,6 @@
             </div>
             <input type="text" class="form-control" aria-label="Username" placeholder="Tempat akad berlangsung" aria-describedby="basic-addon1" name="tambahalamatakad">
           </div>
-          <!-- <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Maps akad</span>
-            </div>
-            <textarea class="form-control" aria-label="With textarea" placeholder="Sematkan dari google maps" name="tambahmapakad"></textarea>
-          </div> -->
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -339,30 +298,20 @@
             </div>
             <input type="text" class="form-control" aria-label="Username" placeholder="Tempat resepsi berlangsung" aria-describedby="basic-addon1" name="tambahalamatacara">
           </div>
-          <div class="input-group">
+          <!-- <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Maps resepsi</span>
             </div>
             <textarea class="form-control" aria-label="With textarea" placeholder="Sematkan dari google maps" name="tambahmapacara"></textarea>
-          </div>
-          <!-- <div class="input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Musik undangan</span>
-            </div>
-            <textarea class="form-control" aria-label="With textarea" placeholder="Sematkan dari sound cloud" name="tambahmusikacara"></textarea>
           </div> -->
-          <div class="input-group mt-3">
+          
+         <!--  <div class="input-group mt-3">
             <div class="input-group-prepend">
               <span class="input-group-text">video undangan</span>
             </div>
             <textarea class="form-control" aria-label="With textarea" placeholder="Sematkan dari youtube" name="tambahvideoacara"></textarea>
-          </div>
-          <!-- <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Stori undangan</span>
-            </div>
-            <textarea class="form-control" aria-label="With textarea" placeholder="Stori pengundang" name="tambahstoriacara"></textarea>
           </div> -->
+          
           <div class="input-group mb-3 mt-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupFileAddon01">Foto L</span>
@@ -395,10 +344,10 @@
               <label class="input-group-text" for="inputGroupSelect02">Tema undangan</label>
             </div>
             <select class="custom-select" id="inputGroupSelect02" name="tambahtemaundangan">
-              <!-- <option value="standar">Standar</option> -->
               <option value="classic">Classic</option>
               <option value="rustic">Rustic</option>
               <option value="tematic">Tematic</option>
+              <option value="vantage">Vantage</option>
             </select>
           </div>
           <div class="input-group mb-3">
@@ -406,16 +355,15 @@
               <label class="input-group-text" for="inputGroupSelect01">Paket undangan</label>
             </div>
             <select class="custom-select" id="inputGroupSelect01" name="tambahpaketacara">
-              <option value="paketeasy">Paket easy(100rb)</option>
-              <option value="paketmedium" class="disabled">Paket medium(200rb)</option>
-              <option value="pakethard" class="disabled">Paket hard(300rb)</option>
-              <option value="paketspesial" class="disabled">Paket spesial(400rb)</option>
+              <option value="hemat">Hemat</option>
+              <option value="reguler" class="disabled">Reguler</option>
+              <option value="premium" class="disabled">Premium</option>
             </select>
           </div>
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-sm" name="tambahsimpan">Simpan</button>
+          <button type="submit" class="btn btn-primary btn-sm" name="tambahsimpan"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
         </form>
       </div>
@@ -438,7 +386,6 @@
         <div class="modal-body">
 
         <form action="<?=base_url('admin/buatakseslogin'); ?>" method="post">
-          <!-- <input type="hidden" name="idepengundang" value="<?=$detailundangan['id_pengundang']; ?>"> -->
           <input type="hidden" name="idpen" class="idpen">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -608,6 +555,13 @@
             $('.passwordd').text(data.password_user);
           }
         });
+      });
+
+      $('.ubahzindex').on('click',function(){
+        $('.mobile-nav-toggle').css('z-index','999');
+      });
+      $('.mobile-nav-toggle').on('click',function(){
+        $('.mobile-nav-toggle').css('z-index','99999');
       });
 
     });

@@ -31,10 +31,10 @@
 
   <title>Setting undangan</title>
   <meta content="Halaman atur undangan admin" name="description">
-  <meta content="undangan digital meinviteyou" name="keywords">
-  <meta property="og:title" content="Admin meinviteyou">
+  <meta content="undangan digital" name="keywords">
+  <meta property="og:title" content="Atur undangan admin meinviteyou">
   <meta property="og:site_name" content="meINVITEyou.com">
-  <meta content='<?=base_url('assets/img/imgsharing/logosharingjpg.jpg'); ?>' property='og:image'/>
+  <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
   <!-- Favicons -->
   <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
@@ -42,11 +42,12 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <!-- icons fontawesome -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- Vendor CSS Files -->
   <link href="<?=base_url('/'); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="<?=base_url('/'); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="<?=base_url('/'); ?>assets/vendor/venobox/venobox.css" rel="stylesheet">
@@ -66,22 +67,15 @@
   </script>
   <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-  <!-- =======================================================
-  * Template Name: BizPage - v3.1.1
-  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <style>
-    /*html,body{
-      height:100%;
-      position:relative;
-    }*/
     .popover{
       max-width: 50%;
     }
     .mobile-nav-toggle{
-      z-index: 999
+      top: 30px;
+    }
+    .mobile-nav a{
+      color:#ddd;
     }
     .text-sendiri {
       color: #2298A4 !important;
@@ -91,9 +85,6 @@
     }
     .bg-sendiri {
       background-color: #2298A4 !important;
-    }
-    .mobile-nav-toggle {
-      top: 30px;
     }
   </style>
 </head>
@@ -106,9 +97,7 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
-          <!-- <h1 class="logo mr-auto"><a href="<?=base_url('admin'); ?>" style="font-size:25px"><i class="fa fa-arrow-left"></i> <span class="text-primary">Admin<span class="text-white">(</span>M<span class="text-danger">I</span>Y<span class="text-white">)</span></span> </a></h1> -->
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="<?=base_url('admin'); ?>" style="border:0;" class="logo mr-auto"><i style="font-size:25px" class="fa fa-arrow-left text-white"></i> <img src="<?=base_url('/'); ?>assets/img/whiteok.png" alt="" class="img-fluid"><span class="text-light" style="font-size:25px"> Admin</span></a>
+          <a href="<?=base_url('admin'); ?>" style="border:0;" class="logo mr-auto"><i style="font-size:25px" class="fa fa-arrow-left text-white"></i> <img src="<?=base_url('/'); ?>assets/img/whiteok.png" alt="" class="img-fluid"><span class="text-light" style="font-size:20px"> Admin</span></a>
         </div>
       </div>
 
@@ -117,10 +106,18 @@
 
   <main id="main" style="margin-top:100px;min-height:800px;margin-bottom:20px">
 
-  <section style="margin:10px">
+  <section style="margin:10px;padding:10px">
     <div class="row">
-      <div class="col-12 text-center py-0">
-        <h4>Kelola undangan <br> <span class="text-info"><?=$detailundangan['namapanggilan_priawanita']; ?></span></h4>
+      <div class="col-sm-12 text-center py-0 mt-2 mb-1 ml-2 mr-2">
+        <h4 style="box-shadow: 0 0 10px rgba(0,0,0,.2);border-radius:5px;padding:5px;font-weight:bold;"><span class="text-info"><?=$detailundangan['namapanggilan_priawanita']; ?></span></h4>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-between mb-1">
+        <a onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/deletepengundang/'.$detailundangan['id_pengundang']); ?>" class="btn btn-danger btn-sm" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-trash" style="color:white;"></i> Delete</a>
+        <button type="button" class="btn btn-success btn-sm editundangan" data-toggle="modal" data-target="#modaleditundangan" data-ideditundangan="<?=$detailundangan['id_pengundang']; ?>" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-edit" style="color:white;"></i> Edit</button>
       </div>
     </div>
 
@@ -128,14 +125,8 @@
     <hr style="border:1px solid grey;margin-bottom:10px;margin-top:0">
     <div>
 
-    <div class="row">
-      <div class="col-12 d-flex justify-content-between mb-1">
-        <a onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/deletepengundang/'.$detailundangan['id_pengundang']); ?>" class="btn btn-danger btn-sm">Delete</a>
-        <button type="button" class="btn btn-primary btn-sm editundangan" data-toggle="modal" data-target="#modaleditundangan" data-ideditundangan="<?=$detailundangan['id_pengundang']; ?>">Edit</button>
-      </div>
-    </div>
 
-    <ul class="list-group text-center">
+    <ul class="list-group text-center" style="box-shadow: 0 0 5px rgba(0,0,0,.2);">
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$detailundangan['namalengkap_pria']; ?></span><br>
         <span style="font-size:12px;color:grey"> (Nama lengkap mempelai pertama)</span>
@@ -156,7 +147,7 @@
 
     <div class="row">
       <div class="col-12 d-flex justify-content-end mt-2">
-        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaldetailundangan">Lihat selengkapnya</button>
+        <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#modaldetailundangan" style="background-color:rgba(48, 154, 171,.4);box-shadow: 0 0 5px rgba(0,0,0,.2);">Lihat selengkapnya <i class="fas fa-angle-double-right" style="color:#616161;"></i></button>
       </div>
     </div>
     
@@ -168,26 +159,27 @@
     <div>
 
     <div class="row">
-      <div class="col-12 d-flex justify-content-start">
-        <button type="button" class="btn btn-primary btn-sm editundangan mb-1" data-toggle="modal" data-target="#modaltambahgaleri">Tambah galeri</button>
+      <div class="col-12 text-center d-flex justify-content-between">
+        <span style="font-weight:bold;font-size:17px;color:#9308ff;">Upload Foto Galeri &rarr;</span>
+        <button type="button" class="btn btn-primary btn-sm editundangan mb-1" data-toggle="modal" data-target="#modaltambahgaleri" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-plus-circle" style="color:white;"></i> Tambah galeri</button>
       </div>
     </div>
 
-    <div class="card-group">
-      <div class="row" style="padding:0;margin:0;">
+    <div class="card-group" style="box-shadow: 0 0 5px rgba(0,0,0,.2);padding:5px;">
+      <div class="row justify-content-center" style="padding:0;margin:0;">
     <?php 
       $idfpengundang=$detailundangan['id_pengundang'];
       $querylistf="SELECT * from galeris where idpengundang_galeri='$idfpengundang'"; 
       $resultlistfoto=$this->db->query($querylistf)->result_array();
     ?>
     <?php foreach($resultlistfoto as $rlf): ?>
-        <div class="col-2 text-center" style="padding:0;margin:0;">
-        <div class="card">
-          <img src="<?=base_url('assets/img/fotogaleripelanggan/'.$rlf['foto_galeri']); ?>" class="card-img-top" alt="..." height="60">
-          <div class="card-body" style="padding:0">
-            <a onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusgaleri/'.$rlf['id_galeri'].'/'.$detailundangan['id_pengundang']); ?>" class="text-danger">hapus</a>
+        <div class="text-center d-flex justify-content-center" style="margin:2px;">
+          <div class="card" style="box-shadow: 0 0 5px rgba(0,0,0,.2);width:80px;height:100px;">
+            <img src="<?=base_url('assets/img/fotogaleripelanggan/'.$rlf['foto_galeri']); ?>" class="card-img-top" alt="..." style="width:100%;height:70px">
+            <div class="card-body" style="padding:0">
+              <a onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusgaleri/'.$rlf['id_galeri'].'/'.$detailundangan['id_pengundang']); ?>" class="text-danger" style="display:block;"><i class="fas fa-trash-alt" style="text-shadow:0 0 3px rgba(0,0,0,.3)"></i></a>
+            </div>
           </div>
-        </div>
         </div>
     <?php endforeach; ?>
       </div>
@@ -201,34 +193,42 @@
     <div>
 
     <div class="row">
-      <div class="col-12 d-flex justify-content-start mb-1">
-        <button type="button" class="btn btn-primary btn-sm editundangana" data-toggle="modal" data-target="#modalgantibackground">Ganti Background</button>
-      </div>
-    </div>
 
-    <div class="card-group">
-      <div class="row">
-        <div class="col-6 text-center d-flex justify-content-center">
-        <div class="card">
-          <span style="position:absolute;right:0px;font-size:15px;padding:2px;background-color:rgba(0,0,0,.5);color:white;">
-            <?php 
-              if($detailundangan['tema_template']=='classic'){
-                echo "1600 x 972";
-              }else if($detailundangan['tema_template']=='rustic'){
-                echo "1600 x 1272";
-              }else if($detailundangan['tema_template']=='tematic'){
-                echo "1500 x 998";
-              }
-            ?>
-          </span>
-          <img src="<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>" class="card-img-top" alt="..." widht="300">
-          <div class="card-body" style="padding:0">
-            <a onclick="return confirm('Pilih Oke untuk ubah ke Default!');" href="<?=base_url('admin/defaultbackground/'.$detailundangan['id_pengundang']); ?>" class="text-danger">Ganti Default</a>
+      <div class="col-6 d-flex justify-content-end" style="margin:0">
+        <div class="card-group">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <div class="card" style="box-shadow: 0 0 5px rgba(0,0,0,.3);">
+                <span style="position:absolute;right:0px;font-size:15px;padding:2px;background-color:rgba(0,0,0,.5);color:white;">
+                  <?php 
+                    if($detailundangan['tema_template']=='classic'){
+                      echo "1600 x 972";
+                    }else if($detailundangan['tema_template']=='rustic'){
+                      echo "1600 x 1272";
+                    }else if($detailundangan['tema_template']=='tematic'){
+                      echo "1500 x 998";
+                    }
+                  ?>
+                </span>
+                <img src="<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>" class="card-img-top" alt="background welcome" width="50%" height="100px">
+              <div class="card-body" style="padding:0;">
+                <a onclick="return confirm('Pilih Oke untuk ubah ke Default!');" href="<?=base_url('admin/defaultbackground/'.$detailundangan['id_pengundang']); ?>" class="text-info"><i class="fas fa-pen-nib text-info"></i> Ganti Default</a>
+              </div>
+              </div>
+            </div>
           </div>
         </div>
-        </div>
       </div>
-    </div>  
+
+      <div class="col-6 d-flex" style="align-items:center;margin:0">
+        <button type="button" class="btn btn-primary btn-sm editundangana" data-toggle="modal" data-target="#modalgantibackground" style="box-shadow: 0 0 5px rgba(0,0,0,.3);height:100%;width:160px;font-size:15px"><i class="fas fa-edit" style="color:white;font-size:30px"></i> <br> Ganti Background</button>
+      </div>
+
+    </div>
+
+    
+
+      
 
     </div>
     <hr style="border:1px solid grey;margin-bottom:10px;margin-top:10px">
@@ -240,15 +240,18 @@
 
       <form id="upload_form" enctype="multipart/form-data">
         <div>
-            <input type="hidden" class="idmusikpengundang" name="idmusikpengundang" value="<?=$detailundangan['id_pengundang']; ?>">
-            <input type="file" name="datafilemusik" id="fileku"><br>
+          <input type="hidden" class="idmusikpengundang" name="idmusikpengundang" value="<?=$detailundangan['id_pengundang']; ?>">
+          <div>
+            <input type="file" class="form-control" name="datafilemusik" id="fileku" required>
+          </div>
           <div class="progress mt-2 hideprogres">
             <div class="progress-bar progress-bar-striped" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">0%</div>
           </div>
             <span id="total"></span>
         </div>
-        <div class="d-flex justify-content-end" style="margin-top:10px">
-          <button type="button" class="btn btn-sm btn-primary ml-auto klikbutton">Update musik</button>
+        <div class="d-flex justify-content-between" style="margin-top:10px">
+          <span style="font-weight:bold;font-size:17px;color:#9308ff;">Upload Musik &rarr;</span>
+          <button type="button" class="btn btn-sm btn-primary ml-auto klikbutton" style="box-shadow: 0 0 5px rgba(0,0,0,.3);"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
       </form>
 
@@ -261,15 +264,18 @@
 
     <!-- div bungkus shraing -->
     <div>
-      <img width="50px" class="img-thumbnail" src="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>"> <?=$detailundangan['namapanggilan_priawanita']; ?>
-      <a class="text-danger bg-warning p-1" onclick="return confirm('Pilih Oke untuk ubah ke default!')" href="<?=base_url('admin/defaultimgsharing/'.$detailundangan['id_pengundang']); ?>">Set to dafault</a>
+      <img width="50px" class="img-thumbnail" src="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>"> Image share Link
+      <a class="text-info p-1" onclick="return confirm('Pilih Oke untuk ubah ke default!')" href="<?=base_url('admin/defaultimgsharing/'.$detailundangan['id_pengundang']); ?>" style="border-radius:5px;"><i class="fas fa-pen-nib text-info"></i> Set to dafault</a>
       <form action="<?=base_url('admin/updateimgsharing'); ?>" method="post" enctype="multipart/form-data">
-        <div>
-            <input type="hidden" class="idsharepengundang" name="idsharepengundang" value="<?=$detailundangan['id_pengundang']; ?>">
-            <div style="display:flex;justify-content:space-around;">
-            <input type="file" name="fotosharing">
-            <button type="submit" class="btn btn-sm btn-primary ml-auto">Update</button>
-            </div>
+        <div class="mt-1">
+          <input type="hidden" class="idsharepengundang" name="idsharepengundang" value="<?=$detailundangan['id_pengundang']; ?>">
+          <div class="mb-2">
+            <input type="file" class="form-control" name="fotosharing" required>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="font-weight:bold;font-size:17px;color:#9308ff;">Upload Image Sharing &rarr;</span>
+          <button type="submit" class="btn btn-sm btn-primary ml-auto" style="box-shadow: 0 0 5px rgba(0,0,0,.3);"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
+          </div>
         </div>
       </form>
 
@@ -280,11 +286,6 @@
     <hr style="border:1px solid grey;margin-bottom:10px;margin-top:10px">
     <!-- div tutup bungkus sharing -->
 
-
-
-    <!-- <div class="embed-responsive embed-responsive-16by9">
-      <span class="text-info"><?=$detailundangan['map_acara']; ?></span>
-    </div> -->
 
     <!-- div bungkus daftar undangan -->
     <div>
@@ -311,8 +312,9 @@
 
       
     <div class="row">
-      <div class="col-12 mt-2 mb-3 d-flex justify-content-start">
-        <button type="button" class="btn btn-primary btn-sm tambahdaftaru" data-toggle="modal" data-target="#modaltambahdaftarundangan">Tambah daftar undangan</button>
+      <div class="col-12 mt-2 mb-3 d-flex justify-content-between">
+        <span style="font-weight:bold;font-size:17px;color:#9308ff;">Generate Link &rarr;</span>
+        <button type="button" class="btn btn-primary btn-sm tambahdaftaru" data-toggle="modal" data-target="#modaltambahdaftarundangan" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-plus-circle" style="color:white;"></i> Buat Link Undangan</button>
       </div>
     </div>
 
@@ -335,12 +337,12 @@
    <?=$this->session->flashdata('message'); ?>
 
     <div class="row">
-      <div class="col-12 mt-0 text-center">
+      <div class="col-sm-12 mt-0 mb-1 text-center">
         <h5>Daftar undangan</h5>
       </div>
     </div>
 
-    <div class="accordion" id="listnama<?=$detailundangan['id_pengundang']; ?>" style="margin-top:-18px">
+    <div class="accordion" id="listnama<?=$detailundangan['id_pengundang']; ?>" style="margin-top:-18px;box-shadow: 0 0 5px rgba(0,0,0,.2);">
   <?php 
     $idpengundang=$detailundangan['id_pengundang'];
     $querylist="SELECT * from diundang where matchid_pengundang='$idpengundang' order by nama_diundang"; 
@@ -368,35 +370,8 @@
         <div id="collapselist<?=$rlist['id_diundang']; ?>" class="collapse" aria-labelledby="headinglist <?=$rlist['id_diundang']; ?>" data-parent="#listnama<?=$detailundangan['id_pengundang']; ?>">
           <div class="card-body" style="padding:2px 0px 5px 20px;">
 
-            <!-- <div class="mb-0">
-              <div class="card shadow" style="padding:0">
-                <div class="card-body py-0" style="margin:0">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-0">
-                      <div class="h5 mb-0 text-gray-800"><?=$rlist['url_diundang']; ?></div>
-                      <div class="mb-0" style="font-size:14px">Nama diUrl</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- <?php if($rlist['nomer_diundang']){ ?> -->
-            <!-- <div class="mb-0">
-              <div class="card shadow" style="padding:0">
-                <div class="card-body py-0" style="margin:0">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-0">
-                      <div class="h5 mb-0 text-gray-800"><?=$rlist['nomer_diundang']; ?></div>
-                      <div class="mb-0" style="font-size:14px">Nomer telepon</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- <?php } ?> -->
             <div class="mb-0">
               <?php
-                // $link=base_url('pernikahan'.'/'.$detailundangan['tema_template'].'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
                 $link=base_url('wedding'.'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
               ?>
               <div class="card shadow" style="padding:0">
@@ -408,7 +383,6 @@
                         <a class="whatsapp" href="https://api.whatsapp.com/send?text=<?=$link; ?>" title="Share this post on Whatsapp" target="_blank"><i style="font-weight:bold;font-size:22px;" class="ion-social-whatsapp text-success"></i></a>  |  
                         <a href="https://www.facebook.com/share.php?u=<?=$link; ?>" title="Share this post on Facebook" target="_blank"><i style="font-weight:bold;font-size:22px;" class="ion-social-facebook text-primary"></i></a>  |  
                         <span onclick="copyToClipboard('.clip<?=$rlist['id_diundang']; ?>');" class="clipboard" title="Copy on clipboard"><i style="font-weight:bold;font-size:23px;margin:0 6px 0 6px;cursor:copy;" class="ion-ios-copy-outline text-secondary onclip" data-toggle="tooltip" data-placement="top" title="Copied!"></i></span> |
-                        <!-- <a class="twitter" href="https://twitter.com/share?text=undangan&url=<?=$link; ?>" title="Share this post on Twitter" target="_blank"><i style="font-weight:bold;font-size:22px;" class="ion-social-twitter text-info"></i></a>  | -->
                       </span>
                       <div class="mb-0 d-flex justify-content-between" style="font-size:14px"><span></span> <span><a target="_blank" style="margin:0px;font-size:15px;" class="text-primary ml-auto" href="<?=$link; ?>">Lihat undangan <span style="font-size:18px">&raquo;</span></a></span></div>
                     </div>
@@ -447,7 +421,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body pt-0 pb-0">
 
         <form action="<?=base_url('admin/tambahgaleri'); ?>" method="post" enctype="multipart/form-data">
           <input type="hidden" name="idtambahgaleri" value="<?=$detailundangan['id_pengundang']; ?>">
@@ -470,7 +444,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-sm" name="tambahglr">Tambah</button>
+          <button type="submit" class="btn btn-primary btn-sm" name="tambahglr"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
         </form>
       </div>
@@ -488,7 +462,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body pt-0 pb-0">
 
         <form action="<?=base_url('admin/gantibackground'); ?>" method="post" enctype="multipart/form-data">
           <input type="hidden" name="idgantibg" value="<?=$detailundangan['id_pengundang']; ?>">
@@ -505,7 +479,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-sm" name="okgantibg">Ganti</button>
+          <button type="submit" class="btn btn-primary btn-sm" name="okgantibg"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
         </form>
       </div>
@@ -518,7 +492,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah daftar undangan</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Tambah link baru</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -534,12 +508,6 @@
           <span class="pl-1 trigereditmanual" style="color:green;cursor:pointer;">[<u>edit</u>]</span>
         </div>
 
-          <!-- <div class="input-group mb-3 customnamainvit">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nama Link</span>
-            </div>
-            <input type="text" class="form-control" placeholder="Nama tidak boleh spasi.." aria-label="Username" aria-describedby="basic-addon1" name="tnamaurl" required>
-          </div> -->
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nama</span>
@@ -549,7 +517,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-sm" name="tambahdaftar">Simpan</button>
+          <button type="submit" class="btn btn-primary btn-sm" name="tambahdaftar"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
         </form>
       </div>
@@ -561,7 +529,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit daftar undangan <span class="loader"><img src="<?=base_url('assets/img/preloader.gif'); ?>" width="25"></span></h5>
+          <h5 class="modal-title" id="exampleModalLabel">Edit <b><span class="namalink"></span></b> <span class="loader"><img src="<?=base_url('assets/img/preloader.gif'); ?>" width="25"></span></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -589,7 +557,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-sm" name="eeditdaftar">Simpan</button>
+          <button type="submit" class="btn btn-primary btn-sm" name="eeditdaftar"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
         </form>
       </div>
@@ -742,12 +710,6 @@
             </div>
             <textarea class="form-control tambahmapacara" aria-label="With textarea" placeholder="Sematkan dari google maps" name="tambahmapacara"></textarea>
           </div>
-          <!-- <div class="input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Musik undangan</span>
-            </div>
-            <textarea class="form-control tambahmusikacara" aria-label="With textarea" placeholder="Sematkan dari sound cloud" name="tambahmusikacara"></textarea>
-          </div> -->
           <div class="input-group mt-3">
             <div class="input-group-prepend">
               <span class="input-group-text">video</span>
@@ -856,10 +818,9 @@
               <label class="input-group-text" for="inputGroupSelect01">Paket undangan</label>
             </div>
             <select class="custom-select tambahpaketacara" id="inputGroupSelect01" name="tambahpaketacara">
-              <option value="paketeasy">Paket easy(100rb)</option>
-              <option value="paketmedium" class="disabled">Paket medium(200rb)</option>
-              <option value="pakethard" class="disabled">Paket hard(300rb)</option>
-              <option value="paketspesial" class="disabled">Paket spesial(400rb)</option>
+              <option value="hemat">Hemat</option>
+              <option value="reguler">Reguler</option>
+              <option value="premium">Premium</option>
             </select>
           </div>
           </div>
@@ -867,7 +828,7 @@
         </div>
         <div class="prebuka">
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-sm" name="tambahsimpan">Simpan</button>
+          <button type="submit" class="btn btn-primary btn-sm" name="tambahsimpan"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
         </div>
         </form>
@@ -877,9 +838,6 @@
   </div>
 
 
-
-<!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
-   <!-- Modal tambah undangan -->
   <div class="modal fade" id="modaldetailundangan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
@@ -964,32 +922,18 @@
               <span class="text-info"><?=$detailundangan['tema_template']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Tema undangan)</span>
             </li>
-
-            <!-- <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item d-flex justify-content-between">
-              <span>
-              <span class="text-info"><?=$detailundangan['color_template']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Warna dasar)</span>
-              </span>
-              <span style="background-color:<?=$detailundangan['color_template']; ?>;height:30px;width:50%;margin-left:5px"></span>
-            </li> -->
-
-            
+            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
+              <span class="text-info"><?=$detailundangan['paket_acara']; ?></span><br>
+              <span style="font-size:12px;color:grey"> (Paket undangan)</span>
+            </li>
+ 
             <li style="padding:5px 15px 5px 15px;line-height:15px;" class="list-group-item">
               <span style="word-wrap:break-word;" class="text-info"><?=base_url('wedding/').$detailundangan['url_pengundang']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Link utama)</span>
             </li>
-            <!-- <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item text-center">
-              <audio controls style="width:100%">
-                <source src="<?=base_url('assets/img/musikwedding/'.$detailundangan['musik_acara']); ?>" type="audio/mpeg">
-              </audio><br>
-              <span style="font-size:12px;color:grey"> (Musik undangan)</span>
-            </li> -->
           </ul>
 
         </div>
-        <!-- <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-sm" name="tambahsimpan">Simpan</button>
-        </div> -->
       </div>
     </div>
   </div>
@@ -1215,6 +1159,7 @@
             $('.idediundang').val(data.id_diundang);
             $('.eshowcustom').val(data.url_diundang);
             $('.ecustomnamalengkap').val(data.nama_diundang);
+            $('.namalink').text(data.nama_diundang);
             $('.enomerdiundang').val(data.nomer_diundang);
             $('.ealamatdiundang').val(data.alamat_diundang);
           }
