@@ -3,24 +3,22 @@
 
 <head>
   <title>Undangan Vantage</title>
-  <!-- Compiled and minified CSS -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="meINVITEyou.com">
-
-
-  <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
-  <meta name="description" content="Minggu, 18 agustus 2021"/>
-  <meta content='<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>' property='og:image'/>
   <meta property="og:locale" content="id_ID">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Pernikahan Romeo & juliete; ?>">
+  <meta property="og:title" content="The Wedding Of Romeo & juliete; ?>">
+  <meta name="description" content="Minggu, 17 agustus 1945"/>
+  <meta content="<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>" property='og:image'/>
+  <!-- Favicons -->
+  <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
+  <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/materialize.css">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/timeline.css">
   <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
       body,html{
         overflow-x:hidden;

@@ -1,56 +1,20 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
+	<title>Undangan tematic</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Undangan tematic</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="meINVITEyou.com" />
-	<meta name="keywords" content="meinviteyou" />
-	<meta name="author" content="meINVITEyou.com" />
-
-	<link href="images/favicon.png" rel="icon">
-    <meta name="robots" content="index,follow">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="meINVITEyou.com">
-
     <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
-    <meta name="description" content="Minggu, 18 agustus 2021"/>
-    <meta content='<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>' property='og:image'/>
+    <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
-    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="meINVITEyou.com">
     <meta property="og:title" content="Pernikahan Romeo & Juliete">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-
-  <!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    <meta name="description" content="Minggu, 17 agustus 1945"/>
+    <meta content='<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>' property='og:image'/>
+    <!-- Favicons -->
+    <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
@@ -128,10 +92,6 @@
 
 	<!-- Modernizr JS -->
 	<script src="<?=base_url('assets/temaundangan/tematic/'); ?>js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 
 	</head>
 	<body>

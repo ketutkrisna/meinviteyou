@@ -13,7 +13,7 @@
   <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
   <!-- Favicons -->
-  <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
+  <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
   <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

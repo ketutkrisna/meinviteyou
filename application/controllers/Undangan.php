@@ -28,13 +28,13 @@ class Undangan extends CI_Controller {
 		$waktuawal  = strtotime($tanggalacara);
 		if($data['detailundangan']['paket_acara']=='hemat'){
 			$waktutarget = $waktuawal + 7884000;
-			$data['paket']='<b>HEMAT</b> dengan masa aktif <b>3 bulan</b>!.<br> Mulai Tanggal <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+			$data['paket']='Anda menggunakan undangan paket <b>HEMAT</b> dengan masa aktif <b>3 bulan</b>.<br> Dihitung dari Tanggal pernikahan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
 		}else if($data['detailundangan']['paket_acara']=='reguler'){
 			$waktutarget = $waktuawal + 15770000;
-			$data['paket']='<b>REGULER</b> dengan masa aktif <b>6 bulan</b>!.<br> Mulai Tanggal <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+			$data['paket']='Anda menggunakan undangan paket <b>REGULER</b> dengan masa aktif <b>6 bulan</b>.<br> Dihitung dari Tanggal pernikahan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
 		}else{
 			$waktutarget = $waktuawal + 31546000;
-			$data['paket']='<b>PREMIUM</b> dengan masa aktif <b>1 tahun</b>!.<br> Mulai Tanggal <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+			$data['paket']='Anda menggunakan undangan paket <b>PREMIUM</b> dengan masa aktif <b>1 tahun</b>.<br> Dihitung dari Tanggal pernikahan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
 		}
 		$waktusekarang = time();
 		if($waktusekarang > $waktutarget){

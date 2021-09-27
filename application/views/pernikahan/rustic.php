@@ -16,33 +16,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title><?=$title; ?></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="meINVITEyou.com">
-    <meta name="keyword" content="your keyword goes to here">
-    <meta name="author" content="themexriver">
-    <title><?=$title; ?></title>
-    <link href="images/favicon.png" rel="icon">
-    <meta name="robots" content="index,follow">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="meINVITEyou.com">
-
     <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="meINVITEyou.com">
+    <meta property="og:title" content="The Wedding Of <?=$detailundangan['namapanggilan_priawanita']; ?>">
     <meta name="description" content="<?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?>"/>
     <meta content='<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>' property='og:image'/>
-    <meta property="og:locale" content="id_ID">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Pernikahan <?=$detailundangan['namapanggilan_priawanita']; ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
 
-    <!-- Icon fonts -->
-    <!-- <link href="<?=base_url('assets/temaundangan/rustic/'); ?>font-awesome/css/font-awesome.css" rel="stylesheet"> -->
+    <!-- Favicons -->
+    <link href="<?=base_url('/'); ?>assets/img/imgsharing/<?=$detailundangan['img_sharing']; ?>" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
     <script src="https://kit.fontawesome.com/33095fbedf.js" crossorigin="anonymous"></script>
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script> -->
-
     <!-- Bootstrap core CSS -->
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/bootstrap.min.css" rel="stylesheet">
 
@@ -63,12 +53,6 @@
 
     <!-- Responsive styles for this template -->
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
     <!-- Google map api -->
     <script src="http://maps.googleapis.com/maps/api/js"></script>

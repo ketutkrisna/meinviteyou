@@ -16,170 +16,134 @@
 
 <head>
   <title><?=$title; ?></title>
-  <!-- Compiled and minified CSS -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-  <meta name="robots" content="index,follow">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="meINVITEyou.com">
-
-
-  <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="The Wedding Of <?=$detailundangan['namapanggilan_priawanita']; ?>">
   <meta name="description" content="<?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?>"/>
   <meta content='<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>' property='og:image'/>
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Pernikahan Romeo & juliete; ?>">
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png"> -->
-  <!--Import Google Icon Font-->
+  <!-- Favicons -->
+  <link href="<?=base_url('/'); ?>assets/img/imgsharing/<?=$detailundangan['img_sharing']; ?>" rel="icon">
+  <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- link rel -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/materialize.css">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/timeline.css">
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
-      body,html{
-        /*height: 115vh;*/
-        overflow-x:hidden;
-        /*background:#ab47bc;*/
-      }
-      .block{
-        height:105vh
-      }
-      #awal{
-        /*min-height: 400px;*/
-        height:105vh
-      }
-      #mempelai{
-        min-height: 400px;
-      }
-      #acara{
-        min-height: 400px;
-      }
-      #galeri{
-        min-height: 400px;
-      }
-      #stori{
-        min-height: 400px;
-      }
-      #quesbook{
-        min-height: 400px;
-      }
-      #kehadiran{
-        min-height: 400px;
-      }
-      .wrapper-digit{
-        background-color:#0097a7;
-        border-radius:5px;
-        width:75px;
-        height:70px;
-      }
-      .times {
-          animation: times .6s infinite alternate;
-          transition:1s;
-      }
-      .note {
-        position:absolute;
-        left:0;
-        right:0;
-        margin:auto;
-        animation: timesnote .6s infinite alternate;
-        transition:1s;
-      }
-      .bukaund {
-        animation: timesnote .6s infinite alternate;
-        transition:1s;
-      }
-
-      .pin-top {
-        position: relative;
-      }
-      .pin-bottom {
-        position: relative;
-      }
-      .pinned {
-        position: fixed !important;
-      }
-
-      .putaran{
-        animation-name: putar;
-        animation-duration: 4s;
-        animation-delay: 1s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        /*animation-direction: alternate;*/
-        transform-style: preserve-3d;
-      }
-
-      /*::-webkit-scrollbar {
-        width: 5px;
-      }*/
-      /*::-webkit-scrollbar-track {*/
-        /*box-shadow: inset 1px 1px 5px grey;*/
-      /*  border-radius: 10px;
-        opacity:0;
-      }*/
-      /*::-webkit-scrollbar-thumb {
-        background:linear-gradient(#4e342e,#ffff00,#ffff00,#4e342e);
-        border-radius: 10px;
-        box-shadow:1px 1px 5px grey;
-      }*/
-
-
-      /*::-webkit-scrollbar-button {
-        background:green;
-        border-radius: 10px;
-      }*/
-      /*::-webkit-scrollbar-corner {
-        background:red;
-        border-radius: 10px;
-      }*/
-
-
-      @keyframes putar {
-        from {transform: rotate(0deg);}
-        to {transform: rotate(360deg);}
-      }
-
-      @keyframes times {
-        0%   { 
-          font-size: 22px;
-          transition:.6s;
-         }
-        100% { 
-          transform: scale(1.1);
-          font-size: 22.5px;
-          transition:.6s;
-        }
-      }
-      @keyframes timesnote {
-        0%   { 
-          font-size: 15px;
-          transition:.6s;
-         }
-        100% { 
-          transform: scale(1.1);
-          font-size: 15.4px;
-          transition:.6s;
-        }
-      }
-
-      @media screen and (min-width: 576px) {
-        .dekstop{
-          width:90%;
-          margin:auto;
-        }
-      }
-      @media screen and (min-width: 768px) {
-        .dekstop{
-          width:80%;
-          margin:auto;
-        }
-      }
-    </style>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Satisfy&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body,html{
+      overflow-x:hidden;
+    }
+    .block{
+      height:105vh
+    }
+    #awal{
+      height:105vh
+    }
+    #mempelai{
+      min-height: 400px;
+    }
+    #acara{
+      min-height: 400px;
+    }
+    #galeri{
+      min-height: 400px;
+    }
+    #stori{
+      min-height: 400px;
+    }
+    #quesbook{
+      min-height: 400px;
+    }
+    #kehadiran{
+      min-height: 400px;
+    }
+    .wrapper-digit{
+      background-color:#0097a7;
+      border-radius:5px;
+      width:75px;
+      height:70px;
+    }
+    .times {
+        animation: times .6s infinite alternate;
+        transition:1s;
+    }
+    .note {
+      position:absolute;
+      left:0;
+      right:0;
+      margin:auto;
+      animation: timesnote .6s infinite alternate;
+      transition:1s;
+    }
+    .bukaund {
+      animation: timesnote .6s infinite alternate;
+      transition:1s;
+    }
+
+    .pin-top {
+      position: relative;
+    }
+    .pin-bottom {
+      position: relative;
+    }
+    .pinned {
+      position: fixed !important;
+    }
+
+    .putaran{
+      animation-name: putar;
+      animation-duration: 4s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes putar {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+    @keyframes times {
+      0%   { 
+        font-size: 22px;
+        transition:.6s;
+       }
+      100% { 
+        transform: scale(1.1);
+        font-size: 22.5px;
+        transition:.6s;
+      }
+    }
+    @keyframes timesnote {
+      0%   { 
+        font-size: 15px;
+        transition:.6s;
+       }
+      100% { 
+        transform: scale(1.1);
+        font-size: 15.4px;
+        transition:.6s;
+      }
+    }
+
+    @media screen and (min-width: 576px) {
+      .dekstop{
+        width:90%;
+        margin:auto;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .dekstop{
+        width:80%;
+        margin:auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -509,6 +473,7 @@
   <?php endif; ?>
 
 
+  <?php if($countgaleri['countgaleri']==0){}else{ ?>
   <div id="galeri" class="warnatema"  style="margin-top:-20px;background-color:#dce0e0;position:relative;">
 
     <svg style="margin-top:-15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="warnawaves" fill="#5fa17e" fill-opacity="1" d="M0,96L80,85.3C160,75,320,53,480,85.3C640,117,800,203,960,218.7C1120,235,1280,181,1360,154.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
@@ -567,6 +532,7 @@
 
     </div>
   </div>
+  <?php } ?>
 
 
   <?php if(!empty($detailundangan['rekening_pengundang'])): ?>

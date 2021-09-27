@@ -37,7 +37,7 @@
   <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
   <!-- Favicons -->
-  <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
+  <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
   <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -115,11 +115,34 @@
 
   <section style="margin:10px;padding:10px">
     <div class="row">
-      <div class="col-sm-12 text-center py-0 mt-2 mb-1 ml-2 mr-2">
+      <div class="col-sm-12 text-center py-0 mt-2 mb-0 ml-2 mr-2">
         <h4 style="box-shadow: 0 0 10px rgba(0,0,0,.2);border-radius:5px;padding:5px;font-weight:bold;"><span class="text-info"><?=$detailundangan['namapanggilan_priawanita']; ?></span></h4>
       </div>
     </div>
 
+    <?php
+      $tanggalacara = $detailundangan['tanggal_acara'];
+      $waktuawal  = strtotime($tanggalacara);
+      if($detailundangan['paket_acara']=='hemat'){
+        $waktutarget = $waktuawal + 7884000;
+        $bulan = '3 bulan';
+      }else if($detailundangan['paket_acara']=='reguler'){
+        $waktutarget = $waktuawal + 15777000;
+        $bulan = '6 bulan';
+      }else{
+        $waktutarget = $waktuawal + 31546000;
+        $bulan = '1 tahun';
+      }
+      $waktusekarang = time();
+    ?>
+
+    <div class="d-flex justify-content-between">
+      <?php if($waktusekarang > $waktutarget){ ?>
+        <span style="color:#7200cf;"><b>Aktif</b> : <?=$bulan; ?> s/d <?=date('d M Y',$waktutarget); ?><span style="color:red;">(Berahir)</span></span>
+      <?php }else{ ?>
+        <span style="color:#7200cf;"><b>Aktif</b> : <?=$bulan; ?> s/d <?=date('d M Y',$waktutarget); ?></span>
+      <?php } ?>
+    </div>
     <!-- div bgnkus data 1-->
     <hr style="border:1px solid grey;margin-bottom:10px;margin-top:0">
     <div>

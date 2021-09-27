@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <title>Undangan Classic</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Undangan Classic</title>
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="meINVITEyou.com">
-
-
-    <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
-    <meta name="description" content="Minggu, 18 agustus 2021"/>
-    <meta content='<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>' property='og:image'/>
     <meta property="og:locale" content="id_ID">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="wedding Of Romeo & juliete; ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <meta property="og:title" content="The Wedding Of Romeo & juliete; ?>">
+    <meta name="description" content="Minggu, 17 agustus 1945"/>
+    <meta content="<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>" property='og:image'/>
+    <!-- Favicons -->
+    <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script> -->
     <script src="https://kit.fontawesome.com/33095fbedf.js" crossorigin="anonymous"></script>
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>css/aos.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>css/ekko-lightbox.css" rel="stylesheet">

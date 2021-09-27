@@ -6,13 +6,17 @@
 
     <title>Halaman login</title>
     <meta content="Halaman login meinviteyou" name="description">
-    <meta content="undangan digital" name="keywords">
+    <meta name="keyword" content="Undangan digital">
+    <meta name="keyword" content="Undangan web">
+    <meta name="keyword" content="Undangan online">
+    <meta name="keyword" content="Undangan link">
+    <meta name="author" content="meINVITEyou">
     <meta property="og:title" content="Login meinviteyou">
     <meta property="og:site_name" content="meINVITEyou.com">
     <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
     <!-- Favicons -->
-    <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
     <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -71,7 +75,7 @@
               <div class="col-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h5 text-gray-900 mb-4"><span style="box-shadow:0 0 5px rgba(0,0,0,.1);padding:6px;border-radius:5px;font-weight:bold;">Masuk Akun</span></h1>
+                    <h1 class="h5 text-info mb-4"><span style="box-shadow:0 0 5px rgba(0,0,0,.1);padding:6px;border-radius:5px;font-weight:bold;">Masuk Akun</span></h1>
                   </div>
 
                   <?= $this->session->flashdata('message'); ?>

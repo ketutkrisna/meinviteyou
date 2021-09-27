@@ -753,32 +753,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <title><?=$title; ?></title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?=$title; ?></title>
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="meINVITEyou.com">
-
-
-    <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="The Wedding Of <?=$detailundangan['namapanggilan_priawanita']; ?>">
     <meta name="description" content="<?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?>"/>
     <meta content='<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>' property='og:image'/>
-    <meta property="og:locale" content="id_ID">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Wedding Of <?=$detailundangan['namapanggilan_priawanita']; ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
+    <!-- Favicons -->
+    <link href="<?=base_url('/'); ?>assets/img/imgsharing/<?=$detailundangan['img_sharing']; ?>" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script> -->
-    <script src="https://kit.fontawesome.com/33095fbedf.js" crossorigin="anonymous"></script>
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>css/aos.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>css/ekko-lightbox.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/classic/'); ?>styles/main.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url('assets/temaundangan/classic/'); ?>styles/timeline.css">
+    <script src="https://kit.fontawesome.com/33095fbedf.js" crossorigin="anonymous"></script>
     <style>
       .whitebg{
         background-image:url('<?=base_url('assets/img/flowersbg/whitebg.jpg'); ?>');
@@ -857,7 +854,7 @@
 
   <div class="ww-wedding-announcement" style="display:flex;justify-content:center;align-items:center;">
     <div class="container ww-announcement-container" style="padding:0;margin:0">
-      <span data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" style="font-size:20px">wedding of <br></span>
+      <span data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" style="font-size:20px">The Wedding Of <br></span>
       <p class="ww-couple-name ww-title mb-3" style="font-size:40px" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000"><?=$detailundangan['namapanggilan_priawanita']; ?></p>
       <img style="margin-top:-20px;width:250px" class="img-fluid" src="<?=base_url('assets/temaundangan/classic/'); ?>images/laurel-1.png" alt="save the date" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000"/>
       <p class="h2 mt-2 ww-title" style="text-shadow:1px 1px 4px black!important" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10">
@@ -991,7 +988,9 @@
         <?php if(!empty($detailundangan['stori_pengundang'])): ?>
           <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#stori"><span class="lismenu">Love Story <i class="text-info fas fa-heartbeat" style="font-size:20px;padding-left:3px;"></i></span></a></li>
         <?php endif; ?>
+        <?php if($countgaleri['countgaleri']==0){}else{ ?>
           <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#gallery"><span class="lismenu">Gallery <i class="text-info fas fa-photo-video" style="font-size:20px;padding-left:3px;"></i></span></a></li>
+        <?php } ?>
         <?php if(!empty($detailundangan['rekening_pengundang'])): ?>
           <li class="nav-item ml-auto"><a class="nav-link smooth-scroll" href="#rekening"><span class="lismenu">Transfer <i class="text-info fas fa-donate" style="font-size:20px;padding-left:3px;"></i></span></a></li>
         <?php endif; ?>

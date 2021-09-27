@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Undangan rustic</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="meINVITEyou.com">
-    <meta name="keyword" content="your keyword goes to here">
-    <meta name="author" content="themexriver">
-    <title>Undangan rustic</title>
-    <link href="images/favicon.png" rel="icon">
-    <meta name="robots" content="index,follow">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="meINVITEyou.com">
-
     <meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
-    <meta name="description" content="Minggu, 18 agustus 2021"/>
-    <meta content='<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>' property='og:image'/>
+    <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Pernikahan Romeo & juliete; ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <meta property="og:site_name" content="meINVITEyou.com">
+    <meta property="og:title" content="The wedding Of Romeo & juliete">
+    <meta name="description" content="Minggu, 17 agustus 1945"/>
+    <meta content="<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>" property='og:image'/>
+    <!-- Favicons -->
+    <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Icon fonts -->
-    <!-- <link href="<?=base_url('assets/temaundangan/rustic/'); ?>font-awesome/css/font-awesome.css" rel="stylesheet"> -->
-    <script src="https://kit.fontawesome.com/33095fbedf.js" crossorigin="anonymous"></script>
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script> -->
-
-    <!-- Bootstrap core CSS -->
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Arimo:400,400italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:700,700italic,400" rel="stylesheet" type="text/css">
-
     <!-- Plugins -->
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/owl.carousel.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/owl.theme.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/nivo-lightbox.css" rel="stylesheet">
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/nivo-default.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/style.css" rel="stylesheet">
-
     <!-- Responsive styles for this template -->
     <link href="<?=base_url('assets/temaundangan/rustic/'); ?>css/responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <script src="https://kit.fontawesome.com/33095fbedf.js" crossorigin="anonymous"></script>
     <!-- Google map api -->
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <style>

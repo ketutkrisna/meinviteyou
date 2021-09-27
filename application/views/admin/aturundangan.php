@@ -37,7 +37,7 @@
   <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
   <!-- Favicons -->
-  <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
+  <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
   <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -119,6 +119,30 @@
         <a onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/deletepengundang/'.$detailundangan['id_pengundang']); ?>" class="btn btn-danger btn-sm" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-trash" style="color:white;"></i> Delete</a>
         <button type="button" class="btn btn-success btn-sm editundangan" data-toggle="modal" data-target="#modaleditundangan" data-ideditundangan="<?=$detailundangan['id_pengundang']; ?>" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-edit" style="color:white;"></i> Edit</button>
       </div>
+    </div>
+
+    <?php
+      $tanggalacara = $detailundangan['tanggal_acara'];
+      $waktuawal  = strtotime($tanggalacara);
+      if($detailundangan['paket_acara']=='hemat'){
+        $waktutarget = $waktuawal + 7884000;
+        $bulan = '3 bulan';
+      }else if($detailundangan['paket_acara']=='reguler'){
+        $waktutarget = $waktuawal + 15777000;
+        $bulan = '6 bulan';
+      }else{
+        $waktutarget = $waktuawal + 31546000;
+        $bulan = '1 tahun';
+      }
+      $waktusekarang = time();
+    ?>
+
+    <div class="d-flex justify-content-between">
+      <?php if($waktusekarang > $waktutarget){ ?>
+        <span style="color:#7200cf;"><b>Aktif</b> : <?=$bulan; ?> s/d <?=date('d M Y',$waktutarget); ?><span style="color:red;">(Berahir)</span></span>
+      <?php }else{ ?>
+        <span style="color:#7200cf;"><b>Aktif</b> : <?=$bulan; ?> s/d <?=date('d M Y',$waktutarget); ?></span>
+      <?php } ?>
     </div>
 
     <!-- div bgnkus data 1-->

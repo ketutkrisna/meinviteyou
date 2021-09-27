@@ -7,13 +7,17 @@
 
   <title>meINVITEyou</title>
   <meta content="Solusi terbaik untuk undangan digitalmu" name="description">
-  <meta content="undangan digital" name="keywords">
+  <meta name="keyword" content="Undangan digital">
+  <meta name="keyword" content="Undangan web">
+  <meta name="keyword" content="Undangan online">
+  <meta name="keyword" content="Undangan link">
+  <meta name="author" content="meINVITEyou">
   <meta property="og:title" content="Buat undangan digitalmu">
   <meta property="og:site_name" content="meINVITEyou.com">
-  <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
+  <meta content="<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>" property='og:image'/>
 
   <!-- Favicons -->
-  <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
+  <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
   <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

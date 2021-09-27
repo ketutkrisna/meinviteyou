@@ -1,19 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <title>meINVITEyou</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>meINVITEyou</title>
-    <meta content="Solusi terbaik untuk undangan digitalmu" name="description">
-    <meta content="undangan digital" name="keywords">
+    
+    <meta content="Masa aktif undangan telah berahir" name="description">
+    <meta name="keyword" content="Undangan digital">
+    <meta name="keyword" content="Undangan web">
+    <meta name="keyword" content="Undangan online">
+    <meta name="keyword" content="Undangan link">
+    <meta name="author" content="meINVITEyou">
     <meta property="og:title" content="Buat undangan digitalmu">
     <meta property="og:site_name" content="meINVITEyou.com">
     <meta content='<?=base_url('assets/img/imgsharing/imgsharing.png'); ?>' property='og:image'/>
 
     <!-- Favicons -->
-    <link href="<?=base_url('/'); ?>assets/img/favicon.png" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
     <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Bootstrap CSS -->
@@ -35,9 +39,9 @@
         <div class="card text-center" style="box-shadow:0 0 20px rgba(0,0,0,.5);border-radius:7px;background-color:rgba(255, 174, 61,.4);border:0;">
           <div class="card-body">
             <img class="p-1" style="width:130px;border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.4);width:130px;height:130px;" src="<?=base_url('assets/img/logook.png') ?>">
-            <h5 class="card-title mt-2">Hello, <?=$detailundangan['namapanggilan_priawanita']; ?></h5>
-            <h6 class="card-subtitle text-danger mb-2" style="font-size:20px">Masa aktif undangan anda telah <b><u>BERAHIR</u></b>!</h6>
-            <p class="card-text">kamu memesan paket <?=$paket; ?></p>
+            <h4 class="card-title mt-2" style="color:#4a4a4a;"><?=$detailundangan['namapanggilan_priawanita']; ?></h4>
+            <h6 class="card-subtitle text-danger mb-2" style="font-size:20px">Masa aktif undangan WEB telah <b><u>BERAHIR</u></b>!</h6>
+            <p class="card-text" style="color:#707070;"><?=$paket; ?></p>
             <a href="<?=base_url(); ?>" class="card-link">Beranda</a>
           </div>
         </div>
