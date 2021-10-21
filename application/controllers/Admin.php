@@ -141,10 +141,11 @@ class Admin extends CI_Controller {
             // }else{
             // 	$colortema='#000';
             // }
-            $colortemplate1='#f4f4f4';
-            $colortemplate2='#dddddd';
+            $colortemplate1=$this->input->post('tambahwarnadasar',true);
+            $colortemplate2=$this->input->post('tambahwarnadasar2',true);
             // insert to produks
-            $bgdefault=$tambahtemaundangan.'.jpg';
+            // $bgdefault=$tambahtemaundangan.'.jpg';
+            $bgdefault='bgdefault.jpg';
 			// $data = array(
 			//         'id_pengundang' => null,
 			//         'url_pengundang' => $tambahnamaurl,
@@ -213,7 +214,8 @@ class Admin extends CI_Controller {
 			        'color_template' => $colortemplate1,
 			        'color_template2' => $colortemplate2,
 			        'img_sharing' => 'defaultsharing.png',
-			        'informasi_modal' => ''
+			        'informasi_modal' => '',
+			        'status_bayar' => 'belum'
 					);
 			$this->db->insert('pengundang', $data);
 			// $idproduk = $this->db->insert_id();
@@ -260,6 +262,18 @@ class Admin extends CI_Controller {
 		$querypengundang="SELECT namapanggilan_priawanita, users.* from pengundang left join users on pengundang.id_pengundang=users.id_p where id_user = '$iduser' group by id_pengundang";
 		$detail=$this->db->query($querypengundang)->row_array();
 		echo json_encode($detail);
+		return false;
+	}
+
+	public function ajaxambilidgaleri()
+	{
+		// sleep(2);
+		$idgaleri=htmlspecialchars($this->input->post('idgaleri',true));
+
+		// $detail=$this->db->get_where('users',['id_user'=>$iduser])->row_array();
+		$querygaleri="SELECT * from galeris where id_galeri = $idgaleri";
+		$detailgaleri=$this->db->query($querygaleri)->row_array();
+		echo json_encode($detailgaleri);
 		return false;
 	}
 
@@ -456,6 +470,7 @@ class Admin extends CI_Controller {
 		$tambahwarnadasar=$this->input->post('tambahwarnadasar',true);
 		$tambahwarnadasar2=$this->input->post('tambahwarnadasar2',true);
 		$tambahpaketacara=$this->input->post('tambahpaketacara',true);
+		$tambahstatusbayar=$this->input->post('tambahstatusbayar',true);
 
 		$getnamapengundang=$this->db->get_where('pengundang',['url_pengundang'=>$tambahnamaurl])->row_array();
 		$fotopertama=$this->db->get_where('pengundang',['id_pengundang'=>$ideundangan])->row_array();
@@ -559,8 +574,8 @@ class Admin extends CI_Controller {
 	            	}
 	            }
 			}
-			if($fotopertama['background_welcome']=='classic.jpg'||$fotopertama['background_welcome']=='rustic.jpg'||$fotopertama['background_welcome']=='tematic.jpg'){
-				$bgdefault=$tambahtemaundangan.'.jpg';
+			if($fotopertama['background_welcome']=='bgdefault.jpg'){
+				$bgdefault='bgdefault.jpg';
 			}else{
 				$bgdefault=$fotopertama['background_welcome'];
 			}
@@ -599,6 +614,7 @@ class Admin extends CI_Controller {
 			$this->db->set('color_template', $tambahwarnadasar);
 			$this->db->set('color_template2', $tambahwarnadasar2);
 			$this->db->set('paket_acara', $tambahpaketacara);
+			$this->db->set('status_bayar', $tambahstatusbayar);
 			$this->db->set('background_welcome', $bgdefault);
 			$this->db->where('id_pengundang', $ideundangan);
 			$this->db->update('pengundang');
@@ -618,8 +634,8 @@ class Admin extends CI_Controller {
 			return false;
 
 		}else{
-			if($fotopertama['background_welcome']=='classic.jpg'||$fotopertama['background_welcome']=='rustic.jpg'||$fotopertama['background_welcome']=='tematic.jpg'){
-				$bgdefault=$tambahtemaundangan.'.jpg';
+			if($fotopertama['background_welcome']=='bgdefault.jpg'){
+				$bgdefault='bgdefault.jpg';
 			}else{
 				$bgdefault=$fotopertama['background_welcome'];
 			}
@@ -660,6 +676,7 @@ class Admin extends CI_Controller {
 			$this->db->set('color_template', $tambahwarnadasar);
 			$this->db->set('color_template2', $tambahwarnadasar2);
 			$this->db->set('paket_acara', $tambahpaketacara);
+			$this->db->set('status_bayar', $tambahstatusbayar);
 			$this->db->set('background_welcome', $bgdefault);
 			$this->db->where('id_pengundang', $ideundangan);
 			$this->db->update('pengundang');
@@ -761,6 +778,82 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function gantigaleri()
+	{
+		$idpgl=htmlspecialchars($this->input->post('idpgl',true));
+		$idgantigl=htmlspecialchars($this->input->post('idgantigl',true));
+
+		if($_FILES['fotogantigl']['name']){
+			$config['upload_path']          = './assets/img/fotogaleripelanggan/';
+            $config['allowed_types']        = 'jpg|png|gif';
+            $config['max_size']             = 2048;
+
+            $this->load->library('upload', $config);
+
+            if($this->upload->do_upload('fotogantigl')){
+            	$foto=$this->upload->data('file_name');
+            }else{
+            	$error = $this->upload->display_errors('','');
+            	if($error=='The filetype you are attempting to upload is not allowed.'){
+            		$errors=['error'=>'Format file harus JPG,PNG'];
+            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+						  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+						    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+						      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+						      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Format file harus <strong>JPG|PNG|GIF</strong>!</span>
+						    </span>
+						    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+						  </div>
+						</div>');
+					redirect('admin/aturundangan/'.$idpgl);
+					return false;
+            	}else{
+            		$errors=['error'=>'Max gambar 2MB'];
+            		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+						  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+						    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+						      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+						      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ukuran file terlalu besar <strong>MAX 2MB</strong>!</span>
+						    </span>
+						    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+						  </div>
+						</div>');
+					redirect('admin/aturundangan/'.$idpgl);
+					return false;
+            	}
+            }
+            // insert to galeri
+            $fotolama=$this->db->get_where('galeris',['id_galeri'=>$idgantigl])->row_array();
+			unlink(FCPATH . '/assets/img/fotogaleripelanggan/' .$fotolama['foto_galeri']);
+			$this->db->set('foto_galeri', $foto);
+			$this->db->where('id_galeri', $idgantigl);
+			$this->db->update('galeris');
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(69, 159, 191,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(69, 159, 191,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Foto galeri <strong>Berhasil</strong> diupdate!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
+			redirect('admin/aturundangan/'.$idpgl);
+			return false;
+		}else{
+			$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:100px;right:10px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+				  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+				    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+				      <div style="font-size:25px;background-color:rgba(255, 191, 41,.7);color:#303030;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+				      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Foto <strong>tidak boleh</strong> kosong!</span>
+				    </span>
+				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+				  </div>
+				</div>');
+			redirect('admin/aturundangan/'.$idpgl);
+			return false;
+		}
+	}
+
 	public function hapusgaleri($idgaleri,$idpengundang)
 	{
 		$foto=$this->db->get_where('galeris',['id_galeri'=>$idgaleri])->row_array();
@@ -780,15 +873,6 @@ class Admin extends CI_Controller {
 		redirect('admin/aturundangan/'.$idpengundang);
 		return false;
 	}
-
-
-
-
-
-
-
-
-
 
 	public function gantibackground()
 	{
@@ -879,10 +963,10 @@ class Admin extends CI_Controller {
 	public function defaultbackground($idpengundang)
 	{
 		$foto=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
-		if($foto['background_welcome']=='classic.jpg'||$foto['background_welcome']=='rustic.jpg'||$foto['background_welcome']=='tematic.jpg'||$foto['background_welcome']=='vantage.jpg'){}else{
+		if($foto['background_welcome']=='bgdefault.jpg'){}else{
 			unlink(FCPATH . '/assets/img/backgroundawal/' .$foto['background_welcome']);
 		}
-		$bgdefault=$foto['tema_template'].'.jpg';
+		$bgdefault='bgdefault.jpg';
 		$this->db->set('background_welcome', $bgdefault);
 		$this->db->where('id_pengundang', $idpengundang);
 		$this->db->update('pengundang');
@@ -900,23 +984,12 @@ class Admin extends CI_Controller {
 		return false;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
 	public function deletepengundang($idpengundang)
 	{
 		$fotogaleri=$this->db->get_where('galeris',['idpengundang_galeri'=>$idpengundang])->result_array();
 		$foto=$this->db->get_where('pengundang',['id_pengundang'=>$idpengundang])->row_array();
 		
-		if($foto['background_welcome']=='classic.jpg'||$foto['background_welcome']=='rustic.jpg'||$foto['background_welcome']=='tematic.jpg'){}else{
+		if($foto['background_welcome']=='bgdefault.jpg'){}else{
 			unlink(FCPATH . '/assets/img/backgroundawal/' .$foto['background_welcome']);
 		}
 			unlink(FCPATH . '/assets/img/fotopelanggan/' .$foto['foto_pria']);
@@ -925,7 +998,6 @@ class Admin extends CI_Controller {
 			unlink(FCPATH . '/assets/img/fotogaleripelanggan/' .$fg['foto_galeri']);
 		}
 			unlink(FCPATH . '/assets/img/musikwedding/' .$foto['musik_acara']);
-			// unlink(FCPATH . '/assets/img/musikwedding/' .$musikwedding['musik_acara']);
 
 		$this->db->where('idpengundang_galeri', $idpengundang);
 		$this->db->delete('galeris');

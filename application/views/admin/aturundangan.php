@@ -200,8 +200,9 @@
         <div class="text-center d-flex justify-content-center" style="margin:2px;">
           <div class="card" style="box-shadow: 0 0 5px rgba(0,0,0,.2);width:80px;height:100px;">
             <img src="<?=base_url('assets/img/fotogaleripelanggan/'.$rlf['foto_galeri']); ?>" class="card-img-top" alt="..." style="width:100%;height:70px">
-            <div class="card-body" style="padding:0">
-              <a onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusgaleri/'.$rlf['id_galeri'].'/'.$detailundangan['id_pengundang']); ?>" class="text-danger" style="display:block;"><i class="fas fa-trash-alt" style="text-shadow:0 0 3px rgba(0,0,0,.3)"></i></a>
+            <div class="card-body d-flex justify-content-around" style="padding:0">
+              <span class="editfotogaleri" data-toggle="modal" data-target="#modalgantigaleri" data-idgaleri="<?=$rlf['id_galeri']; ?>"><i class="fas fa-edit text-success"></i></span>
+              <a onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusgaleri/'.$rlf['id_galeri'].'/'.$detailundangan['id_pengundang']); ?>" class="text-danger" style=""><i class="fas fa-trash-alt" style="text-shadow:0 0 3px rgba(0,0,0,.3)"></i></a>
             </div>
           </div>
         </div>
@@ -471,6 +472,45 @@
           <button type="submit" class="btn btn-primary btn-sm" name="tambahglr"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
         </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal ganti galeri -->
+  <div class="modal fade" id="modalgantigaleri" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ganti galeri <span class="loadergl">..<img src="<?=base_url('assets/img/preloader.gif'); ?>" width="25"></span></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="prebukagl">
+        <div class="modal-body pt-1 pb-0">
+
+        <div class="fotolamagl text-center"></div>
+        <form action="<?=base_url('admin/gantigaleri'); ?>" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="idpgl" value="<?=$detailundangan['id_pengundang']; ?>">
+          <input type="hidden" name="idgantigl" class="idgantigl">
+          <!-- <input type="hidden" name="urltambahgaleri" value="<?=$detailundangan['url_pengundang']; ?>"> -->
+          <div class="input-group mb-3 mt-3">
+            <div class="input-group-prepend">
+              <span style="padding:4px" class="input-group-text" id="inputGroupFileAddon01">Foto</span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="fotogantigl" required>
+              <label class="custom-file-label" for="inputGroupFile01">Pilih foto baru</label>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary btn-sm" name="okgantigl"><i class="fas fa-save" style="color:white;"></i> Simpan</button>
+        </div>
+        </form>
+        </div><!-- tutup prebukagl -->
       </div>
     </div>
   </div>
@@ -788,24 +828,17 @@
               <label class="input-group-text" for="inputGroupSelect02">Tema undangan</label>
             </div>
             <select class="custom-select tambahtemaundangan" id="inputGroupSelect02" name="tambahtemaundangan">
+              <option value="minimalis">Minimalis</option>
               <option value="classic">Classic</option>
+              <option value="vantage">Vantage</option>
               <option value="rustic">Rustic</option>
               <option value="tematic">Tematic</option>
-              <option value="vantage">Vantage</option>
             </select>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">
-                Default: <?php if($detailundangan['tema_template']=='tematic'){
-                  echo "#2484a6";
-                }else if($detailundangan['tema_template']=='rustic'){
-                  echo "#000000";
-                }else if($detailundangan['tema_template']=='classic'){
-                  echo "#ffffff";
-                }else if($detailundangan['tema_template']=='vantage'){
-                  echo "#dce0e0";
-                } ?> 
+                Warna 1
                 <span style="background-color:<?=$detailundangan['color_template']; ?>;height:20px;width:20px;margin-left:5px"></span>
               </span>
             </div>
@@ -815,15 +848,7 @@
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">
-                Default: <?php if($detailundangan['tema_template']=='tematic'){
-                  echo "#2484a6";
-                }else if($detailundangan['tema_template']=='rustic'){
-                  echo "#000000";
-                }else if($detailundangan['tema_template']=='classic'){
-                  echo "#f2f2f2";
-                }else if($detailundangan['tema_template']=='vantage'){
-                  echo "#319e72";
-                } ?> 
+                Warna 2
                 <span style="background-color:<?=$detailundangan['color_template2']; ?>;height:20px;width:20px;margin-left:5px"></span>
               </span>
             </div>
@@ -845,6 +870,16 @@
               <option value="hemat">Hemat</option>
               <option value="reguler">Reguler</option>
               <option value="premium">Premium</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Status Payment</label>
+            </div>
+            <select class="custom-select tambahstatusbayar" id="inputGroupSelect01" name="tambahstatusbayar">
+              <option value="belum">Belum</option>
+              <option value="sudah">Dibayar</option>
             </select>
           </div>
           </div>
@@ -1156,10 +1191,30 @@
             $('.tambahwarnadasar').val(data.color_template);
             $('.tambahwarnadasar2').val(data.color_template2);
             $('.tambahpaketacara').val(data.paket_acara);
+            $('.tambahstatusbayar').val(data.status_bayar);
 
           }
         });
       });
+
+    $('.loadergl').hide();
+    $('.editfotogaleri').on('click',function(){
+      var idgaleri=$(this).data('idgaleri');
+      $('.loadergl').show();
+      $('.prebukagl').hide();
+      $.ajax({
+        url: '<?=base_url('admin/ajaxambilidgaleri'); ?>',
+        method: "POST",
+        data: {idgaleri:idgaleri},
+        dataType: "json",
+        success:function(data){
+          $('.loadergl').hide();
+          $('.prebukagl').show();
+          $('.fotolamagl').html('<img class="img-thumbnail" style="border-radius:5px;" width="100px" src="<?=base_url('assets/img/fotogaleripelanggan/');?>'+data.foto_galeri+'">');
+          $('.idgantigl').val(data.id_galeri);
+        }
+      })
+    });
 
     $('body').on('click','.tambahdaftaru',function(){
       setTimeout(function() {

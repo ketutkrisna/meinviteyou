@@ -24,6 +24,12 @@ class Undangan extends CI_Controller {
 		$data['detailundangan']=$this->db->query($queryurl)->row_array();
 		$datasession=$this->db->query($queryurl)->row_array();
 
+		$statuspayment = $data['detailundangan']['status_bayar'];
+		if($statuspayment=='belum'){
+			$this->load->view('undangan/payment',$data);
+			return false;
+		}
+
 		$tanggalacara = $data['detailundangan']['tanggal_acara'];
 		$waktuawal  = strtotime($tanggalacara);
 		if($data['detailundangan']['paket_acara']=='hemat'){
@@ -68,6 +74,10 @@ class Undangan extends CI_Controller {
 			$this->session->id_pengundang = $datasession['id_pengundang'];
 			$this->session->id_diundang = $datasession['id_diundang'];
 			$this->load->view('pernikahan/vantage',$data);
+		}else if($data['detailundangan']['tema_template']=='minimalis'){
+			$this->session->id_pengundang = $datasession['id_pengundang'];
+			$this->session->id_diundang = $datasession['id_diundang'];
+			$this->load->view('pernikahan/minimalis',$data);
 		}else{
 			redirect('pengunjung');
 		}

@@ -36,12 +36,15 @@
 
     <div class="row d-flex justify-content-center" style="align-items:center;height:100%;">
       <div class="col-10 col-sm-8 col-md-6">
-        <div class="card text-center" style="box-shadow:0 0 20px rgba(0,0,0,.5);border-radius:7px;background-color:rgba(255, 174, 61,.4);border:0;">
+        <div class="card text-center" style="box-shadow:0 0 20px rgba(0,0,0,.5);border-radius:7px;background-color:rgba(22, 145, 53,.3);border:0;">
           <div class="card-body">
             <img class="p-1" style="width:130px;border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.4);width:130px;height:130px;" src="<?=base_url('assets/img/logook.png') ?>">
             <h4 class="card-title mt-2" style="color:#4a4a4a;"><?=$detailundangan['namapanggilan_priawanita']; ?></h4>
-            <h6 class="card-subtitle text-danger mb-2" style="font-size:20px;line-height:20px;">Masa aktif undangan WEB telah <b><u>BERAHIR</u></b>!</h6>
-            <p class="card-text" style="color:#707070;line-height:18px;"><?=$paket; ?></p>
+            <h6 class="card-subtitle text-danger mb-2" style="font-size:20px;line-height:19px;">Anda belum melakukan <b><u>pembayaran</u></b> !</h6>
+            <p class="card-text" style="color:#616161;line-height:18px;">
+                Hubungi admin dibawah untuk melakukan pembayaran :<br>
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=+6282179471533">Ketut Krisna</a>
+            </p>
             <a href="<?=base_url(); ?>" class="card-link">Beranda</a>
           </div>
         </div>

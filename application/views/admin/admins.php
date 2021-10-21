@@ -143,6 +143,14 @@
                 <span class="text-info font-weight-bold"><?=$aorder['paket_acara']; ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
+                Status Payment :
+                <?php if($aorder['status_bayar']=='belum'){ ?>
+                  <span class="text-danger font-weight-bold">Belum</span>
+                <?php }else{ ?>
+                  <span class="text-success font-weight-bold">Dibayar</span>
+                <?php } ?>
+              </li>
+              <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
                 Status :
                 <?php
                   $tanggalacara = $aorder['tanggal_acara'];
@@ -330,6 +338,24 @@
               <label class="custom-file-label" for="inputGroupFile02">Pilih file</label>
             </div>
           </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                Warna 1
+              </span>
+            </div>
+            <input type="text" class="form-control tambahwarnadasar" aria-label="Username" placeholder="Warna dasar 1" aria-describedby="basic-addon1" name="tambahwarnadasar">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                Warna 2
+              </span>
+            </div>
+            <input type="text" class="form-control tambahwarnadasar2" aria-label="Username" placeholder="Warna dasar 2" aria-describedby="basic-addon1" name="tambahwarnadasar2">
+          </div>
+
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Jenis undangan</label>
@@ -344,10 +370,11 @@
               <label class="input-group-text" for="inputGroupSelect02">Tema undangan</label>
             </div>
             <select class="custom-select" id="inputGroupSelect02" name="tambahtemaundangan">
+              <option value="minimalis">Minimalis</option>
               <option value="classic">Classic</option>
+              <option value="vantage">Vantage</option>
               <option value="rustic">Rustic</option>
               <option value="tematic">Tematic</option>
-              <option value="vantage">Vantage</option>
             </select>
           </div>
           <div class="input-group mb-3">
@@ -446,8 +473,8 @@
 
         </div>
         <div class="modal-footer">
-          <a onclick="return confirm('Pilih Oke untuk buka akses login')" type="button" class="btn btn-info btn-sm bukauser">Aktifkan Fitur</a>
-          <a onclick="return confirm('Pilih Oke untuk tutup akses login')" type="button" class="btn btn-danger btn-sm tutupuser">Non aktifkan Fitur</a>
+          <a onclick="return confirm('Pilih Oke untuk aktifkan fitur!')" type="button" class="btn btn-info btn-sm bukauser">Aktifkan Fitur</a>
+          <a onclick="return confirm('Pilih Oke untuk non aktifkan fitur!')" type="button" class="btn btn-danger btn-sm tutupuser">Non aktifkan Fitur</a>
         </div>
       </div>
 

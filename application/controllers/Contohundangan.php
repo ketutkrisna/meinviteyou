@@ -38,5 +38,12 @@ class Contohundangan extends CI_Controller {
 		$this->load->view('contohundangan/vantage', $data);
 	}
 
+	public function minimalis($warna1='eeeeee', $warna2='b5820b')
+	{
+		$data['warna1']=$warna1;
+		$data['warna2']=$warna2;
+		$this->load->view('contohundangan/minimalis', $data);
+	}
+
 
 }
