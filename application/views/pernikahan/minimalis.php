@@ -161,14 +161,14 @@
         <div id="polaroid" class="mt-4" style="position:relative;">
           <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/bungas1.png" style="position:absolute;width:150px;top:-20px;left:-20px;z-index:1;transform:rotateY(180deg);">
           <figure>
-            <img class="bounce" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>" alt="Mempelai 1" title="Tulis Judul yang SEO Friendly"/>
+            <img class="bounce" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>" alt="Mempelai 1"/>
             <figcaption><?=$detailundangan['namalengkap_pria']; ?></figcaption>
             <!-- <figcaption class="anakke">Putra ke-1 dari:</figcaption>
             <figcaption class="ortu">Bapak Romeo & Ibu Romeo</figcaption> -->
             <?=$detailundangan['orangtua_pria']; ?>
           </figure>
           <figure>
-            <img class="bounce" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>" alt="Mempelai 2" title="Tulis Judul yang SEO Friendly"/>
+            <img class="bounce" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>" alt="Mempelai 2"/>
             <figcaption><?=$detailundangan['namalengkap_wanita']; ?> </figcaption>
             <?=$detailundangan['orangtua_wanita']; ?>
           </figure>
@@ -260,58 +260,6 @@
             <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">Love Story</h5>
           </div>
           <?=$detailundangan['stori_pengundang']; ?>
-          <!-- <div class="timeline">
-            <div class="timeline-container primary" data-aos="fade-left" data-aos-duration="1000">
-              <div class="timeline-icon">
-                <i class="far fa-grin-wink"></i>
-              </div>
-              <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
-                <h4 class="timeline-title"><span class="badge">2016</span></h4>
-                <p style="font-style: italic;">Pertemuan pertama</p>
-                <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
-              </div>
-            </div>
-            <div class="timeline-container danger" data-aos="fade-left" data-aos-duration="1000">
-              <div class="timeline-icon">
-                <i class="far fa-grin-hearts"></i>
-              </div>
-              <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
-                <h4 class="timeline-title"><span class="badge">2017</span></h4>
-                <p style="font-style: italic;">Jalan 1 tahun</p>
-                <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
-              </div>
-            </div>
-            <div class="timeline-container success" data-aos="fade-left" data-aos-duration="1000">
-              <div class="timeline-icon">
-                <i class="far fa-grin-tears"></i>
-              </div>
-              <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
-                <h4 class="timeline-title"><span class="badge">2018</span></h4>
-                <p style="font-style: italic;">Jalan 2 tahun</p>
-                <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
-              </div>
-            </div>
-            <div class="timeline-container warning" data-aos="fade-left" data-aos-duration="1000">
-              <div class="timeline-icon">
-                <i class="far fa-grimace"></i>
-              </div>
-              <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
-                <h4 class="timeline-title"><span class="badge">2019</span></h4>
-                <p style="font-style: italic;">Jalan 3 tahun</p>
-                <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
-              </div>
-            </div>
-            <div class="timeline-container" data-aos="fade-left" data-aos-duration="1000">
-              <div class="timeline-icon">
-                <i class="far fa-grin-beam-sweat"></i>
-              </div>
-              <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
-                <h4 class="timeline-title"><span class="badge">2020</span></h4>
-                <p style="font-style: italic;">Memutuskan untuk menikah</p>
-                <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
-              </div>
-            </div>
-          </div> -->
         </div>
       </div><!-- tutup lovestory -->
     <?php endif; ?>
@@ -374,33 +322,6 @@
 
         <div class="row d-flex justify-content-center">
           <?=$detailundangan['rekening_pengundang']; ?>
-          <!-- <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-              <div class="media p-2 mt-3 myshadow d-flex" style="background-color:#f2f2f2;border-radius:3px;transform:rotate(-1deg);">
-                <div class="media-left" style="border-right:1px solid #ddd;padding-right:5px!important;">
-                  <a href="#">
-                    <img class="media-object" src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/bbri.png" alt="bank bri" width="50px">
-                  </a>
-                </div>
-                <div class="media-body text-left pl-2 pr-2" style="padding-left:5px;">
-                  <span style="color:#19191a">No.Rek: 5749-2434-2465-433</span><br>
-                  <span style="color:#19191a">Atas Nama: Suparman</span>
-                </div>
-              </div>
-          </div>
-
-          <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-              <div class="media p-2 mt-3 myshadow d-flex" style="background-color:#f2f2f2;border-radius:3px;transform:rotate(-1deg);">
-                <div class="media-left" style="border-right:1px solid #ddd;padding-right:5px!important;">
-                  <a href="#">
-                    <img class="media-object" src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/bbnii.png" alt="bank bni" width="50px">
-                  </a>
-                </div>
-                <div class="media-body text-left pr-2" style="padding-left:5px;">
-                  <span style="color:#19191a">No.Rek: 5749-2434-2465-433</span><br>
-                  <span style="color:#19191a">Atas Nama: Suparman</span>
-                </div>
-              </div>
-          </div> -->
         </div>
       </div><!-- tutup rekening --> 
     <?php endif; ?>
@@ -429,7 +350,7 @@
         ?>
 
       <?php if($dataucapancount['ucount'] <= 0){ ?>
-        <div class="row justify-content-center" style="display:flex;justify-content:center;">
+        <div class="row justify-content-center mt-5" style="display:flex;justify-content:center;">
           <div class="col-12">
             <div class="text-center" style="margin-top:-20px;background-color:rgba(255,255,255,.4);border-radius:5px;">Friend wishes masih kosong, silahkan kirim ucapan sekarang pada form dibawah!</div>
           </div>
@@ -473,6 +394,9 @@
               </div>
             </div>
           </div>
+          <?php if($this->session->userdata('level_user')=='admin'){ ?>
+              <a style="margin-top:-20px;padding-bottom:10px;color:red;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapan/'.$du['id_ucapan'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
+          <?php } ?>
           <?php endforeach; ?>
         </div>
 
@@ -587,7 +511,29 @@
     <div class="text-primary" style="position:fixed;bottom:30px;margin-left:10px;border-radius:50%;z-index:1020;">
       <div style="background-color:rgba(26, 199, 84,);padding:4px;border-radius:50%">
       <span style="z-index:1020" class="cobain" data-bs-placement="right" data-bs-toggle="popover" title="Kirim ucapan via WA" data-bs-html="true" data-bs-content="
-          <img class='imgradius' src='<?=base_url('assets/img/contoh/mpria.jpg'); ?>' width='25'><a class='text-success' href='#'> Mempelai Pria</a><br><img class='imgradius' src='<?=base_url('assets/img/contoh/mwanita.jpg'); ?>' width='25'><a class='text-success' href='#'> Mempelai Wanita</a>
+        <?php if($detailundangan['nomer_pengundang']==''&&$detailundangan['nomer_pengundangw']==''){ ?>
+          <p class='text-center text-danger'>Nomer tlp tidak ditampilkan</p>
+        <?php }else if($detailundangan['nomer_pengundang']!='' && $detailundangan['nomer_pengundangw']==''){ ?>
+          <?php if(substr($detailundangan['nomer_pengundang'],-1)=='l'){ ?>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundang'],0,-1); ?>'> Mempelai Pria</a>
+          <?php }else{ ?>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundang'],0,-1); ?>'> Mempelai Wanita</a>
+          <?php } ?>
+        <?php }else if($detailundangan['nomer_pengundang']==''&&$detailundangan['nomer_pengundangw']!=''){ ?>
+          <?php if(substr($detailundangan['nomer_pengundangw'],-1)=='w'){ ?>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundangw'],0,-1); ?>'> Mempelai Wanita</a>
+          <?php }else{ ?>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundangw'],0,-1); ?>'> Mempelai Pria</a>
+          <?php } ?>
+        <?php }else{ ?>
+          <?php if(substr($detailundangan['nomer_pengundang'],-1)=='l'&&substr($detailundangan['nomer_pengundangw'],-1)=='w'){ ?>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundang'],0,-1); ?>'> Mempelai Pria</a><br>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundangw'],0,-1); ?>'> Mempelai Wanita</a>
+          <?php }else if(substr($detailundangan['nomer_pengundang'],-1)=='w'&&substr($detailundangan['nomer_pengundangw'],-1)=='l'){ ?>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundang'],0,-1); ?>'> Mempelai Wanita</a><br>
+            <img class='imgradius' src='<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>' width='25'><a class='text-success' href='https://api.whatsapp.com/send?phone=<?=substr($detailundangan['nomer_pengundangw'],0,-1); ?>'> Mempelai Pria</a>
+          <?php } ?>
+        <?php } ?>
       ">
         <i class="fab fa-whatsapp" style="font-size:55px;color:#00c45c;text-shadow:-1px -1px 0 white;"></i>
       </span>
@@ -614,7 +560,7 @@
   <?php endif; ?>
 
     <div id="navatas" class="navatas" style="position:fixed;top:20px;margin-left:73px!important;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
-      <h5 class="sizefont" style="font-size:18px;color:white;margin-top:15px;">Romeo & Juliete</h5>
+      <h5 class="sizefont" style="font-size:18px;color:white;margin-top:15px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
       <div class="bars" style="position:absolute;top:-40px;left:-10px;transition:.7s">
         <img class="onm" style="margin-top:6px" src="<?=base_url('assets/'); ?>img/bars-musik.gif" height="50" width="100">
         <img class="ofm" style="position:absolute;margin-top:15.2px;left:0" src="<?=base_url('assets/'); ?>img/bars-musikof.gif" width="100" height="30">
@@ -653,17 +599,19 @@
       <div class="modal-dialog modal-fullscreen">
         <div class="modal-content text-center text-light" style="background-color:rgba(0,0,0,.8);">
           <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="staticBackdropLabel" style="font-family: 'Fleur De Leah', cursive;font-size:35px;">Romeo & Juliete</h5>
+            <h5 class="modal-title" id="staticBackdropLabel" style="font-family: 'Fleur De Leah', cursive;font-size:35px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
           </div>
           <div class="modal-body">
             <div class="row">
               <h5>Hello,</h5>
-              <h3 style="font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">Mr. Bill Gates</h3>
+              <h3 style="font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;"><?=$detailundangan['nama_diundang']; ?></h3>
               <span style="line-height:19px;">Kami mengundang anda untuk datang pada hari pernikahan kami!</span>
 
-              <!-- <div class="col-12 mt-2">
-                oke dah
-              </div> -->
+              <?php if(!empty($detailundangan['informasi_modal'])): ?>
+                <div class="col-12 mt-2">
+                  <?=$detailundangan['informasi_modal']; ?>
+                </div>
+              <?php endif; ?>
 
               <div class="col-12 mt-2 mb-1" style="line-height:19px;">
                 Tanpa mengurangi rasa hormat. <br>

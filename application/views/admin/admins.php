@@ -111,12 +111,12 @@
               <span class="font-weight-bold"><?=$aorder['namapanggilan_priawanita']; ?></span>
               <?php if($aorder['status_user']){ ?>
                 <?php if($aorder['status_user']=='aktif'){ ?>
-                  (<span class="text-success">Fitur ON</span>)
+                  <span class="text-success" style="font-size:12px;">(CRUD ON)</span>
                 <?php }else{ ?>
-                  (<span class="text-danger">Fitur OFF</span>)
+                  <span class="text-danger" style="font-size:12px;">(CRUD OFF)</span>
                 <?php } ?>
               <?php }else{ ?>
-                (<span class="text-warning">Akses belum dibuat</span>)
+                <span class="text-warning" style="font-size:12px;">(Akun Belum Dibuat)</span>
               <?php } ?>
             </button>
           </h2>
@@ -131,15 +131,19 @@
                 <span class="text-info font-weight-bold"><?=$aorder['url_pengundang']; ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Tgl resepsi :
+                Tanggal Resepsi :
                 <span class="text-info font-weight-bold"><?=date('d M Y', strtotime($aorder['tanggal_acara'])); ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Tema undangan :
+                Tema Undangan :
                 <span class="text-info font-weight-bold"><?=$aorder['tema_template']; ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Paket undangan :
+                Jenis Undangan :
+                <span class="text-info font-weight-bold"><?=$aorder['jenis_acara']; ?></span>
+              </li>
+              <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
+                Paket Undangan :
                 <span class="text-info font-weight-bold"><?=$aorder['paket_acara']; ?></span>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
@@ -151,7 +155,7 @@
                 <?php } ?>
               </li>
               <li style="padding:5px 10px 5px 10px" class="list-group-item d-flex justify-content-between align-items-center">
-                Status :
+                Status Website :
                 <?php
                   $tanggalacara = $aorder['tanggal_acara'];
                   $waktuawal  = strtotime($tanggalacara);
@@ -174,9 +178,9 @@
             <div class="row">
               <div class="col-12 d-flex justify-content-between">
                 <?php if($aorder['ids']==0){ ?>
-                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-danger ambildatapengundang ubahzindex" data-toggle="modal" data-target="#modalakseslogin" data-idpengundang="<?=$aorder['id_pengundang']; ?>" role="button">Buatkan akses</a>
+                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-danger ambildatapengundang ubahzindex" data-toggle="modal" data-target="#modalakseslogin" data-idpengundang="<?=$aorder['id_pengundang']; ?>" role="button">Buatkan Akun</a>
                 <?php }else{ ?>
-                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-success lihatdetailuser" data-toggle="modal" data-target="#modallihatakseslogin" data-iduser="<?=$aorder['id_user']; ?>" role="button">Lihat akses</a>
+                  <a style="margin:5px 5px 0 0" class="btn btn-sm btn-success lihatdetailuser" data-toggle="modal" data-target="#modallihatakseslogin" data-iduser="<?=$aorder['id_user']; ?>" role="button">Lihat Akun</a>
                 <?php } ?>
                 <a style="margin:5px 5px 0 0" class="btn btn-sm btn-primary" href="<?=base_url('admin/aturundangan/'.$aorder['id_pengundang']); ?>" role="button">Kelola</a>
               </div>
@@ -362,6 +366,7 @@
             </div>
             <select class="custom-select" id="inputGroupSelect01" name="tambahjenisacara">
               <option value="pernikahan">Pernikahan</option>
+              <option value="tunangan">Tunangan</option>
               <option value="ulangtahun" class="disabled" disabled>Ulang tahun</option>
             </select>
           </div>
@@ -370,6 +375,7 @@
               <label class="input-group-text" for="inputGroupSelect02">Tema undangan</label>
             </div>
             <select class="custom-select" id="inputGroupSelect02" name="tambahtemaundangan">
+              <option value="elegant">Elegant</option>
               <option value="minimalis">Minimalis</option>
               <option value="classic">Classic</option>
               <option value="vantage">Vantage</option>
@@ -403,7 +409,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Buat akses login <span class="loader"><img src="<?=base_url('assets/img/preloader.gif'); ?>" width="25"></span></h5>
+          <h5 class="modal-title" id="exampleModalLabel">Buat Akun Login <span class="loader"><img src="<?=base_url('assets/img/preloader.gif'); ?>" width="25"></span></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -416,19 +422,19 @@
           <input type="hidden" name="idpen" class="idpen">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1" style="background-color:#bbb">Full name</span>
+              <span class="input-group-text" id="basic-addon1">Full name</span>
             </div>
             <input type="text" class="form-control fullnamepengundang" placeholder="Nama lengkap" aria-label="Username" aria-describedby="basic-addon1" name="fullnamepengundang" required>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1" style="background-color:#bbb">Username</span>
+              <span class="input-group-text" id="basic-addon1">Username</span>
             </div>
             <input type="text" class="form-control usernamepengundang" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="usernamepengundang" required>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1" style="background-color:#bbb">Password</span>
+              <span class="input-group-text" id="basic-addon1">Password</span>
             </div>
             <input type="text" class="form-control passwordpengundang" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1" value="<?=uniqid(); ?>" name="passwordpengundang" required>
           </div>
@@ -449,7 +455,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Akses login <span class="namalogind"></span> <span class="loader"><img src="<?=base_url('assets/img/preloader.gif'); ?>" width="25"></span></h5>
+          <h5 class="modal-title" id="exampleModalLabel">Akun <span style="text-decoration:underline;font-weight:700;" class="namalogind text-info"></span> <span class="loader"><img src="<?=base_url('assets/img/preloader.gif'); ?>" width="25"></span></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -458,23 +464,28 @@
       <div class="prebukaakses">
         <div class="modal-body">
 
-          <ul class="list-group">
-            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info usernamed"></span>
-              <i class="notifkey ion-ios-unlocked"></i>
-              <br>
-              <span style="font-size:12px;color:grey"> (Username)</span>
+          <ul class="list-group" style="box-shadow:0 0 5px rgba(0,0,0,.2);">
+            <li style="padding:5px 10px 5px 10px;background-color:#f6f6f6;" class="list-group-item">
+              <span style="display:flex;align-items:center;">
+                <i style="font-size:22px;margin-right:5px;" class="fas fa-user-circle"></i>
+                <span style="font-size:20px;" class="text-secondary usernamed"></span>
+              </span>
+              <!-- <i class="notifkey ion-ios-unlocked"></i> -->
+              <!-- <br>
+              <span style="font-size:12px;color:grey"> (Username)</span> -->
             </li>
-            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
-              <span class="text-info passwordd"></span><br>
-              <span style="font-size:12px;color:grey"> (Password)</span>
+            <li style="padding:5px 10px 5px 10px;background-color:#f6f6f6;" class="list-group-item">
+              <span style="display:flex;align-items:center;">
+                <i style="font-size:22px;margin-right:5px;" class="fas fa-key"></i>
+                <span style="font-size:20px;" class="text-secondary passwordd"></span>
+              </span>
             </li>
           </ul>
 
         </div>
         <div class="modal-footer">
-          <a onclick="return confirm('Pilih Oke untuk aktifkan fitur!')" type="button" class="btn btn-info btn-sm bukauser">Aktifkan Fitur</a>
-          <a onclick="return confirm('Pilih Oke untuk non aktifkan fitur!')" type="button" class="btn btn-danger btn-sm tutupuser">Non aktifkan Fitur</a>
+          <a onclick="return confirm('Pilih Oke untuk aktifkan fitur!')" type="button" class="btn btn-info btn-sm bukauser">Hidupkan Fitur CRUD</a>
+          <a onclick="return confirm('Pilih Oke untuk non aktifkan fitur!')" type="button" class="btn btn-danger btn-sm tutupuser">Matikan Fitur CRUD</a>
         </div>
       </div>
 
@@ -567,14 +578,14 @@
             if(data.status_user=='aktif'){
               $('.tutupuser').show();
               $('.bukauser').hide();
-              $('.notifkey').addClass('ion-ios-unlocked');
-              $('.notifkey').removeClass('text-danger ion-ios-locked');
+              // $('.notifkey').addClass('ion-ios-unlocked');
+              // $('.notifkey').removeClass('text-danger ion-ios-locked');
               $('.tutupuser').attr('href','<?=base_url('admin/tutupakseslogin/'); ?>'+data.id_user);
             }else{
               $('.tutupuser').hide();
               $('.bukauser').show();
-              $('.notifkey').removeClass('ion-ios-unlocked');
-              $('.notifkey').addClass('text-danger ion-ios-locked');
+              // $('.notifkey').removeClass('ion-ios-unlocked');
+              // $('.notifkey').addClass('text-danger ion-ios-locked');
               $('.bukauser').attr('href','<?=base_url('admin/bukaakseslogin/'); ?>'+data.id_user);
             }
             $('.namalogind').text(data.namapanggilan_priawanita);

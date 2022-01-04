@@ -159,13 +159,21 @@
         <span class="text-info"><?=$detailundangan['namalengkap_wanita']; ?></span><br>
         <span style="font-size:12px;color:grey"> (Nama lengkap mempelai kedua)</span>
       </li>
+    <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
         <span style="font-size:12px;color:grey"> (Tanggal akad pernikahan)</span>
       </li>
+    <?php endif; ?>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Tanggal resepsi pernikahan)</span>
+        <span style="font-size:12px;color:grey"> 
+          <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+            (Tanggal resepsi pernikahan)
+          <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+            (Tanggal acara pertunangan)
+          <?php } ?>
+        </span>
       </li>
     </ul>
 
@@ -176,7 +184,7 @@
     </div>
     
     </div>
-    <hr style="border:1px solid grey;margin-bottom:10px;margin-top:10px">
+    <hr style="border-bottom:1px solid grey;margin-bottom:10px;margin-top:10px;">
     <!-- tutup div bungkus data 1-->
 
     <!-- div bungkus galeri -->
@@ -339,7 +347,7 @@
     <div class="row">
       <div class="col-12 mt-2 mb-3 d-flex justify-content-between">
         <span style="font-weight:bold;font-size:17px;color:#9308ff;">Generate Link &rarr;</span>
-        <button type="button" class="btn btn-primary btn-sm tambahdaftaru" data-toggle="modal" data-target="#modaltambahdaftarundangan" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-plus-circle" style="color:white;"></i> Buat Link Undangan</button>
+        <button type="button" class="btn btn-primary btn-sm tambahdaftaru" data-toggle="modal" data-target="#modaltambahdaftarundangan" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-plus-circle" style="color:white;"></i> Buat link undangan</button>
       </div>
     </div>
 
@@ -397,7 +405,11 @@
 
             <div class="mb-0">
               <?php
-                $link=base_url('wedding'.'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
+                if($detailundangan['jenis_acara']=='pernikahan'){
+                  $link=base_url('wedding'.'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
+                }else if($detailundangan['jenis_acara']=='tunangan'){
+                  $link=base_url('engagement'.'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
+                }
               ?>
               <div class="card shadow" style="padding:0">
                 <div class="card-body py-0" style="margin:0">
@@ -668,8 +680,13 @@
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text btn ortutoltip" id="basic-addon1" data-toggle="popover" title="Contoh template orang tua" data-content='
-                  <span class="anakke">Putra pertama dari :</span><br>
+                <?php if($detailundangan['tema_template']=='minimalis'){ ?>
+                  <figcaption class="anakke">Putra ke-1 dari:</figcaption>
+                  <figcaption class="ortu">Bapak Romeo & Ibu Romeo</figcaption>
+                <?php }else{ ?>
+                  <span class="anakke">Putra ke-1 dari :</span><br>
                   <span class="ortu">Bapak Romeo & Ibu Romeo</span>
+                <?php } ?>
               '>Nama ortu L
               </span>
             </div>
@@ -684,8 +701,13 @@
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text btn ortutoltip" id="basic-addon1" data-toggle="popover" title="Contoh template orang tua" data-content='
-                  <span class="anakke">Putri kedua dari :</span><br>
+                <?php if($detailundangan['tema_template']=='minimalis'){ ?>
+                  <figcaption class="anakke">Putri ke-2 dari:</figcaption>
+                  <figcaption class="ortu">Bapak Juliete & Ibu Juliete</figcaption>
+                <?php }else{ ?>
+                  <span class="anakke">Putri ke-2 dari :</span><br>
                   <span class="ortu">Bapak Juliete & Ibu Juliete</span>
+                <?php } ?>
               '>Nama ortu W
               </span>
             </div>
@@ -820,6 +842,7 @@
             </div>
             <select class="custom-select tambahjenisacara" id="inputGroupSelect01" name="tambahjenisacara">
               <option value="pernikahan">Pernikahan</option>
+              <option value="tunangan">Tunangan</option>
               <option value="ulangtahun" class="disabled" disabled>Ulang tahun</option>
             </select>
           </div>
@@ -828,6 +851,7 @@
               <label class="input-group-text" for="inputGroupSelect02">Tema undangan</label>
             </div>
             <select class="custom-select tambahtemaundangan" id="inputGroupSelect02" name="tambahtemaundangan">
+              <option value="elegant">Elegant</option>
               <option value="minimalis">Minimalis</option>
               <option value="classic">Classic</option>
               <option value="vantage">Vantage</option>
@@ -937,30 +961,48 @@
               <span class="text-info"><?=$detailundangan['orangtua_wanita']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Nama orang tua mempelai kedua)</span>
             </li>
+          <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Tanggal & jam akad pernikahan)</span>
             </li>
+          <?php endif; ?>
+          <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['alamat_akad']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Alamat akad pernikahan)</span>
             </li>
+          <?php endif; ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Tanggal & jam resepsi pernikahan)</span>
+              <span style="font-size:12px;color:grey"> 
+                <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+                  (Tanggal & jam resepsi pernikahan)
+                <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+                  (Tanggal & jam acara pertunangan)
+                <?php } ?>
+              </span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['alamat_acara']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Alamat resepsi pernikahan)</span>
+              <span style="font-size:12px;color:grey"> 
+                <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+                  (Alamat resepsi pernikahan)
+                <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+                  (Alamat acara pertunangan)
+                <?php } ?>
+              </span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['ucapan_awal']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Ucapan awal pada undangan)</span>
             </li>
+          <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['ucapan_ahir']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Ucapan ahir pada undangan)</span>
             </li>
+          <?php endif; ?>
           <?php if(!empty($detailundangan['nomer_pengundang'])): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=substr($detailundangan['nomer_pengundang'], 0, -1); ?></span><br>
@@ -987,7 +1029,13 @@
             </li>
  
             <li style="padding:5px 15px 5px 15px;line-height:15px;" class="list-group-item">
-              <span style="word-wrap:break-word;" class="text-info"><?=base_url('wedding/').$detailundangan['url_pengundang']; ?></span><br>
+              <span style="word-wrap:break-word;" class="text-info">
+                <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+                  <?=base_url('wedding/').$detailundangan['url_pengundang']; ?>
+                <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+                  <?=base_url('engagement/').$detailundangan['url_pengundang']; ?>
+                <?php } ?>
+              </span><br>
               <span style="font-size:12px;color:grey"> (Link utama)</span>
             </li>
           </ul>
@@ -1012,6 +1060,8 @@
           <script async src="//jsfiddle.net/thisizanagi/cfdka3tm/1/embed/html/dark/"></script>
         <?php }else if($detailundangan['tema_template']=='vantage'){ ?>
           <script async src="//jsfiddle.net/thisizanagi/zd0msp4L/9/embed/html/dark/"></script>
+        <?php }else if($detailundangan['tema_template']=='minimalis'){ ?>
+          <script async src="//jsfiddle.net/thisizanagi/b2wk0pyo/4/embed/html/dark/"></script>
         <?php } ?>
       </div>
     </div>
@@ -1032,8 +1082,10 @@
         <?php if($detailundangan['tema_template']=='classic'){ ?>
           <script async src="//jsfiddle.net/thisizanagi/4aq61gop/3/embed/html/dark/"></script>
         <?php }else if($detailundangan['tema_template']=='vantage'){ ?>
-          <script async src="//jsfiddle.net/thisizanagi/c0x3hu72/7/embed/html/dark/"></script>
-        <?php } ?>
+          <script async src="//jsfiddle.net/thisizanagi/c0x3hu72/8/embed/html/dark/"></script>
+        <?php }else if($detailundangan['tema_template']=='minimalis'){ ?>
+          <script async src="//jsfiddle.net/thisizanagi/c7mfwey9/8/embed/html/dark/"></script>
+        <?php } ?> 
       </div>
     </div>
   </div>

@@ -157,13 +157,21 @@
         <span class="text-info"><?=$detailundangan['namalengkap_wanita']; ?></span><br>
         <span style="font-size:12px;color:grey"> (Nama lengkap mempelai kedua)</span>
       </li>
+    <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
         <span style="font-size:12px;color:grey"> (Tanggal akad pernikahan)</span>
       </li>
+    <?php endif; ?>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
-        <span style="font-size:12px;color:grey"> (Tanggal resepsi pernikahan)</span>
+        <span style="font-size:12px;color:grey"> 
+          <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+            (Tanggal resepsi pernikahan)
+          <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+            (Tanggal acara pertunangan)
+          <?php } ?>
+        </span>
       </li>
     </ul>
 
@@ -204,7 +212,7 @@
     <div class="row">
       <div class="col-12 mt-2 mb-3 d-flex justify-content-between">
         <span style="font-weight:bold;font-size:17px;color:#9308ff;">Generate Link &rarr;</span>
-        <button type="button" class="btn btn-primary btn-sm tambahdaftaru ubahzindex" data-toggle="modal" data-target="#modaltambahdaftarundangan" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-plus-circle" style="color:white;"></i> Buat Link Undangan</button>
+        <button type="button" class="btn btn-primary btn-sm tambahdaftaru ubahzindex" data-toggle="modal" data-target="#modaltambahdaftarundangan" style="box-shadow:0 0 5px rgba(0,0,0,.4)"><i class="fas fa-plus-circle" style="color:white;"></i> Buat link undangan</button>
       </div>
     </div>
 
@@ -277,7 +285,11 @@
             <?php } ?>
             <div class="mb-0">
               <?php
-                $link=base_url('wedding'.'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
+                if($detailundangan['jenis_acara']=='pernikahan'){
+                  $link=base_url('wedding'.'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
+                }else if($detailundangan['jenis_acara']=='tunangan'){
+                  $link=base_url('engagement'.'/'.$detailundangan['url_pengundang'].'/'.$rlist['url_diundang'].'/');
+                }
               ?>
               <div class="card shadow" style="padding:0">
                 <div class="card-body py-0" style="margin:0">
@@ -440,30 +452,48 @@
               <span class="text-info"><?=$detailundangan['orangtua_wanita']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Nama orang tua mempelai kedua)</span>
             </li>
+          <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Tanggal & jam akad pernikahan)</span>
             </li>
+          <?php endif; ?>
+          <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['alamat_akad']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Alamat akad pernikahan)</span>
             </li>
+          <?php endif; ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Tanggal & jam resepsi pernikahan)</span>
+              <span style="font-size:12px;color:grey"> 
+                <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+                  (Tanggal & jam resepsi pernikahan)
+                <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+                  (Tanggal & jam acara pertunangan)
+                <?php } ?>
+              </span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['alamat_acara']; ?></span><br>
-              <span style="font-size:12px;color:grey"> (Alamat resepsi pernikahan)</span>
+              <span style="font-size:12px;color:grey"> 
+                <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+                  (Alamat resepsi pernikahan)
+                <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+                  (Alamat acara pertunangan)
+                <?php } ?>
+              </span>
             </li>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['ucapan_awal']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Ucapan awal pada undangan)</span>
             </li>
+          <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['ucapan_ahir']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Ucapan ahir pada undangan)</span>
             </li>
+          <?php endif; ?>
           <?php if(!empty($detailundangan['nomer_pengundang'])): ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=substr($detailundangan['nomer_pengundang'], 0, -1); ?></span><br>
@@ -486,7 +516,13 @@
             </li>
    
             <li style="padding:5px 15px 5px 15px;line-height:15px;" class="list-group-item">
-              <span style="word-wrap:break-word;" class="text-info"><?=base_url('wedding/').$detailundangan['url_pengundang']; ?></span><br>
+              <span style="word-wrap:break-word;" class="text-info">
+                <?php if($detailundangan['jenis_acara']=='pernikahan'){ ?>
+                  <?=base_url('wedding/').$detailundangan['url_pengundang']; ?>
+                <?php }else if($detailundangan['jenis_acara']=='tunangan'){ ?>
+                  <?=base_url('engagement/').$detailundangan['url_pengundang']; ?>
+                <?php } ?>
+              </span><br>
               <span style="font-size:12px;color:grey"> (Link utama)</span>
             </li>
           </ul>

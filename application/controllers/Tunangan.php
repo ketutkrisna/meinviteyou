@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Undangan extends CI_Controller {
+class Tunangan extends CI_Controller {
 
 	public function __construct()
 	{
@@ -13,7 +13,7 @@ class Undangan extends CI_Controller {
 		redirect('pengunjung');
 	}
 
-	public function daftarundangan($pengundang='',$diundang='')
+	public function daftartunangan($pengundang='',$diundang='')
 	{
 		// $pengundang='krisnadanhilmah';
 		if($diundang==''){
@@ -25,7 +25,7 @@ class Undangan extends CI_Controller {
 		$datasession=$this->db->query($queryurl)->row_array();
 
 		$jenisacara = $data['detailundangan']['jenis_acara'];
-		if($jenisacara!='pernikahan'){
+		if($jenisacara!='tunangan'){
 			redirect('pengunjung');
 		}
 
@@ -39,13 +39,13 @@ class Undangan extends CI_Controller {
 		$waktuawal  = strtotime($tanggalacara);
 		if($data['detailundangan']['paket_acara']=='hemat'){
 			$waktutarget = $waktuawal + 7884000;
-			$data['paket']='Anda menggunakan undangan paket <b>HEMAT</b> dengan masa aktif <b>3 bulan</b>.<br> Dihitung dari Tanggal pernikahan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+			$data['paket']='Anda menggunakan undangan paket <b>HEMAT</b> dengan masa aktif <b>3 bulan</b>.<br> Dihitung dari Tanggal pertunangan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
 		}else if($data['detailundangan']['paket_acara']=='reguler'){
 			$waktutarget = $waktuawal + 15770000;
-			$data['paket']='Anda menggunakan undangan paket <b>REGULER</b> dengan masa aktif <b>6 bulan</b>.<br> Dihitung dari Tanggal pernikahan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+			$data['paket']='Anda menggunakan undangan paket <b>REGULER</b> dengan masa aktif <b>6 bulan</b>.<br> Dihitung dari Tanggal pertunangan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
 		}else{
 			$waktutarget = $waktuawal + 31546000;
-			$data['paket']='Anda menggunakan undangan paket <b>PREMIUM</b> dengan masa aktif <b>1 tahun</b>.<br> Dihitung dari Tanggal pernikahan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
+			$data['paket']='Anda menggunakan undangan paket <b>PREMIUM</b> dengan masa aktif <b>1 tahun</b>.<br> Dihitung dari Tanggal pertunangan anda <b>'.date('d M Y',$waktuawal).'</b> Sampai tanggal <b>'.date('d M Y',$waktutarget).'</b>';
 		}
 		$waktusekarang = time();
 		if($waktusekarang > $waktutarget){
@@ -63,26 +63,10 @@ class Undangan extends CI_Controller {
 		// var_dump($data['fotogaleris']);die;
 		$data['title']=$data['detailundangan']['namapanggilan_priawanita'];
 		// var_dump($data['detailundangan']['paket_wedding']);die;
-		if($data['detailundangan']['tema_template']=='classic'){
+		if($data['detailundangan']['tema_template']=='elegant'){
 			$this->session->id_pengundang = $datasession['id_pengundang'];
 			$this->session->id_diundang = $datasession['id_diundang'];
-			$this->load->view('pernikahan/classic',$data);
-		}else if($data['detailundangan']['tema_template']=='rustic'){
-			$this->session->id_pengundang = $datasession['id_pengundang'];
-			$this->session->id_diundang = $datasession['id_diundang'];
-			$this->load->view('pernikahan/rustic',$data);
-		}else if($data['detailundangan']['tema_template']=='tematic'){
-			$this->session->id_pengundang = $datasession['id_pengundang'];
-			$this->session->id_diundang = $datasession['id_diundang'];
-			$this->load->view('pernikahan/tematic',$data);
-		}else if($data['detailundangan']['tema_template']=='vantage'){
-			$this->session->id_pengundang = $datasession['id_pengundang'];
-			$this->session->id_diundang = $datasession['id_diundang'];
-			$this->load->view('pernikahan/vantage',$data);
-		}else if($data['detailundangan']['tema_template']=='minimalis'){
-			$this->session->id_pengundang = $datasession['id_pengundang'];
-			$this->session->id_diundang = $datasession['id_diundang'];
-			$this->load->view('pernikahan/minimalis',$data);
+			$this->load->view('tunangan/elegant',$data);
 		}else{
 			redirect('pengunjung');
 		}
@@ -123,7 +107,7 @@ class Undangan extends CI_Controller {
 				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
 				  </div>
 				</div>');
-			redirect('wedding/'.$namapengundang.'/'.$namadiundang);
+			redirect('engagement/'.$namapengundang.'/'.$namadiundang);
 			return false;
 		}
 
@@ -153,7 +137,7 @@ class Undangan extends CI_Controller {
 				    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
 				  </div>
 				</div>');
-			redirect('wedding/'.$namapengundang.'/'.$namadiundang);
+			redirect('engagement/'.$namapengundang.'/'.$namadiundang);
 			return false;
 		// }else{
 		// 	redirect('pengunjung');

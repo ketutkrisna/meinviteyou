@@ -315,7 +315,7 @@ class Admin extends CI_Controller {
 		$this->db->update('users');
 
 		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">
-              <strong>Akses login,</strong> telah ditutup!
+              <strong>Fitur CRUD,</strong> telah dinonaktifkan!
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -331,7 +331,7 @@ class Admin extends CI_Controller {
 		$this->db->update('users');
 
 		$this->session->set_flashdata('message','<div class="alert alert-warning alert-dismissible fade show" role="alert">
-              <strong>Akses login,</strong> telah dibuka!
+              <strong>Fitur CRUD,</strong> telah diaktifkan!
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -1150,8 +1150,12 @@ class Admin extends CI_Controller {
 			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
 			  </div>
 			</div>');
-		redirect('wedding/'.$urlpengundang.'/'.$urldiundang);
-			return false;
+		if($datacek['jenis_acara']=='pernikahan'){
+			redirect('wedding/'.$urlpengundang.'/'.$urldiundang);
+		}else if($datacek['jenis_acara']=='tunangan'){
+			redirect('engagement/'.$urlpengundang.'/'.$urldiundang);
+		}
+		return false;
 		return false;
 	}
 

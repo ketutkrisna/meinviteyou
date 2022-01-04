@@ -59,5 +59,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'pengunjung';
 $route['wedding/(:any)/(:any)'] = 'undangan/daftarundangan/$1/$2';
+$route['engagement/(:any)/(:any)'] = 'tunangan/daftartunangan/$1/$2';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
