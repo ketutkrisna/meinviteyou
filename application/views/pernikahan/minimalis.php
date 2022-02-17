@@ -471,7 +471,7 @@
         </form>
         <div class="row">
           <div class="col-12 mt-3 mb-3 text-center text-light">
-            <span style="font-size:25px;font-weight:500;font-family: cursive, Arial, Helvetica, sans-serif;">Romeo & Juliete</span><br>
+            <span style="font-size:25px;font-weight:500;font-family: cursive, Arial, Helvetica, sans-serif;"><?=$detailundangan['namapanggilan_priawanita']; ?></span><br>
             <span>(Doakan yang terbaik untuk kami)</span>
           </div>
         </div>

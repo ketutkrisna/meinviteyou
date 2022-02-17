@@ -243,6 +243,21 @@
         <div class="col-lg-3 col-md-4 col-6 portfolio-item filter-app">
           <div class="portfolio-wrap text-center">
             <figure>
+              <img src="<?=base_url('/'); ?>assets/img/portfolio/desain-elegant.jpg" class="img-fluid" alt="tema elegant">
+              <a href="<?=base_url('/'); ?>assets/img/portfolio/desain-elegant.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Design elegant"><i class="ion ion-eye"></i></a>
+              <a target="_blank" href="<?=base_url('/'); ?>contohundangan/elegant/" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="#!" style="color:#616161;">ELEGANT</a></h4>
+              <p>Pernikahan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 portfolio-item filter-app">
+          <div class="portfolio-wrap text-center">
+            <figure>
               <img src="<?=base_url('/'); ?>assets/img/portfolio/desain-minimalis.jpg" class="img-fluid" alt="tema minimalis">
               <a href="<?=base_url('/'); ?>assets/img/portfolio/desain-minimalis.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Design Minimalis"><i class="ion ion-eye"></i></a>
               <a target="_blank" href="<?=base_url('/'); ?>contohundangan/minimalis/" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>

@@ -83,6 +83,10 @@ class Undangan extends CI_Controller {
 			$this->session->id_pengundang = $datasession['id_pengundang'];
 			$this->session->id_diundang = $datasession['id_diundang'];
 			$this->load->view('pernikahan/minimalis',$data);
+		}else if($data['detailundangan']['tema_template']=='elegant'){
+			$this->session->id_pengundang = $datasession['id_pengundang'];
+			$this->session->id_diundang = $datasession['id_diundang'];
+			$this->load->view('pernikahan/elegant',$data);
 		}else{
 			redirect('pengunjung');
 		}

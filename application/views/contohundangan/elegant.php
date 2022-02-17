@@ -237,36 +237,31 @@
       </div>
 
       <ul class="timeline mt-3">
-        <!-- Item 1 -->
         <li>
           <div class="direction-r">
             <div class="flag-wrapper">
               <span class="hexa"></span>
               <span class="flag">2015</span>
             </div>
-            <div class="desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.</div>
+            <div class="desc" data-aos="flip-right" data-aos-duration="1000">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.</div>
           </div>
         </li>
-
-        <!-- Item 2 -->
         <li>
           <div class="direction-l">
             <div class="flag-wrapper">
               <span class="hexa"></span>
               <span class="flag">2016</span>
             </div>
-            <div class="desc">Lorem ipsum In ut sit in dolor nisi ex magna eu anim anim tempor dolore aliquip enim cupidatat laborum dolore.</div>
+            <div class="desc" data-aos="flip-left" data-aos-duration="1000">Lorem ipsum In ut sit in dolor nisi ex magna eu anim anim tempor dolore aliquip enim cupidatat laborum dolore.</div>
           </div>
         </li>
-
-        <!-- Item 3 -->
         <li>
           <div class="direction-r">
             <div class="flag-wrapper">
               <span class="hexa"></span>
               <span class="flag">2017</span>
             </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
+            <div class="desc" data-aos="flip-right" data-aos-duration="1000">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
           </div>
         </li>
       </ul>
@@ -289,27 +284,27 @@
             <div class="row">
               <div class="col-6 col-md-6 col-lg-4">
                 <div class="gallery-item">
-                  <div class="content"><img class="img-thumbnail" src="https://source.unsplash.com/random/?tech,care" alt=""></div>
+                  <div class="content" data-aos="zoom-in" data-aos-duration="1000"><img class="img-thumbnail imgmy" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt=""></div>
                 </div>
               </div>
               <div class="col-6 col-md-6 col-lg-4">
                 <div class="gallery-item">
-                  <div class="content"><img class="img-thumbnail" src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
+                  <div class="content" data-aos="zoom-in" data-aos-duration="1000"><img class="img-thumbnail imgmy" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt=""></div>
                 </div>
               </div>
               <div class="col-6 col-md-6 col-lg-4">
                 <div class="gallery-item">
-                  <div class="content"><img class="img-thumbnail" src="https://source.unsplash.com/random/?tech,substance" alt=""></div>
+                  <div class="content" data-aos="zoom-in" data-aos-duration="1000"><img class="img-thumbnail imgmy" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt=""></div>
                 </div>
               </div>
               <div class="col-6 col-md-6 col-lg-4">
                 <div class="gallery-item">
-                  <div class="content"><img class="img-thumbnail" src="https://source.unsplash.com/random/?tech,choose" alt=""></div>
+                  <div class="content" data-aos="zoom-in" data-aos-duration="1000"><img class="img-thumbnail imgmy" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt=""></div>
                 </div>
               </div>
               <div class="col-6 col-md-6 col-lg-4">
                 <div class="gallery-item">
-                  <div class="content"><img class="img-thumbnail" src="https://source.unsplash.com/random/?tech,past" alt=""></div>
+                  <div class="content" data-aos="zoom-in" data-aos-duration="1000"><img class="img-thumbnail imgmy" src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" alt=""></div>
                 </div>
               </div>
             </div>
@@ -317,9 +312,59 @@
 
         </div>
       </div>
+      <div class="row justify-content-center mt-5">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-8">
+          <div class="ratio ratio-16x9 text-center" style="border:4px solid red;border-radius:5px;">
+            <h5>Disini Tempat Video</h5>
+            <!-- <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe> -->
+          </div>
+        </div>
+      </div>
       </div>
 
     </div>
+
+    <div class="rekening" style="padding-bottom:50px;">
+      <div class="container">
+        <div class="inforekening mt-5">
+          <div class="d-flex justify-content-center text-center">
+            <div class="warnatema2" style="box-shadow:0 0 15px rgba(0,0,0,.2);width:100%;border-radius:5px;background-color:#00E0D6;">
+              <div class="p-3 text-light" style="font-size:18px;color:#696969;font-family: cursive, Arial, Helvetica, sans-serif;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui:</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-md-6">
+            <div class="media p-2 mt-3 myshadow d-flex" style="background-color:#f2f2f2;border-radius:3px;">
+              <div class="media-left" style="border-right:1px solid #ddd;padding-right:5px!important;">
+                <a href="#">
+                  <img class="media-object" src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/bbri.png" alt="bank bri" width="50px">
+                </a>
+              </div>
+              <div class="media-body text-left pl-2 pr-2" style="padding-left:5px;">
+                <span style="color:#19191a">No.Rek: 5749-2434-2465-433</span><br>
+                <span style="color:#19191a">Atas Nama: Suparman</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="media p-2 mt-3 myshadow d-flex" style="background-color:#f2f2f2;border-radius:3px;">
+              <div class="media-left" style="border-right:1px solid #ddd;padding-right:5px!important;">
+                <a href="#">
+                  <img class="media-object" src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/bbnii.png" alt="bank bni" width="50px">
+                </a>
+              </div>
+              <div class="media-body text-left pr-2" style="padding-left:5px;">
+                <span style="color:#19191a">No.Rek: 5749-2434-2465-433</span><br>
+                <span style="color:#19191a">Atas Nama: Suparman</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- tutup rekening --> 
 
     <style>
         .myshadow {
@@ -686,10 +731,12 @@
 
         $('#staticBackdrop').modal('show');
 
+        $('.byebye').removeClass('byebye');
+        // $('.imgmy').addClass()
         var dan =$('.dan').text().split(' ');
         var jadi=dan.splice(1,1, ' <img src="<?=base_url('assets/temaundangan/engagement/elegant/img/header-icon.png'); ?>" width="45"> ');
         $('.dan').html(dan);
-        console.log(dan);
+        // console.log(dan);
 
         var countkomentar = document.querySelectorAll('.countkomentar');
         $('.jumlahwhises').text(countkomentar.length+' Whises');
