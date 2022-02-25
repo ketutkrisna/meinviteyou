@@ -851,6 +851,7 @@
               <label class="input-group-text" for="inputGroupSelect02">Tema undangan</label>
             </div>
             <select class="custom-select tambahtemaundangan" id="inputGroupSelect02" name="tambahtemaundangan">
+              <option value="ethnic">Ethnic</option>
               <option value="elegant">Elegant</option>
               <option value="minimalis">Minimalis</option>
               <option value="classic">Classic</option>
@@ -904,6 +905,17 @@
             <select class="custom-select tambahstatusbayar" id="inputGroupSelect01" name="tambahstatusbayar">
               <option value="belum">Belum</option>
               <option value="sudah">Dibayar</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Tipe undangan</label>
+            </div>
+            <select class="custom-select tipeundangan" id="inputGroupSelect01" name="tambahtipeundangan">
+              <option value="mudah">Mudah</option>
+              <option value="sedang">Sedang</option>
+              <option value="sulit">Sulit</option>
             </select>
           </div>
           </div>
@@ -1026,6 +1038,14 @@
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['paket_acara']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Paket undangan)</span>
+            </li>
+            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
+              <span class="text-info"><?=$detailundangan['status_bayar']; ?></span><br>
+              <span style="font-size:12px;color:grey"> (Status payment)</span>
+            </li>
+            <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
+              <span class="text-info"><?=$detailundangan['tipe_undangan']; ?></span><br>
+              <span style="font-size:12px;color:grey"> (Tipe undangan)</span>
             </li>
  
             <li style="padding:5px 15px 5px 15px;line-height:15px;" class="list-group-item">
@@ -1244,6 +1264,7 @@
             $('.tambahwarnadasar2').val(data.color_template2);
             $('.tambahpaketacara').val(data.paket_acara);
             $('.tambahstatusbayar').val(data.status_bayar);
+            $('.tipeundangan').val(data.tipe_undangan);
 
           }
         });

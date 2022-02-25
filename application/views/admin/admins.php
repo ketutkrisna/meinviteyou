@@ -375,6 +375,7 @@
               <label class="input-group-text" for="inputGroupSelect02">Tema undangan</label>
             </div>
             <select class="custom-select" id="inputGroupSelect02" name="tambahtemaundangan">
+              <option value="ethnic">Ethnic</option>
               <option value="elegant">Elegant</option>
               <option value="minimalis">Minimalis</option>
               <option value="classic">Classic</option>

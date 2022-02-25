@@ -25,7 +25,7 @@
     <meta property="og:locale" content="id_ID">
     <meta property="og:title" content="The Wedding Of <?=$detailundangan['namapanggilan_priawanita']; ?>">
     <meta name="description" content="<?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?>"/>
-    <meta content="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>" property='og:image'/>
+    <meta content="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>" property="og:image"/>
     <!-- Favicons -->
     <link href="<?=base_url('/'); ?>assets/img/imgsharing/<?=$detailundangan['img_sharing']; ?>" rel="icon">
     <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -34,6 +34,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Montserrat+Alternates:wght@100&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/temaundangan/minimalis/'); ?>css/polaroid.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/temaundangan/minimalis/'); ?>css/timeline.css">
@@ -67,7 +68,7 @@
       <div class="headers">
         <div class="row d-flex justify-content-center text-center" style="height:85vh;background-image:url('<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>');background-size:cover;background-position:center;align-items:center;position:relative;">
           <div class="contenttengah">
-            <div class="col-12 text-light mb-3"><span style="font-family: cursive, Arial, Helvetica, sans-serif;text-shadow:0 0 4px rgba(0,0,0,.6);font-size:18px;">The Wedding Of</span> <h1 style="font-family: 'Fleur De Leah', cursive;font-size:40px;text-shadow:0 0 6px rgba(0,0,0,.8);font-weight:600;letter-spacing:4px;word-spacing:-5px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h1></div>
+            <div class="col-12 text-light mb-3"><span style="font-family: 'Jua', sans-serif;text-shadow:0 0 4px rgba(0,0,0,.6);font-size:20px;">The Wedding Of</span> <h1 style="font-family: 'Fleur De Leah', cursive;font-size:40px;text-shadow:0 0 6px rgba(0,0,0,.8);font-weight:600;letter-spacing:4px;word-spacing:-5px;margin-top:10px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h1></div>
             <div class="image" data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
               <img src="<?=base_url('assets/temaundangan/minimalis/img/std7.png'); ?>" width="170">
             </div>
@@ -87,7 +88,7 @@
                     <div style="width:25px;" class="digit"></div>
                   </div>
                   <div style="border-bottom:1px solid #ccc;width:90%;margin:auto;"></div>
-                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: cursive, Arial, Helvetica, sans-serif;">Hari</div>
+                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: 'Jua', sans-serif;">Hari</div>
                 </div>
               </div>
             </div>
@@ -99,7 +100,7 @@
                     <div style="width:25px;" class="digit"></div>
                   </div>
                   <div style="border-bottom:1px solid #ccc;width:90%;margin:auto;"></div>
-                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: cursive, Arial, Helvetica, sans-serif;">Jam</div>
+                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: 'Jua', sans-serif;">Jam</div>
                 </div>
               </div>
             </div>
@@ -111,7 +112,7 @@
                     <div style="width:25px;" class="digit"></div>
                   </div>
                   <div style="border-bottom:1px solid #ccc;width:90%;margin:auto;"></div>
-                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: cursive, Arial, Helvetica, sans-serif;">Menit</div>
+                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: 'Jua', sans-serif;">Menit</div>
                 </div>
               </div>
             </div>
@@ -123,7 +124,7 @@
                     <div style="width:25px;" class="digit"></div>
                   </div>
                   <div style="border-bottom:1px solid #ccc;width:90%;margin:auto;"></div>
-                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: cursive, Arial, Helvetica, sans-serif;">Detik</div>
+                  <div style="font-size:18px;font-weight:500;color:#ccc;font-style:italic;font-family: 'Jua', sans-serif;">Detik</div>
                 </div>
               </div>
             </div>
@@ -137,9 +138,9 @@
         <div class="ucapanawal mt-4" style="">
           <div class="d-flex justify-content-center text-center">
             <div class="warnatema2" data-aos="zoom-in" data-aos-duration="1000" style="box-shadow:0 0 15px rgba(0,0,0,.2);width:100%;border-radius:5px;background-color:#b5820b;">
-              <div class="p-4 text-light" style="font-size:18px;color:#696969;font-style:italic;font-family: cursive, Arial, Helvetica, sans-serif;position:relative;">
+              <div class="p-4 text-light" style="font-size:18px;color:#696969;font-style:italic;font-family: cursive;position:relative;">
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:80px;bottom:0px;left:0px;z-index:0;transform:rotateY(180deg) rotateX(180deg);">
-                  <?=$detailundangan['ucapan_awal']; ?>
+                  <span style="font-family: 'Jua', sans-serif;"><?=$detailundangan['ucapan_awal']; ?></span>
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:80px;top:0px;right:0px;z-index:0;">
               </div>
             </div>
@@ -148,13 +149,18 @@
 
         <style>
           .anakke {
-            font-size:11px;
-            margin-top:-2px;
+            font-size:14px;
+            line-height:4px;
+            margin-top:13px;
+            font-family: font-family: 'Jua', sans-serif;
+            color:#616161;
           }
           .ortu {
-            font-size:12px;
-            margin-top:-2px;
-            line-height:13px;
+            font-size:16px;
+            line-height:4px;
+            margin-top:-10px;
+            font-family: font-family: 'Jua', sans-serif;
+            color:#616161;
           }
         </style>
 
@@ -162,31 +168,32 @@
           <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/bungas1.png" style="position:absolute;width:150px;top:-20px;left:-20px;z-index:1;transform:rotateY(180deg);">
           <figure>
             <img class="bounce" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>" alt="Mempelai 1"/>
-            <figcaption><?=$detailundangan['namalengkap_pria']; ?></figcaption>
+            <figcaption style="font-family: 'Jua', sans-serif;font-size:19px;line-height:16px;margin-top:4px;"><?=$detailundangan['namalengkap_pria']; ?></figcaption>
             <!-- <figcaption class="anakke">Putra ke-1 dari:</figcaption>
             <figcaption class="ortu">Bapak Romeo & Ibu Romeo</figcaption> -->
-            <?=$detailundangan['orangtua_pria']; ?>
+            <span style="font-family: 'Jua', sans-serif;line-height:16px;"><?=$detailundangan['orangtua_pria']; ?></span>
           </figure>
           <figure>
             <img class="bounce" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>" alt="Mempelai 2"/>
-            <figcaption><?=$detailundangan['namalengkap_wanita']; ?> </figcaption>
-            <?=$detailundangan['orangtua_wanita']; ?>
+            <figcaption style="font-family: 'Jua', sans-serif;font-size:19px;line-height:16px;margin-top:4px;"><?=$detailundangan['namalengkap_wanita']; ?> </figcaption>
+            <span style="font-family: 'Jua', sans-serif;"><?=$detailundangan['orangtua_wanita']; ?></span>
           </figure>
           <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/bungas1.png" style="position:absolute;width:150px;bottom:-20px;right:-20px;z-index:1">
         </div>
       </div><!-- tutup profile -->
 
       <div class="events">
-        <div class="row text-center mt-5">
+        <div class="row text-center mt-5 justify-content-center">
+          <?php if($detailundangan['tanggal_akad']=='0001-01-01'){}else{ ?>
           <div class="col-12 col-md-6 mb-3">
 
             <div class="scene" data-aos="fade-down" data-aos-duration="1000">
               <div class="card warnatema2">
                 <div class="card__face card__face--front text-light">
                   <div style="color:#eee;font-size:40px;font-family: 'Fleur De Leah', cursive;">Akad</div>
-                  <div style="font-family: cursive, Arial, Helvetica, sans-serif;"><i class="fas fa-calendar-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_akad'])); ?></div>
-                  <div style="font-family: cursive, Arial, Helvetica, sans-serif;"><i class="fas fa-clock" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> Pukul <?=$detailundangan['jam_akad']; ?></div>
-                  <div style="font-family: cursive, Arial, Helvetica, sans-serif;"><i class="fas fa-map-marked-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$detailundangan['alamat_akad']; ?></div>
+                  <div style="font-family: 'Jua', sans-serif;"><i class="fas fa-calendar-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_akad'])); ?></div>
+                  <div style="font-family: 'Jua', sans-serif;"><i class="fas fa-clock" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> Pukul <?=$detailundangan['jam_akad']; ?></div>
+                  <div style="font-family: 'Jua', sans-serif;"><i class="fas fa-map-marked-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$detailundangan['alamat_akad']; ?></div>
                   <div class="" style="position:absolute;bottom:27px;left:0;right:0;margin: auto;">
                   <?php if(!empty($detailundangan['map_akad'])): ?>
                     <button class="btn btn-sm btn-light fliping" style="box-shadow:0 0 10px rgba(0,0,0,.3);">Lihat Maps <i class="fas fa-arrow-circle-right"></i></button>
@@ -208,15 +215,16 @@
             </div>
             
           </div>
+          <?php } ?>
           <div class="col-12 col-md-6 mb-3">
 
             <div class="scene" data-aos="fade-up" data-aos-duration="1000">
               <div class="card warnatema2">
                 <div class="card__face card__face--front text-light">
                   <div style="color:#eee;font-size:40px;font-family: 'Fleur De Leah', cursive;">Resepsi</div>
-                  <div style="font-family: cursive, Arial, Helvetica, sans-serif;"><i class="fas fa-calendar-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?></div>
-                  <div style="font-family: cursive, Arial, Helvetica, sans-serif;"><i class="fas fa-clock" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> Pukul <?=$detailundangan['jam_acara']; ?></div>
-                  <div style="font-family: cursive, Arial, Helvetica, sans-serif;"><i class="fas fa-map-marked-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$detailundangan['alamat_acara']; ?></div>
+                  <div style="font-family: 'Jua', sans-serif;"><i class="fas fa-calendar-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?></div>
+                  <div style="font-family: 'Jua', sans-serif;"><i class="fas fa-clock" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> Pukul <?=$detailundangan['jam_acara']; ?></div>
+                  <div style="font-family: 'Jua', sans-serif;padding:0 7px 0 7px;"><i class="fas fa-map-marked-alt" style="color:#ccc;text-shadow:0 0 3px rgba(0,0,0,.8);"></i> <?=$detailundangan['alamat_acara']; ?></div>
                     <div class="" style="position:absolute;bottom:27px;left:0;right:0;margin: auto;">
                     <?php if(!empty($detailundangan['map_acara'])): ?>
                       <button class="btn btn-sm btn-light fliping1" style="box-shadow:0 0 10px rgba(0,0,0,.3);">Lihat Maps <i class="fas fa-arrow-circle-right"></i></button>
@@ -243,8 +251,8 @@
         <div class="ucapanahir mt-4">
           <div class="d-flex justify-content-center text-center">
             <div class="warnatema2" data-aos="zoom-in" data-aos-duration="1000" style="box-shadow:0 0 15px rgba(0,0,0,.2);width:100%;border-radius:5px;background-color:#b5820b;">
-              <div class="p-4 text-light" style="font-size:18px;color:#696969;font-style:italic;font-family: cursive, Arial, Helvetica, sans-serif;position: relative;">
-                <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:80px;bottom:0px;left:0px;z-index:0;transform:rotateY(180deg) rotateX(180deg);">
+              <div class="p-4 text-light" style="font-size:18px;color:#696969;font-style:italic;font-family: 'Jua', sans-serif;position: relative;">
+                <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:80px;bottom:0px;left:0px;z-index:0;transform:rotateY(180deg) rotateX(180deg);font-family: 'Jua', sans-serif;">
                   <?=$detailundangan['ucapan_ahir']; ?>
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:80px;top:0px;right:0px;z-index:0;">
               </div>
@@ -257,7 +265,7 @@
       <div class="lovestory">
         <div class="initimeline mt-5">
           <div style="margin-bottom:15px;">
-            <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">Love Story</h5>
+            <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: 'Jua', sans-serif;font-weight:bold;">Love Story</h5>
           </div>
           <?=$detailundangan['stori_pengundang']; ?>
         </div>
@@ -269,9 +277,9 @@
         <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:100px;top:0px;right:0px;z-index:0;">
         <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:100px;bottom:0px;left:0px;z-index:1;transform:rotateY(180deg) rotateX(180deg);">
         <div class="mb-3 mt-2">
-          <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">Galeri</h5>
+          <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: 'Jua', sans-serif;font-weight:bold;">Galeri</h5>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
           <?php $aos=1; foreach($fotogaleris as $fgs): ?>
           <div class="col-6 col-md-4 col-xl-4" data-aos="fade-down" data-aos-duration="1000">
             <img src="<?=base_url('assets/img/fotogaleripelanggan/'.$fgs['foto_galeri']); ?>" class="img-thumbnail mb-1 myImg" alt="<?=$detailundangan['namapanggilan_priawanita']; ?>">
@@ -315,12 +323,12 @@
         <div class="inforekening mt-5">
           <div class="d-flex justify-content-center text-center" data-aos="zoom-in" data-aos-duration="1000">
             <div class="warnatema2" style="box-shadow:0 0 15px rgba(0,0,0,.2);width:100%;border-radius:5px;background-color:#b5820b;transform:rotate(-1deg);">
-              <div class="p-3 text-light" style="font-size:18px;color:#696969;font-family: cursive, Arial, Helvetica, sans-serif;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui:</div>
+              <div class="p-3 text-light" style="font-size:18px;color:#696969;font-family: 'Jua', sans-serif;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui:</div>
             </div>
           </div>
         </div>
 
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" style="font-family: 'Jua', sans-serif;">
           <?=$detailundangan['rekening_pengundang']; ?>
         </div>
       </div><!-- tutup rekening --> 
@@ -328,24 +336,42 @@
 
       <div class="whises mt-5" style="background-image:url('<?=base_url('assets/temaundangan/minimalis/img/bgtexture.jpg'); ?>');width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:5px;">
         <div class="mb-3 mt-2">
-          <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">Friend Whises</h5>
+          <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: 'Jua', sans-serif;font-weight:bold;">Friend Whises</h5>
         </div>
 
         <?php 
 
           $urlpucapan=$detailundangan['id_pengundang'];
 
-          $queryallucapana="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
-          $dataucapana=$this->db->query($queryallucapana)->result_array();
+          if($detailundangan['tipe_undangan']=='mudah'){
 
-          $queryucapan="SELECT max(id_ucapan) as maxidu FROM ucapan where urlpengundang_ucapan='$urlpucapan'";
-          $resultmax=$this->db->query($queryucapan)->row_array();
+            $queryallucapana="SELECT * from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen order by id_komen desc";
+            $dataucapana=$this->db->query($queryallucapana)->result_array();
 
-          $queryallucapan="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
-          $dataucapan=$this->db->query($queryallucapan)->result_array();
+            $queryucapan="SELECT max(id_komen) as maxidu FROM komen where urlpengundang_komen='$urlpucapan'";
+            $resultmax=$this->db->query($queryucapan)->row_array();
 
-          $queryallucapancount="SELECT count(*) as ucount from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan='$urlpucapan'";
-          $dataucapancount=$this->db->query($queryallucapancount)->row_array();
+            $queryallucapan="SELECT * from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen order by id_komen desc";
+            $dataucapan=$this->db->query($queryallucapan)->result_array();
+
+            $queryallucapancount="SELECT count(*) as ucount from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen where urlpengundang_komen='$urlpucapan'";
+            $dataucapancount=$this->db->query($queryallucapancount)->row_array();
+
+          }else{
+
+            $queryallucapana="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
+            $dataucapana=$this->db->query($queryallucapana)->result_array();
+
+            $queryucapan="SELECT max(id_ucapan) as maxidu FROM ucapan where urlpengundang_ucapan='$urlpucapan'";
+            $resultmax=$this->db->query($queryucapan)->row_array();
+
+            $queryallucapan="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
+            $dataucapan=$this->db->query($queryallucapan)->result_array();
+
+            $queryallucapancount="SELECT count(*) as ucount from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan='$urlpucapan'";
+            $dataucapancount=$this->db->query($queryallucapancount)->row_array();
+
+          }
 
         ?>
 
@@ -380,9 +406,29 @@
                 $post = floor($waktubulan).' bulan yang lalu';
               }else{
                 $waktutahun=$waktu/31536000;
-                $post = floor($waktubulan).' tahun yang lalu';
+                $post = floor($waktutahun).' tahun yang lalu';
               }
             ?>
+
+          <?php if($detailundangan['tipe_undangan']=='mudah'){ ?>
+
+            <div class="col-12 countkomentar">
+              <div class="d-flex mb-3" style="min-width: 100px;">
+                <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
+                  <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
+                </div>
+                <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
+                  <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;"><?=$du['urldiundang_komen']; ?></span><span style="font-size:11px;color:#757575;line-height:13px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span></div>
+                  <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;"><?=$du['isi_komen']; ?></div>
+                </div>
+              </div>
+            </div>
+          <?php if($this->session->userdata('level_user')=='admin'){ ?>
+              <a style="margin-top:-20px;padding-bottom:10px;color:red;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapantampanama/'.$du['id_komen'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
+          <?php } ?>
+
+          <?php }else{ ?>
+
           <div class="col-12 countkomentar">
             <div class="d-flex mb-3" style="min-width: 100px;">
               <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
@@ -397,6 +443,8 @@
           <?php if($this->session->userdata('level_user')=='admin'){ ?>
               <a style="margin-top:-20px;padding-bottom:10px;color:red;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapan/'.$du['id_ucapan'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
           <?php } ?>
+
+          <?php } ?>
           <?php endforeach; ?>
         </div>
 
@@ -410,23 +458,82 @@
       <style>
         .rsvp .form-select ,textarea.form-control {
           background-color: rgba(222, 222, 222, 0.2);
-          color: #fff;
-          border: 1px solid rgba(255, 255, 255, 0.6);
+          color: #616161;
+          border: 3px solid rgba(11,94,215, 0.6);
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
         }
         .rsvp .form-select ,textarea.form-control:focus {
           background-color: rgba(222, 222, 222, 0.2);
-          color: #fff;
-          border: 1px solid rgba(255, 255, 255, 0.6);
+          color: #616161;
+          border: 3px solid rgba(11,94,215, 0.6);
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
         }
         .rsvp select.form-select option {
           background: rgba(0, 0, 0, 0.3);
-          color: #fff;
+          color: #616161;
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
+        }
+        .rsvp input.form-control {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 3px solid rgba(11,94,215, 0.6);
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
         }
       </style>
-      <div class="rsvp mt-5" style="background-image:url('<?=base_url('assets/temaundangan/minimalis/img/bgrsvp.jpg'); ?>');width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:0;">
+      <div class="rsvp mt-5" style="background-image:url('<?=base_url('assets/temaundangan/minimalis/img/bg-pattern.png'); ?>');width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:0;background-color:#eee;">
         <div class="mb-3 mt-2">
-          <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">RSVP</h5>
+          <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: 'Jua', sans-serif;font-weight:bold;">RSVP</h5>
         </div>
+      <?php if($detailundangan['tipe_undangan']=='mudah'){ ?>
+
+        <form action="<?=base_url('undangan/ucapantampanama'); ?>" method="post" data-aos="fade-down" data-aos-duration="1000">
+          <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
+          <!-- <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>"> -->
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <input class="form-control" type="text" name="namaanda" placeholder="Ketikan nama anda disini.." required>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <select class="form-select" name="absenkehadiran" aria-label=".form-select-sm example" required>
+                <option value="" selected>Apakah akan menghadiri?</option>
+                <option value="hadir">Menghadiri</option>
+                <option value="tidak hadir">Tidak menghadiri</option>
+                <option value="ragu-ragu">Masih ragu-ragu</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <select class="form-select" name="jumlahkehadiran" aria-label=".form-select-sm example" required>
+                <option value="" selected>Jumlah yang menghadiri?</option>
+                <option value="1">1 orang</option>
+                <option value="2">2 orang</option>
+                <option value="3">3 orang</option>
+                <option value="4">4 orang</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 mb-3">
+              <div class="form-floating">
+                <textarea class="form-control" name="isiucapan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
+                <label for="floatingTextarea2" style="color:#616161!important;font-family: 'Jua', sans-serif;">Ketikan ungkapan</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-sm float-end addkomentar" id="addkomentar">Kirim</button>
+            </div>
+          </div>
+        </form>
+
+      <?php }else{ ?>
+
         <form action="<?=base_url('undangan/ucapan'); ?>" method="post" data-aos="fade-down" data-aos-duration="1000">
           <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
           <div class="row">
@@ -459,7 +566,7 @@
             <div class="col-sm-12 mb-3">
               <div class="form-floating">
                 <textarea class="form-control" name="isiucapan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
-                <label for="floatingTextarea2" style="color:white!important">Ketikan ungkapan</label>
+                <label for="floatingTextarea2" style="color:#616161!important;font-family: 'Jua', sans-serif;">Ketikan ungkapan</label>
               </div>
             </div>
           </div>
@@ -469,10 +576,12 @@
             </div>
           </div>
         </form>
+
+      <?php } ?>
         <div class="row">
           <div class="col-12 mt-3 mb-3 text-center text-light">
-            <span style="font-size:25px;font-weight:500;font-family: cursive, Arial, Helvetica, sans-serif;"><?=$detailundangan['namapanggilan_priawanita']; ?></span><br>
-            <span>(Doakan yang terbaik untuk kami)</span>
+            <span style="font-size:25px;font-weight:500;font-family: 'Jua', sans-serif;color:#616161;"><?=$detailundangan['namapanggilan_priawanita']; ?></span><br>
+            <span style="color:#616161;">(Doakan yang terbaik untuk kami)</span>
           </div>
         </div>
       </div><!-- tutup kirimucapan --> 
@@ -543,7 +652,7 @@
   <?php if(!empty($detailundangan['musik_acara'])): ?>
     <div class="piringan" style="position:fixed;top:5px;z-index:30;margin-left:10px!important;">
       <div class="musikplayer musikset z-depth-2" style="width:70px;height:70px;border-radius:50%;background-color:white;border:1px solid yellow;box-shadow:1px 1px 9px #ddd;">
-        <img class="putarmulai" style="border-radius:50%" src="<?=base_url('assets/'); ?>img/bgmusik.jpg" width="100%">
+        <img class="putarmulai" style="border-radius:50%" src="<?=base_url('/'); ?>assets/img/imgsharing/<?=$detailundangan['img_sharing']; ?>" width="100%">
         <div class="bulattengah" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:20px;height:20px;border-radius:50%;background-color:#c2c2c2;">
           <div class="bulathitam" style="position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:5px;height:5px;border-radius:50%;background-color:#353b35;"></div>
         </div>
@@ -560,7 +669,7 @@
   <?php endif; ?>
 
     <div id="navatas" class="navatas" style="position:fixed;top:20px;margin-left:73px!important;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
-      <h5 class="sizefont" style="font-size:18px;color:white;margin-top:15px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
+      <h5 class="sizefont" style="font-size:18px;color:white;margin-top:15px;font-family: 'Jua', sans-serif;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
       <div class="bars" style="position:absolute;top:-40px;left:-10px;transition:.7s">
         <img class="onm" style="margin-top:6px" src="<?=base_url('assets/'); ?>img/bars-musik.gif" height="50" width="100">
         <img class="ofm" style="position:absolute;margin-top:15.2px;left:0" src="<?=base_url('assets/'); ?>img/bars-musikof.gif" width="100" height="30">
@@ -570,7 +679,7 @@
     </div><!-- tutup maxwidth --> 
 
     <!-- The Modal -->
-    <div id="myModal" class="modalgaleri">
+    <div id="myModal" class="modalgaleri" style="z-index: 1200;">
       <div style="padding:10px;display:flex;justify-content:center;align-items: center;height:100%">
         <div style="position:relative;">
         <span class="close">&times;</span>
@@ -601,10 +710,10 @@
           <div class="modal-header d-flex justify-content-center">
             <h5 class="modal-title" id="staticBackdropLabel" style="font-family: 'Fleur De Leah', cursive;font-size:35px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="font-family: 'Jua', sans-serif;">
             <div class="row">
               <h5>Hello,</h5>
-              <h3 style="font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;"><?=$detailundangan['nama_diundang']; ?></h3>
+              <h3 style="font-family: 'Jua', sans-serif;font-weight:bold;"><?=$detailundangan['nama_diundang']; ?></h3>
               <span style="line-height:19px;">Kami mengundang anda untuk datang pada hari pernikahan kami!</span>
 
               <?php if(!empty($detailundangan['informasi_modal'])): ?>
@@ -625,37 +734,37 @@
                 <div class="col-4 p-2">
                   <div class="kotakcovid warnatema2">
                     <img src="<?=base_url('assets/img/covid/'); ?>anaksp.png" width="100%">
-                    <span>Tidak dianjurkan membawa anak kecil</span>
+                    <span style="font-family: 'Jua', sans-serif;font-style:italic;">Tidak dianjurkan membawa anak kecil</span>
                   </div>
                 </div>
                 <div class="col-4 p-2">
                   <div class="kotakcovid warnatema2 p-1">
                     <img src="<?=base_url('assets/img/covid/'); ?>maskp.png" width="100%">
-                    <span>Gunakan Masker</span>
+                    <span style="font-family: 'Jua', sans-serif;font-style:italic;">Gunakan Masker</span>
                   </div>
                 </div>
                 <div class="col-4 p-2">
                   <div class="kotakcovid warnatema2 p-1">
                     <img src="<?=base_url('assets/img/covid/'); ?>handsp.png" width="100%">
-                    <span>Gunakan Handsanitizer</span>
+                    <span style="font-family: 'Jua', sans-serif;font-style:italic;">Gunakan Handsanitizer</span>
                   </div>
                 </div>
                 <div class="col-4 p-2">
                   <div class="kotakcovid warnatema2">
                     <img src="<?=base_url('assets/img/covid/'); ?>suhusp.png" width="100%">
-                    <span>Cek Suhu Tubuh</span>
+                    <span style="font-family: 'Jua', sans-serif;font-style:italic;">Cek Suhu Tubuh</span>
                   </div>
                 </div>
                 <div class="col-4 p-2">
                   <div class="kotakcovid warnatema2 p-1">
                     <img src="<?=base_url('assets/img/covid/'); ?>cucisp.png" width="100%">
-                    <span>Cuci Tangan</span>
+                    <span style="font-family: 'Jua', sans-serif;font-style:italic;">Cuci Tangan</span>
                   </div>
                 </div>
                 <div class="col-4 p-2">
                   <div class="kotakcovid warnatema2 p-1">
                     <img src="<?=base_url('assets/img/covid/'); ?>socialp.png" width="100%">
-                    <span>Jaga Jarak 1M</span>
+                    <span style="font-family: 'Jua', sans-serif;font-style:italic;">Jaga Jarak 1M</span>
                   </div>
                 </div>
               </div>
