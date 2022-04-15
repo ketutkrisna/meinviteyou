@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="meINVITEyou.com">
     <meta property="og:locale" content="id_ID">
-    <meta property="og:title" content="The Wedding Of Romeo & juliete; ?>">
+    <meta property="og:title" content="The Wedding Of Romeo & juliete">
     <meta name="description" content="Minggu, 17 agustus 1945"/>
     <meta content="<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>" property='og:image'/>
     <!-- Favicons -->
@@ -20,6 +20,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Montserrat+Alternates:wght@100&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/temaundangan/minimalis/'); ?>css/polaroid.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/temaundangan/minimalis/'); ?>css/timeline.css">
@@ -233,7 +234,7 @@
               </div>
               <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
                 <h4 class="timeline-title"><span class="badge">2016</span></h4>
-                <p style="font-style: italic;">Pertemuan pertama</p>
+                <p style="font-style: italic;font-family: 'Jua', sans-serif;">Pertemuan pertama</p>
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
               </div>
             </div>
@@ -243,7 +244,7 @@
               </div>
               <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
                 <h4 class="timeline-title"><span class="badge">2017</span></h4>
-                <p style="font-style: italic;">Jalan 1 tahun</p>
+                <p style="font-style: italic;font-family: 'Jua', sans-serif;">Jalan 1 tahun</p>
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
               </div>
             </div>
@@ -253,7 +254,7 @@
               </div>
               <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
                 <h4 class="timeline-title"><span class="badge">2018</span></h4>
-                <p style="font-style: italic;">Jalan 2 tahun</p>
+                <p style="font-style: italic;font-family: 'Jua', sans-serif;">Jalan 2 tahun</p>
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
               </div>
             </div>
@@ -263,7 +264,7 @@
               </div>
               <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
                 <h4 class="timeline-title"><span class="badge">2019</span></h4>
-                <p style="font-style: italic;">Jalan 3 tahun</p>
+                <p style="font-style: italic;font-family: 'Jua', sans-serif;">Jalan 3 tahun</p>
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
               </div>
             </div>
@@ -273,7 +274,7 @@
               </div>
               <div class="timeline-body" style="position:relative;transform:rotate(-1deg);">
                 <h4 class="timeline-title"><span class="badge">2020</span></h4>
-                <p style="font-style: italic;">Memutuskan untuk menikah</p>
+                <p style="font-style: italic;font-family: 'Jua', sans-serif;">Memutuskan untuk menikah</p>
                 <img src="<?=base_url('assets/temaundangan/minimalis/'); ?>img/flowers1.png" style="position:absolute;width:50px;top:0px;right:0px;z-index:0;">
               </div>
             </div>
@@ -332,6 +333,19 @@
           background-color: #fff;
           /*transform: skew(.312rad);*/
         }
+        .tampilkomentreply::before {
+          content: "";
+          top:8px;
+          left:-4px;
+          z-index: 0;
+          position: absolute;
+          height: 12px;
+          width: 12px;
+          box-shadow:-2px -2px 0px rgba(0,0,0,.1);
+          transform: rotate(-45deg);
+          background-color: #fff;
+          /*transform: skew(.312rad);*/
+        }
       </style>
 
       <div class="rekening">
@@ -374,22 +388,97 @@
         </div>
       </div><!-- tutup rekening --> 
 
+      <!-- <style>
+        .reply .form-reply, textarea.form-control {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 1px solid rgba(11,94,215, 0.6);
+        }
+        .reply .form-reply, textarea.form-control:focus {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 1px solid rgba(11,94,215, 0.6);
+        }
+        .reply .form-reply input.form-control {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 1px solid rgba(11,94,215, 0.6);
+          border-radius:30px;
+        }
+      </style> -->
+
       <div class="whises mt-5" style="background-image:url('<?=base_url('assets/temaundangan/minimalis/img/bgtexture.jpg'); ?>');width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:5px;">
         <div class="mb-3 mt-2">
           <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">Friend Whises</h5>
         </div>
         <div class="jumlahwhises mb-2 fw-bold text-primary"></div>
         <div class="row justify-content-center">
-          <div class="col-12 countkomentar">
-            <div class="d-flex mb-3" style="min-width: 100px;">
+          <div class="col-12 countkomentar mb-3">
+            <div class="d-flex" style="min-width: 100px;">
               <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
                 <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
               </div>
               <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                 <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Mr.Bill Gates</span><span style="font-size:11px;color:#757575;line-height:13px;">3 jam yang lalu 14.13</span></div>
                 <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">Good Luck!</div>
+                <!-- reply -->
+                <div class="reply text-right d-flex justify-content-between" style="color:#757575;text-align:right;font-size:15px;background-color:white;align-items:center;">
+                  <span class="text-info" style="font-size:11px">2 balasan</span>
+                  <span class="reply-to text-info" data-reply="1" style="cursor:pointer;font-style:italic;"><i class="fas fa-reply"></i> balas</span>
+                </div>
+                <div class="form-reply toggle-form-reply-1 bg-white">
+                  <form class="" action="" method="post">
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                        <div class="">
+                          <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:3px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                          <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:3px;" required></textarea>
+                      </div>
+                    </div>
+                    <div class="d-flex" style="justify-content:right">
+                      <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- ahir reply -->
+                <i style="position:absolute;bottom:-20px;transform:rotate(180deg);margin-left:-15px;font-size:20px;color:#8a8a8a;" class="fas fa-reply-all text-info"></i>
               </div>
             </div>
+
+            <div class="d-flex mb-1" style="min-width:10px;margin-left:75px;margin-top:5px;">
+              <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:20px;background-color:#fff;align-items:center;">
+                <i class="fas fa-user-check" style="width:30px;height:30px;font-size:13px;color:#7a7a7a;"></i>
+              </div>
+              <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+                <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;">Steven</span><span style="font-size:9px;color:#757575;line-height:13px;">10 jam yang lalu 17.57</span></div>
+                <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+            <div class="d-flex mb-1" style="min-width:10px;margin-left:75px;margin-top:5px;">
+              <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:20px;background-color:#fff;align-items:center;">
+                <i class="fas fa-user-check" style="width:30px;height:30px;font-size:13px;color:#7a7a7a;"></i>
+              </div>
+              <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+                <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;">Steven</span><span style="font-size:9px;color:#757575;line-height:13px;">10 jam yang lalu 17.57</span></div>
+                <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+
           </div>
           <div class="col-12 countkomentar">
             <div class="d-flex mb-3" style="min-width: 100px;">
@@ -399,6 +488,30 @@
               <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                 <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Steven</span><span style="font-size:11px;color:#757575;line-height:13px;">10 jam yang lalu 17.57</span></div>
                 <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">HWD!</div>
+                <!-- reply -->
+                <div class="reply text-right" style="color:#757575;text-align:right;font-size:15px;font-style:italic;background-color:white;">
+                  <span class="reply-to text-info" data-reply="2" style="cursor:pointer;"><i class="fas fa-reply"></i> reply</span>
+                </div>
+                <div class="form-reply toggle-form-reply-2 bg-white">
+                  <form class="" action="" method="post">
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                        <div class="">
+                          <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:3px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                          <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:3px;" required></textarea>
+                      </div>
+                    </div>
+                    <div class="d-flex" style="justify-content:right">
+                      <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- ahir reply -->
               </div>
             </div>
           </div>
@@ -410,6 +523,30 @@
               <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                 <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Arsi</span><span style="font-size:11px;color:#757575;line-height:13px;">2 hari yang lalu 18.22</span></div>
                 <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">Selamt ya!</div>
+                <!-- reply -->
+                <div class="reply text-right" style="color:#757575;text-align:right;font-size:15px;font-style:italic;background-color:white;">
+                  <span class="reply-to text-info" data-reply="3" style="cursor:pointer;"><i class="fas fa-reply"></i> reply</span>
+                </div>
+                <div class="form-reply toggle-form-reply-3 bg-white">
+                  <form class="" action="" method="post">
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                        <div class="">
+                          <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:3px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                          <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:3px;" required></textarea>
+                      </div>
+                    </div>
+                    <div class="d-flex" style="justify-content:right">
+                      <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- ahir reply -->
               </div>
             </div>
           </div>
@@ -421,6 +558,30 @@
               <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                 <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Roman</span><span style="font-size:11px;color:#757575;line-height:13px;">3 hari yang lalu 15.44</span></div>
                 <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">H.W.D!</div>
+                <!-- reply -->
+                <div class="reply text-right" style="color:#757575;text-align:right;font-size:15px;font-style:italic;background-color:white;">
+                  <span class="reply-to text-info" data-reply="4" style="cursor:pointer;"><i class="fas fa-reply"></i> reply</span>
+                </div>
+                <div class="form-reply toggle-form-reply-4 bg-white">
+                  <form class="" action="" method="post">
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                        <div class="">
+                          <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:3px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 mb-1">
+                          <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:3px;" required></textarea>
+                      </div>
+                    </div>
+                    <div class="d-flex" style="justify-content:right">
+                      <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- ahir reply -->
               </div>
             </div>
           </div>
@@ -435,29 +596,40 @@
       <style>
         .rsvp .form-select ,textarea.form-control {
           background-color: rgba(222, 222, 222, 0.2);
-          color: #fff;
-          border: 1px solid rgba(255, 255, 255, 0.6);
+          color: #616161;
+          border: 3px solid rgba(11,94,215, 0.6);
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
         }
         .rsvp .form-select ,textarea.form-control:focus {
           background-color: rgba(222, 222, 222, 0.2);
-          color: #fff;
-          border: 1px solid rgba(255, 255, 255, 0.6);
+          color: #616161;
+          border: 3px solid rgba(11,94,215, 0.6);
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
         }
         .rsvp select.form-select option {
           background: rgba(0, 0, 0, 0.3);
-          color: #fff;
+          color: #616161;
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
+        }
+        .rsvp input.form-control {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 3px solid rgba(11,94,215, 0.6);
+          border-radius:30px;
+          font-family: 'Jua', sans-serif;
         }
       </style>
-      <div class="rsvp mt-5" style="background-image:url('<?=base_url('assets/temaundangan/minimalis/img/bgrsvp.jpg'); ?>');width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:0;">
+      <div class="rsvp mt-5" style="background-image:url('<?=base_url('assets/temaundangan/minimalis/img/bg-pattern.png'); ?>');width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:0;">
         <div class="mb-3 mt-2">
           <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: cursive, Arial, Helvetica, sans-serif;font-weight:bold;">RSVP</h5>
         </div>
-        <form data-aos="fade-down" data-aos-duration="1000">
+        <form data-aos="fade-down" action="" method="post" data-aos-duration="1000">
           <div class="row">
             <div class="col-sm-6 mb-3">
-              <select class="form-select" aria-label=".form-select-sm example">
-                <option value="1">Mr. Toni stark</option>
-              </select>
+              <input class="form-control" type="text" name="namaanda" placeholder="Ketikan nama anda disini.." required>
             </div>
             <div class="col-sm-6 mb-3">
               <select class="form-select" aria-label=".form-select-sm example">
@@ -483,20 +655,20 @@
             <div class="col-sm-12 mb-3">
               <div class="form-floating">
                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                <label for="floatingTextarea2" style="color:white!important">Ketikan ungkapan</label>
+                <label for="floatingTextarea2" style="color:#616161!important;font-family: 'Jua', sans-serif;">Ketikan ungkapan</label>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <button type="button" class="btn btn-primary btn-sm float-end">Kirim</button>
+              <button type="submit" class="btn btn-primary btn-sm float-end addkomentar">Kirim</button>
             </div>
           </div>
         </form>
         <div class="row">
           <div class="col-12 mt-3 mb-3 text-center text-light">
-            <span style="font-size:25px;font-weight:500;font-family: cursive, Arial, Helvetica, sans-serif;">Romeo & Juliete</span><br>
-            <span>(Doakan yang terbaik untuk kami)</span>
+            <span style="font-size:25px;font-weight:500;font-family: 'Jua', sans-serif;color:#616161;">Romeo & Juliete</span><br>
+            <span style="color:#616161;">(Doakan yang terbaik untuk kami)</span>
           </div>
         </div>
       </div><!-- tutup kirimucapan --> 
@@ -560,7 +732,7 @@
     </audio>
 
     <div id="navatas" class="navatas" style="position:fixed;top:20px;margin-left:73px!important;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;z-index:26;">
-      <h5 class="sizefont" style="font-size:18px;color:white;margin-top:15px;">Romeo & Juliete</h5>
+      <h5 class="sizefont" style="font-size:18px;color:white;margin-top:15px;font-family: 'Jua', sans-serif;">Romeo & Juliete</h5>
       <div class="bars" style="position:absolute;top:-40px;left:-10px;transition:.7s">
         <img class="onm" style="margin-top:6px" src="<?=base_url('assets/'); ?>img/bars-musik.gif" height="50" width="100">
         <img class="ofm" style="position:absolute;margin-top:15.2px;left:0" src="<?=base_url('assets/'); ?>img/bars-musikof.gif" width="100" height="30">
@@ -940,6 +1112,20 @@
           var warnaorder2=$('.warna2').val();
           document.location.href='https://api.whatsapp.com/send?phone=+6282179471533&text=Saya%20pesan%20template%20undangan%20digital%20MINIMALIS%20dengan%20warna%20ini%20kak%20:%20%0A%0A<?=base_url("contohundangan/classic/"); ?>'+warnaorder1.substring(1,7)+'/'+warnaorder2.substring(1,7)+'/';
         });
+
+        $(document).on('submit',function() {
+            $('.addkomentar').attr('disabled','on');
+            $('.addkomentar').text('loading..');
+          $('.btn-reply').attr('disabled','on');
+          $('.btn-reply').text('loading..');
+        })
+
+        $('.form-reply').hide();
+        $('.reply-to').on('click',function(){
+          var datareply=$(this).data('reply');
+          // $('.form-reply').hide();
+          $('.toggle-form-reply-'+datareply).slideToggle();
+        })
 
 
         $('.closeout').on('click',function(){

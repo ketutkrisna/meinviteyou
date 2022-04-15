@@ -1,16 +1,3 @@
-<?php 
-    $daftar_hari = array(
-     'Sunday' => 'Minggu',
-     'Monday' => 'Senin',
-     'Tuesday' => 'Selasa',
-     'Wednesday' => 'Rabu',
-     'Thursday' => 'Kamis',
-     'Friday' => 'Jumat',
-     'Saturday' => 'Sabtu'
-    );
-    $date=$detailundangan['tanggal_acara'];
-    $namahari = date('l', strtotime($date));
-?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -19,13 +6,13 @@
 	<meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="meINVITEyou.com">
-	<title><?= $title; ?></title>		
+	<title>Undangan ethnic</title>		
 	
-	<meta property="og:title" content="The Wedding Of <?=$detailundangan['namapanggilan_priawanita']; ?>">
-    <meta name="description" content="<?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?>"/>
-    <meta content="<?=base_url('assets/img/imgsharing/'.$detailundangan['img_sharing']); ?>" property="og:image"/>
+	<meta property="og:title" content="The Wedding Of Romeo & juliete">
+    <meta name="description" content="Minggu, 17 agustus 1945"/>
+    <meta content="<?=base_url('assets/img/imgsharing/defaultsharing.png'); ?>" property="og:image"/>
     <!-- Favicons -->
-    <link href="<?=base_url('/'); ?>assets/img/imgsharing/<?=$detailundangan['img_sharing']; ?>" rel="icon">
+    <link href="<?=base_url('/'); ?>assets/img/favicon.ico" rel="icon">
     <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <meta property="og:url" content="https://meinviteyou.com/">
 
@@ -46,18 +33,17 @@
 </head>
 <body>
 
-	<?=$this->session->flashdata('message'); ?>
 	<!-- MUSIC -->
 	<div id="buttonmusic" class="shadow"><ion-icon name='volume-high-outline'></ion-icon></div>
 	<audio id="player">
-		<source src="<?=base_url('assets/img/musikwedding/'.$detailundangan['musik_acara']); ?>" type="audio/mpeg">
+		<source src="<?=base_url('assets/img/'); ?>contoh/musik2.mp3" type="audio/mpeg">
 	</audio>
 	<!-- MUSIC END -->
     
 	<!-- HEADER -->
 	<header>
 		<div class="js-hero-slider">
-			<div class="hero hero--slide1 js-hero-slide d-flex align-items-center justify-content-center" style="background-image: url('<?=base_url('assets/img/backgroundawal/'.$detailundangan['background_welcome']); ?>');">
+			<div class="hero hero--slide1 js-hero-slide d-flex align-items-center justify-content-center" style="background-image: url('<?=base_url('assets/img/contoh/lp.jpg'); ?>');">
 			    <div class="shape">
                 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
                 		<path class="shape-fill" opacity="0.33" d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"></path>
@@ -68,11 +54,11 @@
 			</div>
 		</div>
 		<div class="hero-body">
-			<h1 class="hero_title"><?=$detailundangan['namapanggilan_priawanita']; ?></h1>
-			<p class="hero_date"><?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?></p>
+			<h1 class="hero_title">Romeo & Juliete</h1>
+			<p class="hero_date">Minggu, 30 desember 1945</p>
 			<p class="paragraph-modal">Kepada</p>
             <p class="paragraph-modal">Bapak/Ibu/Saudara/i</p>
-            <h2 class="modal-penerima"><?=$detailundangan['nama_diundang']; ?></h2>
+            <h2 class="modal-penerima">Tamu</h2>
 			<a href="#intro"class="btn btn-md btn-default btn-modal smoothScroll" id="btn-open">Buka Undangan</a>
 		</div>
 	</header>
@@ -83,7 +69,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<?=$detailundangan['ucapan_awal']; ?>
+					<h2 class="cmb-2 cmt-2 text-center heading-title" data-aos="fade-up">Om Swastiastu</h2>
+					<p class="cmb-5 paragraph text-center" data-aos="fade-up">Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Pawiwahan (Pernikahan) Putra dan Putri kami.</p>
 				</div>
 			</div>
 			
@@ -91,22 +78,24 @@
 
 				<div class="col-sm-6 mempelai mb-5">
 					<div class="mempelai-foto d-flex justify-content-center" data-aos="fade-up">
-						<img class="frame" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>" alt="mempelai 1">
+						<img class="frame" src="<?=base_url('assets/img/contoh/mpria.jpg'); ?>" alt="mempelai 1">
 					</div>
 				  
 					<br>
-					<div class="mempelai-nama" data-aos="fade-up"><?=$detailundangan['namalengkap_pria']; ?></div>
-					<?=$detailundangan['orangtua_pria']; ?>
+					<div class="mempelai-nama" data-aos="fade-up">Romeo Aguero</div>
+					<div class="mempelai-detail" data-aos="fade-up"> Putra pertama dari pasangan </div> 	
+					<div class="mempelai-ortu" data-aos="fade-up"> Bapak Romeo<br />&<br /> Ibu Romeo </div>
 					<!-- <div class="mempelai-alamat" data-aos="fade-up"> Br.Buahan, Ds. Buahan, Kec. Kintamani, Kab. Bangli, Bali<br/><br/></div> -->
 				</div>
 
 				<div class="col-sm-6 mempelai mb-5">
 					<div class="mempelai-foto d-flex justify-content-center" data-aos="fade-up">
-						<img class="frame" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>" alt="mempelai 2">
+						<img class="frame" src="<?=base_url('assets/img/contoh/mwanita.jpg'); ?>" alt="mempelai 2">
 					</div>
 					<br>
-					<div class="mempelai-nama" data-aos="fade-up"><?=$detailundangan['namalengkap_wanita']; ?></div>
-					<?=$detailundangan['orangtua_wanita']; ?>
+					<div class="mempelai-nama" data-aos="fade-up">Juliete</div>
+					<div class="mempelai-detail" data-aos="fade-up"> Putri kedua dari pasangan </div> 		
+					<div class="mempelai-ortu" data-aos="fade-up"> Bapak Juliete<br />&<br /> Ibu Juliete </div>
 					<!-- <div class="mempelai-alamat" data-aos="fade-up"> Br. Surakarma, Ds. Kintamani, Kec. Kintamani Kab. Bangli, Bali<br /><br /></div> -->
 				</div>
 
@@ -116,7 +105,7 @@
 			<div class="row countdown">
 				<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 					<h2 class="cmb-2 text-center heading-title" data-aos="fade-up">Hari Bahagia</h2>
-					<ul class="countdown-list js-countdown clearfix" data-aos="fade-up" data-aos-delay="300" data-date="<?=$detailundangan['tanggal_acara']; ?>">
+					<ul class="countdown-list js-countdown clearfix" data-aos="fade-up" data-aos-delay="300" data-date="2022/10/10">
 						<li class="countdown-list__item">
 							<span class="js-countdown-days">000</span>
 							<p>hari</p>
@@ -147,7 +136,9 @@
 			<div class="row">
 				<div class="col-md-10 offset-md-1">
 					<h3 class="quote__text font-italic" data-aos="fade-up">
-						<?=$detailundangan['informasi_modal']; ?>
+						Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau putrair naptrbhih, modamanau sve grhe.<br>
+						(Rg Veda X.85.42)<br><br>
+						Wahai pasangan suami-isteri, semoga kalian tetap bersatu dan tidak pernah terpisahkan. Semoga kalian mencapai hidup penuh kebahagiaan, tinggal di rumah yang penuh kegembiraan bersama seluruh keturunanmu.
 					</h3>
 				</div>
 			</div>
@@ -165,38 +156,38 @@
 
 					<div class="row acara">
         				<div class="col-md-10 offset-md-1">
-        					<?php if($detailundangan['tanggal_akad']=='0001-01-01'){}else{ ?>
         					<h2 class="acara-head cmt-3" data-aos="fade-up"><u>AKAD</u></h2>
-        					<p class="acara-detail mt-3" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-calendar" style="color:#6b7d69;"></i> <?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_akad'])); ?></p>
+        					<p class="acara-detail mt-3" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-calendar" style="color:#6b7d69;"></i> Minggu, 17 agustus 1945</p>
         					<!-- <h2 class="acara-head" data-aos="fade-up">Pukul</h2> -->
-        					<p class="acara-detail" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-clock" style="color:#6b7d69;"></i> Pukul, <?=$detailundangan['jam_akad']; ?></p>
+        					<p class="acara-detail" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-clock" style="color:#6b7d69;"></i> Pukul, 08:00 - SELESAI</p>
         					<p class="acara-detail" data-aos="fade-up" style="font-size:25px;"><i class="fas fa-map-marker-alt" style="color:#6b7d69;"></i></p>
-        					<p class="acara-alamat" data-aos="fade-up"> <?=$detailundangan['alamat_akad']; ?> </p>
-        					<?php if(!empty($detailundangan['map_akad'])): ?>
+        					<p class="acara-alamat" data-aos="fade-up"> Jln mars no.1000 di atas bumi </p>
         					<div class="col-md-12 text-center" data-aos="fade-up">
-    							<a href="<?=$detailundangan['map_acara']; ?>" target="_blank">
+    							<a href="" target="_blank">
     								<br />
     								<button class="btn btn-md btn-default btn-map"> Map Lokasi Akad </button>
     							</a>
         					</div>
-        					<?php endif; ?>
-        					<?php } ?>
 
         					<h2 class="acara-head cmt-3 mt-5" data-aos="fade-up"><u>RESEPSI</u></h2>
-        					<p class="acara-detail mt-3" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-calendar" style="color:#6b7d69;"></i> <?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?></p>
+        					<p class="acara-detail mt-3" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-calendar" style="color:#6b7d69;"></i> Minggu, 17 agustus 1945</p>
         					<!-- <h2 class="acara-head" data-aos="fade-up">Pukul</h2> -->
-        					<p class="acara-detail" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-clock" style="color:#6b7d69;"></i> Pukul, <?=$detailundangan['jam_acara']; ?></p>
+        					<p class="acara-detail" data-aos="fade-up" style="font-size:23px;"><i class="fas fa-clock" style="color:#6b7d69;"></i> Pukul, 10.00 s/d Selesai</p>
         					<p class="acara-detail" data-aos="fade-up" style="font-size:25px;"><i class="fas fa-map-marker-alt" style="color:#6b7d69;"></i></p>
-        					<p class="acara-alamat" data-aos="fade-up"> <?=$detailundangan['alamat_acara']; ?> </p>
-        					<?php if(!empty($detailundangan['map_acara'])): ?>
+        					<p class="acara-alamat" data-aos="fade-up"> Jln mars no.1000 di atas bumi</p>
         					<div class="col-md-12 text-center" data-aos="fade-up">
-    							<a href="<?=$detailundangan['map_acara']; ?>" target="_blank">
+    							<a href="" target="_blank">
     								<br />
     								<button class="btn btn-md btn-default btn-map"> Map Lokasi Resepsi </button>
     							</a>
         					</div>
-        					<?php endif; ?>
-        					<?=$detailundangan['ucapan_ahir']; ?>
+
+        					<p class="font-italic text-center cmt-3 cmb-2" data-aos="fade-up"> Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/ Ibu/ Saudara/i, berkenan hadir untuk memberikan doa restu kepada putra- putri kami.</p>
+        					<p class="font-italic text-center" data-aos="fade-up"> Atas kehadiran dan doa restunya kami ucapkan terimakasih </p>
+        					<h2 class="section-title text-center penutup" data-aos="fade-up">Om Shanti Shanti Shanti Om</h2>
+        					<p class="keluarga cmb-1" data-aos="fade-up">Kami yang berbahagia</p>
+        					<p class="keluarga" data-aos="fade-up">Kel. Romeo &amp; Juliete </p>
+
         				</div>
 
 				    </div>
@@ -220,12 +211,19 @@
 					<div class=" grid">
 						<div class="grid-sizer"></div>
 						<div class="gutter-sizer"></div>
-
-					<?php $aos=1; foreach($fotogaleris as $fgs): ?>
+					
 						<div class="grid-item">
-						    <a class="story-popup" href="<?=base_url('assets/img/fotogaleripelanggan/'.$fgs['foto_galeri']); ?>"><img src="<?=base_url('assets/img/fotogaleripelanggan/'.$fgs['foto_galeri']); ?>" class="stories__img" alt="<?=$detailundangan['namapanggilan_priawanita']; ?>"/></a>
+						    <a class="story-popup" href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>"><img src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" class="stories__img" alt="Romeo & Juliete"/></a>
 						</div>
-					<?php endforeach; ?>
+						<div class="grid-item">
+						    <a class="story-popup" href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>"><img src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" class="stories__img" alt="Romeo & Juliete"/></a>
+						</div>
+						<div class="grid-item">
+						    <a class="story-popup" href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>"><img src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" class="stories__img" alt="Romeo & Juliete"/></a>
+						</div>
+						<div class="grid-item">
+						    <a class="story-popup" href="<?=base_url('assets/img/contoh/galeris.jpg'); ?>"><img src="<?=base_url('assets/img/contoh/galeris.jpg'); ?>" class="stories__img" alt="Romeo & Juliete"/></a>
+						</div>
 
 					</div>
 				</div>
@@ -235,7 +233,7 @@
 	<!-- STORIES END -->
 	
 	<!-- VIDEO -->
-	<?php if(!empty($detailundangan['video_acara'])): ?>
+
 	<section class="video text-center cbg-grey js-section" id="video">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -244,7 +242,7 @@
 				    <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="ratio ratio-16x9 text-center">
-			              <?=$detailundangan['video_acara'] ?>
+			              tempat video
 			            </div>
                     </div>
                     </div>
@@ -252,7 +250,7 @@
 			</div>
 		</div>
 	</section>
-	<?php endif; ?>
+
     <!-- VIDEO END -->
 
    	<style>
@@ -293,11 +291,9 @@
 				<div class="container col-md-6 col-sm-12">
 					<h2 class="heading-title text-center cmb-5" data-aos="fade-up">Mohon Doa Restu</h2>
 
-					<?php if($detailundangan['tipe_undangan']=='mudah'){ ?>
 
-			        <form action="<?=base_url('undangan/ucapantampanama'); ?>" class="rsvp-form js-form" id="rsvp-form" method="post">
+			        <form action="" class="rsvp-form js-form" id="rsvp-form" method="post">
 			            <div class="d-md-flex justify-content-between">
-			            	<input class="form-control" type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
 							<div class="col-sm-12">
 								<div class="rsvp-form-field">
 								    <!-- <label for="nama">Masukan namamu</label> -->
@@ -331,47 +327,7 @@
                     <button type="submit" class="rsvp-form-submit js-submit addkomentar">Kirim Ucapan</button>
                 	</form>
 
-                	<?php }else{ ?>
 
-                	<form action="<?=base_url('undangan/ucapan'); ?>" class="rsvp-form js-form" id="rsvp-form" method="post">
-			            <div class="d-md-flex justify-content-between">
-			            	<input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
-							<div class="col-sm-12">
-								<div class="rsvp-form-field">
-								    <!-- <label for="nama">Masukan namamu</label> -->
-									<select class="form-select" name="namaanda" aria-label=".form-select-sm example" required>
-						              <option value="<?=$detailundangan['id_diundang']; ?>"><?=$detailundangan['nama_diundang']; ?></option>
-						            </select>
-								</div>
-								<div class="rsvp-form-field">
-								  <select class="form-select" name="absenkehadiran" aria-label=".form-select-sm example" required>
-					                <option value="" selected>Apakah akan menghadiri?</option>
-					                <option value="hadir">Menghadiri</option>
-					                <option value="tidak">Tidak menghadiri</option>
-					                <option value="ragu">Masih ragu-ragu</option>
-					              </select>
-								</div>
-								<div class="rsvp-form-field">
-								  <select class="form-select" name="jumlahkehadiran" aria-label=".form-select-sm example" required>
-					                <option value="" selected>Jumlah yang menghadiri?</option>
-					                <option value="1">1 orang</option>
-					                <option value="2">2 orang</option>
-					                <option value="3">3 orang</option>
-					                <option value="4">4 orang</option>
-					              </select>
-								</div>
-								<div class="rsvp-form-field textarea">
-								    <label style="color:#616161;" for="ucapan">Berikan ucapanmu</label>
-									<textarea class="form-control" rows="3" name="isiucapan" id="ucapan" placeholder="Ketik disini.." required></textarea>
-								</div>
-							</div>
-						</div>
-
-                	<br>
-                    <button type="submit" class="rsvp-form-submit js-submit addkomentar">Kirim Ucapan</button>
-                	</form>	
-
-                	<?php } ?>
 				</div>
 			</div>
 
@@ -410,100 +366,27 @@
 			    <div class='col-sm-12' style='margin-top: 50px;'>
 			    <h2 class='heading-title text-center cmb-3' data-aos='zoom-out-up'>Ucapan Doa</h2>
 
-			    <?php 
-
-		          $urlpucapan=$detailundangan['id_pengundang'];
-
-		          if($detailundangan['tipe_undangan']=='mudah'){
-
-		            $queryallucapana="SELECT * from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen where urlpengundang_komen=$urlpucapan order by id_komen desc";
-		            $dataucapana=$this->db->query($queryallucapana)->result_array();
-
-		            $queryucapan="SELECT max(id_komen) as maxidu FROM komen where urlpengundang_komen='$urlpucapan'";
-		            $resultmax=$this->db->query($queryucapan)->row_array();
-
-		            $queryallucapan="SELECT pengundang.*, komen.*, count(id_komenreply) as counterply from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen left join reply on komen.id_komen=reply.id_komenreply where urlpengundang_komen=$urlpucapan group by id_komen order by id_komen desc";
-		            $dataucapan=$this->db->query($queryallucapan)->result_array();
-
-		            $queryallucapancount="SELECT count(*) as ucount from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen where urlpengundang_komen='$urlpucapan'";
-		            $dataucapancount=$this->db->query($queryallucapancount)->row_array();
-
-		          }else{
-
-		            $queryallucapana="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
-		            $dataucapana=$this->db->query($queryallucapana)->result_array();
-
-		            $queryucapan="SELECT max(id_ucapan) as maxidu FROM ucapan where urlpengundang_ucapan='$urlpucapan'";
-		            $resultmax=$this->db->query($queryucapan)->row_array();
-
-		            $queryallucapan="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
-		            $dataucapan=$this->db->query($queryallucapan)->result_array();
-
-		            $queryallucapancount="SELECT count(*) as ucount from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan='$urlpucapan'";
-		            $dataucapancount=$this->db->query($queryallucapancount)->row_array();
-
-		          }
-
-		        ?>
 
 					   	<div class="whises mt-5" style="width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:5px;">
-					<?php if($dataucapancount['ucount'] <= 0){ ?>
-				        <div class="row justify-content-center mt-5" style="display:flex;justify-content:center;">
-				          <div class="col-12">
-				            <div class="text-center" style="margin-top:-20px;background-color:rgba(255,255,255,.4);border-radius:5px;">Ucapan masih kosong, silahkan kirim ucapan sekarang pada form diatas!</div>
-				          </div>
-				        </div>
-				    <?php }else{ ?>
+
 				        <div class="jumlahwhises mb-2 fw-bold text-primary text-left"></div>
 				        <div class="row justify-content-center">
-				        <?php foreach($dataucapan as $du): ?>
-			            <?php 
-			              $waktu=time() - $du['waktu_ucapan'];
-			              if($waktu<60){
-			                $post = $waktu.' detik yang lalu';
-			              }else if($waktu>=60&&$waktu<=3600){
-			                $waktumenit=$waktu/60;
-			                $post = floor($waktumenit).' menit yang lalu';
-			              }else if($waktu>=3600&&$waktu<=86400){
-			                $waktujam=$waktu/3600;
-			                $post = floor($waktujam).' jam yang lalu';
-			              }else if($waktu>=86400&&$waktu<=604800){
-			                $waktuhari=$waktu/86400;
-			                $post = floor($waktuhari).' hari yang lalu';
-			              }else if($waktu>=604800&&$waktu<=2592000){
-			                $waktuminggu=$waktu/604800;
-			                $post = floor($waktuminggu).' minggu yang lalu';
-			              }else if($waktu>=2592000&&$waktu<=31536000){
-			                $waktubulan=$waktu/2592000;
-			                $post = floor($waktubulan).' bulan yang lalu';
-			              }else{
-			                $waktutahun=$waktu/31536000;
-			                $post = floor($waktutahun).' tahun yang lalu';
-			              }
-			            ?>
 
-			            <?php if($detailundangan['tipe_undangan']=='mudah'){ ?>	
 				          <div class="col-12 countkomentar mb-3">
 				            <div class="d-flex justify-content-left" style="min-width: 100px;position:relative;">
 				              <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
 				                <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
 				              </div>
 				              <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
-				                <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-family: arial;font-size:17px;text-align:left;"><?=$du['urldiundang_komen']; ?></span><span style="font-size:11px;color:#757575;line-height:13px;font-family: arial;text-align:left;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span></div>
-				                <div class="isikomentar text-left" style="color:#757575;line-height:16px;font-size:15px;font-family: arial;text-align:left;"><?=$du['isi_komen']; ?></div>
+				                <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-family: arial;font-size:17px;text-align:left;">Mr bill gates</span><span style="font-size:11px;color:#757575;line-height:13px;font-family: arial;text-align:left;">2 hari yang lalu 21.23</span></div>
+				                <div class="isikomentar text-left" style="color:#757575;line-height:16px;font-size:15px;font-family: arial;text-align:left;">Selamat cuy!!</div>
 				               	<!-- reply -->
 			                  <div class="reply text-right d-flex justify-content-between" style="color:#757575;text-align:right;font-size:15px;background-color:white;align-items:center;">
-			                    <?php if($du['counterply']==0){ ?>
-			                      <span></span>
-			                    <?php }else{ ?>
-			                    <span class="text-info" style="font-size:11px"><?=$du['counterply']; ?> balasan</span>
-			                    <?php } ?>
-			                    <span class="reply-to text-info" data-reply="<?= $du['id_komen']; ?>" style="cursor:pointer;font-style:italic;"><i class="fas fa-reply"></i> balas</span>
+			                    <span class="text-info" style="font-size:11px">2 balasan</span>
+			                    <span class="reply-to text-info" data-reply="1" style="cursor:pointer;font-style:italic;"><i class="fas fa-reply"></i> balas</span>
 			                  </div>
-			                  <div class="form-reply toggle-form-reply-<?= $du['id_komen']; ?> bg-white">
-			                    <form class="" action="<?=base_url('undangan/replytampanama'); ?>" method="post">
-			                      <input type="hidden" name="idupengundang" value="<?= $du['urlpengundang_komen']; ?>">
-			                      <input type="hidden" name="idkomen" value="<?= $du['id_komen']; ?>">
+			                  <div class="form-reply toggle-form-reply-1 bg-white">
+			                    <form class="" action="" method="post">
 			                      <div class="row">
 			                        <div class="col-sm-12 mb-1">
 			                          <div class="">
@@ -523,90 +406,77 @@
 			                  </div>
 			                  <!-- ahir reply -->
 
-			                  <?php 
-			                    $idkomen=$du['id_komen']; 
-			                    $queryreply="SELECT * from reply where id_komenreply=$idkomen order by id_reply desc";
-			                    $datareply=$this->db->query($queryreply)->result_array();
-			                  ?>
-
-			                  <?php if($du['counterply']==0){}else{ ?>
-			                    <i style="position:absolute;bottom:-20px;transform:rotate(180deg);margin-left:-103px;font-size:20px;color:#8a8a8a;" class="fas fa-reply-all text-info"></i>
-			                  <?php } ?>
+			                    <i style="position:absolute;bottom:-20px;transform:rotate(180deg);margin-left:-122px;font-size:20px;color:#8a8a8a;" class="fas fa-reply-all text-info"></i>
 
 				              </div>
 				            </div>
 
-				            <?php foreach($datareply as $reply){ ?>
-			                <?php 
-			                $waktu=time() - $reply['waktu_reply'];
-			                if($waktu<60){
-			                  $postreply = $waktu.' detik yang lalu';
-			                }else if($waktu>=60&&$waktu<=3600){
-			                  $waktumenit=$waktu/60;
-			                  $postreply = floor($waktumenit).' menit yang lalu';
-			                }else if($waktu>=3600&&$waktu<=86400){
-			                  $waktujam=$waktu/3600;
-			                  $postreply = floor($waktujam).' jam yang lalu';
-			                }else if($waktu>=86400&&$waktu<=604800){
-			                  $waktuhari=$waktu/86400;
-			                  $postreply = floor($waktuhari).' hari yang lalu';
-			                }else if($waktu>=604800&&$waktu<=2592000){
-			                  $waktuminggu=$waktu/604800;
-			                  $postreply = floor($waktuminggu).' minggu yang lalu';
-			                }else if($waktu>=2592000&&$waktu<=31536000){
-			                  $waktubulan=$waktu/2592000;
-			                  $postreply = floor($waktubulan).' bulan yang lalu';
-			                }else{
-			                  $waktutahun=$waktu/31536000;
-			                  $postreply = floor($waktutahun).' tahun yang lalu';
-			                }
-			                ?>
-
+				            <!-- balasan tampil -->
 			                <div class="d-flex justify-content-left mb-1" style="min-width:10px;margin-left:75px;margin-top:5px;">
 			                <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:18px;background-color:#fff;align-items:center;margin-left:-0px;">
 			                  <i class="fas fa-user-check" style="width:20px;height:20px;font-size:13px;color:#7a7a7a;"></i>
 			                </div>
 			                <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
-			                  <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;text-align:left;"><?=$reply['nama_reply']; ?></span><span style="font-size:9px;color:#757575;line-height:13px;text-align:left;"><?=$postreply.' '.date('H.i',$reply['waktu_reply']); ?></span></div>
-			                  <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;text-align:left;"><?=$reply['isi_reply']; ?></div>
+			                  <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;text-align:left;">bagong</span><span style="font-size:9px;color:#757575;line-height:13px;text-align:left;">1 hari yang lalu 13.00</span></div>
+			                  <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;text-align:left;">Mantap dah</div>
 			                </div>
-			                <?php if($this->session->userdata('level_user')=='admin'){ ?>
-			                  <a style="margin-top:-20px;padding-bottom:10px;color:red;display:inline-block;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusreply/'.$du['id_komen'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang'].'/'.$reply['id_reply']); ?>">[hapus]</a>
-			                <?php } ?>
 			              	</div>
 
-			              <?php } ?>
+			              	<div class="d-flex justify-content-left mb-1" style="min-width:10px;margin-left:75px;margin-top:5px;">
+			                <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:18px;background-color:#fff;align-items:center;margin-left:-0px;">
+			                  <i class="fas fa-user-check" style="width:20px;height:20px;font-size:13px;color:#7a7a7a;"></i>
+			                </div>
+			                <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+			                  <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;text-align:left;">bagong</span><span style="font-size:9px;color:#757575;line-height:13px;text-align:left;">1 hari yang lalu 13.00</span></div>
+			                  <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;text-align:left;">Mantap dah</div>
+			                </div>
+			              	</div>
+			              	<!-- tutup balasan tampil -->
 
 				          </div>
 
-				          <?php if($this->session->userdata('level_user')=='admin'){ ?>
-				              <a style="margin-top:-20px;padding-bottom:10px;color:red;text-align:left;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapantampanama/'.$du['id_komen'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
-				          <?php } ?>
-				        <?php }else{ ?>
-				          <div class="col-12 countkomentar">
-				            <div class="d-flex mb-3" style="min-width: 100px;">
+
+				          <div class="col-12 countkomentar mb-3">
+				            <div class="d-flex justify-content-left" style="min-width: 100px;position:relative;">
 				              <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
 				                <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
 				              </div>
 				              <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
-				                <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-family: arial;font-size:17px;"><?=$du['nama_diundang']; ?></span><span style="font-size:11px;color:#757575;line-height:13px;font-family: arial;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span></div>
-				                <div class="isikomentar text-left" style="color:#757575;line-height:16px;font-size:15px;font-family: arial;"><?=$du['isi_ucapan']; ?></div>
+				                <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-family: arial;font-size:17px;text-align:left;">Mr nyamang</span><span style="font-size:11px;color:#757575;line-height:13px;font-family: arial;text-align:left;">3 hari yang lalu 20.23</span></div>
+				                <div class="isikomentar text-left" style="color:#757575;line-height:16px;font-size:15px;font-family: arial;text-align:left;">Selamat cuy!!</div>
+				               	<!-- reply -->
+			                  <div class="reply text-right d-flex justify-content-between" style="color:#757575;text-align:right;font-size:15px;background-color:white;align-items:center;">
+			                    <span class="text-info" style="font-size:11px"></span>
+			                    <span class="reply-to text-info" data-reply="2" style="cursor:pointer;font-style:italic;"><i class="fas fa-reply"></i> balas</span>
+			                  </div>
+			                  <div class="form-reply toggle-form-reply-2 bg-white">
+			                    <form class="" action="" method="post">
+			                      <div class="row">
+			                        <div class="col-sm-12 mb-1">
+			                          <div class="">
+			                            <input style="height: 25px;border: 1px solid #ddd;color:#616161;border-radius:10px;font-family: 'Jua', sans-serif;" class="form-control" type="text" name="namareply" placeholder="masukan nama.." required>
+			                          </div>
+			                        </div>
+			                      </div>
+			                      <div class="row">
+			                        <div class="col-sm-12 mb-1">
+			                            <textarea class="form-control" placeholder="ketikan balasan disini.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:10px;font-family: 'Jua', sans-serif;" name="isireply" autocomplete="off" required></textarea>
+			                        </div>
+			                      </div>
+			                      <div class="d-flex" style="justify-content:right">
+			                        <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+			                      </div>
+			                    </form>
+			                  </div>
+			                  <!-- ahir reply -->
+
+
 				              </div>
 				            </div>
+
 				          </div>
 
-				          <?php if($this->session->userdata('level_user')=='admin'){ ?>
-				              <a style="margin-top:-20px;padding-bottom:10px;color:red;text-align:left;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapan/'.$du['id_ucapan'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
-				          <?php } ?>
-				        <?php } ?>
-
-				        <?php endforeach; ?>
-
-				        </div>
-
-				        <div class="viewallkomentar text-primary text-right" style="cursor:pointer;color:blue;"><u>Tampilkan semua ucapan</u></div>
-				        <div class="hidellkomentar text-primary text-right" style="cursor:pointer;display:none;"><u>Tampilkan sebagian</u></div>
-				    <?php } ?>
+				   
 				      	</div><!-- tutup whises --> 
 			    	</div>
 			    </div>			

@@ -316,6 +316,19 @@
           background-color: #fff;
           /*transform: skew(.312rad);*/
         }
+        .tampilkomentreply::before {
+          content: "";
+          top:8px;
+          left:-4px;
+          z-index: 0;
+          position: absolute;
+          height: 12px;
+          width: 12px;
+          box-shadow:-2px -2px 0px rgba(0,0,0,.1);
+          transform: rotate(-45deg);
+          background-color: #fff;
+          /*transform: skew(.312rad);*/
+        }
       </style>
 
     <?php if(!empty($detailundangan['rekening_pengundang'])): ?>
@@ -334,6 +347,7 @@
       </div><!-- tutup rekening --> 
     <?php endif; ?>
 
+
       <div class="whises mt-5" style="background-image:url('<?=base_url('assets/temaundangan/minimalis/img/bgtexture.jpg'); ?>');width:100%;padding:10px;box-shadow:0 0 7px rgba(0,0,0,.2);border-radius:5px;">
         <div class="mb-3 mt-2">
           <h5 class="warnatema2" style="box-shadow:0 0 7px rgba(0,0,0,.3);display:inline;padding:5px;border-radius:3px;color:#eee;background-color:#b5820b;font-family: 'Jua', sans-serif;font-weight:bold;">Friend Whises</h5>
@@ -345,13 +359,13 @@
 
           if($detailundangan['tipe_undangan']=='mudah'){
 
-            $queryallucapana="SELECT * from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen order by id_komen desc";
+            $queryallucapana="SELECT * from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen where urlpengundang_komen=$urlpucapan order by id_komen desc";
             $dataucapana=$this->db->query($queryallucapana)->result_array();
 
             $queryucapan="SELECT max(id_komen) as maxidu FROM komen where urlpengundang_komen='$urlpucapan'";
             $resultmax=$this->db->query($queryucapan)->row_array();
 
-            $queryallucapan="SELECT * from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen order by id_komen desc";
+            $queryallucapan="SELECT pengundang.*, komen.*, count(id_komenreply) as counterply from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen left join reply on komen.id_komen=reply.id_komenreply where urlpengundang_komen=$urlpucapan group by id_komen order by id_komen desc";
             $dataucapan=$this->db->query($queryallucapan)->result_array();
 
             $queryallucapancount="SELECT count(*) as ucount from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen where urlpengundang_komen='$urlpucapan'";
@@ -412,16 +426,98 @@
 
           <?php if($detailundangan['tipe_undangan']=='mudah'){ ?>
 
-            <div class="col-12 countkomentar">
-              <div class="d-flex mb-3" style="min-width: 100px;">
+            <div class="col-12 countkomentar mb-3">
+              <div class="d-flex" style="min-width: 100px;">
                 <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
                   <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
                 </div>
                 <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                   <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;"><?=$du['urldiundang_komen']; ?></span><span style="font-size:11px;color:#757575;line-height:13px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span></div>
                   <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;"><?=$du['isi_komen']; ?></div>
+                  <!-- reply -->
+                  <div class="reply text-right d-flex justify-content-between" style="color:#757575;text-align:right;font-size:15px;background-color:white;align-items:center;">
+                    <?php if($du['counterply']==0){ ?>
+                      <span></span>
+                    <?php }else{ ?>
+                    <span class="text-info" style="font-size:11px"><?=$du['counterply']; ?> balasan</span>
+                    <?php } ?>
+                    <span class="reply-to text-info" data-reply="<?= $du['id_komen']; ?>" style="cursor:pointer;font-style:italic;"><i class="fas fa-reply"></i> balas</span>
+                  </div>
+                  <div class="form-reply toggle-form-reply-<?= $du['id_komen']; ?> bg-white">
+                    <form class="" action="<?=base_url('undangan/replytampanama'); ?>" method="post">
+                      <input type="hidden" name="idupengundang" value="<?= $du['urlpengundang_komen']; ?>">
+                      <input type="hidden" name="idkomen" value="<?= $du['id_komen']; ?>">
+                      <div class="row">
+                        <div class="col-sm-12 mb-1">
+                          <div class="">
+                            <input style="height: 25px;border: 1px solid #ddd;color:#616161;border-radius:10px;font-family: 'Jua', sans-serif;" class="form-control" type="text" name="namareply" placeholder="masukan nama.." required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 mb-1">
+                            <textarea class="form-control" placeholder="ketikan balasan disini.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:10px;font-family: 'Jua', sans-serif;" name="isireply" autocomplete="off" required></textarea>
+                        </div>
+                      </div>
+                      <div class="d-flex" style="justify-content:right">
+                        <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- ahir reply -->
+                  <?php 
+                    $idkomen=$du['id_komen']; 
+                    $queryreply="SELECT * from reply where id_komenreply=$idkomen order by id_reply desc";
+                    $datareply=$this->db->query($queryreply)->result_array();
+                  ?>
+
+                  <?php if($du['counterply']==0){}else{ ?>
+                    <i style="position:absolute;bottom:-20px;transform:rotate(180deg);margin-left:-15px;font-size:20px;color:#8a8a8a;" class="fas fa-reply-all text-info"></i>
+                  <?php } ?>
+                  
                 </div>
               </div>
+               
+              <?php foreach($datareply as $reply){ ?>
+              <?php 
+                $waktu=time() - $reply['waktu_reply'];
+                if($waktu<60){
+                  $postreply = $waktu.' detik yang lalu';
+                }else if($waktu>=60&&$waktu<=3600){
+                  $waktumenit=$waktu/60;
+                  $postreply = floor($waktumenit).' menit yang lalu';
+                }else if($waktu>=3600&&$waktu<=86400){
+                  $waktujam=$waktu/3600;
+                  $postreply = floor($waktujam).' jam yang lalu';
+                }else if($waktu>=86400&&$waktu<=604800){
+                  $waktuhari=$waktu/86400;
+                  $postreply = floor($waktuhari).' hari yang lalu';
+                }else if($waktu>=604800&&$waktu<=2592000){
+                  $waktuminggu=$waktu/604800;
+                  $postreply = floor($waktuminggu).' minggu yang lalu';
+                }else if($waktu>=2592000&&$waktu<=31536000){
+                  $waktubulan=$waktu/2592000;
+                  $postreply = floor($waktubulan).' bulan yang lalu';
+                }else{
+                  $waktutahun=$waktu/31536000;
+                  $postreply = floor($waktutahun).' tahun yang lalu';
+                }
+              ?>
+              <div class="d-flex mb-1" style="min-width:10px;margin-left:75px;margin-top:5px;">
+                <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:18px;background-color:#fff;align-items:center;">
+                  <i class="fas fa-user-check" style="width:20px;height:20px;font-size:13px;color:#7a7a7a;"></i>
+                </div>
+                <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+                  <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;"><?=$reply['nama_reply']; ?></span><span style="font-size:9px;color:#757575;line-height:13px;"><?=$postreply.' '.date('H.i',$reply['waktu_reply']); ?></span></div>
+                  <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;"><?=$reply['isi_reply']; ?></div>
+                </div>
+                <?php if($this->session->userdata('level_user')=='admin'){ ?>
+                  <a style="margin-top:-20px;padding-bottom:10px;color:red;display:inline-block;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusreply/'.$du['id_komen'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang'].'/'.$reply['id_reply']); ?>">[hapus]</a>
+                <?php } ?>
+              </div>
+              <?php } ?>
+
+
             </div>
           <?php if($this->session->userdata('level_user')=='admin'){ ?>
               <a style="margin-top:-20px;padding-bottom:10px;color:red;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapantampanama/'.$du['id_komen'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
@@ -490,7 +586,7 @@
         </div>
       <?php if($detailundangan['tipe_undangan']=='mudah'){ ?>
 
-        <form action="<?=base_url('undangan/ucapantampanama'); ?>" method="post" data-aos="fade-down" data-aos-duration="1000">
+        <form data-aos="fade-down" data-aos-duration="1000" action="<?=base_url('undangan/ucapantampanama'); ?>" method="post">
           <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
           <!-- <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>"> -->
           <div class="row">
@@ -534,7 +630,7 @@
 
       <?php }else{ ?>
 
-        <form action="<?=base_url('undangan/ucapan'); ?>" method="post" data-aos="fade-down" data-aos-duration="1000">
+        <form action="<?=base_url('undangan/ucapan'); ?>" method="post">
           <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
           <div class="row">
             <div class="col-sm-6 mb-3">
@@ -848,6 +944,21 @@
           }
         }
 
+
+        $(document).on('submit',function() {
+            $('.addkomentar').attr('disabled','on');
+            $('.addkomentar').text('loading..');
+          $('.btn-reply').attr('disabled','on');
+          $('.btn-reply').text('loading..');
+        })
+
+        $('.form-reply').hide();
+        $('.reply-to').on('click',function(){
+          var datareply=$(this).data('reply');
+          // $('.form-reply').hide();
+          $('.toggle-form-reply-'+datareply).slideToggle();
+        })
+
         // listen for events
         window.addEventListener("load", callbackFunc);
         window.addEventListener("resize", callbackFunc);
@@ -1009,6 +1120,13 @@
           var warnaorder2=$('.warna2').val();
           document.location.href='https://api.whatsapp.com/send?phone=+6282179471533&text=Saya%20pesan%20template%20undangan%20digital%20MINIMALIS%20dengan%20warna%20ini%20kak%20:%20%0A%0A<?=base_url("contohundangan/classic/"); ?>'+warnaorder1.substring(1,7)+'/'+warnaorder2.substring(1,7)+'/';
         });
+
+
+        // window.on('load',function(){
+        //   setTimeout(function() {
+        //     $('.addkomentar').attr('disabled','on');
+        //   }, 100);
+        // })
 
 
         $('.closeout').on('click',function(){

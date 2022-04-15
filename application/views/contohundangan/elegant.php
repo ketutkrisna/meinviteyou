@@ -383,6 +383,35 @@
           background-color: #fff;
           /*transform: skew(.312rad);*/
         }
+        .tampilkomentreply::before {
+          content: "";
+          top:8px;
+          left:-4px;
+          z-index: 0;
+          position: absolute;
+          height: 12px;
+          width: 12px;
+          box-shadow:-2px -2px 0px rgba(0,0,0,.1);
+          transform: rotate(-45deg);
+          background-color: #fff;
+          /*transform: skew(.312rad);*/
+        }
+        /*.reply .form-reply, textarea.form-control {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 1px solid rgba(11,94,215, 0.6);
+        }
+        .reply .form-reply, textarea.form-control:focus {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 1px solid rgba(11,94,215, 0.6);
+        }
+        .reply .form-reply input.form-control {
+          background-color: rgba(222, 222, 222, 0.2);
+          color: #616161;
+          border: 1px solid rgba(11,94,215, 0.6);
+          border-radius:50%;
+        }*/
       </style>
 
     <div class="quesbook" style="min-height:500px;background-image:url('<?=base_url('assets/temaundangan/engagement/elegant/'); ?>img/body-bg.png');padding-bottom:70px;">
@@ -396,88 +425,183 @@
       <div class="container">
       <div class="row">
         <div class="col-12 mt-3">
+        <div class="jumlahwhises" style="font-weight:bold;color:#00E0D6;font-size:18px;"></div>
           <div class="boxcoment" style="background-color:#fff;min-height:300px;border-radius:10px;padding:10px;box-shadow:0px 0px 2px rgba(0,0,0,.3);">
             <div class="row">
-              <div class="col-12 countkomentar" data-aos="fade-down" data-aos-duration="500">
-                <div class="d-flex mb-3" style="min-width: 100px;">
+              <div class="col-12 countkomentar mb-3" data-aos="fade-down" data-aos-duration="500">
+                <div class="d-flex" style="min-width: 100px;">
                   <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
                     <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
                   </div>
                   <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                     <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Mr.Bill Gates</span><span style="font-size:11px;color:#757575;line-height:13px;">3 jam yang lalu 14.13</span></div>
                     <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">Good Luck!</div>
+                  <!-- reply -->
+                    <div class="reply text-right d-flex justify-content-between" style="color:#757575;text-align:right;font-size:15px;background-color:white;align-items:center;">
+                      <span class="text-info" style="font-size:11px">2 balasan</span>
+                      <span class="reply-to text-info" data-reply="1" style="cursor:pointer;font-style:italic;"><i class="fas fa-reply"></i> balas</span>
+                    </div>
+                    <div class="form-reply toggle-form-reply-1 bg-white">
+                      <form class="" action="" method="post">
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                            <div class="">
+                              <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:10px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                              <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:10px;" required></textarea>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="justify-content:right">
+                          <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- ahir reply -->
+                    <i style="position:absolute;bottom:-20px;transform:rotate(180deg);margin-left:-15px;font-size:20px;color:#8a8a8a;" class="fas fa-reply-all text-info"></i>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-1" style="min-width:10px;margin-left:75px;margin-top:5px;">
+                  <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:20px;background-color:#fff;align-items:center;">
+                    <i class="fas fa-user-check" style="width:30px;height:30px;font-size:13px;color:#7a7a7a;"></i>
+                  </div>
+                  <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+                    <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;">Steven</span><span style="font-size:9px;color:#757575;line-height:13px;">10 jam yang lalu 17.57</span></div>
+                    <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  </div>
+                </div>
+                <div class="d-flex mb-1" style="min-width:10px;margin-left:75px;margin-top:5px;">
+                  <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:20px;background-color:#fff;align-items:center;">
+                    <i class="fas fa-user-check" style="width:30px;height:30px;font-size:13px;color:#7a7a7a;"></i>
+                  </div>
+                  <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+                    <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;">Steven</span><span style="font-size:9px;color:#757575;line-height:13px;">10 jam yang lalu 17.57</span></div>
+                    <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   </div>
                 </div>
               </div>
-              <div class="col-12 countkomentar" data-aos="fade-down" data-aos-duration="500">
-                <div class="d-flex mb-3" style="min-width: 100px;">
+              <div class="col-12 countkomentar mb-3" data-aos="fade-down" data-aos-duration="500">
+                <div class="d-flex" style="min-width: 100px;">
                   <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
                     <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
                   </div>
                   <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                     <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Steven</span><span style="font-size:11px;color:#757575;line-height:13px;">10 jam yang lalu 17.57</span></div>
                     <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">HWD!</div>
+                    <!-- reply -->
+                    <div class="reply text-right" style="color:#757575;text-align:right;font-size:15px;font-style:italic;background-color:white;">
+                      <span class="reply-to text-info" data-reply="2" style="cursor:pointer;"><i class="fas fa-reply"></i> reply</span>
+                    </div>
+                    <div class="form-reply toggle-form-reply-2 bg-white">
+                      <form class="" action="" method="post">
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                            <div class="">
+                              <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:10px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                              <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:10px;" required></textarea>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="justify-content:right">
+                          <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- ahir reply -->
                   </div>
                 </div>
               </div>
-              <div class="col-12 countkomentar" data-aos="fade-down" data-aos-duration="500">
-                <div class="d-flex mb-3" style="min-width: 100px;">
+              <div class="col-12 countkomentar mb-3" data-aos="fade-down" data-aos-duration="500">
+                <div class="d-flex" style="min-width: 100px;">
                   <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
                     <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
                   </div>
                   <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                     <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Arsi</span><span style="font-size:11px;color:#757575;line-height:13px;">2 hari yang lalu 18.22</span></div>
                     <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">Selamat ya!</div>
+                    <!-- reply -->
+                    <div class="reply text-right" style="color:#757575;text-align:right;font-size:15px;font-style:italic;background-color:white;">
+                      <span class="reply-to text-info" data-reply="3" style="cursor:pointer;"><i class="fas fa-reply"></i> reply</span>
+                    </div>
+                    <div class="form-reply toggle-form-reply-3 bg-white">
+                      <form class="" action="" method="post">
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                            <div class="">
+                              <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:10px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                              <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:10px;" required></textarea>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="justify-content:right">
+                          <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- ahir reply -->
                   </div>
                 </div>
               </div>
-              <div class="col-12 countkomentar" data-aos="fade-down" data-aos-duration="500">
-                <div class="d-flex mb-3" style="min-width: 100px;">
+              <div class="col-12 countkomentar mb-3" data-aos="fade-down" data-aos-duration="500">
+                <div class="d-flex" style="min-width: 100px;">
                   <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
                     <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
                   </div>
                   <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
                     <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Roman</span><span style="font-size:11px;color:#757575;line-height:13px;">3 hari yang lalu 15.44</span></div>
                     <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">H.W.D!</div>
+                    <!-- reply -->
+                    <div class="reply text-right" style="color:#757575;text-align:right;font-size:15px;font-style:italic;background-color:white;">
+                      <span class="reply-to text-info" data-reply="4" style="cursor:pointer;"><i class="fas fa-reply"></i> reply</span>
+                    </div>
+                    <div class="form-reply toggle-form-reply-4 bg-white">
+                      <form class="" action="" method="post">
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                            <div class="">
+                              <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;border-radius:10px;" class="form-control" type="text" name="namareply" placeholder="ketik nama.." required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 mb-1">
+                              <textarea class="form-control" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 45px;color:#616161;background-color:white;border: 1px solid #ddd;border-radius:10px;" required></textarea>
+                          </div>
+                        </div>
+                        <div class="d-flex" style="justify-content:right">
+                          <button style="padding:3px;" type="submit" name="ok-reply" class="btn btn-sm btn-primary btn-reply">kirim</button>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- ahir reply -->
                   </div>
                 </div>
               </div>
-              <div class="col-12 countkomentar" data-aos="fade-down" data-aos-duration="500">
-                <div class="d-flex mb-3" style="min-width: 100px;">
-                  <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
-                    <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
-                  </div>
-                  <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
-                    <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Roman</span><span style="font-size:11px;color:#757575;line-height:13px;">3 hari yang lalu 15.44</span></div>
-                    <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">H.W.D!</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 countkomentar" data-aos="fade-down" data-aos-duration="500">
-                <div class="d-flex mb-3" style="min-width: 100px;">
-                  <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
-                    <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
-                  </div>
-                  <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
-                    <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Roman</span><span style="font-size:11px;color:#757575;line-height:13px;">3 hari yang lalu 15.44</span></div>
-                    <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">H.W.D!</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 countkomentar" data-aos="fade-down" data-aos-duration="500">
-                <div class="d-flex mb-3" style="min-width: 100px;">
-                  <div class="imagekomen text-center" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:20px;line-height:30px;background-color:#fff;">
-                    <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;"></i>
-                  </div>
-                  <div class="tampilkoment" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:6px 12px 6px 12px;min-width:200px;position:relative;background-color:#fff;">
-                    <div class="nama d-flex justify-content-between align-items-center mb-1"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;">Roman</span><span style="font-size:11px;color:#757575;line-height:13px;">3 hari yang lalu 15.44</span></div>
-                    <div class="isikomentar" style="color:#757575;line-height:16px;font-size:15px;">H.W.D!</div>
-                  </div>
-                </div>
-              </div>
+
             </div>
-            <div class="tampilkansemua d-flex justify-content-between" style="font-size:17px;">
-              <span class="jumlahwhises" style="font-weight:bold;color:#8a8a8a;"></span>
+            <div class="tampilkansemua d-flex justify-content-center" style="font-size:17px;">
               <span class="viewallkomentar"><a href="#!">View all whises</a></span>
               <span class="hideallkomentar" style="cursor:pointer;display:none;"><a href="#!">Short</a></span>
             </div>
@@ -505,6 +629,16 @@
         background: rgba(0, 0, 0, 0.3);
         color: #fff;
       }
+      .rsvp input.form-control {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #00E0D6;
+        border: 3px solid rgba(0, 214, 222, 0.8);
+        border-radius:30px;
+        height:60px;
+      }
+      .inputtext::-webkit-input-placeholder{
+        color: #00E0D6;
+      }
     </style>
 
     <div class="rsvp" style="min-height:500px;background-image:url('<?=base_url('assets/temaundangan/engagement/elegant/'); ?>img/sectionright.png');padding-bottom:70px;background-size:cover;background-attachment: fixed;">
@@ -518,15 +652,13 @@
       <div class="container">
       <div class="row mt-3">
         <div class="col-12">
-          <form data-aos="fade-down" data-aos-duration="1000">
+          <form data-aos="fade-down" action="" method="post" data-aos-duration="1000">
             <div class="row">
               <div class="col-sm-6 mb-3">
-                <select class="form-select" aria-label=".form-select-sm example">
-                  <option value="1">Mr. Toni stark</option>
-                </select>
+                <input class="form-control inputtext" type="text" name="namaanda" placeholder="Ketikan nama anda disini.." required>
               </div>
               <div class="col-sm-6 mb-3">
-                <select class="form-select" aria-label=".form-select-sm example">
+                <select class="form-select" aria-label=".form-select-sm example" required>
                   <option selected>Apakah akan menghadiri?</option>
                   <option value="1">Menghadiri</option>
                   <option value="2">Tidak menghadiri</option>
@@ -536,7 +668,7 @@
             </div>
             <div class="row">
               <div class="col-sm-6 mb-3">
-                <select class="form-select" aria-label=".form-select-sm example">
+                <select class="form-select" aria-label=".form-select-sm example" required>
                   <option selected>Jumlah yang menghadiri?</option>
                   <option value="1">1 orang</option>
                   <option value="2">2 orang</option>
@@ -548,14 +680,14 @@
             <div class="row">
               <div class="col-sm-12 mb-3">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
                   <label for="floatingTextarea2" style="color:#00E0D6!important">Ketikan ungkapan</label>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-12">
-                <button type="button" class="btn btn-primary btn-sm float-end cobain">Kirim</button>
+                <button type="submit" class="btn btn-primary btn-sm float-end cobain addkomentar">Kirim</button>
               </div>
             </div>
           </form>
@@ -677,7 +809,7 @@
       </div>
     </div>
     <audio id="musikvalue" loop style="width:100%">
-      <source src="<?=base_url('assets/img/contoh/rembulan.MP3'); ?>" type="audio/mpeg">
+      <source src="<?=base_url('assets/img/'); ?>contoh/musik2.mp3" type="audio/mpeg">
     </audio>
 
     <style>
@@ -693,6 +825,16 @@
       <a href="#home" class="page-scroll" style="width:90px;height:90px;">
         <i style="font-size:47px;line-height:55px;opacity:.4;color:#000;" class="fas fa-arrow-circle-up"></i>
       </a>
+    </div>
+
+    <div class="text-primary" style="position:fixed;bottom:25px;margin-left:10px;border-radius:50%;z-index:1020;">
+      <div style="background-color:rgba(26, 199, 84,);padding:4px;border-radius:50%">
+      <span style="z-index:1020" class="cobain" data-bs-placement="right" data-bs-toggle="popover" title="Kirim ucapan via WA" data-bs-html="true" data-bs-content="
+          <img class='imgradius' src='<?=base_url('assets/img/contoh/mpria.jpg'); ?>' width='25'><a class='text-success' href='#'> Mempelai Pria</a><br><img class='imgradius' src='<?=base_url('assets/img/contoh/mwanita.jpg'); ?>' width='25'><a class='text-success' href='#'> Mempelai Wanita</a>
+      ">
+        <i class="fab fa-whatsapp" style="font-size:55px;color:#00c45c;text-shadow:-1px -1px 0 white;"></i>
+      </span>
+      </div>
     </div>
 
 
@@ -730,6 +872,7 @@
         });
 
         $('#staticBackdrop').modal('show');
+        $('.cobain').popover();
 
         $('.byebye').removeClass('byebye');
         // $('.imgmy').addClass()
@@ -804,6 +947,20 @@
           }, 500);
           e.preventDefault();
         });
+
+        $(document).on('submit',function() {
+            $('.addkomentar').attr('disabled','on');
+            $('.addkomentar').text('loading..');
+          $('.btn-reply').attr('disabled','on');
+          $('.btn-reply').text('loading..');
+        })
+
+        $('.form-reply').hide();
+        $('.reply-to').on('click',function(){
+          var datareply=$(this).data('reply');
+          // $('.form-reply').hide();
+          $('.toggle-form-reply-'+datareply).slideToggle();
+        })
 
 
       });

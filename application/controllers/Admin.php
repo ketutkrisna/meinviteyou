@@ -1160,13 +1160,15 @@ class Admin extends CI_Controller {
 			redirect('engagement/'.$urlpengundang.'/'.$urldiundang);
 		}
 		return false;
-		return false;
 	}
 
 	public function hapusucapantampanama($iducapan,$urlpengundang,$urldiundang)
 	{
 		$this->db->where('id_komen', $iducapan);
 		$this->db->delete('komen');
+
+		$this->db->where('id_komenreply', $iducapan);
+		$this->db->delete('reply');
 
 		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
 		$tema=$datacek['tema_template'];
@@ -1176,6 +1178,34 @@ class Admin extends CI_Controller {
 			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
 			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
 			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ucapan <strong>Berhasil</strong> dihapus!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
+		if($datacek['jenis_acara']=='pernikahan'){
+			redirect('wedding/'.$urlpengundang.'/'.$urldiundang);
+		}else if($datacek['jenis_acara']=='tunangan'){
+			redirect('engagement/'.$urlpengundang.'/'.$urldiundang);
+		}
+		return false;
+	}
+
+	public function hapusreply($iducapan,$urlpengundang,$urldiundang,$idreply)
+	{
+		// $this->db->where('id_komen', $iducapan);
+		// $this->db->delete('komen');
+
+		$this->db->where('id_reply', $idreply);
+		$this->db->delete('reply');
+
+		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
+		$tema=$datacek['tema_template'];
+
+		$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Balasan <strong>Berhasil</strong> dihapus!</span>
 			    </span>
 			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
 			  </div>

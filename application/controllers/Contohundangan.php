@@ -52,5 +52,12 @@ class Contohundangan extends CI_Controller {
 		$this->load->view('contohundangan/elegant', $data);
 	}
 
+	public function ethnic($warna1='eeeeee', $warna2='b5820b')
+	{
+		$data['warna1']=$warna1;
+		$data['warna2']=$warna2;
+		$this->load->view('contohundangan/ethnic', $data);
+	}
+
 
 }

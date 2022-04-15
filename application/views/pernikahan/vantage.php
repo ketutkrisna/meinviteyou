@@ -29,7 +29,9 @@
   <link href="<?=base_url('/'); ?>assets/img/imgsharing/<?=$detailundangan['img_sharing']; ?>" rel="icon">
   <link href="<?=base_url('/'); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- link rel -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alice&family=Boogaloo&family=Comfortaa:wght@700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/materialize.css">
   <link rel="stylesheet" href="<?=base_url('assets/temaundangan/vantage/'); ?>css/timeline.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Satisfy&display=swap" rel="stylesheet">
@@ -102,6 +104,36 @@
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       transform-style: preserve-3d;
+    }
+
+    .myshadow {
+      box-shadow: 0 0 10px rgba(0,0,0,.3);
+    }
+    .tampilkoment::before {
+      content: "";
+      top:8px;
+      left:-7px;
+      z-index: 0;
+      position: absolute;
+      height: 12px;
+      width: 15px;
+      box-shadow:-2px -2px 0px rgba(0,0,0,.1);
+      transform: rotate(-30deg) skew(.500rad);
+      background-color: #fff;
+      /*transform: skew(.312rad);*/
+    }
+    .tampilkomentreply::before {
+      content: "";
+      top:8px;
+      left:-4px;
+      z-index: 0;
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      box-shadow:-2px -2px 0px rgba(0,0,0,.1);
+      transform: rotate(-45deg);
+      background-color: #fff;
+      /*transform: skew(.312rad);*/
     }
 
     @keyframes putar {
@@ -179,11 +211,11 @@
                     <div class="times center-align" style="margin-right:6px;">
                         <div class="days_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;font-family: 'Boogaloo', cursive;">
                                 <div class="digit"></div>
                                 <div class="digit"></div>
                                 </div>
-                                <span style="color:#ddd;" class="note dash_title">Hari</span>
+                                <span style="color:#ddd;font-family: 'Boogaloo', cursive;" class="note dash_title">Hari</span>
                             </div>
                         </div>
                     </div>
@@ -191,11 +223,11 @@
                     <div class="times" style="margin:0 6px 0 6px;">
                         <div class="hours_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;font-family: 'Boogaloo', cursive;">
                                 <div class="digit"></div>
                                 <div class="digit"></div>
                                 </div>
-                                <span style="color:#ddd;" class="note dash_title">Jam</span>
+                                <span style="color:#ddd;font-family: 'Boogaloo', cursive;" class="note dash_title">Jam</span>
                             </div>
                         </div>
                     </div>
@@ -203,11 +235,11 @@
                     <div class="times" style="margin:0 6px 0 6px;">
                         <div class="minutes_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;font-family: 'Boogaloo', cursive;">
                                 <div class="digit"></div>
                                 <div class="digit"></div>
                                 </div>
-                                <span style="color:#ddd;" class="note dash_title">Menit</span>
+                                <span style="color:#ddd;font-family: 'Boogaloo', cursive;" class="note dash_title">Menit</span>
                             </div>
                         </div>
                     </div>
@@ -215,11 +247,11 @@
                     <div class="times" style="margin-left:6px;">
                         <div class="seconds_dash" data-vp-add-class="visible bounceIn" data-vp-offset="0">
                             <div class="wrapper-digit">
-                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;">
+                                <div class="white-text" style="display:flex;justify-content:center;font-size:23px;font-weight:bold;font-family: 'Boogaloo', cursive;">
                                 <div class="digit"></div>
                                 <div class="digit"></div>
                                 </div>
-                                <span style="color:#ddd;" class="note dash_title">Detik</span>
+                                <span style="color:#ddd;font-family: 'Boogaloo', cursive;" class="note dash_title">Detik</span>
                             </div>
                         </div>
                     </div>
@@ -261,7 +293,7 @@
       <div class="container">
       <div class="col s12 center-align">
         <div class="warnakotak z-depth-1" style="border-radius:7px;padding:3px;margin-top:20px;background-color:#eee"> 
-        <p class="warnatitle" style="font-family: 'Roboto', cursive;font-size:17px;color:#3b3d3b;padding:0 5px 0 5px;"><?=$detailundangan['ucapan_awal']; ?></p>
+        <p class="warnatitle" style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;padding:0 5px 0 5px;"><?=$detailundangan['ucapan_awal']; ?></p>
         </div>
       </div>
       </div>
@@ -275,17 +307,21 @@
         .anakke{
           font-size:14px;
           padding:0 7px 0 7px;
+          font-family: 'Boogaloo',cursive;
+          color:#616161;
         }
         .ortu{
           font-size:16px;
           padding:0 7px 0 7px;
+          font-family: 'Boogaloo',cursive;
+          color:#616161;
         }
       </style>
 
       <div class="col s12 l5 center-align" data-aos="flip-left" data-aos-duration="1000" style="">
         <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_pria']); ?>" alt="mempelai" width="150" style="border-radius:50%;"><br>
-        <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;"><?=$detailundangan['namalengkap_pria']; ?></span><br>
-        <span style="background-color:rgba(255,255,255,.7);">
+        <span style="font-size:29px;font-family: 'Boogaloo', cursive;color:#616161;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;"><?=$detailundangan['namalengkap_pria']; ?></span><br>
+        <span style="background-color:rgba(255,255,255,.7);font-family: 'Boogaloo', cursive;font-size:18px;">
           <?=$detailundangan['orangtua_pria']; ?>
         </span>
       </div>
@@ -300,8 +336,8 @@
       </div>
       <div class="col s12 l5 center-align" data-aos="flip-right" data-aos-duration="1000" style="">
         <img class="z-depth-1 img-thumbnail" src="<?=base_url('assets/img/fotopelanggan/'.$detailundangan['foto_wanita']); ?>" alt="mempelai" width="150" style="border-radius:50%;"><br>
-        <span style="font-size:29px;font-family: 'Satisfy', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;"><?=$detailundangan['namalengkap_wanita']; ?></span><br>
-        <span style="background-color:rgba(255,255,255,.7);">
+        <span style="font-size:29px;font-family: 'Boogaloo', cursive;background-color:rgba(255,255,255,.7);padding:0 10px 0 10px;border-radius:5px;color:#616161;"><?=$detailundangan['namalengkap_wanita']; ?></span><br>
+        <span style="background-color:rgba(255,255,255,.7);font-family: 'Boogaloo', cursive;font-size:18px;">
           <?=$detailundangan['orangtua_wanita']; ?>
         </span>
       </div>
@@ -342,7 +378,7 @@
 
       <div class="col s12 l6 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
         <div class="warnakotak" style="background-color:#eee;border-radius:9px;padding:3px;">
-          <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;">Akad</h5>
+          <h5 class="warnatitle" style="font-size:26px;font-family: 'Boogaloo', cursive;color:#616161;">Akad</h5>
         </div>
         <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:1px">
           <div class="card-image" style="text-align:center;">
@@ -352,16 +388,16 @@
             <div class="card-content center-align">
               <span style="display:flex;justify-content:center;">
                 <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">event</i>
-                <span style="font-size:18px;color:#19191a;"><?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_akad'])); ?></span>
+                <span style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;"><?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_akad'])); ?></span>
               </span>
               <span style="display:flex;justify-content:center;margin-top:5px">
                 <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">schedule</i>
-                <span style="font-size:18px;color:#19191a;"><?=$detailundangan['jam_akad']; ?></span>
+                <span style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;"><?=$detailundangan['jam_akad']; ?></span>
               </span>
             </div>
             <div class="card-action" style="">
               <i class="material-icons red-text" style="font-size:35px;line-height:15px;">place</i><br>
-              <span style="font-size:18px;line-height:20px;"><?=$detailundangan['alamat_akad']; ?></span><br>
+              <span style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;line-height:20px;"><?=$detailundangan['alamat_akad']; ?></span><br>
             </div>
 
             <?php if(!empty($detailundangan['map_akad'])): ?>
@@ -386,7 +422,7 @@
 
       <div class="col s12 l6 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
         <div class="warnakotak" style="background-color:#eee;border-radius:9px;padding:3px;">
-          <h5 class="warnatitle" style="font-size:26px;font-family: 'Roboto', cursive;color:#3b3d3b;">Resepsi</h5>
+          <h5 class="warnatitle" style="font-size:26px;font-family: 'Boogaloo', cursive;color:#616161;">Resepsi</h5>
         </div>
         <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:1px;">
           <div class="card-image" style="text-align:center;">
@@ -396,16 +432,16 @@
             <div class="card-content center-align">
               <span style="display:flex;justify-content:center;">
                 <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">event</i>
-                <span style="font-size:18px;color:#19191a;"><?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?></span>
+                <span style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;"><?=$daftar_hari[$namahari].', '.date('d F Y', strtotime($detailundangan['tanggal_acara'])); ?></span>
               </span>
               <span style="display:flex;justify-content:center;margin-top:5px">
                 <i class="material-icons blue-text" style="font-size:27px;font-weight:bold;">schedule</i>
-                <span style="font-size:18px;color:#19191a;"><?=$detailundangan['jam_acara']; ?></span>
+                <span style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;"><?=$detailundangan['jam_acara']; ?></span>
               </span>
             </div>
             <div class="card-action" style="">
               <i class="material-icons red-text" style="font-size:35px;line-height:15px;">place</i><br>
-              <span style="font-size:18px;line-height:20px;"><?=$detailundangan['alamat_acara']; ?></span>
+              <span style="font-family: 'Boogaloo', cursive;font-size:18px;line-height:20px;color:#616161;"><?=$detailundangan['alamat_acara']; ?></span>
             </div>
 
             <?php if(!empty($detailundangan['map_acara'])): ?>
@@ -431,7 +467,7 @@
       <div class="row">
         <div class="col s12 center-align">
           <div class="z-depth-2" style="background-color:#eee;border-radius:9px;padding:3px;margin-top:30px;">
-          <p class="" style="font-size:18px;color:#3b3d3b;padding:0 5px 0 5px;"><?=$detailundangan['ucapan_ahir']; ?></p>
+          <p class="" style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;padding:0 5px 0 5px;"><?=$detailundangan['ucapan_ahir']; ?></p>
         </div>
         </div>
       </div>
@@ -508,9 +544,9 @@
     <?php if(!empty($detailundangan['video_acara'])): ?>
     <div class="row">
     <div class="col s12 m8 offset-m2 l6 offset-l3 center-align" data-aos="zoom-in" data-aos-duration="1000" style="margin-top:20px;">
-      <div class="" style="background-color:#eee;border-radius:9px;padding:0px;">
+      <!-- <div class="" style="background-color:#eee;border-radius:9px;padding:0px;">
         <h5 class="" style="font-size:20px;font-family: 'Roboto', cursive;color:#3b3d3b;padding:2px">Video</h5>
-      </div>
+      </div> -->
       <div class="card horizontal" style="border-radius:10px;background-color:#eee;margin-top:-8px;">
         <div class="card-image" style="text-align:center;">
           
@@ -544,7 +580,7 @@
       <div class="row">
         <div class="col s12 center-align">
           <div class="warnakotak z-depth-2" style="background-color:#eee;border-radius:9px;padding:3px;">
-          <p class="warnatitle" style="font-size:18px;color:#3b3d3b;padding:0 5px 0 5px;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui :</p>
+          <p class="warnatitle" style="font-family: 'Boogaloo', cursive;font-size:18px;color:#616161;padding:0 5px 0 5px;">Tampa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk pengantin dapat melalui :</p>
         </div>
         </div>
       </div>
@@ -556,6 +592,25 @@
     </div>
   </div>
   <?php endif; ?>
+
+  <style>
+    .reply .form-reply, textarea.form-control {
+      background-color: rgba(222, 222, 222, 0.2);
+      color: #616161;
+      border: 1px solid rgba(11,94,215, 0.6);
+    }
+    .reply .form-reply, textarea.form-control:focus {
+      background-color: rgba(222, 222, 222, 0.2);
+      color: #616161;
+      border: 1px solid rgba(11,94,215, 0.6);
+    }
+    .reply .form-reply input.form-control {
+      background-color: rgba(222, 222, 222, 0.2);
+      color: #616161;
+      border: 1px solid rgba(11,94,215, 0.6);
+      border-radius:30px;
+    }
+  </style>
 
 
   <div id="quesbook" class="warnatema ww-detail" style="margin-top:-10px;background-color:#dce0e0;position:relative;">
@@ -587,34 +642,52 @@
       </div>
 
       <div class="row">
-        <div class="col s4 right" style="margin-top:-10px">
+        <div class="col s12" style="margin-top:-10px;display:flex;justify-content:space-between;align-items:center;">
+          <div class="jumlahwhises" style="font-size:20px;font-weight:bold;color:white;background-color:rgba(255,255,255,.2);padding:2px 10px 2px 10px;border-radius:2px;border:1px solid #ddd;">12 whises</div>
           <div class="input-field" style="z-index:2;">
             <select style="border-radius:5px;" class="changekomentar browser-default form-custom" name="changekomentar">
               <option value="slide">Slide</option>
               <option value="list">List</option>
             </select>
-            <!-- <label>Materialize Select</label> -->
           </div>
         </div>
       </div>
 
       <?php 
 
-        $urlpucapan=$detailundangan['id_pengundang'];
+          $urlpucapan=$detailundangan['id_pengundang'];
 
-        $queryallucapana="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
-        $dataucapana=$this->db->query($queryallucapana)->result_array();
+          if($detailundangan['tipe_undangan']=='mudah'){
 
-        $queryucapan="SELECT max(id_ucapan) as maxidu FROM ucapan where urlpengundang_ucapan='$urlpucapan'";
-        $resultmax=$this->db->query($queryucapan)->row_array();
+            $queryallucapana="SELECT * from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen where urlpengundang_komen=$urlpucapan order by id_komen desc";
+            $dataucapana=$this->db->query($queryallucapana)->result_array();
 
-        $queryallucapan="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
-        $dataucapan=$this->db->query($queryallucapan)->result_array();
+            $queryucapan="SELECT max(id_komen) as maxidu FROM komen where urlpengundang_komen='$urlpucapan'";
+            $resultmax=$this->db->query($queryucapan)->row_array();
 
-        $queryallucapancount="SELECT count(*) as ucount from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan='$urlpucapan'";
-        $dataucapancount=$this->db->query($queryallucapancount)->row_array();
+            $queryallucapan="SELECT pengundang.*, komen.*, count(id_komenreply) as counterply from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen left join reply on komen.id_komen=reply.id_komenreply where urlpengundang_komen=$urlpucapan group by id_komen order by id_komen desc";
+            $dataucapan=$this->db->query($queryallucapan)->result_array();
 
-      ?>
+            $queryallucapancount="SELECT count(*) as ucount from pengundang join komen on pengundang.id_pengundang=komen.urlpengundang_komen where urlpengundang_komen='$urlpucapan'";
+            $dataucapancount=$this->db->query($queryallucapancount)->row_array();
+
+          }else{
+
+            $queryallucapana="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
+            $dataucapana=$this->db->query($queryallucapana)->result_array();
+
+            $queryucapan="SELECT max(id_ucapan) as maxidu FROM ucapan where urlpengundang_ucapan='$urlpucapan'";
+            $resultmax=$this->db->query($queryucapan)->row_array();
+
+            $queryallucapan="SELECT * from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan=$urlpucapan group by id_ucapan order by id_ucapan desc";
+            $dataucapan=$this->db->query($queryallucapan)->result_array();
+
+            $queryallucapancount="SELECT count(*) as ucount from pengundang join diundang on pengundang.id_pengundang=diundang.matchid_pengundang join ucapan on diundang.id_diundang=ucapan.urldiundang_ucapan and pengundang.id_pengundang=ucapan.urlpengundang_ucapan where urlpengundang_ucapan='$urlpucapan'";
+            $dataucapancount=$this->db->query($queryallucapancount)->row_array();
+
+          }
+
+        ?>
 
       <?php if($dataucapancount['ucount'] <= 0){ ?>
         <div class="row" style="display:flex;justify-content:center;">
@@ -654,15 +727,93 @@
                   $post = floor($waktubulan).' tahun yang lalu';
                 }
               ?>
-            <a class="carousel-item center-align checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
-              <h5 style="font-size:18px;line-height:12px;">
-                <span style="color:#282928;"><?=$du['nama_diundang']; ?></span><br>
-                <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span>
-              </h5>
+            <a class="carousel-item checkitem z-depth-1 countkomentar" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:75%;color:black;" href="#one!">
+              <div style="display:flex;justify-content:center;align-items:center;">
+                <div class="imagekomen" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:5px;line-height:30px;background-color:#fff;">
+                  <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;margin-left:5px;color:#515151;"></i>
+                </div>
+                <h5 style="font-size:18px;line-height:12px;margin-left:5px;">
+                  <span style="color:#515151;font-weight:bold;"><?=$du['urldiundang_komen']; ?></span><br>
+                  <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span>
+                </h5>
+              </div>
               <div class="divider" style="margin-top:-7px;"></div>
-              <p style="font-size:14px;line-height:16px;margin-top:3px;color:#4f4f4f;">
-                <?=$du['isi_ucapan']; ?>
+              <p style="font-size:15px;line-height:16px;margin-top:3px;color:#515151;text-align:center;">
+                <?=$du['isi_komen']; ?>
               </p>
+              <div class="reply" style="color:#757575;font-size:15px;background-color:white;align-items:center;justify-content:space-between;display:flex;margin-top:-10px;">
+                <?php if($du['counterply']==0){ ?>
+                  <span></span>
+                <?php }else{ ?>
+                  <span class="" style="font-size:13px;color:#3cd0de;"><?=$du['counterply']; ?> balasan</span>
+                <?php } ?>
+                <span class="reply-to" data-reply="<?= $du['id_komen']; ?>" style="cursor:pointer;font-style:italic;color:#3cd0de;"><i class="fas fa-reply"></i> balas</span>
+              </div>
+
+              <div class="form-reply toggle-form-reply-<?= $du['id_komen']; ?> bg-white" style="padding:0 10px 0 10px;">
+                <form class="" action="<?=base_url('undangan/replytampanama'); ?>" method="post">
+                    <input type="hidden" name="idupengundang" value="<?= $du['urlpengundang_komen']; ?>">
+                    <input type="hidden" name="idkomen" value="<?= $du['id_komen']; ?>">
+                    <div class="">
+                      <div class="">
+                        <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;" class="" type="text" name="namareply" placeholder="ketik nama.." required>
+                      </div>
+                    </div>
+                    <div class="">
+                        <textarea class="materialize-textarea" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 40px;color:#616161;background-color:white;border: 1px solid #ddd;width:100%;" name="isireply" autocomplete="off" required></textarea>
+                    </div>
+                  <div style="justify-content:right;display:flex;">
+                    <button style="padding:0px 2px 0px 2px;margin-top:-10px;" type="submit" name="ok-reply" class="btn btn-small btn-primary btn-reply">kirim</button>
+                  </div>
+                </form>
+              </div>
+
+              <?php 
+                $idkomen=$du['id_komen']; 
+                $queryreply="SELECT * from reply where id_komenreply=$idkomen order by id_reply desc";
+                $datareply=$this->db->query($queryreply)->result_array();
+              ?>
+
+              <?php if($du['counterply']==0){}else{ ?>
+              <i style="transform:rotate(180deg);margin-left:0px;font-size:20px;color:#3cd0de;margin-top:5px;" class="fas fa-reply-all"></i>
+              <?php } ?>
+
+              <?php foreach($datareply as $reply){ ?>
+              <?php 
+                $waktu=time() - $reply['waktu_reply'];
+                if($waktu<60){
+                  $postreply = $waktu.' detik yang lalu';
+                }else if($waktu>=60&&$waktu<=3600){
+                  $waktumenit=$waktu/60;
+                  $postreply = floor($waktumenit).' menit yang lalu';
+                }else if($waktu>=3600&&$waktu<=86400){
+                  $waktujam=$waktu/3600;
+                  $postreply = floor($waktujam).' jam yang lalu';
+                }else if($waktu>=86400&&$waktu<=604800){
+                  $waktuhari=$waktu/86400;
+                  $postreply = floor($waktuhari).' hari yang lalu';
+                }else if($waktu>=604800&&$waktu<=2592000){
+                  $waktuminggu=$waktu/604800;
+                  $postreply = floor($waktuminggu).' minggu yang lalu';
+                }else if($waktu>=2592000&&$waktu<=31536000){
+                  $waktubulan=$waktu/2592000;
+                  $postreply = floor($waktubulan).' bulan yang lalu';
+                }else{
+                  $waktutahun=$waktu/31536000;
+                  $postreply = floor($waktutahun).' tahun yang lalu';
+                }
+              ?>
+              <div class="" style="min-width:10px;margin-left:30px;margin-top:-15px;display:flex;margin-bottom:25px;">
+                <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:20px;background-color:#fff;align-items:center;">
+                  <i class="fas fa-user-check" style="width:30px;height:30px;font-size:13px;color:#7a7a7a;margin-left:3px;"></i>
+                </div>
+                <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+                  <div class="nama" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;"><?=$reply['nama_reply']; ?></span><span style="font-size:9px;color:#757575;line-height:13px;"><?=$postreply.' '.date('H.i',$reply['waktu_reply']); ?></span></div>
+                  <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;"><?=$reply['isi_reply']; ?></div>
+                </div>
+              </div>
+              <?php } ?>
+
             </a>
 
             <?php endforeach; ?>
@@ -700,18 +851,102 @@
               ?>
 
             <?php if($this->session->userdata('level_user')=='admin'){ ?>
-              <a style="color:red" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapan/'.$du['id_ucapan'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
+              <a style="color:red" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusucapan/'.$du['id_komen'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang']); ?>">[hapus]</a>
             <?php } ?>
-            <a class="carousel-item checkitem center-align z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:10px;width:100%;display:block;margin-bottom:10px;color:black;" href="#one!">
-              <h5 style="font-size:18px;line-height:12px;">
-                <span style="color:#282928;"><?=$du['nama_diundang']; ?></span> <br>
-                <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span>
-              </h5>
+
+            <span class="carousel-item checkitem z-depth-1" style="background-color:white;overflow-y:scroll;padding:0 10px 0 10px;border-radius:8px;width:100%;color:black;display:block;margin-bottom:13px;" href="#one!">
+              <div style="display:flex;justify-content:center;align-items:center;">
+                <div class="imagekomen" style="border-radius:50%;width:30px;height:30px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:5px;line-height:30px;background-color:#fff;">
+                  <i class="fas fa-user-check" style="width:30px;height:30px;font-size:20px;margin-left:5px;color:#515151;"></i>
+                </div>
+                <h5 style="font-size:18px;line-height:12px;margin-left:5px;">
+                  <span style="color:#515151;font-weight:bold;"><?=$du['urldiundang_komen']; ?></span><br>
+                  <span style="color:#aaa;font-size:11px;margin-top:-20px;"><?=$post.' '.date('H.i',$du['waktu_ucapan']); ?></span>
+                </h5>
+              </div>
               <div class="divider" style="margin-top:-7px;"></div>
-              <p style="font-size:14px;line-height:16px;margin-top:4px;color:#4f4f4f;">
-                <?=$du['isi_ucapan']; ?>
+              <p style="font-size:15px;line-height:16px;margin-top:3px;color:#515151;text-align:center;">
+                <?=$du['isi_komen']; ?>
               </p>
-            </a>
+              <div class="reply" style="color:#757575;font-size:15px;background-color:white;align-items:center;justify-content:space-between;display:flex;margin-top:-10px;">
+                <?php if($du['counterply']==0){ ?>
+                  <span></span>
+                <?php }else{ ?>
+                  <span class="" style="font-size:13px;color:#3cd0de;"><?=$du['counterply']; ?> balasan</span>
+                <?php } ?>
+                <span class="reply-to" data-reply="<?= $du['id_komen']; ?>" style="cursor:pointer;font-style:italic;color:#3cd0de;"><i class="fas fa-reply"></i> balas</span>
+              </div>
+
+              <div class="form-reply toggle-form-reply-<?= $du['id_komen']; ?> bg-white" style="padding:0 10px 0 10px;">
+                <form class="" action="<?=base_url('undangan/replytampanama'); ?>" method="post">
+                    <input type="hidden" name="idupengundang" value="<?= $du['urlpengundang_komen']; ?>">
+                    <input type="hidden" name="idkomen" value="<?= $du['id_komen']; ?>">
+                    <div class="">
+                      <div class="">
+                        <input style="height: 25px;border: 1px solid #ddd;color:#616161;font-family: 'Jua', sans-serif;" class="" type="text" name="namareply" placeholder="ketik nama.." required>
+                      </div>
+                    </div>
+                    <div class="">
+                        <textarea class="materialize-textarea" placeholder="ketikan balasan.." id="floatingTextarea2" style="height: 40px;color:#616161;background-color:white;border: 1px solid #ddd;width:100%;" name="isireply" autocomplete="off" required></textarea>
+                    </div>
+                  <div style="justify-content:right;display:flex;">
+                    <button style="padding:0px 2px 0px 2px;margin-top:-10px;" type="submit" name="ok-reply" class="btn btn-small btn-primary btn-reply">kirim</button>
+                  </div>
+                </form>
+              </div>
+
+              <?php 
+                $idkomen=$du['id_komen']; 
+                $queryreply="SELECT * from reply where id_komenreply=$idkomen order by id_reply desc";
+                $datareply=$this->db->query($queryreply)->result_array();
+              ?>
+
+              <?php if($du['counterply']==0){}else{ ?>
+                <i style="transform:rotate(180deg);margin-left:0px;font-size:20px;color:#3cd0de;margin-top:5px;" class="fas fa-reply-all"></i>
+              <?php } ?>
+
+              <?php foreach($datareply as $reply){ ?>
+              <?php 
+                $waktu=time() - $reply['waktu_reply'];
+                if($waktu<60){
+                  $postreply = $waktu.' detik yang lalu';
+                }else if($waktu>=60&&$waktu<=3600){
+                  $waktumenit=$waktu/60;
+                  $postreply = floor($waktumenit).' menit yang lalu';
+                }else if($waktu>=3600&&$waktu<=86400){
+                  $waktujam=$waktu/3600;
+                  $postreply = floor($waktujam).' jam yang lalu';
+                }else if($waktu>=86400&&$waktu<=604800){
+                  $waktuhari=$waktu/86400;
+                  $postreply = floor($waktuhari).' hari yang lalu';
+                }else if($waktu>=604800&&$waktu<=2592000){
+                  $waktuminggu=$waktu/604800;
+                  $postreply = floor($waktuminggu).' minggu yang lalu';
+                }else if($waktu>=2592000&&$waktu<=31536000){
+                  $waktubulan=$waktu/2592000;
+                  $postreply = floor($waktubulan).' bulan yang lalu';
+                }else{
+                  $waktutahun=$waktu/31536000;
+                  $postreply = floor($waktutahun).' tahun yang lalu';
+                }
+              ?>
+
+              <div class="" style="min-width:10px;margin-left:30px;margin-top:-15px;display:flex;margin-bottom:25px;">
+                <div class="imagekomen text-center" style="border-radius:50%;width:20px;height:20px;box-shadow:0 0 7px rgba(0,0,0,.6);margin-right:15px;line-height:20px;background-color:#fff;align-items:center;">
+                  <i class="fas fa-user-check" style="width:30px;height:30px;font-size:13px;color:#7a7a7a;margin-left:3px;"></i>
+                </div>
+                <div class="tampilkomentreply" style="box-shadow:0 0 5px rgba(0,0,0,.3);border-radius:5px;padding:3px 9px 3px 9px;min-width:170px;position:relative;background-color:#fff;">
+                  <div class="nama" style="display:flex;justify-content:space-between;align-items:center;"><span style="font-weight:600;line-height:16px;margin-right:10px;color:#616161;font-size:15px;"><?=$reply['nama_reply']; ?></span><span style="font-size:9px;color:#757575;line-height:13px;"><?=$postreply.' '.date('H.i',$reply['waktu_reply']); ?></span></div>
+                  <div class="isikomentar" style="color:#757575;line-height:16px;font-size:13px;"><?=$reply['isi_reply']; ?></div>
+                  <?php if($this->session->userdata('level_user')=='admin'){ ?>
+                    <a style="color:red;" onclick="return confirm('Pilih Oke untuk hapus!');" href="<?=base_url('admin/hapusreply/'.$du['id_komen'].'/'.$detailundangan['url_pengundang'].'/'.$detailundangan['url_diundang'].'/'.$reply['id_reply']); ?>">[hapus]</a>
+                  <?php } ?>
+                </div>
+              </div>
+              <?php } ?>
+
+            </span>
+
 
             <?php endforeach; ?>
 
@@ -724,6 +959,18 @@
       
     </div>
   </div>
+
+  <style>
+    .ww-rsvp-form input.input-custom {
+      background-color: rgba(222, 222, 222, 0.2);
+      color: #616161;
+      /*border: 3px solid rgba(11,94,215, 0.6);*/
+      border-radius:3px;
+      width:100%;
+      height:40px;
+      font-family: 'Boogaloo', cursive;
+    }
+  </style>
 
 
   <div id="kehadiran" class="warnatema ww-detail" style="background:linear-gradient(rgba(95, 161, 126, 1),rgba(151, 194, 143, 1),rgba(151, 194, 143,1));background-image:url('<?=base_url('assets/temaundangan/vantage/'); ?>img/rsvp-imgc.jpg');background-size:cover;background-position:center;position:relative;">
@@ -752,6 +999,89 @@
         </div>
       </div>
 
+      <?php if($detailundangan['tipe_undangan']=='mudah'){ ?>
+
+      <div class="row ww-rsvp-form">
+        <div class="col s12" style="">
+        <div class="container">
+         <form method="post" action="<?=base_url('undangan/ucapantampanama'); ?>" data-aos="fade-down" data-aos-duration="1000">
+            <input type="hidden" name="idupengundang" value="<?=$detailundangan['id_pengundang']; ?>">
+
+            <div class="row">
+              <div class="col s12">
+                <div class="input-field col s12" style="border-radius:5px;">
+                  <input class="browser-default input-custom form-custom" type="text" name="namaanda" placeholder="Ketikan nama anda disini.." required>
+                  <!-- <label>Materialize Select</label> -->
+                </div>
+              </div>
+            </div>
+            <div class="row" style="margin-top:-20px">
+              <div class="col s12 m6 center-align">
+                <!-- <div class="form-group">
+                  <select class="form-control" id="events-input" name="absenkehadiran" required>
+                    <option value="">Apakah kamu menghadiri?</option>
+                    <option value="hadir">Menghadiri</option>
+                    <option value="tidak">Tidak menghadiri</option>
+                  </select>
+                </div> -->
+                <div class="input-field col s12 m6" style="width:100%;border-radius:5px;">
+                  <select style="font-family: 'Boogaloo', cursive;" class="browser-default form-custom" name="absenkehadiran" required>
+                    <option value="">Apakah kamu menghadiri?</option>
+                    <option value="hadir">Menghadiri</option>
+                    <option value="tidak">Tidak menghadiri</option>
+                    <option value="ragu">Masih ragu-ragu</option>
+                  </select>
+                  <!-- <label>Materialize Select</label> -->
+                </div>
+              </div>
+
+              <div class="col s12 m6 center-align">
+                <!-- <div class="form-group">
+                  <select class="form-control" id="events-input" name="jumlahkehadiran" required>
+                    <option value="1">1 orang</option>
+                    <option value="2">2 orang</option>
+                  </select>
+                </div> -->
+                <div class="input-field col s12 m6" style="width:100%;border-radius:5px;">
+                  <select style="font-family: 'Boogaloo', cursive;" class="browser-default form-custom" name="jumlahkehadiran" required>
+                    <option value="1">1 orang</option>
+                    <option value="2">2 orang</option>
+                    <option value="3">3 orang</option>
+                    <option value="4">4 orang</option>
+                  </select>
+                  <!-- <label>Materialize Select</label> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <!-- <div class="form-group">
+                  <label for="message-input">Pesan Anda</label>
+                  <textarea class="form-control" id="message-input" name="isiucapan" rows="4" required></textarea>
+                </div>
+              </div> -->
+              <div class="row">
+                <div class="col s12" style="margin-top:-20px">
+                  <div class="input-field col s12" style="border-radius:5px;">
+                    <textarea id="textarea1" name="isiucapan" class="materialize-textarea browser-default form-custom" required style="padding-left:10px;font-family: 'Boogaloo', cursive;"></textarea>
+                    <label for="textarea1" style="color:white;font-size:15px;padding-left:10px;font-family: 'Boogaloo', cursive;">Ketik ucapan disini!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col right" style="margin-top:-20px;margin-right:21px">
+                <!-- <div class="container"> -->
+                <button class="btn blue btn-small waves-effect waves-light addkomentar" id="addkomentar" type="submit" name="kirimin">kirim</button>
+                <!-- </div> -->
+              </div>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+
+      <?php }else{ ?>
 
       <div class="row ww-rsvp-form">
         <div class="col s12" style="">
@@ -779,7 +1109,7 @@
                   </select>
                 </div> -->
                 <div class="input-field col s12 m6" style="width:100%;border-radius:5px;">
-                  <select class="browser-default form-custom" name="absenkehadiran" required>
+                  <select style="font-family: 'Boogaloo', cursive;" class="browser-default form-custom" name="absenkehadiran" required>
                     <option value="">Apakah kamu menghadiri?</option>
                     <option value="hadir">Menghadiri</option>
                     <option value="tidak">Tidak menghadiri</option>
@@ -817,8 +1147,8 @@
               <div class="row">
                 <div class="col s12" style="margin-top:-20px">
                   <div class="input-field col s12" style="border-radius:5px;">
-                    <textarea id="textarea1" name="isiucapan" class="materialize-textarea browser-default form-custom" required></textarea>
-                    <label for="textarea1" style="color:white;font-size:15px">Ketit disini!</label>
+                    <textarea id="textarea1" name="isiucapan" class="materialize-textarea browser-default form-custom" required style="padding-left:10px;"></textarea>
+                    <label for="textarea1" style="color:white;font-size:15px;padding-left:10px;">Ketit disini!</label>
                   </div>
                 </div>
               </div>
@@ -835,10 +1165,12 @@
         </div>
       </div>
 
+    <?php } ?>
+
       <div class="row">
         <div class="col s12 center-align">
-          <h5 style="text-shadow:0 4px 8px #19191a;color:white;font-size:25px"><?= $detailundangan['namapanggilan_priawanita']; ?></h5>
-          <p style="text-shadow:0 3px 6px #19191a;color:white;font-size:17px;margin-top:-10px">(Doakan yang terbaik untuk kami)</p>
+          <h5 style="text-shadow:0 4px 8px #19191a;color:white;font-size:25px;font-family: 'Boogaloo', cursive;"><?= $detailundangan['namapanggilan_priawanita']; ?></h5>
+          <p style="text-shadow:0 3px 6px #19191a;color:white;font-size:17px;margin-top:-10px;font-family: 'Boogaloo', cursive;">(Doakan yang terbaik untuk kami)</p>
         </div>
       </div>
       
@@ -891,7 +1223,7 @@
   </div>
 
   <div id="navatas" class="navatas center-align white-text z-depth-2" style="position:fixed;top:20px;left:68px;border-radius:0 40px 40px 0;z-index:8;transition:1s;height:40px;min-width:0px;background-color:rgba(0,0,0,.5);display:flex;justify-content:center;align-items:center;padding:0 10px 8px 10px;border:1px solid yellow;">
-    <h5 class="sizefont" style="font-size:18px;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
+    <h5 class="sizefont" style="font-size:18px;font-family: 'Boogaloo', cursive;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5>
     <div class="bars" style="position:absolute;top:-35px;left:-10px;transition:.7s">
       <img class="onm" style="margin-top:1.1px" src="<?=base_url('assets/img/bars-musik.gif'); ?>" width="100px" height="50px">
       <img class="ofm" style="position:absolute;top:10px;left:0" src="<?=base_url('assets/img/bars-musikof.gif'); ?>" width="100px" height="30px">
@@ -1087,38 +1419,38 @@
   </ul>
 
 <!-- modal awal -->
-  <div id="modal1" class="modal modal-fixed-footer white-text" style="width:100%;height:100%!important;background-image: url('<?=base_url('assets/temaundangan/vantage/'); ?>img/bgmodal.png');background-size:cover;">
+  <div id="modal1" class="modal modal-fixed-footer white-text" style="width:100%;height:100%!important;background-color:rgba(135,135,135,.4);">
     <div style="position:absolute;left:0;right:0;bottom:0;top:0;background-color:black;opacity:.6"></div>
 
     <div class="modal-content center-align" style="height:100%">
       <h5 style="font-size:30px;font-weight:bold;font-family: 'Satisfy', cursive;"><?=$detailundangan['namapanggilan_priawanita']; ?></h5><hr>
       <span>Hello,</span><br>
       <span style="font-family: 'Satisfy', cursive;font-size:28px;font-weight:bold;"><u><?=$detailundangan['nama_diundang']; ?></u></span>
-      <p style="font-family: 'Roboto', sans-serif;">Kami mengundang anda untuk datang pada hari pernikahan kami!</p>
+      <p style="font-family: 'Boogaloo', cursive;font-size:18px;">Kami mengundang anda untuk datang pada hari pernikahan kami!</p>
 
       <?php if(!empty($detailundangan['informasi_modal'])): ?>
-        <div class="col" style="margin-top:10px;">
+        <div class="col" style="margin-top:10px;font-family: 'Boogaloo', cursive;font-size:18px;">
           <?=$detailundangan['informasi_modal']; ?>
         </div>
       <?php endif; ?>
 
-      <p style="font-family: 'Roboto', sans-serif;">Tampa mengurangi rasa hormat <br> Acara ini akan dilaksanakan dengan menerapkan <br> <b>PROTOKOL KESEHATAN</b> <br> sebagai berikut:</p>
+      <p style="font-family: 'Boogaloo', cursive;font-size:18px;">Tampa mengurangi rasa hormat <br> Acara ini akan dilaksanakan dengan menerapkan <br> <b>PROTOKOL KESEHATAN</b> <br> sebagai berikut:</p>
 
       <div class="row" style="padding:0;margin:0 auto;max-width:450px;">
 
         <div class="barisatas" style="display:flex;justify-content:space-between;">
           <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
             <img class="hoverc" data-aos="fade-down" data-aos-delay-="300" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/anaksp.png"><br>
-            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Dianjurkan Tidak <br> Membawa Anak Kecil</span>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;font-style:italic;">Dianjurkan Tidak <br> Membawa Anak Kecil</span>
           </div>
           <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="300" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
             <img class="hoverc" data-aos="fade-down" data-aos-delay="600" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/maskp.png"><br>
-            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Masker <br></span>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;font-style:italic;">Gunakan Masker <br></span>
             <span style="opacity:0">membawa oke <br> sipp</span>
           </div>
           <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="900" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
             <img class="hoverc" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/handsp.png"><br>
-            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Gunakan Handsanitizer <br></span>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;font-style:italic;">Gunakan Handsanitizer <br></span>
             <span style="opacity:0">membawa oke</span>
           </div>
         </div>
@@ -1126,17 +1458,17 @@
         <div class="barisatas" style="display:flex;justify-content:space-between;">
           <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
             <img class="hoverc" data-aos="fade-down" data-aos-delay="2100" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/suhusp.png"><br>
-            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cek Suhu Tubuh <br></span>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;font-style:italic;">Cek Suhu Tubuh <br></span>
             <span style="opacity:0">membawa oke </span>
           </div>
           <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
             <img class="hoverc" data-aos="fade-down" data-aos-delay="1800" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/cucisp.png"><br>
-            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Cuci Tangan <br></span>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;font-style:italic;">Cuci Tangan <br></span>
             <span style="opacity:0">membawa oke </span>
           </div>
           <div class="kotak1 z-depth-2 cyan darken-2" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="500" style="border-radius:5px;margin:1px;padding:1px;">
             <img class="hoverc" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="500" style="width:100%;margin:auto;" src="<?=base_url('assets/temaundangan/vantage/'); ?>img/socialp.png"><br>
-            <span style="line-height:15px;font-family: 'Roboto', sans-serif;">Jaga Jarak 1METER <br></span>
+            <span style="line-height:15px;font-family: 'Roboto', sans-serif;font-style:italic;">Jaga Jarak 1METER <br></span>
             <span style="opacity:0">membawa oke </span>
           </div>
         </div>
@@ -1145,13 +1477,13 @@
 
       <div class="row">
         <div class="col s12" style="padding-bottom: 20px">
-          <p style="font-family: 'Roboto', sans-serif;">Atas perhatiannya kami ucapkan <br> <b>Terima Kasih</b></p>
+          <p style="font-family: 'Boogaloo', cursive;font-size:18px;">Atas perhatiannya kami ucapkan <br> <b>Terima Kasih</b></p>
         </div>
       </div>
 
     </div>
     <div class="modal-footer" style="padding:0 50px 0 50px;background-color:rgba(0,0,0,0);border:0;display:flex;justify-content:center;align-items: center;margin-bottom:20px;">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.5);width:200px;display: flex;align-items: center;justify-content:center;"><i class="large material-icons" style="padding-right:5px">drafts</i> Open</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text pulse bukaundangan" style="border-radius:20px;background-color:rgba(0,0,0,.8);width:200px;display: flex;align-items: center;justify-content:center;border:3px solid white;"><i class="large material-icons" style="padding-right:5px">drafts</i> Open</a>
     </div>
 
   </div>
@@ -1360,6 +1692,23 @@
 
         }
       }
+
+      $(document).on('submit',function() {
+        $('.addkomentar').attr('disabled','on');
+        $('.addkomentar').text('loading..');
+        $('.btn-reply').attr('disabled','on');
+        $('.btn-reply').text('loading..');
+      })
+
+      var countkomentar = document.querySelectorAll('.countkomentar');
+      $('.jumlahwhises').text(countkomentar.length+' Whises');
+
+      $('.form-reply').hide();
+      $('.reply-to').on('click',function(){
+        var datareply=$(this).data('reply');
+        // $('.form-reply').hide();
+        $('.toggle-form-reply-'+datareply).slideToggle();
+      })
 
 
       $('.closeout').on('click',function(){

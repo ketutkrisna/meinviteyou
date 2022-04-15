@@ -291,6 +291,147 @@ class Users extends CI_Controller {
 		return false;
 	}
 
+	public function hapusucapanusertampanama($iducapan='',$urlpengundang='',$urldiundang='')
+	{
+		$idlogin=$this->session->userdata('id_p');
+		$iducapan=htmlspecialchars($iducapan,true);
+		$urlpengundang=htmlspecialchars($urlpengundang,true);
+		$urldiundang=htmlspecialchars($urldiundang,true);
+
+		$cekidkomen = $this->db->get_where('komen',['id_komen'=>$iducapan,'urlpengundang_komen'=>$idlogin])->row_array();
+		$cekurlpengundang = $this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang,'id_pengundang'=>$idlogin])->row_array();
+		$cekurldiundang = $this->db->get_where('diundang',['url_diundang'=>$urldiundang,'matchid_pengundang'=>$idlogin])->row_array();
+
+		if($cekidkomen == true){
+			if($cekurlpengundang == true){
+				if($cekurldiundang == true){
+
+				}else{
+					show_404();
+					return false;
+				}
+			}else{
+				show_404();
+				return false;
+			}
+		}else{
+			show_404();
+			return false;
+		}
+
+		$this->db->where('id_komen', $iducapan);
+		$this->db->where('urlpengundang_komen', $idlogin);
+		$this->db->delete('komen');
+
+		if ($this->db->affected_rows() > 0){
+		  	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ucapan <strong>Berhasil</strong> dihapus!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
+		}else{
+		  	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Ucapan <strong>Gagal</strong> dihapus!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
+			return false;
+		}
+
+		$this->db->where('id_komenreply', $iducapan);
+		$this->db->where('id_pengundangreply', $idlogin);
+		$this->db->delete('reply');
+
+		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
+		// $tema=$datacek['tema_template'];
+	
+		if($datacek['jenis_acara']=='pernikahan'){
+			redirect('wedding/'.$urlpengundang.'/'.$urldiundang);
+		}else if($datacek['jenis_acara']=='tunangan'){
+			redirect('engagement/'.$urlpengundang.'/'.$urldiundang);
+		}
+		return false;
+	}
+
+	public function hapusreplyuser($iducapan,$urlpengundang,$urldiundang,$idreply)
+	{
+		$idlogin=$this->session->userdata('id_p');
+		$iducapan=htmlspecialchars($iducapan,true);
+		$urlpengundang=htmlspecialchars($urlpengundang,true);
+		$urldiundang=htmlspecialchars($urldiundang,true);
+		$idreply=htmlspecialchars($idreply,true);
+
+		$cekidkomen = $this->db->get_where('komen',['id_komen'=>$iducapan,'urlpengundang_komen'=>$idlogin])->row_array();
+		$cekurlpengundang = $this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang,'id_pengundang'=>$idlogin])->row_array();
+		$cekurldiundang = $this->db->get_where('diundang',['url_diundang'=>$urldiundang,'matchid_pengundang'=>$idlogin])->row_array();
+		$cekidreply = $this->db->get_where('reply',['id_reply'=>$idreply,'id_pengundangreply'=>$idlogin])->row_array();
+
+		if($cekidkomen == true){
+			if($cekurlpengundang == true){
+				if($cekurldiundang == true){
+					if($cekidreply == true){
+
+					}else{
+						show_404();
+						return false;	
+					}
+				}else{
+					show_404();
+					return false;
+				}
+			}else{
+				show_404();
+				return false;
+			}
+		}else{
+			show_404();
+			return false;
+		}
+
+		$this->db->where('id_reply', $idreply);
+		$this->db->delete('reply');
+
+		if ($this->db->affected_rows() > 0){
+		  	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(235, 90, 70,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Balasan <strong>Berhasil</strong> dihapus!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
+		}else{
+		  	$this->session->set_flashdata('message','<div class="popupnotif" style="position:absolute;top:13px;right:13px;background-color:rgba(245, 178, 34,.9);border-radius:5px;z-index:10;box-shadow:0px 0px 5px rgba(0,0,0,.5);">
+			  <div style="display:flex;justify-content:space-between;color:white;padding:3px 7px 3px 7px;align-items:center;">
+			    <span style="padding-right:20px;display:flex;justify-content:flex-start;align-items:center;">
+			      <div style="font-size:25px;background-color:rgba(235, 90, 70,.7);color:#1c1c1c;border-radius:50%;box-shadow:0px 0px 4px rgba(0,0,0,.8);height:27px;width:27px;display:flex;justify-content:center;align-items:center;padding:0 0px 4px 0;font-weight:bold;">&#8520;</div>
+			      <span style="padding-left:5px;color:#1c1c1c;line-height:16px;font-size:15px;">Balasan <strong>Gagal</strong> dihapus!</span>
+			    </span>
+			    <span class="closeout" style="color:#ddd;padding:0 0px 0 6px;border-left:1px solid #ddd;font-size:25px;text-shadow:0px 0px 5px rgba(0,0,0,.6);cursor:pointer;">&#9746;</span>
+			  </div>
+			</div>');
+			return false;
+		}
+
+		$datacek=$this->db->get_where('pengundang',['url_pengundang'=>$urlpengundang])->row_array();
+		// $tema=$datacek['tema_template'];
+		if($datacek['jenis_acara']=='pernikahan'){
+			redirect('wedding/'.$urlpengundang.'/'.$urldiundang);
+		}else if($datacek['jenis_acara']=='tunangan'){
+			redirect('engagement/'.$urlpengundang.'/'.$urldiundang);
+		}
+		return false;
+	}
+
 	public function ubahpassworduser()
 	{
 		$data['profileuser']=$this->db->get_where('users',['id_user'=>$this->session->userdata('id_user')])->row_array();

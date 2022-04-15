@@ -160,10 +160,12 @@
         <span style="font-size:12px;color:grey"> (Nama lengkap mempelai kedua)</span>
       </li>
     <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
+      <?php if($detailundangan['tanggal_akad']=='0001-01-01'){}else{ ?>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
         <span style="font-size:12px;color:grey"> (Tanggal akad pernikahan)</span>
       </li>
+      <?php } ?>
     <?php endif; ?>
       <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
         <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
@@ -326,20 +328,31 @@
 
       <?php 
         $idpengundangsum=$detailundangan['id_pengundang'];
-        $queryhadir="SELECT SUM(jumlah_kehadiran) as jumlahhadir from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='hadir'"; 
-        $resultsum=$this->db->query($queryhadir)->row_array();
+        if($detailundangan['tipe_undangan']=='mudah'){
+          $queryhadir="SELECT sum(jumlah_kehadiran) as jumlahhadir from komen where urlpengundang_komen='$idpengundangsum' and absen_komen='hadir'"; 
+          $resultsum=$this->db->query($queryhadir)->row_array();
 
-        $querytidak="SELECT SUM(jumlah_kehadiran) as jumlahtidak from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='tidak'"; 
-        $resultsumtidak=$this->db->query($querytidak)->row_array();
+          $querytidak="SELECT SUM(jumlah_kehadiran) as jumlahtidak from komen where urlpengundang_komen='$idpengundangsum' and absen_komen='tidak hadir'"; 
+          $resultsumtidak=$this->db->query($querytidak)->row_array();
 
-        $queryragu="SELECT SUM(jumlah_kehadiran) as jumlahragu from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='ragu'"; 
-        $resultsumragu=$this->db->query($queryragu)->row_array();
+          $queryragu="SELECT SUM(jumlah_kehadiran) as jumlahragu from komen where urlpengundang_komen='$idpengundangsum' and absen_komen='ragu-ragu'"; 
+          $resultsumragu=$this->db->query($queryragu)->row_array();
+        }else{
+          $queryhadir="SELECT SUM(jumlah_kehadiran) as jumlahhadir from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='hadir'"; 
+          $resultsum=$this->db->query($queryhadir)->row_array();
 
-        $querynull="SELECT count(jumlah_kehadiran) as jumlahnull from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='null'"; 
-        $resultsumnull=$this->db->query($querynull)->row_array();
+          $querytidak="SELECT SUM(jumlah_kehadiran) as jumlahtidak from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='tidak'"; 
+          $resultsumtidak=$this->db->query($querytidak)->row_array();
 
-        $querysemua="SELECT count(jumlah_kehadiran) as jumlahsemua from diundang where matchid_pengundang='$idpengundangsum'"; 
-        $resultsumsemua=$this->db->query($querysemua)->row_array();
+          $queryragu="SELECT SUM(jumlah_kehadiran) as jumlahragu from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='ragu'"; 
+          $resultsumragu=$this->db->query($queryragu)->row_array();
+
+          $querynull="SELECT count(jumlah_kehadiran) as jumlahnull from diundang where matchid_pengundang='$idpengundangsum' and absen_diundang='null'"; 
+          $resultsumnull=$this->db->query($querynull)->row_array();
+
+          $querysemua="SELECT count(jumlah_kehadiran) as jumlahsemua from diundang where matchid_pengundang='$idpengundangsum'"; 
+          $resultsumsemua=$this->db->query($querysemua)->row_array();
+        }
       ?>
 
 
@@ -355,15 +368,19 @@
       <div class="col-12 mt-0 mb-3">
         <div class="d-flex justify-content-between">
         <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;font-weight:bold;border-right:1px solid #ccc;padding-right:5px;" class="ion-android-checkbox-outline text-primary"></i> Hadir : <?=$resultsum['jumlahhadir']; ?> </span>
+        <?php if($detailundangan['tipe_undangan']=='sulit'){ ?>
         <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;font-weight:bold;border-right:1px solid #ccc;padding-right:5px;" class="ion-android-sync text-warning"></i> Belum confirmasi : <?=$resultsumnull['jumlahnull']; ?> </span>
+        <?php } ?>
         </div>
         <div class="d-flex justify-content-between mt-2">
         <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;border-right:1px solid #ccc;padding-right:5px;" class="ion-close-round text-danger"></i> Tidak hadir : <?=$resultsumtidak['jumlahtidak']; ?> </span>
         <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;font-weight:bold;border-right:1px solid #ccc;padding-right:5px;" class="ion-ios-infinite-outline text-secondary"></i> Masih ragu : <?=$resultsumragu['jumlahragu']; ?> </span>
         </div>
+        <?php if($detailundangan['tipe_undangan']=='sulit'){ ?>
         <div class="d-flex justify-content-start mt-2">
         <span style="background-color:#eee;box-shadow:0 0 3px rgba(0,0,0,.4);padding:0 8px 0 8px;border-radius:5px;"><i style="font-size:22px;border-right:1px solid #ccc;padding-right:5px;" class="ion-podium text-success"></i> Semua undangan : <?=$resultsumsemua['jumlahsemua']; ?> </span>
         </div>
+        <?php } ?>
       </div>
     </div>
 
@@ -387,6 +404,7 @@
           <h2 class="mb-0">
             <button class="btn btn-link btn-block d-flex justify-content-between" type="button" data-toggle="collapse" data-target="#collapselist<?=$rlist['id_diundang']; ?>" aria-expanded="true" aria-controls="collapselist<?=$rlist['id_diundang']; ?>">
               <span><?=$no++; ?>. <?=$rlist['nama_diundang']; ?></span>
+          <?php if($detailundangan['tipe_undangan']=='sulit'){ ?>
             <?php if($rlist['absen_diundang']=='hadir'){ ?> 
               <span><i class="ion-android-checkbox-outline"></i>  <?=$rlist['jumlah_kehadiran']; ?></span>
             <?php }else if($rlist['absen_diundang']=='tidak'){ ?>
@@ -396,6 +414,7 @@
             <?php }else{ ?>
               
             <?php } ?>
+          <?php } ?>
             </button>
           </h2>
         </div>
@@ -974,16 +993,20 @@
               <span style="font-size:12px;color:grey"> (Nama orang tua mempelai kedua)</span>
             </li>
           <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
+            <?php if($detailundangan['tanggal_akad']=='0001-01-01'){}else{ ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$daftar_hari[$namahariakad].', '.date('d M Y', strtotime($detailundangan['tanggal_akad'])).', '.$detailundangan['jam_akad']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Tanggal & jam akad pernikahan)</span>
             </li>
+            <?php } ?>
           <?php endif; ?>
           <?php if($detailundangan['jenis_acara']=='pernikahan'): ?>
+            <?php if($detailundangan['tanggal_akad']=='0001-01-01'){}else{ ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$detailundangan['alamat_akad']; ?></span><br>
               <span style="font-size:12px;color:grey"> (Alamat akad pernikahan)</span>
             </li>
+            <?php } ?>
           <?php endif; ?>
             <li style="padding:5px 15px 5px 15px;line-height:15px" class="list-group-item">
               <span class="text-info"><?=$daftar_hari[$namahariresepsi].', '.date('d M Y', strtotime($detailundangan['tanggal_acara'])).', '.$detailundangan['jam_acara']; ?></span><br>
